@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 
 if len(sys.argv) != 3: raise SystemExit('usage: build_registry.py <ucos_checkout> <registry_checkout>')
 ucos = pathlib.Path(sys.argv[1]).resolve(); registry = pathlib.Path(sys.argv[2]).resolve()
-out = registry / 'generated' / 'layers'; out.mkdir(parents=True, exist_ok=True)
+out = registry / 'generated' / 'layers'; out.mkdir(parents=True, exist_ok=True); (registry / 'status').mkdir(parents=True, exist_ok=True)
 def git(args): return subprocess.check_output(['git','-C',str(ucos),*args], text=True).strip()
 sha = git(['rev-parse','HEAD'])
 names={1:'Core',2:'Research',3:'Intelligence',4:'Writing',5:'Image',6:'Quality',7:'Publishing',8:'Analytics',9:'Learning',10:'Affiliate',11:'Integrations',12:'AI Foundation',13:'Persistence',14:'Enterprise Integration',15:'Async Runtime',16:'Database',17:'Security',18:'Monitoring',19:'Analytics Engine',20:'Image Pipeline',21:'Deployment',22:'Documentation',23:'Website Manager'}
