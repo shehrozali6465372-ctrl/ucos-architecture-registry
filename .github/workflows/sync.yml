@@ -1,6 +1,7 @@
 name: Sync UCOS Architecture Registry
 
 on:
+  push:
   workflow_dispatch:
   repository_dispatch:
     types: [ucos-changed]
