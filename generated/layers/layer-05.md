@@ -1,6 +1,6 @@
 # Layer 05 — Image
 
-Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation commit: 61969fd436d1f678b469357df9c4edb476a8a2bb
 Implementation path: layers/layer05_image
 
 ## Source inventory
