@@ -1,0 +1,1186 @@
+# Layer 03 — Intelligence
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer03_intelligence
+
+## Source inventory
+- Python modules: **112**
+- Classes: **225**
+- Functions/methods: **831**
+
+## Python modules
+- layers/layer03_intelligence/__init__.py
+- layers/layer03_intelligence/modules/content_intelligence/__init__.py
+- layers/layer03_intelligence/modules/content_intelligence/audience_fit_analyzer.py
+- layers/layer03_intelligence/modules/content_intelligence/content_confidence.py
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py
+- layers/layer03_intelligence/modules/content_intelligence/cta_analyzer.py
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py
+- layers/layer03_intelligence/modules/content_intelligence/hook_analyzer.py
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py
+- layers/layer03_intelligence/modules/content_intelligence/novelty_detector.py
+- layers/layer03_intelligence/modules/content_intelligence/quality_estimator.py
+- layers/layer03_intelligence/modules/content_intelligence/readability_analyzer.py
+- layers/layer03_intelligence/modules/content_intelligence/redundancy_detector.py
+- layers/layer03_intelligence/modules/content_intelligence/virality_predictor.py
+- layers/layer03_intelligence/modules/content_understanding/__init__.py
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py
+- layers/layer03_intelligence/modules/content_understanding/exceptions.py
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py
+- layers/layer03_intelligence/modules/content_understanding/topic_extractor.py
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py
+- layers/layer03_intelligence/modules/intelligence_memory/__init__.py
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py
+- layers/layer03_intelligence/modules/intelligence_orchestrator/__init__.py
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py
+- layers/layer03_intelligence/modules/knowledge_fusion/__init__.py
+- layers/layer03_intelligence/modules/knowledge_fusion/evidence_aggregator.py
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py
+- layers/layer03_intelligence/modules/knowledge_fusion/intelligence_merger.py
+- layers/layer03_intelligence/modules/knowledge_fusion/source_ranker.py
+- layers/layer03_intelligence/modules/learning_signals/__init__.py
+- layers/layer03_intelligence/modules/learning_signals/engagement_calculator.py
+- layers/layer03_intelligence/modules/learning_signals/feedback_analyzer.py
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py
+- layers/layer03_intelligence/modules/reasoning_engine/__init__.py
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_reasoner.py
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py
+- layers/layer03_intelligence/modules/recommendation_engine/__init__.py
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py
+- layers/layer03_intelligence/modules/recommendation_engine/confidence_calculator.py
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py
+- layers/layer03_intelligence/modules/recommendation_engine/diversity_engine.py
+- layers/layer03_intelligence/modules/recommendation_engine/explanation_builder.py
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py
+- layers/layer03_intelligence/modules/strategy_engine/__init__.py
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py
+- layers/layer03_intelligence/modules/trend_intelligence/__init__.py
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py
+- layers/layer03_intelligence/modules/trend_intelligence/lifecycle_detector.py
+- layers/layer03_intelligence/modules/trend_intelligence/momentum_analyzer.py
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_confidence.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_explainer.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py
+- layers/layer03_intelligence/modules/trend_intelligence/trend_predictor.py
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py
+
+## Classes
+- layers/layer03_intelligence/modules/content_intelligence/audience_fit_analyzer.py:6 AudienceFitResult
+- layers/layer03_intelligence/modules/content_intelligence/audience_fit_analyzer.py:27 AudienceFitAnalyzer
+- layers/layer03_intelligence/modules/content_intelligence/content_confidence.py:6 ContentConfidenceResult
+- layers/layer03_intelligence/modules/content_intelligence/content_confidence.py:21 ContentConfidence
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:6 OptimizationSuggestion
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:23 OptimizationResult
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:39 ContentOptimizer
+- layers/layer03_intelligence/modules/content_intelligence/cta_analyzer.py:6 CTAResult
+- layers/layer03_intelligence/modules/content_intelligence/cta_analyzer.py:30 CTAAnalyzer
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:6 EmotionScore
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:16 EmotionalResult
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:48 EmotionalAnalyzer
+- layers/layer03_intelligence/modules/content_intelligence/hook_analyzer.py:6 HookResult
+- layers/layer03_intelligence/modules/content_intelligence/hook_analyzer.py:22 HookAnalyzer
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py:19 ContentAnalysisResult
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py:58 IntelligenceManager
+- layers/layer03_intelligence/modules/content_intelligence/novelty_detector.py:7 NoveltyResult
+- layers/layer03_intelligence/modules/content_intelligence/novelty_detector.py:21 NoveltyDetector
+- layers/layer03_intelligence/modules/content_intelligence/quality_estimator.py:6 QualityResult
+- layers/layer03_intelligence/modules/content_intelligence/quality_estimator.py:22 QualityEstimator
+- layers/layer03_intelligence/modules/content_intelligence/readability_analyzer.py:7 ReadabilityResult
+- layers/layer03_intelligence/modules/content_intelligence/readability_analyzer.py:35 ReadabilityAnalyzer
+- layers/layer03_intelligence/modules/content_intelligence/redundancy_detector.py:6 RedundancyResult
+- layers/layer03_intelligence/modules/content_intelligence/redundancy_detector.py:22 RedundancyDetector
+- layers/layer03_intelligence/modules/content_intelligence/virality_predictor.py:6 ContentViralityResult
+- layers/layer03_intelligence/modules/content_intelligence/virality_predictor.py:29 ContentViralityPredictor
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:57 AmbiguityResult
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:84 AmbiguityDetector
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:20 BatchMetrics
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:56 BatchProcessor
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:19 CalibratedConfidence
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:39 ConfidenceCalibrator
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:17 ContentUnderstanding
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:49 ContentAnalyzer
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:52 ContradictionResult
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:79 ContradictionDetector
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:59 DuplicateResult
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:84 DuplicateDetector
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:56 EmbeddingEngine
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:26 EntityType
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:116 LinkedEntity
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:166 EntityLinker
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:52 Entity
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:77 EntityRecognizer
+- layers/layer03_intelligence/modules/content_understanding/exceptions.py:3 ContentUnderstandingError
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:22 IntentResult
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:40 IntentDetector
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:20 KeywordAnalysis
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:42 KeywordAnalyzer
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:112 SemanticResult
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:187 SemanticAnalyzer
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:20 Cluster
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:58 SemanticClusterer
+- layers/layer03_intelligence/modules/content_understanding/topic_extractor.py:27 TopicExtractor
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:11 TopicNode
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:94 TopicHierarchy
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:8 Case
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:38 CaseRetriever
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:8 ConfidenceRecord
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:37 ConfidenceHistory
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:5 CachedResult
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:15 IntelligenceCache
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:17 IntelMemoryResult
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:37 IntelMemoryManager
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:8 IntelligenceEntry
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:44 IntelligenceStore
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:6 ConsolidatedEntry
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:31 MemoryConsolidator
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:7 PruningResult
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:25 MemoryPruner
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:6 SearchResult
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:22 MemorySearcher
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:8 MemoryVersion
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:36 MemoryVersioner
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:8 Pattern
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:38 PatternIndexer
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:20 PipelineEvent
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:40 ModuleMetrics
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:69 HealthStatus
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:88 IntelligenceResult
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:125 IntelligenceOrchestrator
+- layers/layer03_intelligence/modules/knowledge_fusion/evidence_aggregator.py:6 AggregatedEvidence
+- layers/layer03_intelligence/modules/knowledge_fusion/evidence_aggregator.py:20 EvidenceAggregator
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:6 UnifiedIntelligence
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:38 ConflictResolver
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:57 FusionEngine
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:12 FusionResult
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:34 FusionManager
+- layers/layer03_intelligence/modules/knowledge_fusion/intelligence_merger.py:6 MergedIntelligence
+- layers/layer03_intelligence/modules/knowledge_fusion/intelligence_merger.py:20 IntelligenceMerger
+- layers/layer03_intelligence/modules/knowledge_fusion/source_ranker.py:6 SourceScore
+- layers/layer03_intelligence/modules/knowledge_fusion/source_ranker.py:20 SourceRanker
+- layers/layer03_intelligence/modules/learning_signals/engagement_calculator.py:6 EngagementResult
+- layers/layer03_intelligence/modules/learning_signals/engagement_calculator.py:18 EngagementCalculator
+- layers/layer03_intelligence/modules/learning_signals/feedback_analyzer.py:6 FeedbackAnalysis
+- layers/layer03_intelligence/modules/learning_signals/feedback_analyzer.py:19 FeedbackAnalyzer
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:7 PerformanceSnapshot
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:20 PerformanceTracker
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:7 Signal
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:22 SignalCollector
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py:13 LearningSignalsResult
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py:36 SignalManager
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py:7 NormalizedSignal
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py:20 SignalNormalizer
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:7 ConfidenceStage
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:26 ConfidenceEvolution
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:91 ConfidenceEvolutionTracker
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_reasoner.py:6 ConfidenceBreakdown
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_reasoner.py:27 ConfidenceReasoner
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:6 Constraint
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:27 ConstraintResult
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:43 ConstraintSolver
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:6 CounterfactualScenario
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:32 CounterfactualResult
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:54 CounterfactualReasoner
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:6 DecisionOption
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:21 DecisionResult
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:42 DecisionEngine
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:7 DecisionNode
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:30 DecisionEdge
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:46 DecisionGraph
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:7 DecisionRecord
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:30 DecisionMemory
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:7 ReplayStep
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:32 DecisionReplay
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:78 ReplayStore
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:6 Explanation
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:48 ExplanationGenerator
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:7 Goal
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:35 GoalEvaluation
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:55 GoalEvaluator
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:7 Hypothesis
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:29 HypothesisResult
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:48 HypothesisEngine
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:6 Objective
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:24 ParetoSolution
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:40 MultiObjectiveResult
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:62 MultiObjectiveOptimizer
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:29 ReasoningResult
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:71 ReasoningManager
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:6 Rule
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:35 RuleResult
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:50 RuleEngine
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:6 Strategy
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:39 StrategyResult
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:58 StrategySelector
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:6 TradeoffDimension
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:21 TradeoffResult
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:43 TradeoffAnalyzer
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:6 Candidate
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:22 CandidateGenerator
+- layers/layer03_intelligence/modules/recommendation_engine/confidence_calculator.py:6 RecConfidence
+- layers/layer03_intelligence/modules/recommendation_engine/confidence_calculator.py:18 ConfidenceCalculator
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:6 FilterConstraint
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:14 FilterResult
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:24 ConstraintFilter
+- layers/layer03_intelligence/modules/recommendation_engine/diversity_engine.py:6 DiversityResult
+- layers/layer03_intelligence/modules/recommendation_engine/diversity_engine.py:18 DiversityEngine
+- layers/layer03_intelligence/modules/recommendation_engine/explanation_builder.py:6 Explanation
+- layers/layer03_intelligence/modules/recommendation_engine/explanation_builder.py:19 ExplanationBuilder
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:7 FeedbackItem
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:20 FeedbackCollector
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py:6 NoveltyResult
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py:16 NoveltyEngine
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py:6 RankedCandidate
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py:23 RankingEngine
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:4 Recommendation
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:17 RecommendationEngine
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py:17 RecommendationResult
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py:44 RecommendationManager
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:7 RecRecord
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:21 RecommendationMemory
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:8 Goal
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:33 GoalPlan
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:61 GoalPlanner
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:6 RiskAssessment
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:31 RiskAnalyzer
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:7 AdaptationResult
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:33 StrategyAdapter
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:4 StrategyPlan
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:17 StrategyEngine
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:6 EvaluationResult
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:32 StrategyEvaluator
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:6 StrategyExplanation
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:36 StrategyExplainer
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:7 GeneratedStrategy
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:44 StrategyGenerator
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:16 StrategyManagerResult
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:51 StrategyManager
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:7 StrategyRecord
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:34 StrategyMemory
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:6 SelectionResult
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:27 StrategySelector
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:6 CrossPlatformTrend
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:40 CrossPlatformFusion
+- layers/layer03_intelligence/modules/trend_intelligence/lifecycle_detector.py:6 LifecycleStage
+- layers/layer03_intelligence/modules/trend_intelligence/lifecycle_detector.py:14 LifecycleResult
+- layers/layer03_intelligence/modules/trend_intelligence/lifecycle_detector.py:34 LifecycleDetector
+- layers/layer03_intelligence/modules/trend_intelligence/momentum_analyzer.py:6 MomentumResult
+- layers/layer03_intelligence/modules/trend_intelligence/momentum_analyzer.py:27 MomentumAnalyzer
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:6 SeasonalPattern
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:31 SeasonalityAnalyzer
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:8 TrendEntry
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:37 TrendCollector
+- layers/layer03_intelligence/modules/trend_intelligence/trend_confidence.py:6 TrendConfidenceResult
+- layers/layer03_intelligence/modules/trend_intelligence/trend_confidence.py:45 TrendConfidence
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:7 TrendEvent
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:38 TrendEventBus
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:82 TrendEventEmitter
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:6 EvidenceItem
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:26 TrendEvidence
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:69 TrendEvidenceBuilder
+- layers/layer03_intelligence/modules/trend_intelligence/trend_explainer.py:6 TrendExplanation
+- layers/layer03_intelligence/modules/trend_intelligence/trend_explainer.py:30 TrendExplainer
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:7 TrendSnapshot
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:35 TopicHistory
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:87 TrendHistory
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:20 TrendAnalysisResult
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:57 TrendManager
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:7 NormalizedTrend
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:46 TrendNormalizer
+- layers/layer03_intelligence/modules/trend_intelligence/trend_predictor.py:7 TrendPrediction
+- layers/layer03_intelligence/modules/trend_intelligence/trend_predictor.py:30 TrendPredictor
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py:6 ViralityResult
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py:36 ViralityPredictor
+
+## Functions / methods
+- layers/layer03_intelligence/modules/content_intelligence/audience_fit_analyzer.py:9 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/audience_fit_analyzer.py:16 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/audience_fit_analyzer.py:28 analyze()
+- layers/layer03_intelligence/modules/content_intelligence/content_confidence.py:9 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/content_confidence.py:15 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/content_confidence.py:22 calculate()
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:9 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:17 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:26 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:32 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/content_optimizer.py:40 optimize()
+- layers/layer03_intelligence/modules/content_intelligence/cta_analyzer.py:9 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/cta_analyzer.py:16 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/cta_analyzer.py:31 analyze()
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:8 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:12 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:19 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:26 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/emotional_analyzer.py:49 analyze()
+- layers/layer03_intelligence/modules/content_intelligence/hook_analyzer.py:9 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/hook_analyzer.py:16 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/hook_analyzer.py:30 analyze()
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py:24 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py:40 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py:59 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py:72 analyze()
+- layers/layer03_intelligence/modules/content_intelligence/intelligence_manager.py:108 get_health()
+- layers/layer03_intelligence/modules/content_intelligence/novelty_detector.py:10 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/novelty_detector.py:16 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/novelty_detector.py:22 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/novelty_detector.py:27 detect()
+- layers/layer03_intelligence/modules/content_intelligence/quality_estimator.py:8 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/quality_estimator.py:14 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/quality_estimator.py:23 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/quality_estimator.py:26 estimate()
+- layers/layer03_intelligence/modules/content_intelligence/readability_analyzer.py:13 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/readability_analyzer.py:23 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/readability_analyzer.py:38 analyze()
+- layers/layer03_intelligence/modules/content_intelligence/readability_analyzer.py:74 _count_syllables()
+- layers/layer03_intelligence/modules/content_intelligence/redundancy_detector.py:9 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/redundancy_detector.py:15 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/redundancy_detector.py:23 detect()
+- layers/layer03_intelligence/modules/content_intelligence/virality_predictor.py:9 __init__()
+- layers/layer03_intelligence/modules/content_intelligence/virality_predictor.py:17 to_dict()
+- layers/layer03_intelligence/modules/content_intelligence/virality_predictor.py:30 predict()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:63 __init__()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:72 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:94 __init__()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:97 detect()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:160 is_ambiguous()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:163 get_alternatives()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:166 add_ambiguous_word()
+- layers/layer03_intelligence/modules/content_understanding/ambiguity_detector.py:169 _tokenize()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:26 __init__()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:34 record()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:44 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:68 __init__()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:76 analyze_many()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:88 analyze_with_cache()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:109 get_metrics()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:112 cache_size()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:115 clear_cache()
+- layers/layer03_intelligence/modules/content_understanding/batch_processor.py:118 reset_metrics()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:24 __init__()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:30 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:74 __init__()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:77 calibrate()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:119 normalize_score()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:126 aggregate_confidence()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:138 reliability_grade()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:145 set_weights()
+- layers/layer03_intelligence/modules/content_understanding/confidence_calibrator.py:148 _build_explanation()
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:26 __init__()
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:36 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:52 __init__()
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:58 analyze()
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:86 analyze_batch()
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:90 compare()
+- layers/layer03_intelligence/modules/content_understanding/content_analyzer.py:101 _keyword_overlap()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:58 __init__()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:67 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:89 __init__()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:93 detect()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:122 detect_batch()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:132 has_contradiction()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:137 find_contradictions()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:146 add_antonym_pair()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:153 _check_negation()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:180 _check_antonyms()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:208 _check_directional()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:241 _has_similar_topic()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:274 _lemmatize()
+- layers/layer03_intelligence/modules/content_understanding/contradiction_detector.py:303 _tokenize()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:65 __init__()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:73 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:94 __init__()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:98 detect()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:175 find_duplicates()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:185 deduplicate()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:199 get_groups()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:220 add_synonym_group()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:245 _lemmatize()
+- layers/layer03_intelligence/modules/content_understanding/duplicate_detector.py:282 _tokenize()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:67 __init__()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:77 fit()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:106 embed()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:132 similarity()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:145 cross_similarity()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:166 cosine_similarity()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:180 get_vocabulary()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:184 get_vocab_size()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:187 is_fitted()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:190 reset()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:196 _tokenize()
+- layers/layer03_intelligence/modules/content_understanding/embedding_engine.py:200 _normalize()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:130 __init__()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:146 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:156 __repr__()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:177 __init__()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:194 link()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:223 normalize()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:245 classify()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:292 confidence()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:331 get_entity_links()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:368 add_entity()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:380 get_kb_stats()
+- layers/layer03_intelligence/modules/content_understanding/entity_linker.py:391 _link_single()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:57 __init__()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:64 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:73 __repr__()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:80 __init__()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:85 recognize()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:107 recognize_by_type()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:111 get_entity_types()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:119 extract_all_text()
+- layers/layer03_intelligence/modules/content_understanding/entity_recognizer.py:126 add_pattern()
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:27 __init__()
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:32 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:43 __init__()
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:47 detect()
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:65 detect_batch()
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:69 get_dominant_intent()
+- layers/layer03_intelligence/modules/content_understanding/intent_detector.py:85 add_pattern()
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:25 __init__()
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:32 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:45 __init__()
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:49 analyze()
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:89 analyze_batch()
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:93 get_common_keywords()
+- layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:102 add_domain()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:139 __init__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:157 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:177 __repr__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:200 __init__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:211 analyze()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:267 extract_topics()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:301 detect_intent()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:310 detect_context()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:332 semantic_score()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:337 semantic_similarity()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:358 _tokenize()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:391 _split_sentences()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:396 _extract_bigrams()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:409 _classify_intent()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:431 _extract_entities()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:460 _analyze_sentiment()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:487 _score_complexity()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:511 _compute_semantic_score()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:539 _compute_confidence()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:562 _build_reasoning()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:605 _publish_event()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:25 __init__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:32 add()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:37 _update_centroid()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:48 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:74 __init__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:79 cluster()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:121 assign()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:147 get_cluster()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:153 get_clusters()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:156 merge_clusters()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:171 summary()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:179 reset()
+- layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:185 _default_similarity()
+- layers/layer03_intelligence/modules/content_understanding/topic_extractor.py:30 __init__()
+- layers/layer03_intelligence/modules/content_understanding/topic_extractor.py:34 extract()
+- layers/layer03_intelligence/modules/content_understanding/topic_extractor.py:59 extract_multi_word()
+- layers/layer03_intelligence/modules/content_understanding/topic_extractor.py:77 _tokenize()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:29 _build_default_hierarchy()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:16 __init__()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:23 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:97 __init__()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:103 classify()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:115 get_parent()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:118 get_children()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:121 get_siblings()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:130 get_ancestors()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:138 get_hierarchy()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:142 search()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:146 get_all_topics()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:149 get_depth()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:152 _build()
+- layers/layer03_intelligence/modules/content_understanding/topic_hierarchy.py:165 _subtree()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:13 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:24 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:41 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:46 store()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:62 get_similar()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:68 get_by_tag()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:73 get_successful()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:78 get_failed()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:83 get_by_score_range()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:86 search()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:96 count()
+- layers/layer03_intelligence/modules/intelligence_memory/case_retriever.py:99 clear()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:13 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:23 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:40 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:45 record()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:60 get_topic_history()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:64 get_module_history()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:68 get_trend()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:94 get_average_by_module()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:104 get_latest()
+- layers/layer03_intelligence/modules/intelligence_memory/confidence_history.py:111 count()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:7 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:12 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:16 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:20 store()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:25 get()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:31 has()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:33 remove()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:35 size()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:37 hit_rate()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:40 clear()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_cache.py:42 keys()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:21 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:28 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:52 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:76 _setup_searcher()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:80 remember()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:94 recall()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:104 learn_pattern()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:113 find_similar_cases()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:118 store_case()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:127 get_confidence_trend()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:131 consolidate()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:140 prune()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:150 search()
+- layers/layer03_intelligence/modules/intelligence_memory/intel_memory_manager.py:155 get_stats()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:14 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:28 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:47 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:53 store()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:73 get()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:79 get_by_category()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:83 get_by_tag()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:87 search()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:92 update()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:107 delete()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:113 _remove_entry()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:121 count()
+- layers/layer03_intelligence/modules/intelligence_memory/intelligence_store.py:124 stats()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:11 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:20 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:34 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:37 consolidate()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:67 _similar()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:77 _avg_confidence()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:81 _merge_data()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_consolidator.py:90 _calc_score()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:11 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:17 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:28 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:32 prune()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:46 analyze()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_pruner.py:63 calculate_value()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:10 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:15 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:25 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:28 register_store()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:32 search()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:51 search_by_tag()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:66 search_by_confidence()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:82 _calculate_relevance()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_searcher.py:92 store_count()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:13 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:22 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:39 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:42 create_version()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:55 get_latest()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:59 get_version()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:66 get_history()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:69 rollback()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:77 version_count()
+- layers/layer03_intelligence/modules/intelligence_memory/memory_versioning.py:80 total_versions()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:13 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:24 to_dict()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:41 __init__()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:46 index()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:70 get()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:73 search()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:92 get_frequent()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:97 get_high_confidence()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:103 _find_similar()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:110 count()
+- layers/layer03_intelligence/modules/intelligence_memory/pattern_indexer.py:113 clear()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:24 __init__()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:31 to_dict()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:45 __init__()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:53 avg_time_ms()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:57 success_rate()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:60 to_dict()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:73 __init__()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:79 to_dict()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:94 __init__()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:109 to_dict()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:131 __init__()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:149 analyze()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:229 analyze_batch()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:241 _run_module()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:269 get_metrics()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:275 get_health()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:290 total_analyses()
+- layers/layer03_intelligence/modules/intelligence_orchestrator/intel_orchestrator.py:294 total_events()
+- layers/layer03_intelligence/modules/knowledge_fusion/evidence_aggregator.py:8 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/evidence_aggregator.py:14 to_dict()
+- layers/layer03_intelligence/modules/knowledge_fusion/evidence_aggregator.py:21 aggregate()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:10 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:19 add_source()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:21 to_dict()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:40 resolve()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:59 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:66 fuse()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_engine.py:122 fuse_batch()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:14 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:22 to_dict()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:36 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:42 fuse()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:78 fuse_batch()
+- layers/layer03_intelligence/modules/knowledge_fusion/fusion_manager.py:81 get_health()
+- layers/layer03_intelligence/modules/knowledge_fusion/intelligence_merger.py:8 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/intelligence_merger.py:14 to_dict()
+- layers/layer03_intelligence/modules/knowledge_fusion/intelligence_merger.py:21 merge()
+- layers/layer03_intelligence/modules/knowledge_fusion/source_ranker.py:8 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/source_ranker.py:14 to_dict()
+- layers/layer03_intelligence/modules/knowledge_fusion/source_ranker.py:21 __init__()
+- layers/layer03_intelligence/modules/knowledge_fusion/source_ranker.py:24 rank()
+- layers/layer03_intelligence/modules/learning_signals/engagement_calculator.py:8 __init__()
+- layers/layer03_intelligence/modules/learning_signals/engagement_calculator.py:13 to_dict()
+- layers/layer03_intelligence/modules/learning_signals/engagement_calculator.py:19 __init__()
+- layers/layer03_intelligence/modules/learning_signals/engagement_calculator.py:23 calculate()
+- layers/layer03_intelligence/modules/learning_signals/feedback_analyzer.py:8 __init__()
+- layers/layer03_intelligence/modules/learning_signals/feedback_analyzer.py:14 to_dict()
+- layers/layer03_intelligence/modules/learning_signals/feedback_analyzer.py:23 analyze()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:9 __init__()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:14 to_dict()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:21 __init__()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:25 record()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:34 get_for_post()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:37 get_best_performing()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:40 get_worst_performing()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:43 get_average_score()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:47 get_trend()
+- layers/layer03_intelligence/modules/learning_signals/performance_tracker.py:57 count()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:10 __init__()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:17 to_dict()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:24 __init__()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:26 collect()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:28 add()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:32 get_by_type()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:34 get_by_source()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:36 get_by_post()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:38 count()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:40 clear()
+- layers/layer03_intelligence/modules/learning_signals/signal_collector.py:42 to_dict()
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py:16 __init__()
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py:24 to_dict()
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py:37 __init__()
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py:44 analyze()
+- layers/layer03_intelligence/modules/learning_signals/signal_manager.py:92 get_health()
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py:9 __init__()
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py:15 to_dict()
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py:22 __init__()
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py:26 normalize()
+- layers/layer03_intelligence/modules/learning_signals/signal_normalizer.py:51 normalize_batch()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:11 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:18 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:29 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:34 add_stage()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:39 _recalculate()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:52 get_contribution()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:58 get_weakest_stage()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:63 get_strongest_stage()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:68 get_drops()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:81 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:94 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:97 create()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:102 get()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:105 add_stage()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:112 get_all_topics()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:115 get_final_confidence()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_evolution.py:119 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_reasoner.py:10 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_reasoner.py:17 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/confidence_reasoner.py:30 reason()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:10 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:18 check()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:31 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:38 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:46 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:49 add_constraint()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:52 add_simple()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:55 check()
+- layers/layer03_intelligence/modules/reasoning_engine/constraint_solver.py:68 count()
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:11 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:21 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:37 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:44 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:57 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:60 add_template()
+- layers/layer03_intelligence/modules/reasoning_engine/counterfactual_reasoner.py:64 analyze()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:10 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:16 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:25 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:32 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:45 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:48 set_weights()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:52 decide()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_engine.py:88 decide_simple()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:12 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:22 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:34 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:41 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:49 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:53 add_node()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:56 create_node()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:69 add_edge()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:73 get_node()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:76 get_dependencies()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:85 get_dependents()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:94 get_critical_path()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:110 _dfs()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:124 find_weak_link()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:131 get_path_confidence()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:141 count()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_graph.py:144 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:12 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:22 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:33 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:37 store()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:42 create_and_store()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:50 get()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:56 get_recent()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:59 get_successful()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:62 get_failed()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:65 get_success_rate()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:71 record_outcome()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:78 count()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_memory.py:81 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:12 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:22 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:35 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:44 add_step()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:56 finalize()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:60 get_stage_decisions()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:64 get_path()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:67 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:81 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:85 record()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:90 get_by_topic()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:93 get_successful()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:96 get_failed()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:99 get_common_paths()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:106 count()
+- layers/layer03_intelligence/modules/reasoning_engine/decision_replay.py:109 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:11 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:20 add_section()
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:23 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:31 to_text()
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:51 generate()
+- layers/layer03_intelligence/modules/reasoning_engine/explanation_generator.py:116 generate_from_decision()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:11 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:22 progress()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:26 achieved()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:29 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:39 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:46 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:58 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:61 add_goal()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:64 evaluate()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:84 evaluate_all()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:87 get_overall_progress()
+- layers/layer03_intelligence/modules/reasoning_engine/goal_evaluator.py:92 count()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:12 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:20 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:33 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:39 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:51 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:54 propose()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:59 add_evidence_for()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:63 add_evidence_against()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:67 evaluate()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:93 get_supported()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:96 get_refuted()
+- layers/layer03_intelligence/modules/reasoning_engine/hypothesis_engine.py:99 count()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:10 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:19 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:28 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:35 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:45 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:52 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:65 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:68 add_objective()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:71 optimize()
+- layers/layer03_intelligence/modules/reasoning_engine/multi_objective_optimizer.py:133 _dominates()
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:36 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:52 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:84 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:101 reason()
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:197 get_health()
+- layers/layer03_intelligence/modules/reasoning_engine/reasoning_manager.py:216 reason_batch()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:10 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:20 evaluate()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:30 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:39 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:45 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:53 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:56 add_rule()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:60 add_simple_rule()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:64 evaluate()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:79 evaluate_first_match()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:90 get_rules_by_tag()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:93 enable_rule()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:98 disable_rule()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:103 count()
+- layers/layer03_intelligence/modules/reasoning_engine/rule_engine.py:106 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:10 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:20 matches()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:33 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:43 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:49 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:61 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:64 add_strategy()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:68 select()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:89 select_all_matching()
+- layers/layer03_intelligence/modules/reasoning_engine/strategy_selector.py:92 count()
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:10 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:16 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:26 __init__()
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:33 to_dict()
+- layers/layer03_intelligence/modules/reasoning_engine/tradeoff_analyzer.py:46 analyze()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:10 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:17 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:25 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:28 generate_from_trends()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:37 generate_from_audience()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:46 generate_from_competitor()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:54 generate_from_knowledge()
+- layers/layer03_intelligence/modules/recommendation_engine/candidate_generator.py:63 merge_candidates()
+- layers/layer03_intelligence/modules/recommendation_engine/confidence_calculator.py:8 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/confidence_calculator.py:13 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/confidence_calculator.py:19 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/confidence_calculator.py:22 calculate()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:8 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:16 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:20 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:25 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:28 add_constraint()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:31 add_simple()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:34 filter()
+- layers/layer03_intelligence/modules/recommendation_engine/constraint_filter.py:52 count()
+- layers/layer03_intelligence/modules/recommendation_engine/diversity_engine.py:8 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/diversity_engine.py:13 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/diversity_engine.py:19 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/diversity_engine.py:22 diversify()
+- layers/layer03_intelligence/modules/recommendation_engine/explanation_builder.py:8 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/explanation_builder.py:14 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/explanation_builder.py:20 build()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:9 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:15 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:21 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:24 collect()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:27 add()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:30 get_for_topic()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:33 get_average()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:40 get_aggregate()
+- layers/layer03_intelligence/modules/recommendation_engine/feedback_collector.py:46 count()
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py:8 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py:12 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py:17 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py:21 score_novelty()
+- layers/layer03_intelligence/modules/recommendation_engine/novelty_engine.py:32 add_to_history()
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py:10 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py:17 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py:26 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py:32 rank()
+- layers/layer03_intelligence/modules/recommendation_engine/ranking_engine.py:52 set_weights()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:6 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:13 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:18 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:20 add()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:22 get_top()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:24 get_by_type()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:26 get_by_priority()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:28 count()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:30 clear()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:32 generate_topic_recommendations()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_engine.py:40 generate_posting_recommendations()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py:21 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py:31 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py:57 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py:68 recommend()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_manager.py:132 get_health()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:9 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:16 to_dict()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:22 __init__()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:26 store()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:31 record_outcome()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:38 get_successful()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:41 get_failed()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:44 get_success_rate()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:49 was_recommended()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:52 count()
+- layers/layer03_intelligence/modules/recommendation_engine/recommendation_memory.py:55 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:13 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:25 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:38 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:47 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:66 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:69 create_goals()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:81 plan()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:120 reprioritize()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:127 update_progress()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:139 get_blocked_goals()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:152 get_plan()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:155 _find_critical_path()
+- layers/layer03_intelligence/modules/strategy_engine/goal_planner.py:162 _dfs()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:11 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:20 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:43 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:46 assess()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:80 compare_risks()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:84 suggest_low_risk_strategy()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:92 _classify_risk()
+- layers/layer03_intelligence/modules/strategy_engine/risk_analyzer.py:99 _suggest_mitigations()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:12 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:21 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:36 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:39 adapt()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:96 adapt_urgency()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_adapter.py:108 adaptation_count()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:6 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:13 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:18 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:20 create_short_term()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:28 create_long_term()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:36 get_plan()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_engine.py:38 list_plans()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:11 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:20 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:47 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:53 evaluate()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:80 evaluate_batch()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:84 compare()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:96 _score_feasibility()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:108 _score_impact()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:113 _score_risk_adjustment()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:118 _score_resource_efficiency()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:125 _score_alignment()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:134 _assign_grade()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:140 _identify_strengths()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:152 _identify_weaknesses()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_evaluator.py:164 _predict_outcomes()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:12 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:23 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:39 explain()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:76 explain_selection()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:88 explain_risk()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:98 _build_summary()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:104 _build_why()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:116 _build_alternatives()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:127 _build_risks()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:138 _build_expected()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:150 _explain_confidence()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_explainer.py:158 _assemble_full_text()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:13 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:27 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:50 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:53 generate()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:104 generate_batch()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:122 _build_goals()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:134 _build_tactics()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:144 _build_content_mix()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:158 _build_schedule()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:171 _assess_risk()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:181 _calculate_confidence()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:201 _build_reasoning()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_generator.py:228 generation_count()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:22 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:35 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:57 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:78 run_pipeline()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:170 adapt_strategy()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:178 get_memory_stats()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:181 get_lessons()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_manager.py:185 pipeline_count()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:12 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:22 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:37 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:42 store()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:72 get()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:78 get_by_strategy()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:82 get_successful()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:85 get_failed()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:88 get_similar()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:98 get_lessons()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:107 stats()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:122 clear()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_memory.py:127 size()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:10 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:17 to_dict()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:38 __init__()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:41 select()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:76 _score_candidate()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:95 _feasibility_score()
+- layers/layer03_intelligence/modules/strategy_engine/strategy_selector.py:103 _build_reasoning()
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:11 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:20 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:43 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:46 fuse()
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:89 fuse_batch()
+- layers/layer03_intelligence/modules/trend_intelligence/cross_platform_fusion.py:92 find_cross_platform_trends()
+- layers/layer03_intelligence/modules/trend_intelligence/lifecycle_detector.py:18 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/lifecycle_detector.py:26 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/lifecycle_detector.py:37 detect()
+- layers/layer03_intelligence/modules/trend_intelligence/momentum_analyzer.py:11 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/momentum_analyzer.py:19 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/momentum_analyzer.py:30 analyze()
+- layers/layer03_intelligence/modules/trend_intelligence/momentum_analyzer.py:63 analyze_with_timestamps()
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:11 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:22 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:38 detect()
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:76 _autocorrelation()
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:85 _estimate_phase()
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:91 _period_name()
+- layers/layer03_intelligence/modules/trend_intelligence/seasonality_analyzer.py:97 predict_next_peak()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:13 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:25 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:33 entry_id()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:40 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:44 collect()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:54 collect_batch()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:66 get_entries()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:74 get_topics()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:77 count()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:80 clear()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_collector.py:84 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_confidence.py:12 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_confidence.py:23 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_confidence.py:48 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_confidence.py:55 calculate()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:11 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:19 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:41 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:46 subscribe()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:49 unsubscribe()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:53 publish()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:65 publish_batch()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:69 get_recent_events()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:72 get_events_for_topic()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:75 get_event_count()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:78 clear()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:85 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_events.py:89 analyze_and_emit()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:10 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:18 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:31 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:39 add_evidence()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:43 add_counter_evidence()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:46 add_reasoning()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:49 calculate_strength()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:58 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_evidence.py:72 build()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_explainer.py:11 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_explainer.py:20 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_explainer.py:33 explain()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:12 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:23 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:40 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:48 add_snapshot()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:58 get_score_history()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:61 get_momentum_history()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:64 get_latest()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:67 get_recent()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:70 days_tracked()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:75 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:90 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:94 record()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:119 record_analysis()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:144 get_topic_history()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:147 get_all_topics()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:150 get_score_history()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:154 get_trending_topics()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:162 get_declining_topics()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:171 get_stats()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_history.py:178 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:26 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:40 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:71 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:86 analyze_topic()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:150 analyze_batch()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:153 rank_topics()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:161 get_health()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_manager.py:154 _score()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:12 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:22 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:49 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:52 normalize()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:94 normalize_batch()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:97 set_source_weight()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_normalizer.py:100 get_weights()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_predictor.py:12 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_predictor.py:20 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_predictor.py:33 predict()
+- layers/layer03_intelligence/modules/trend_intelligence/trend_predictor.py:65 predict_with_decay()
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py:12 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py:23 to_dict()
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py:39 __init__()
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py:46 predict()
+- layers/layer03_intelligence/modules/trend_intelligence/virality_predictor.py:117 _sigmoid()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

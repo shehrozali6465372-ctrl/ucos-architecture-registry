@@ -1,0 +1,1191 @@
+# Layer 11 — Integrations
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer11_async_runtime
+
+## Source inventory
+- Python modules: **218**
+- Classes: **237**
+- Functions/methods: **718**
+
+## Python modules
+- layers/layer11_async_runtime/__init__.py
+- layers/layer11_async_runtime/modules/async_ai_engine/__init__.py
+- layers/layer11_async_runtime/modules/async_ai_engine/balancer.py
+- layers/layer11_async_runtime/modules/async_ai_engine/batcher.py
+- layers/layer11_async_runtime/modules/async_ai_engine/builder.py
+- layers/layer11_async_runtime/modules/async_ai_engine/config.py
+- layers/layer11_async_runtime/modules/async_ai_engine/context.py
+- layers/layer11_async_runtime/modules/async_ai_engine/dispatcher.py
+- layers/layer11_async_runtime/modules/async_ai_engine/events.py
+- layers/layer11_async_runtime/modules/async_ai_engine/exceptions.py
+- layers/layer11_async_runtime/modules/async_ai_engine/factory.py
+- layers/layer11_async_runtime/modules/async_ai_engine/health.py
+- layers/layer11_async_runtime/modules/async_ai_engine/memory.py
+- layers/layer11_async_runtime/modules/async_ai_engine/metrics.py
+- layers/layer11_async_runtime/modules/async_ai_engine/models.py
+- layers/layer11_async_runtime/modules/async_ai_engine/monitor.py
+- layers/layer11_async_runtime/modules/async_ai_engine/pipeline.py
+- layers/layer11_async_runtime/modules/async_ai_engine/profiler.py
+- layers/layer11_async_runtime/modules/async_ai_engine/queue.py
+- layers/layer11_async_runtime/modules/async_ai_engine/recovery.py
+- layers/layer11_async_runtime/modules/async_ai_engine/report.py
+- layers/layer11_async_runtime/modules/async_ai_engine/router.py
+- layers/layer11_async_runtime/modules/async_ai_engine/validator.py
+- layers/layer11_async_runtime/modules/async_http_engine/__init__.py
+- layers/layer11_async_runtime/modules/async_http_engine/balancer.py
+- layers/layer11_async_runtime/modules/async_http_engine/batcher.py
+- layers/layer11_async_runtime/modules/async_http_engine/builder.py
+- layers/layer11_async_runtime/modules/async_http_engine/config.py
+- layers/layer11_async_runtime/modules/async_http_engine/context.py
+- layers/layer11_async_runtime/modules/async_http_engine/dispatcher.py
+- layers/layer11_async_runtime/modules/async_http_engine/events.py
+- layers/layer11_async_runtime/modules/async_http_engine/exceptions.py
+- layers/layer11_async_runtime/modules/async_http_engine/factory.py
+- layers/layer11_async_runtime/modules/async_http_engine/health.py
+- layers/layer11_async_runtime/modules/async_http_engine/memory.py
+- layers/layer11_async_runtime/modules/async_http_engine/metrics.py
+- layers/layer11_async_runtime/modules/async_http_engine/models.py
+- layers/layer11_async_runtime/modules/async_http_engine/monitor.py
+- layers/layer11_async_runtime/modules/async_http_engine/pipeline.py
+- layers/layer11_async_runtime/modules/async_http_engine/profiler.py
+- layers/layer11_async_runtime/modules/async_http_engine/queue.py
+- layers/layer11_async_runtime/modules/async_http_engine/recovery.py
+- layers/layer11_async_runtime/modules/async_http_engine/report.py
+- layers/layer11_async_runtime/modules/async_http_engine/router.py
+- layers/layer11_async_runtime/modules/async_http_engine/validator.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/__init__.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/balancer.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/batcher.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/builder.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/config.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/context.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/dispatcher.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/events.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/exceptions.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/factory.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/health.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/memory.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/metrics.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/models.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/monitor.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/pipeline.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/profiler.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/queue.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/recovery.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/report.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/router.py
+- layers/layer11_async_runtime/modules/async_plugin_framework/validator.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/__init__.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_config.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_context.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_factory.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py
+- layers/layer11_async_runtime/modules/async_task_manager/__init__.py
+- layers/layer11_async_runtime/modules/async_task_manager/exceptions.py
+- layers/layer11_async_runtime/modules/async_task_manager/models.py
+- layers/layer11_async_runtime/modules/async_task_manager/task.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_cancel.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_context.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_dependency.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_dispatcher.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_executor.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_group.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_history.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_memory.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_metrics.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_monitor.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_pause.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_priority.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_profiler.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_result.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_retry.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_scheduler.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_state.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_timeout.py
+- layers/layer11_async_runtime/modules/async_task_manager/task_validator.py
+- layers/layer11_async_runtime/modules/background_workers/__init__.py
+- layers/layer11_async_runtime/modules/background_workers/balancer.py
+- layers/layer11_async_runtime/modules/background_workers/batcher.py
+- layers/layer11_async_runtime/modules/background_workers/builder.py
+- layers/layer11_async_runtime/modules/background_workers/config.py
+- layers/layer11_async_runtime/modules/background_workers/context.py
+- layers/layer11_async_runtime/modules/background_workers/dispatcher.py
+- layers/layer11_async_runtime/modules/background_workers/events.py
+- layers/layer11_async_runtime/modules/background_workers/exceptions.py
+- layers/layer11_async_runtime/modules/background_workers/factory.py
+- layers/layer11_async_runtime/modules/background_workers/health.py
+- layers/layer11_async_runtime/modules/background_workers/memory.py
+- layers/layer11_async_runtime/modules/background_workers/metrics.py
+- layers/layer11_async_runtime/modules/background_workers/models.py
+- layers/layer11_async_runtime/modules/background_workers/monitor.py
+- layers/layer11_async_runtime/modules/background_workers/pipeline.py
+- layers/layer11_async_runtime/modules/background_workers/profiler.py
+- layers/layer11_async_runtime/modules/background_workers/queue.py
+- layers/layer11_async_runtime/modules/background_workers/recovery.py
+- layers/layer11_async_runtime/modules/background_workers/report.py
+- layers/layer11_async_runtime/modules/background_workers/router.py
+- layers/layer11_async_runtime/modules/background_workers/validator.py
+- layers/layer11_async_runtime/modules/concurrent_execution/__init__.py
+- layers/layer11_async_runtime/modules/concurrent_execution/events.py
+- layers/layer11_async_runtime/modules/concurrent_execution/exceptions.py
+- layers/layer11_async_runtime/modules/concurrent_execution/health.py
+- layers/layer11_async_runtime/modules/concurrent_execution/metrics.py
+- layers/layer11_async_runtime/modules/concurrent_execution/models.py
+- layers/layer11_async_runtime/modules/concurrent_execution/monitor.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_balancer.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_context.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_dispatcher.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_group.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_health.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_memory.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_pipeline.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_profiler.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_queue.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_result.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_scheduler.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_strategy.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_validator.py
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_worker.py
+- layers/layer11_async_runtime/modules/concurrent_execution/report.py
+- layers/layer11_async_runtime/modules/distributed_cluster/__init__.py
+- layers/layer11_async_runtime/modules/distributed_cluster/balancer.py
+- layers/layer11_async_runtime/modules/distributed_cluster/batcher.py
+- layers/layer11_async_runtime/modules/distributed_cluster/builder.py
+- layers/layer11_async_runtime/modules/distributed_cluster/config.py
+- layers/layer11_async_runtime/modules/distributed_cluster/context.py
+- layers/layer11_async_runtime/modules/distributed_cluster/dispatcher.py
+- layers/layer11_async_runtime/modules/distributed_cluster/events.py
+- layers/layer11_async_runtime/modules/distributed_cluster/exceptions.py
+- layers/layer11_async_runtime/modules/distributed_cluster/factory.py
+- layers/layer11_async_runtime/modules/distributed_cluster/health.py
+- layers/layer11_async_runtime/modules/distributed_cluster/memory.py
+- layers/layer11_async_runtime/modules/distributed_cluster/metrics.py
+- layers/layer11_async_runtime/modules/distributed_cluster/models.py
+- layers/layer11_async_runtime/modules/distributed_cluster/monitor.py
+- layers/layer11_async_runtime/modules/distributed_cluster/pipeline.py
+- layers/layer11_async_runtime/modules/distributed_cluster/profiler.py
+- layers/layer11_async_runtime/modules/distributed_cluster/queue.py
+- layers/layer11_async_runtime/modules/distributed_cluster/recovery.py
+- layers/layer11_async_runtime/modules/distributed_cluster/report.py
+- layers/layer11_async_runtime/modules/distributed_cluster/router.py
+- layers/layer11_async_runtime/modules/distributed_cluster/validator.py
+- layers/layer11_async_runtime/modules/event_loop_management/__init__.py
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py
+- layers/layer11_async_runtime/modules/event_loop_management/exceptions.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_balancer.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_context.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_dispatcher.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_health.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_memory.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_metrics.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_monitor.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_policy.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_profiler.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_recovery.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_restart.py
+- layers/layer11_async_runtime/modules/event_loop_management/loop_validator.py
+- layers/layer11_async_runtime/modules/event_loop_management/models.py
+- layers/layer11_async_runtime/modules/performance_optimization/__init__.py
+- layers/layer11_async_runtime/modules/performance_optimization/balancer.py
+- layers/layer11_async_runtime/modules/performance_optimization/batcher.py
+- layers/layer11_async_runtime/modules/performance_optimization/builder.py
+- layers/layer11_async_runtime/modules/performance_optimization/config.py
+- layers/layer11_async_runtime/modules/performance_optimization/context.py
+- layers/layer11_async_runtime/modules/performance_optimization/dispatcher.py
+- layers/layer11_async_runtime/modules/performance_optimization/events.py
+- layers/layer11_async_runtime/modules/performance_optimization/exceptions.py
+- layers/layer11_async_runtime/modules/performance_optimization/factory.py
+- layers/layer11_async_runtime/modules/performance_optimization/health.py
+- layers/layer11_async_runtime/modules/performance_optimization/memory.py
+- layers/layer11_async_runtime/modules/performance_optimization/metrics.py
+- layers/layer11_async_runtime/modules/performance_optimization/models.py
+- layers/layer11_async_runtime/modules/performance_optimization/monitor.py
+- layers/layer11_async_runtime/modules/performance_optimization/pipeline.py
+- layers/layer11_async_runtime/modules/performance_optimization/profiler.py
+- layers/layer11_async_runtime/modules/performance_optimization/queue.py
+- layers/layer11_async_runtime/modules/performance_optimization/recovery.py
+- layers/layer11_async_runtime/modules/performance_optimization/report.py
+- layers/layer11_async_runtime/modules/performance_optimization/router.py
+- layers/layer11_async_runtime/modules/performance_optimization/validator.py
+
+## Classes
+- layers/layer11_async_runtime/modules/async_ai_engine/balancer.py:5 AIBalancer
+- layers/layer11_async_runtime/modules/async_ai_engine/batcher.py:5 AIBatcher
+- layers/layer11_async_runtime/modules/async_ai_engine/builder.py:5 AIBuilder
+- layers/layer11_async_runtime/modules/async_ai_engine/config.py:5 AIConfig
+- layers/layer11_async_runtime/modules/async_ai_engine/context.py:5 AIContext
+- layers/layer11_async_runtime/modules/async_ai_engine/dispatcher.py:5 AIDispatcher
+- layers/layer11_async_runtime/modules/async_ai_engine/events.py:6 Events
+- layers/layer11_async_runtime/modules/async_ai_engine/exceptions.py:3 BaseError
+- layers/layer11_async_runtime/modules/async_ai_engine/factory.py:5 AIFactory
+- layers/layer11_async_runtime/modules/async_ai_engine/health.py:6 Health
+- layers/layer11_async_runtime/modules/async_ai_engine/memory.py:5 AIMemory
+- layers/layer11_async_runtime/modules/async_ai_engine/metrics.py:6 Metrics
+- layers/layer11_async_runtime/modules/async_ai_engine/models.py:6 AIModel
+- layers/layer11_async_runtime/modules/async_ai_engine/monitor.py:6 Monitor
+- layers/layer11_async_runtime/modules/async_ai_engine/pipeline.py:5 AIPipeline
+- layers/layer11_async_runtime/modules/async_ai_engine/profiler.py:5 AIProfiler
+- layers/layer11_async_runtime/modules/async_ai_engine/queue.py:5 AIQueue
+- layers/layer11_async_runtime/modules/async_ai_engine/recovery.py:5 AIRecovery
+- layers/layer11_async_runtime/modules/async_ai_engine/report.py:6 Report
+- layers/layer11_async_runtime/modules/async_ai_engine/router.py:5 AIRouter
+- layers/layer11_async_runtime/modules/async_ai_engine/validator.py:5 AIValidator
+- layers/layer11_async_runtime/modules/async_http_engine/balancer.py:5 HttpBalancer
+- layers/layer11_async_runtime/modules/async_http_engine/batcher.py:5 HttpBatcher
+- layers/layer11_async_runtime/modules/async_http_engine/builder.py:5 HttpBuilder
+- layers/layer11_async_runtime/modules/async_http_engine/config.py:5 HttpConfig
+- layers/layer11_async_runtime/modules/async_http_engine/context.py:5 HttpContext
+- layers/layer11_async_runtime/modules/async_http_engine/dispatcher.py:5 HttpDispatcher
+- layers/layer11_async_runtime/modules/async_http_engine/events.py:6 Events
+- layers/layer11_async_runtime/modules/async_http_engine/exceptions.py:3 BaseError
+- layers/layer11_async_runtime/modules/async_http_engine/factory.py:5 HttpFactory
+- layers/layer11_async_runtime/modules/async_http_engine/health.py:6 Health
+- layers/layer11_async_runtime/modules/async_http_engine/memory.py:5 HttpMemory
+- layers/layer11_async_runtime/modules/async_http_engine/metrics.py:6 Metrics
+- layers/layer11_async_runtime/modules/async_http_engine/models.py:6 HttpClient
+- layers/layer11_async_runtime/modules/async_http_engine/monitor.py:6 Monitor
+- layers/layer11_async_runtime/modules/async_http_engine/pipeline.py:5 HttpPipeline
+- layers/layer11_async_runtime/modules/async_http_engine/profiler.py:5 HttpProfiler
+- layers/layer11_async_runtime/modules/async_http_engine/queue.py:5 HttpQueue
+- layers/layer11_async_runtime/modules/async_http_engine/recovery.py:5 HttpRecovery
+- layers/layer11_async_runtime/modules/async_http_engine/report.py:6 Report
+- layers/layer11_async_runtime/modules/async_http_engine/router.py:5 HttpRouter
+- layers/layer11_async_runtime/modules/async_http_engine/validator.py:5 HttpValidator
+- layers/layer11_async_runtime/modules/async_plugin_framework/balancer.py:5 PluginBalancer
+- layers/layer11_async_runtime/modules/async_plugin_framework/batcher.py:5 PluginBatcher
+- layers/layer11_async_runtime/modules/async_plugin_framework/builder.py:5 PluginBuilder
+- layers/layer11_async_runtime/modules/async_plugin_framework/config.py:5 PluginConfig
+- layers/layer11_async_runtime/modules/async_plugin_framework/context.py:5 PluginContext
+- layers/layer11_async_runtime/modules/async_plugin_framework/dispatcher.py:5 PluginDispatcher
+- layers/layer11_async_runtime/modules/async_plugin_framework/events.py:6 Events
+- layers/layer11_async_runtime/modules/async_plugin_framework/exceptions.py:3 BaseError
+- layers/layer11_async_runtime/modules/async_plugin_framework/factory.py:5 PluginFactory
+- layers/layer11_async_runtime/modules/async_plugin_framework/health.py:6 Health
+- layers/layer11_async_runtime/modules/async_plugin_framework/memory.py:5 PluginMemory
+- layers/layer11_async_runtime/modules/async_plugin_framework/metrics.py:6 Metrics
+- layers/layer11_async_runtime/modules/async_plugin_framework/models.py:6 Plugin
+- layers/layer11_async_runtime/modules/async_plugin_framework/monitor.py:6 Monitor
+- layers/layer11_async_runtime/modules/async_plugin_framework/pipeline.py:5 PluginPipeline
+- layers/layer11_async_runtime/modules/async_plugin_framework/profiler.py:5 PluginProfiler
+- layers/layer11_async_runtime/modules/async_plugin_framework/queue.py:5 PluginQueue
+- layers/layer11_async_runtime/modules/async_plugin_framework/recovery.py:5 PluginRecovery
+- layers/layer11_async_runtime/modules/async_plugin_framework/report.py:6 Report
+- layers/layer11_async_runtime/modules/async_plugin_framework/router.py:5 PluginRouter
+- layers/layer11_async_runtime/modules/async_plugin_framework/validator.py:5 PluginValidator
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:5 AsyncRuntimeError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:9 EventLoopError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:13 TaskError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:17 WorkerError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:21 TimeoutError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:25 CancellationError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:29 SchedulerError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:33 ResourceExhaustedError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:37 ConfigurationError
+- layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:41 HealthCheckError
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:11 TaskState
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:19 AsyncTask
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:35 AsyncRuntime
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:8 RuntimeBuilder
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_config.py:6 RuntimeConfig
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_context.py:7 RuntimeContext
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:10 RuntimeEvent
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:22 RuntimeEvents
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_factory.py:9 RuntimeFactory
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:7 HealthCheck
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:23 RuntimeHealth
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:18 RuntimeManager
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:7 RuntimeCheckpoint
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:18 RuntimeMemory
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:7 RuntimeMetrics
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:7 RuntimeMonitor
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:7 ProfileEntry
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:18 RuntimeProfiler
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:7 RuntimeComponent
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:20 RuntimeRegistry
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:8 RuntimeReport
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:35 RuntimeReportGenerator
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:7 RuntimeState
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:6 ValidationResult
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:26 RuntimeValidator
+- layers/layer11_async_runtime/modules/async_task_manager/exceptions.py:4 BaseError
+- layers/layer11_async_runtime/modules/async_task_manager/exceptions.py:5 TaskError
+- layers/layer11_async_runtime/modules/async_task_manager/exceptions.py:6 TaskTimeoutError
+- layers/layer11_async_runtime/modules/async_task_manager/exceptions.py:7 TaskCancelledError
+- layers/layer11_async_runtime/modules/async_task_manager/exceptions.py:8 TaskDependencyError
+- layers/layer11_async_runtime/modules/async_task_manager/exceptions.py:9 TaskRetryError
+- layers/layer11_async_runtime/modules/async_task_manager/models.py:6 TaskState
+- layers/layer11_async_runtime/modules/async_task_manager/models.py:9 AsyncTask
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:6 Task
+- layers/layer11_async_runtime/modules/async_task_manager/task_cancel.py:3 TaskCancel
+- layers/layer11_async_runtime/modules/async_task_manager/task_context.py:5 TaskContext
+- layers/layer11_async_runtime/modules/async_task_manager/task_dependency.py:4 TaskDependency
+- layers/layer11_async_runtime/modules/async_task_manager/task_dispatcher.py:5 TaskDispatcher
+- layers/layer11_async_runtime/modules/async_task_manager/task_executor.py:7 TaskExecutor
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:5 TaskGraph
+- layers/layer11_async_runtime/modules/async_task_manager/task_group.py:6 TaskGroup
+- layers/layer11_async_runtime/modules/async_task_manager/task_history.py:5 TaskHistory
+- layers/layer11_async_runtime/modules/async_task_manager/task_memory.py:5 TaskMemory
+- layers/layer11_async_runtime/modules/async_task_manager/task_metrics.py:4 TaskMetrics
+- layers/layer11_async_runtime/modules/async_task_manager/task_monitor.py:5 TaskMonitor
+- layers/layer11_async_runtime/modules/async_task_manager/task_pause.py:3 TaskPause
+- layers/layer11_async_runtime/modules/async_task_manager/task_priority.py:4 Priority
+- layers/layer11_async_runtime/modules/async_task_manager/task_profiler.py:5 TaskProfiler
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:5 TaskReport
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:10 TaskReportGenerator
+- layers/layer11_async_runtime/modules/async_task_manager/task_result.py:5 TaskResult
+- layers/layer11_async_runtime/modules/async_task_manager/task_retry.py:4 RetryPolicy
+- layers/layer11_async_runtime/modules/async_task_manager/task_scheduler.py:7 TaskScheduler
+- layers/layer11_async_runtime/modules/async_task_manager/task_timeout.py:4 TaskTimeout
+- layers/layer11_async_runtime/modules/async_task_manager/task_validator.py:4 TaskValidator
+- layers/layer11_async_runtime/modules/background_workers/balancer.py:5 WorkerBalancer
+- layers/layer11_async_runtime/modules/background_workers/batcher.py:5 WorkerBatcher
+- layers/layer11_async_runtime/modules/background_workers/builder.py:5 WorkerBuilder
+- layers/layer11_async_runtime/modules/background_workers/config.py:5 WorkerConfig
+- layers/layer11_async_runtime/modules/background_workers/context.py:5 WorkerContext
+- layers/layer11_async_runtime/modules/background_workers/dispatcher.py:5 WorkerDispatcher
+- layers/layer11_async_runtime/modules/background_workers/events.py:6 Events
+- layers/layer11_async_runtime/modules/background_workers/exceptions.py:3 BaseError
+- layers/layer11_async_runtime/modules/background_workers/factory.py:5 WorkerFactory
+- layers/layer11_async_runtime/modules/background_workers/health.py:6 Health
+- layers/layer11_async_runtime/modules/background_workers/memory.py:5 WorkerMemory
+- layers/layer11_async_runtime/modules/background_workers/metrics.py:6 Metrics
+- layers/layer11_async_runtime/modules/background_workers/models.py:6 Worker
+- layers/layer11_async_runtime/modules/background_workers/monitor.py:6 Monitor
+- layers/layer11_async_runtime/modules/background_workers/pipeline.py:5 WorkerPipeline
+- layers/layer11_async_runtime/modules/background_workers/profiler.py:5 WorkerProfiler
+- layers/layer11_async_runtime/modules/background_workers/queue.py:5 WorkerQueue
+- layers/layer11_async_runtime/modules/background_workers/recovery.py:5 WorkerRecovery
+- layers/layer11_async_runtime/modules/background_workers/report.py:6 Report
+- layers/layer11_async_runtime/modules/background_workers/router.py:5 WorkerRouter
+- layers/layer11_async_runtime/modules/background_workers/validator.py:5 WorkerValidator
+- layers/layer11_async_runtime/modules/concurrent_execution/events.py:6 Events
+- layers/layer11_async_runtime/modules/concurrent_execution/exceptions.py:3 BaseError
+- layers/layer11_async_runtime/modules/concurrent_execution/health.py:6 Health
+- layers/layer11_async_runtime/modules/concurrent_execution/metrics.py:6 Metrics
+- layers/layer11_async_runtime/modules/concurrent_execution/models.py:6 Executor
+- layers/layer11_async_runtime/modules/concurrent_execution/monitor.py:6 Monitor
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_balancer.py:5 Parallelbalancer
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_context.py:5 Parallelcontext
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_dispatcher.py:5 Paralleldispatcher
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_group.py:5 Parallelgroup
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_health.py:5 Parallelhealth
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_memory.py:5 Parallelmemory
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_pipeline.py:5 Parallelpipeline
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_profiler.py:5 Parallelprofiler
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_queue.py:5 Parallelqueue
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_result.py:5 Parallelresult
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_scheduler.py:5 Parallelscheduler
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_strategy.py:5 Parallelstrategy
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_validator.py:5 Parallelvalidator
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_worker.py:5 Parallelworker
+- layers/layer11_async_runtime/modules/concurrent_execution/report.py:6 Report
+- layers/layer11_async_runtime/modules/distributed_cluster/balancer.py:5 DistributedBalancer
+- layers/layer11_async_runtime/modules/distributed_cluster/batcher.py:5 DistributedBatcher
+- layers/layer11_async_runtime/modules/distributed_cluster/builder.py:5 DistributedBuilder
+- layers/layer11_async_runtime/modules/distributed_cluster/config.py:5 DistributedConfig
+- layers/layer11_async_runtime/modules/distributed_cluster/context.py:5 DistributedContext
+- layers/layer11_async_runtime/modules/distributed_cluster/dispatcher.py:5 DistributedDispatcher
+- layers/layer11_async_runtime/modules/distributed_cluster/events.py:6 Events
+- layers/layer11_async_runtime/modules/distributed_cluster/exceptions.py:3 BaseError
+- layers/layer11_async_runtime/modules/distributed_cluster/factory.py:5 DistributedFactory
+- layers/layer11_async_runtime/modules/distributed_cluster/health.py:6 Health
+- layers/layer11_async_runtime/modules/distributed_cluster/memory.py:5 DistributedMemory
+- layers/layer11_async_runtime/modules/distributed_cluster/metrics.py:6 Metrics
+- layers/layer11_async_runtime/modules/distributed_cluster/models.py:6 ClusterNode
+- layers/layer11_async_runtime/modules/distributed_cluster/monitor.py:6 Monitor
+- layers/layer11_async_runtime/modules/distributed_cluster/pipeline.py:5 DistributedPipeline
+- layers/layer11_async_runtime/modules/distributed_cluster/profiler.py:5 DistributedProfiler
+- layers/layer11_async_runtime/modules/distributed_cluster/queue.py:5 DistributedQueue
+- layers/layer11_async_runtime/modules/distributed_cluster/recovery.py:5 DistributedRecovery
+- layers/layer11_async_runtime/modules/distributed_cluster/report.py:6 Report
+- layers/layer11_async_runtime/modules/distributed_cluster/router.py:5 DistributedRouter
+- layers/layer11_async_runtime/modules/distributed_cluster/validator.py:5 DistributedValidator
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:6 AsyncEventLoop
+- layers/layer11_async_runtime/modules/event_loop_management/exceptions.py:4 EventLoopError
+- layers/layer11_async_runtime/modules/event_loop_management/exceptions.py:5 LoopTimeoutError
+- layers/layer11_async_runtime/modules/event_loop_management/exceptions.py:6 LoopRecoveryError
+- layers/layer11_async_runtime/modules/event_loop_management/exceptions.py:7 LoopBalancingError
+- layers/layer11_async_runtime/modules/event_loop_management/loop_balancer.py:5 LoopBalancer
+- layers/layer11_async_runtime/modules/event_loop_management/loop_context.py:6 LoopContext
+- layers/layer11_async_runtime/modules/event_loop_management/loop_dispatcher.py:6 LoopDispatcher
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:8 LoopEvent
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:15 LoopEvents
+- layers/layer11_async_runtime/modules/event_loop_management/loop_health.py:6 LoopHealth
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py:6 LoopManager
+- layers/layer11_async_runtime/modules/event_loop_management/loop_memory.py:6 LoopMemory
+- layers/layer11_async_runtime/modules/event_loop_management/loop_metrics.py:5 LoopMetrics
+- layers/layer11_async_runtime/modules/event_loop_management/loop_monitor.py:6 LoopMonitor
+- layers/layer11_async_runtime/modules/event_loop_management/loop_policy.py:5 LoopPolicy
+- layers/layer11_async_runtime/modules/event_loop_management/loop_profiler.py:6 LoopProfiler
+- layers/layer11_async_runtime/modules/event_loop_management/loop_recovery.py:6 LoopRecovery
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:6 LoopEntry
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:13 LoopRegistry
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:6 LoopReport
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:14 LoopReportGenerator
+- layers/layer11_async_runtime/modules/event_loop_management/loop_restart.py:5 LoopRestart
+- layers/layer11_async_runtime/modules/event_loop_management/loop_validator.py:5 LoopValidator
+- layers/layer11_async_runtime/modules/event_loop_management/models.py:6 LoopInfo
+- layers/layer11_async_runtime/modules/performance_optimization/balancer.py:5 PerfBalancer
+- layers/layer11_async_runtime/modules/performance_optimization/batcher.py:5 PerfBatcher
+- layers/layer11_async_runtime/modules/performance_optimization/builder.py:5 PerfBuilder
+- layers/layer11_async_runtime/modules/performance_optimization/config.py:5 PerfConfig
+- layers/layer11_async_runtime/modules/performance_optimization/context.py:5 PerfContext
+- layers/layer11_async_runtime/modules/performance_optimization/dispatcher.py:5 PerfDispatcher
+- layers/layer11_async_runtime/modules/performance_optimization/events.py:6 Events
+- layers/layer11_async_runtime/modules/performance_optimization/exceptions.py:3 BaseError
+- layers/layer11_async_runtime/modules/performance_optimization/factory.py:5 PerfFactory
+- layers/layer11_async_runtime/modules/performance_optimization/health.py:6 Health
+- layers/layer11_async_runtime/modules/performance_optimization/memory.py:5 PerfMemory
+- layers/layer11_async_runtime/modules/performance_optimization/metrics.py:6 Metrics
+- layers/layer11_async_runtime/modules/performance_optimization/models.py:6 Optimizer
+- layers/layer11_async_runtime/modules/performance_optimization/monitor.py:6 Monitor
+- layers/layer11_async_runtime/modules/performance_optimization/pipeline.py:5 PerfPipeline
+- layers/layer11_async_runtime/modules/performance_optimization/profiler.py:5 PerfProfiler
+- layers/layer11_async_runtime/modules/performance_optimization/queue.py:5 PerfQueue
+- layers/layer11_async_runtime/modules/performance_optimization/recovery.py:5 PerfRecovery
+- layers/layer11_async_runtime/modules/performance_optimization/report.py:6 Report
+- layers/layer11_async_runtime/modules/performance_optimization/router.py:5 PerfRouter
+- layers/layer11_async_runtime/modules/performance_optimization/validator.py:5 PerfValidator
+
+## Functions / methods
+- layers/layer11_async_runtime/modules/async_ai_engine/balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/balancer.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/balancer.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/batcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/batcher.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/batcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/builder.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/builder.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/builder.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/config.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/config.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/config.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/context.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/context.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/context.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/dispatcher.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/dispatcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/events.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/events.py:9 record()
+- layers/layer11_async_runtime/modules/async_ai_engine/events.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/factory.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/factory.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/factory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/health.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/health.py:9 record()
+- layers/layer11_async_runtime/modules/async_ai_engine/health.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/memory.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/memory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/metrics.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/metrics.py:9 record()
+- layers/layer11_async_runtime/modules/async_ai_engine/metrics.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/models.py:16 to_dict()
+- layers/layer11_async_runtime/modules/async_ai_engine/monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/monitor.py:9 record()
+- layers/layer11_async_runtime/modules/async_ai_engine/monitor.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/pipeline.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/pipeline.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/pipeline.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/profiler.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/queue.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/queue.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/queue.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/recovery.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/recovery.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/recovery.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/report.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/report.py:9 record()
+- layers/layer11_async_runtime/modules/async_ai_engine/report.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/router.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/router.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/router.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_ai_engine/validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_ai_engine/validator.py:8 process()
+- layers/layer11_async_runtime/modules/async_ai_engine/validator.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/balancer.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/balancer.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/batcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/batcher.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/batcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/builder.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/builder.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/builder.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/config.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/config.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/config.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/context.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/context.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/context.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/dispatcher.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/dispatcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/events.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/events.py:9 record()
+- layers/layer11_async_runtime/modules/async_http_engine/events.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/factory.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/factory.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/factory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/health.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/health.py:9 record()
+- layers/layer11_async_runtime/modules/async_http_engine/health.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/memory.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/memory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/metrics.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/metrics.py:9 record()
+- layers/layer11_async_runtime/modules/async_http_engine/metrics.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/models.py:16 to_dict()
+- layers/layer11_async_runtime/modules/async_http_engine/monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/monitor.py:9 record()
+- layers/layer11_async_runtime/modules/async_http_engine/monitor.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/pipeline.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/pipeline.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/pipeline.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/profiler.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/queue.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/queue.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/queue.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/recovery.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/recovery.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/recovery.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/report.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/report.py:9 record()
+- layers/layer11_async_runtime/modules/async_http_engine/report.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/router.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/router.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/router.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_http_engine/validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_http_engine/validator.py:8 process()
+- layers/layer11_async_runtime/modules/async_http_engine/validator.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/balancer.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/balancer.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/batcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/batcher.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/batcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/builder.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/builder.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/builder.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/config.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/config.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/config.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/context.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/context.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/context.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/dispatcher.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/dispatcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/events.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/events.py:9 record()
+- layers/layer11_async_runtime/modules/async_plugin_framework/events.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/factory.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/factory.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/factory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/health.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/health.py:9 record()
+- layers/layer11_async_runtime/modules/async_plugin_framework/health.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/memory.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/memory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/metrics.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/metrics.py:9 record()
+- layers/layer11_async_runtime/modules/async_plugin_framework/metrics.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/models.py:16 to_dict()
+- layers/layer11_async_runtime/modules/async_plugin_framework/monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/monitor.py:9 record()
+- layers/layer11_async_runtime/modules/async_plugin_framework/monitor.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/pipeline.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/pipeline.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/pipeline.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/profiler.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/queue.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/queue.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/queue.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/recovery.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/recovery.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/recovery.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/report.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/report.py:9 record()
+- layers/layer11_async_runtime/modules/async_plugin_framework/report.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/router.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/router.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/router.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_plugin_framework/validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_plugin_framework/validator.py:8 process()
+- layers/layer11_async_runtime/modules/async_plugin_framework/validator.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:23 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:45 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:59 start()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:63 stop()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:69 is_running()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:73 metrics()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:76 run_coroutine()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:104 execute_coroutine()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:128 gather()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:133 run_parallel()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:139 submit_to_thread()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:144 submit_to_thread_async()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:149 health()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:158 get_task()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:161 list_tasks()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:135 _gather()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:11 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:14 max_workers()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:18 max_tasks()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:22 task_timeout()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:26 max_retries()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:30 enable_profiling()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:34 enable_monitoring()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:38 log_level()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:42 build()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_config.py:15 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_config.py:31 to_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_config.py:35 from_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_context.py:13 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_context.py:22 is_expired()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_context.py:25 elapsed()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_context.py:28 to_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:14 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:25 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:29 publish()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:42 subscribe()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:45 unsubscribe()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:52 get_events()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:58 clear()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_events.py:63 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_factory.py:20 create()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_factory.py:26 create_custom()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_factory.py:31 get_presets()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:11 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:18 to_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:26 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:30 register_check()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:33 run_checks()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:49 is_healthy()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:54 get_results()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:57 get_unhealthy()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_health.py:60 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:21 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:34 start()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:44 stop()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:53 pause()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:59 resume()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:65 restart()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:69 status()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:73 health_check()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:78 generate_report()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_manager.py:82 get_full_status()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:11 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:21 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:25 save_checkpoint()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:34 get_latest()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:37 get_all()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:40 clear()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_memory.py:45 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:10 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:17 increment()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:20 decrement()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:23 set_gauge()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:26 record_latency()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:32 get_counter()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:35 get_gauge()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:38 get_uptime()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:41 get_throughput()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:48 get_avg_latency()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:53 get_error_rate()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:59 to_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_metrics.py:64 reset()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:10 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:14 record_snapshot()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:20 alert()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:24 get_alerts()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:30 get_history()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:33 clear_alerts()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_monitor.py:38 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:11 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:21 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:25 start()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:28 stop()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:37 get_entries()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:43 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_profiler.py:54 clear()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:11 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:23 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:26 register()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:35 unregister()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:38 get()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:41 get_by_type()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:44 get_all()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_registry.py:47 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:12 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:20 add_insight()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:23 add_recommendation()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:26 to_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:31 export_json()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:37 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:40 generate()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:48 get_recent()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_report.py:51 get_stats()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:31 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:37 current()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:41 uptime_in_state()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:44 can_transition()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:47 transition()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:57 get_history()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_state.py:60 to_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:10 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:15 add_error()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:19 add_warning()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:22 to_dict()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:29 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:32 validate_config()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime_validator.py:45 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/models.py:11 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/models.py:26 to_dict()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:10 id()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:12 state()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:13 start()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:14 complete()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:15 fail()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:16 cancel()
+- layers/layer11_async_runtime/modules/async_task_manager/task.py:17 to_dict()
+- layers/layer11_async_runtime/modules/async_task_manager/task_cancel.py:4 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_cancel.py:5 cancel()
+- layers/layer11_async_runtime/modules/async_task_manager/task_cancel.py:6 is_cancelled()
+- layers/layer11_async_runtime/modules/async_task_manager/task_cancel.py:7 clear()
+- layers/layer11_async_runtime/modules/async_task_manager/task_context.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_context.py:10 set()
+- layers/layer11_async_runtime/modules/async_task_manager/task_context.py:11 get()
+- layers/layer11_async_runtime/modules/async_task_manager/task_context.py:12 to_dict()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dependency.py:5 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dependency.py:6 add()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dependency.py:8 get()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dependency.py:9 is_satisfied()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dependency.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dispatcher.py:7 dispatch()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dispatcher.py:11 get_history()
+- layers/layer11_async_runtime/modules/async_task_manager/task_dispatcher.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_executor.py:8 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_executor.py:9 execute()
+- layers/layer11_async_runtime/modules/async_task_manager/task_executor.py:20 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:9 add_edge()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:12 get_dependencies()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:14 get_dependents()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:16 get_ready_tasks()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:22 has_cycle()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:34 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_graph.py:24 dfs()
+- layers/layer11_async_runtime/modules/async_task_manager/task_group.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_group.py:12 add_task()
+- layers/layer11_async_runtime/modules/async_task_manager/task_group.py:13 remove_task()
+- layers/layer11_async_runtime/modules/async_task_manager/task_group.py:14 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_history.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_history.py:8 record()
+- layers/layer11_async_runtime/modules/async_task_manager/task_history.py:11 get_recent()
+- layers/layer11_async_runtime/modules/async_task_manager/task_history.py:12 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_memory.py:8 store()
+- layers/layer11_async_runtime/modules/async_task_manager/task_memory.py:11 get()
+- layers/layer11_async_runtime/modules/async_task_manager/task_memory.py:15 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_metrics.py:5 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_metrics.py:7 record()
+- layers/layer11_async_runtime/modules/async_task_manager/task_metrics.py:8 get()
+- layers/layer11_async_runtime/modules/async_task_manager/task_metrics.py:9 get_success_rate()
+- layers/layer11_async_runtime/modules/async_task_manager/task_metrics.py:12 to_dict()
+- layers/layer11_async_runtime/modules/async_task_manager/task_monitor.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_monitor.py:7 record()
+- layers/layer11_async_runtime/modules/async_task_manager/task_monitor.py:10 get_events()
+- layers/layer11_async_runtime/modules/async_task_manager/task_monitor.py:14 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_pause.py:4 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_pause.py:5 pause()
+- layers/layer11_async_runtime/modules/async_task_manager/task_pause.py:6 resume()
+- layers/layer11_async_runtime/modules/async_task_manager/task_pause.py:7 is_paused()
+- layers/layer11_async_runtime/modules/async_task_manager/task_priority.py:5 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_priority.py:6 __lt__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_priority.py:7 __repr__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_profiler.py:7 profile()
+- layers/layer11_async_runtime/modules/async_task_manager/task_profiler.py:9 get_slowest()
+- layers/layer11_async_runtime/modules/async_task_manager/task_profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:6 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:8 to_dict()
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:11 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:12 generate()
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:17 get_recent()
+- layers/layer11_async_runtime/modules/async_task_manager/task_report.py:18 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_result.py:7 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_result.py:10 to_dict()
+- layers/layer11_async_runtime/modules/async_task_manager/task_retry.py:5 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_retry.py:7 get_delay()
+- layers/layer11_async_runtime/modules/async_task_manager/task_retry.py:8 can_retry()
+- layers/layer11_async_runtime/modules/async_task_manager/task_retry.py:9 to_dict()
+- layers/layer11_async_runtime/modules/async_task_manager/task_scheduler.py:8 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_scheduler.py:9 schedule()
+- layers/layer11_async_runtime/modules/async_task_manager/task_scheduler.py:12 next()
+- layers/layer11_async_runtime/modules/async_task_manager/task_scheduler.py:18 size()
+- layers/layer11_async_runtime/modules/async_task_manager/task_scheduler.py:19 get_stats()
+- layers/layer11_async_runtime/modules/async_task_manager/task_timeout.py:5 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_timeout.py:6 is_expired()
+- layers/layer11_async_runtime/modules/async_task_manager/task_timeout.py:7 remaining()
+- layers/layer11_async_runtime/modules/async_task_manager/task_validator.py:5 __init__()
+- layers/layer11_async_runtime/modules/async_task_manager/task_validator.py:6 validate()
+- layers/layer11_async_runtime/modules/async_task_manager/task_validator.py:13 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/balancer.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/balancer.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/batcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/batcher.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/batcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/builder.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/builder.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/builder.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/config.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/config.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/config.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/context.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/context.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/context.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/dispatcher.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/dispatcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/events.py:7 __init__()
+- layers/layer11_async_runtime/modules/background_workers/events.py:9 record()
+- layers/layer11_async_runtime/modules/background_workers/events.py:12 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/factory.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/factory.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/factory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/health.py:7 __init__()
+- layers/layer11_async_runtime/modules/background_workers/health.py:9 record()
+- layers/layer11_async_runtime/modules/background_workers/health.py:12 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/memory.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/memory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/metrics.py:7 __init__()
+- layers/layer11_async_runtime/modules/background_workers/metrics.py:9 record()
+- layers/layer11_async_runtime/modules/background_workers/metrics.py:12 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/background_workers/models.py:16 to_dict()
+- layers/layer11_async_runtime/modules/background_workers/monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/background_workers/monitor.py:9 record()
+- layers/layer11_async_runtime/modules/background_workers/monitor.py:12 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/pipeline.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/pipeline.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/pipeline.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/profiler.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/queue.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/queue.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/queue.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/recovery.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/recovery.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/recovery.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/report.py:7 __init__()
+- layers/layer11_async_runtime/modules/background_workers/report.py:9 record()
+- layers/layer11_async_runtime/modules/background_workers/report.py:12 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/router.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/router.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/router.py:11 get_stats()
+- layers/layer11_async_runtime/modules/background_workers/validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/background_workers/validator.py:8 process()
+- layers/layer11_async_runtime/modules/background_workers/validator.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/events.py:7 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/events.py:9 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/events.py:12 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/health.py:7 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/health.py:9 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/health.py:12 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/metrics.py:7 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/metrics.py:9 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/metrics.py:12 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/models.py:16 to_dict()
+- layers/layer11_async_runtime/modules/concurrent_execution/monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/monitor.py:9 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/monitor.py:12 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_balancer.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_balancer.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_context.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_context.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_context.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_dispatcher.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_dispatcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_group.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_group.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_group.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_health.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_health.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_health.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_memory.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_memory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_pipeline.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_pipeline.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_pipeline.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_profiler.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_queue.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_queue.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_queue.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_result.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_result.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_result.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_scheduler.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_scheduler.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_scheduler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_strategy.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_strategy.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_strategy.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_validator.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_validator.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_worker.py:6 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_worker.py:8 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/parallel_worker.py:11 get_stats()
+- layers/layer11_async_runtime/modules/concurrent_execution/report.py:7 __init__()
+- layers/layer11_async_runtime/modules/concurrent_execution/report.py:9 record()
+- layers/layer11_async_runtime/modules/concurrent_execution/report.py:12 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/balancer.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/balancer.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/batcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/batcher.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/batcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/builder.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/builder.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/builder.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/config.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/config.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/config.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/context.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/context.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/context.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/dispatcher.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/dispatcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/events.py:7 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/events.py:9 record()
+- layers/layer11_async_runtime/modules/distributed_cluster/events.py:12 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/factory.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/factory.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/factory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/health.py:7 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/health.py:9 record()
+- layers/layer11_async_runtime/modules/distributed_cluster/health.py:12 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/memory.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/memory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/metrics.py:7 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/metrics.py:9 record()
+- layers/layer11_async_runtime/modules/distributed_cluster/metrics.py:12 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/models.py:16 to_dict()
+- layers/layer11_async_runtime/modules/distributed_cluster/monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/monitor.py:9 record()
+- layers/layer11_async_runtime/modules/distributed_cluster/monitor.py:12 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/pipeline.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/pipeline.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/pipeline.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/profiler.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/queue.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/queue.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/queue.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/recovery.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/recovery.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/recovery.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/report.py:7 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/report.py:9 record()
+- layers/layer11_async_runtime/modules/distributed_cluster/report.py:12 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/router.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/router.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/router.py:11 get_stats()
+- layers/layer11_async_runtime/modules/distributed_cluster/validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/distributed_cluster/validator.py:8 process()
+- layers/layer11_async_runtime/modules/distributed_cluster/validator.py:11 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:11 start()
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:19 stop()
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:24 is_running()
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:26 run_coroutine()
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:30 run_sync()
+- layers/layer11_async_runtime/modules/event_loop_management/event_loop.py:34 to_dict()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_balancer.py:8 assign()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_balancer.py:11 release()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_balancer.py:13 get_balanced()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_balancer.py:17 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_context.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_context.py:11 set()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_context.py:13 get()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_context.py:15 to_dict()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_dispatcher.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_dispatcher.py:9 dispatch()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_dispatcher.py:13 get_history()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_dispatcher.py:15 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:9 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:16 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:19 publish()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:27 subscribe()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:29 get_events()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_events.py:31 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_health.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_health.py:9 check()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_health.py:13 get_results()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_health.py:15 is_all_healthy()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_health.py:17 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py:9 create_loop()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py:13 get_loop()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py:15 remove_loop()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py:21 get_all()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_manager.py:23 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_memory.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_memory.py:10 store()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_memory.py:14 get_latest()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_memory.py:19 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_metrics.py:6 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_metrics.py:8 record()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_metrics.py:10 get()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_metrics.py:12 to_dict()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_metrics.py:14 reset()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_monitor.py:9 record()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_monitor.py:13 get_history()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_monitor.py:18 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_policy.py:6 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_policy.py:8 set_policy()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_policy.py:10 get_policy()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_policy.py:12 get_all()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_policy.py:14 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_profiler.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_profiler.py:10 start()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_profiler.py:12 stop()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_profiler.py:17 get_entries()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_profiler.py:19 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_recovery.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_recovery.py:9 attempt_recovery()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_recovery.py:13 get_history()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_recovery.py:15 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:8 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:14 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:16 register()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:20 unregister()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:22 get_all()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_registry.py:24 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:7 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:11 to_dict()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:15 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:17 generate()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:22 get_recent()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_report.py:24 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_restart.py:6 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_restart.py:8 restart()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_restart.py:11 get_count()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_restart.py:13 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_validator.py:8 validate()
+- layers/layer11_async_runtime/modules/event_loop_management/loop_validator.py:15 get_stats()
+- layers/layer11_async_runtime/modules/event_loop_management/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/event_loop_management/models.py:14 to_dict()
+- layers/layer11_async_runtime/modules/performance_optimization/balancer.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/balancer.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/balancer.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/batcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/batcher.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/batcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/builder.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/builder.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/builder.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/config.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/config.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/config.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/context.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/context.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/context.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/dispatcher.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/dispatcher.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/dispatcher.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/events.py:7 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/events.py:9 record()
+- layers/layer11_async_runtime/modules/performance_optimization/events.py:12 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/factory.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/factory.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/factory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/health.py:7 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/health.py:9 record()
+- layers/layer11_async_runtime/modules/performance_optimization/health.py:12 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/memory.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/memory.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/memory.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/metrics.py:7 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/metrics.py:9 record()
+- layers/layer11_async_runtime/modules/performance_optimization/metrics.py:12 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/models.py:8 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/models.py:16 to_dict()
+- layers/layer11_async_runtime/modules/performance_optimization/monitor.py:7 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/monitor.py:9 record()
+- layers/layer11_async_runtime/modules/performance_optimization/monitor.py:12 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/pipeline.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/pipeline.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/pipeline.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/profiler.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/profiler.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/profiler.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/queue.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/queue.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/queue.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/recovery.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/recovery.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/recovery.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/report.py:7 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/report.py:9 record()
+- layers/layer11_async_runtime/modules/performance_optimization/report.py:12 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/router.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/router.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/router.py:11 get_stats()
+- layers/layer11_async_runtime/modules/performance_optimization/validator.py:6 __init__()
+- layers/layer11_async_runtime/modules/performance_optimization/validator.py:8 process()
+- layers/layer11_async_runtime/modules/performance_optimization/validator.py:11 get_stats()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

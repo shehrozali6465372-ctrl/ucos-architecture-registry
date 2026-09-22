@@ -1,0 +1,202 @@
+# Layer 17 — Security
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer17_security
+
+## Source inventory
+- Python modules: **27**
+- Classes: **29**
+- Functions/methods: **128**
+
+## Python modules
+- layers/layer17_security/__init__.py
+- layers/layer17_security/modules/audit_logger/__init__.py
+- layers/layer17_security/modules/audit_logger/audit_logger.py
+- layers/layer17_security/modules/authentication/__init__.py
+- layers/layer17_security/modules/authentication/authentication.py
+- layers/layer17_security/modules/authorization/__init__.py
+- layers/layer17_security/modules/authorization/authorization.py
+- layers/layer17_security/modules/encryption_engine/__init__.py
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py
+- layers/layer17_security/modules/firewall/__init__.py
+- layers/layer17_security/modules/firewall/firewall.py
+- layers/layer17_security/modules/input_validator/__init__.py
+- layers/layer17_security/modules/input_validator/input_validator.py
+- layers/layer17_security/modules/jwt_framework/__init__.py
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py
+- layers/layer17_security/modules/output_sanitizer/__init__.py
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py
+- layers/layer17_security/modules/permission_engine/__init__.py
+- layers/layer17_security/modules/permission_engine/permission_engine.py
+- layers/layer17_security/modules/secrets_manager/__init__.py
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py
+- layers/layer17_security/modules/security_policies/__init__.py
+- layers/layer17_security/modules/security_policies/security_policies.py
+- layers/layer17_security/modules/signature_engine/__init__.py
+- layers/layer17_security/modules/signature_engine/signature_engine.py
+- layers/layer17_security/modules/token_manager/__init__.py
+- layers/layer17_security/modules/token_manager/token_manager.py
+
+## Classes
+- layers/layer17_security/modules/audit_logger/audit_logger.py:9 AuditSeverity
+- layers/layer17_security/modules/audit_logger/audit_logger.py:13 AuditEvent
+- layers/layer17_security/modules/audit_logger/audit_logger.py:35 AuditLogger
+- layers/layer17_security/modules/authentication/authentication.py:11 AuthStrategy
+- layers/layer17_security/modules/authentication/authentication.py:15 User
+- layers/layer17_security/modules/authentication/authentication.py:43 AuthSession
+- layers/layer17_security/modules/authentication/authentication.py:64 AuthenticationManager
+- layers/layer17_security/modules/authorization/authorization.py:8 Permission
+- layers/layer17_security/modules/authorization/authorization.py:13 Role
+- layers/layer17_security/modules/authorization/authorization.py:28 AuthorizationManager
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:10 EncryptionEngine
+- layers/layer17_security/modules/firewall/firewall.py:8 FirewallRule
+- layers/layer17_security/modules/firewall/firewall.py:19 Firewall
+- layers/layer17_security/modules/input_validator/input_validator.py:10 ValidationRule
+- layers/layer17_security/modules/input_validator/input_validator.py:21 InputValidator
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:12 JWTToken
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:23 JWTFramework
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:7 OutputSanitizer
+- layers/layer17_security/modules/permission_engine/permission_engine.py:6 PermissionRule
+- layers/layer17_security/modules/permission_engine/permission_engine.py:17 PermissionEngine
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:10 SecretEntry
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:30 SecretsManager
+- layers/layer17_security/modules/security_policies/security_policies.py:8 PolicyLevel
+- layers/layer17_security/modules/security_policies/security_policies.py:12 SecurityPolicy
+- layers/layer17_security/modules/security_policies/security_policies.py:44 SecurityPolicies
+- layers/layer17_security/modules/signature_engine/signature_engine.py:9 SignatureEngine
+- layers/layer17_security/modules/token_manager/token_manager.py:10 TokenType
+- layers/layer17_security/modules/token_manager/token_manager.py:14 Token
+- layers/layer17_security/modules/token_manager/token_manager.py:40 TokenManager
+
+## Functions / methods
+- layers/layer17_security/modules/audit_logger/audit_logger.py:17 __init__()
+- layers/layer17_security/modules/audit_logger/audit_logger.py:29 to_dict()
+- layers/layer17_security/modules/audit_logger/audit_logger.py:36 __init__()
+- layers/layer17_security/modules/audit_logger/audit_logger.py:40 log()
+- layers/layer17_security/modules/audit_logger/audit_logger.py:50 query()
+- layers/layer17_security/modules/audit_logger/audit_logger.py:63 count()
+- layers/layer17_security/modules/audit_logger/audit_logger.py:66 clear()
+- layers/layer17_security/modules/authentication/authentication.py:19 __init__()
+- layers/layer17_security/modules/authentication/authentication.py:31 _hash_password()
+- layers/layer17_security/modules/authentication/authentication.py:34 verify_password()
+- layers/layer17_security/modules/authentication/authentication.py:37 to_dict()
+- layers/layer17_security/modules/authentication/authentication.py:47 __init__()
+- layers/layer17_security/modules/authentication/authentication.py:56 is_expired()
+- layers/layer17_security/modules/authentication/authentication.py:59 to_dict()
+- layers/layer17_security/modules/authentication/authentication.py:65 __init__()
+- layers/layer17_security/modules/authentication/authentication.py:72 register_user()
+- layers/layer17_security/modules/authentication/authentication.py:78 authenticate_password()
+- layers/layer17_security/modules/authentication/authentication.py:98 register_api_key()
+- layers/layer17_security/modules/authentication/authentication.py:104 authenticate_api_key()
+- layers/layer17_security/modules/authentication/authentication.py:107 validate_session()
+- layers/layer17_security/modules/authentication/authentication.py:115 invalidate_session()
+- layers/layer17_security/modules/authentication/authentication.py:121 get_user()
+- layers/layer17_security/modules/authentication/authentication.py:124 list_users()
+- layers/layer17_security/modules/authentication/authentication.py:127 stats()
+- layers/layer17_security/modules/authorization/authorization.py:16 __init__()
+- layers/layer17_security/modules/authorization/authorization.py:23 to_dict()
+- layers/layer17_security/modules/authorization/authorization.py:29 __init__()
+- layers/layer17_security/modules/authorization/authorization.py:33 create_role()
+- layers/layer17_security/modules/authorization/authorization.py:38 assign_role()
+- layers/layer17_security/modules/authorization/authorization.py:44 revoke_role()
+- layers/layer17_security/modules/authorization/authorization.py:50 has_permission()
+- layers/layer17_security/modules/authorization/authorization.py:58 get_user_roles()
+- layers/layer17_security/modules/authorization/authorization.py:61 get_role_permissions()
+- layers/layer17_security/modules/authorization/authorization.py:65 list_roles()
+- layers/layer17_security/modules/authorization/authorization.py:68 stats()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:11 __init__()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:14 set_key()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:17 generate_key()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:20 encrypt()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:28 decrypt()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:36 hash()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:45 hmac_sign()
+- layers/layer17_security/modules/encryption_engine/encryption_engine.py:48 hmac_verify()
+- layers/layer17_security/modules/firewall/firewall.py:11 __init__()
+- layers/layer17_security/modules/firewall/firewall.py:20 __init__()
+- layers/layer17_security/modules/firewall/firewall.py:26 add_rule()
+- layers/layer17_security/modules/firewall/firewall.py:31 block_ip()
+- layers/layer17_security/modules/firewall/firewall.py:34 unblock_ip()
+- layers/layer17_security/modules/firewall/firewall.py:40 is_ip_blocked()
+- layers/layer17_security/modules/firewall/firewall.py:43 block_path()
+- layers/layer17_security/modules/firewall/firewall.py:46 is_path_blocked()
+- layers/layer17_security/modules/firewall/firewall.py:49 check_rate_limit()
+- layers/layer17_security/modules/firewall/firewall.py:60 evaluate()
+- layers/layer17_security/modules/firewall/firewall.py:69 list_rules()
+- layers/layer17_security/modules/firewall/firewall.py:72 stats()
+- layers/layer17_security/modules/input_validator/input_validator.py:13 __init__()
+- layers/layer17_security/modules/input_validator/input_validator.py:22 __init__()
+- layers/layer17_security/modules/input_validator/input_validator.py:26 add_rule()
+- layers/layer17_security/modules/input_validator/input_validator.py:29 validate()
+- layers/layer17_security/modules/input_validator/input_validator.py:42 validate_field()
+- layers/layer17_security/modules/input_validator/input_validator.py:52 is_valid_email()
+- layers/layer17_security/modules/input_validator/input_validator.py:55 is_valid_url()
+- layers/layer17_security/modules/input_validator/input_validator.py:77 sanitize_string()
+- layers/layer17_security/modules/input_validator/input_validator.py:83 get_errors()
+- layers/layer17_security/modules/input_validator/input_validator.py:86 clear_errors()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:15 __init__()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:24 __init__()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:28 _b64url()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:31 create_token()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:43 decode_token()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:61 revoke_token()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:65 is_revoked()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:68 refresh_token()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:77 list_blacklist()
+- layers/layer17_security/modules/jwt_framework/jwt_framework.py:80 clear_blacklist()
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:8 __init__()
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:16 sanitize_html()
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:22 sanitize_sql()
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:27 sanitize_dict()
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:40 strip_null_bytes()
+- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:43 limit_length()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:9 __init__()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:18 __init__()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:22 add_rule()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:28 check_permission()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:39 assign_role_permissions()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:42 check_role_permission()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:45 list_rules()
+- layers/layer17_security/modules/permission_engine/permission_engine.py:48 count()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:14 __init__()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:25 to_dict()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:31 __init__()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:35 set_secret()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:43 get_secret()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:50 delete_secret()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:56 rotate_secret()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:65 list_secrets()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:70 count()
+- layers/layer17_security/modules/secrets_manager/secrets_manager.py:73 get_access_log()
+- layers/layer17_security/modules/security_policies/security_policies.py:16 __init__()
+- layers/layer17_security/modules/security_policies/security_policies.py:25 add_rule()
+- layers/layer17_security/modules/security_policies/security_policies.py:28 evaluate()
+- layers/layer17_security/modules/security_policies/security_policies.py:38 to_dict()
+- layers/layer17_security/modules/security_policies/security_policies.py:45 __init__()
+- layers/layer17_security/modules/security_policies/security_policies.py:49 create_policy()
+- layers/layer17_security/modules/security_policies/security_policies.py:54 evaluate_all()
+- layers/layer17_security/modules/security_policies/security_policies.py:63 get_policy()
+- layers/layer17_security/modules/security_policies/security_policies.py:66 list_policies()
+- layers/layer17_security/modules/security_policies/security_policies.py:69 get_history()
+- layers/layer17_security/modules/security_policies/security_policies.py:72 count()
+- layers/layer17_security/modules/signature_engine/signature_engine.py:10 __init__()
+- layers/layer17_security/modules/signature_engine/signature_engine.py:13 generate_key()
+- layers/layer17_security/modules/signature_engine/signature_engine.py:18 sign()
+- layers/layer17_security/modules/signature_engine/signature_engine.py:22 verify()
+- layers/layer17_security/modules/signature_engine/signature_engine.py:27 list_keys()
+- layers/layer17_security/modules/signature_engine/signature_engine.py:30 remove_key()
+- layers/layer17_security/modules/token_manager/token_manager.py:18 __init__()
+- layers/layer17_security/modules/token_manager/token_manager.py:29 is_expired()
+- layers/layer17_security/modules/token_manager/token_manager.py:32 is_valid()
+- layers/layer17_security/modules/token_manager/token_manager.py:35 to_dict()
+- layers/layer17_security/modules/token_manager/token_manager.py:41 __init__()
+- layers/layer17_security/modules/token_manager/token_manager.py:45 create_token()
+- layers/layer17_security/modules/token_manager/token_manager.py:52 validate_token()
+- layers/layer17_security/modules/token_manager/token_manager.py:58 revoke_token()
+- layers/layer17_security/modules/token_manager/token_manager.py:65 revoke_all_user_tokens()
+- layers/layer17_security/modules/token_manager/token_manager.py:74 list_tokens()
+- layers/layer17_security/modules/token_manager/token_manager.py:83 cleanup_expired()
+- layers/layer17_security/modules/token_manager/token_manager.py:89 stats()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

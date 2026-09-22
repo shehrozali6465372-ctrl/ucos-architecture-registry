@@ -1,0 +1,2501 @@
+# Layer 13 — Persistence
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer13_persistence
+
+## Source inventory
+- Python modules: **250**
+- Classes: **416**
+- Functions/methods: **1817**
+
+## Python modules
+- layers/layer13_persistence/__init__.py
+- layers/layer13_persistence/modules/ai_memory_persistence/__init__.py
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_compaction.py
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py
+- layers/layer13_persistence/modules/ai_memory_persistence/working_memory_store.py
+- layers/layer13_persistence/modules/backup_dr/__init__.py
+- layers/layer13_persistence/modules/backup_dr/backup_encryption.py
+- layers/layer13_persistence/modules/backup_dr/backup_history.py
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py
+- layers/layer13_persistence/modules/backup_dr/backup_validator.py
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py
+- layers/layer13_persistence/modules/backup_dr/exceptions.py
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py
+- layers/layer13_persistence/modules/backup_dr/full_backup.py
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py
+- layers/layer13_persistence/modules/backup_dr/recovery_metrics.py
+- layers/layer13_persistence/modules/backup_dr/recovery_report.py
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py
+- layers/layer13_persistence/modules/event_store/__init__.py
+- layers/layer13_persistence/modules/event_store/event.py
+- layers/layer13_persistence/modules/event_store/event_archive.py
+- layers/layer13_persistence/modules/event_store/event_bus.py
+- layers/layer13_persistence/modules/event_store/event_compression.py
+- layers/layer13_persistence/modules/event_store/event_metrics.py
+- layers/layer13_persistence/modules/event_store/event_recovery.py
+- layers/layer13_persistence/modules/event_store/event_replication.py
+- layers/layer13_persistence/modules/event_store/event_report.py
+- layers/layer13_persistence/modules/event_store/event_search.py
+- layers/layer13_persistence/modules/event_store/event_store.py
+- layers/layer13_persistence/modules/event_store/event_stream.py
+- layers/layer13_persistence/modules/event_store/event_versioning.py
+- layers/layer13_persistence/modules/event_store/exceptions.py
+- layers/layer13_persistence/modules/event_store/replay_engine.py
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py
+- layers/layer13_persistence/modules/object_storage_platform/__init__.py
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py
+- layers/layer13_persistence/modules/object_storage_platform/encryption_engine.py
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py
+- layers/layer13_persistence/modules/object_storage_platform/file_validator.py
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py
+- layers/layer13_persistence/modules/object_storage_platform/storage_cleaner.py
+- layers/layer13_persistence/modules/object_storage_platform/storage_events.py
+- layers/layer13_persistence/modules/object_storage_platform/storage_health.py
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py
+- layers/layer13_persistence/modules/persistence_kernel/__init__.py
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_configuration.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_context.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_report.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py
+- layers/layer13_persistence/modules/postgresql/__init__.py
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py
+- layers/layer13_persistence/modules/postgresql/connection/pool.py
+- layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py
+- layers/layer13_persistence/modules/postgresql/manager.py
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py
+- layers/layer13_persistence/modules/postgresql/verification.py
+- layers/layer13_persistence/modules/redis_platform/__init__.py
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py
+- layers/layer13_persistence/modules/redis_platform/exceptions.py
+- layers/layer13_persistence/modules/redis_platform/hyperloglog.py
+- layers/layer13_persistence/modules/redis_platform/pubsub.py
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py
+- layers/layer13_persistence/modules/redis_platform/rate_limiter.py
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py
+- layers/layer13_persistence/modules/redis_platform/redis_client.py
+- layers/layer13_persistence/modules/redis_platform/redis_config.py
+- layers/layer13_persistence/modules/redis_platform/redis_health.py
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py
+- layers/layer13_persistence/modules/redis_platform/redis_report.py
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py
+- layers/layer13_persistence/modules/redis_platform/redis_session.py
+- layers/layer13_persistence/modules/redis_platform/session_manager.py
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py
+- layers/layer13_persistence/modules/repository_layer/__init__.py
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py
+- layers/layer13_persistence/modules/repository_layer/base_repository.py
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py
+- layers/layer13_persistence/modules/repository_layer/content_repository.py
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py
+- layers/layer13_persistence/modules/repository_layer/exceptions.py
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py
+- layers/layer13_persistence/modules/repository_layer/media_repository.py
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py
+- layers/layer13_persistence/modules/repository_layer/project_repository.py
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py
+- layers/layer13_persistence/modules/repository_layer/report_repository.py
+- layers/layer13_persistence/modules/repository_layer/research_repository.py
+- layers/layer13_persistence/modules/repository_layer/task_repository.py
+- layers/layer13_persistence/modules/repository_layer/user_repository.py
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py
+- layers/layer13_persistence/modules/sql_database_platform/__init__.py
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py
+- layers/layer13_persistence/modules/sql_database_platform/database_events.py
+- layers/layer13_persistence/modules/sql_database_platform/database_factory.py
+- layers/layer13_persistence/modules/sql_database_platform/database_health.py
+- layers/layer13_persistence/modules/sql_database_platform/database_report.py
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/sql_compiler.py
+- layers/layer13_persistence/modules/sql_database_platform/sql_health.py
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py
+- layers/layer13_persistence/modules/sql_database_platform/sql_report.py
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py
+- layers/layer13_persistence/modules/universal_orchestrator/__init__.py
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py
+- layers/layer13_persistence/modules/universal_orchestrator/consistency_checker.py
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py
+- layers/layer13_persistence/modules/universal_orchestrator/garbage_collector.py
+- layers/layer13_persistence/modules/universal_orchestrator/health_coordinator.py
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py
+- layers/layer13_persistence/modules/universal_orchestrator/performance_tuner.py
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_metrics.py
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_report.py
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py
+- layers/layer13_persistence/modules/universal_orchestrator/recovery_coordinator.py
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py
+- layers/layer13_persistence/modules/universal_orchestrator/storage_advisor.py
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py
+- layers/layer13_persistence/modules/vector_database_platform/__init__.py
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py
+- layers/layer13_persistence/modules/vector_database_platform/embedding_health.py
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py
+- layers/layer13_persistence/modules/vector_database_platform/embedding_validator.py
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py
+- layers/layer13_persistence/modules/vector_database_platform/hybrid_search.py
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py
+- layers/layer13_persistence/modules/vector_database_platform/metadata_search.py
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py
+- layers/layer13_persistence/modules/vector_database_platform/vector_events.py
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py
+
+## Classes
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:7 AnalyticsMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:8 MemoryEntry
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:33 BaseMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:7 BrandMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:7 BusinessMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:7 ContextMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:7 ConversationMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:8 EpisodicMemory
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:31 EpisodicMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py:4 MemoryPersistenceError
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py:5 StorageError
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py:6 RetrievalError
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py:7 SearchError
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py:8 CompactionError
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py:9 SnapshotError
+- layers/layer13_persistence/modules/ai_memory_persistence/exceptions.py:10 VersionError
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:7 Goal
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:30 GoalMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:7 KnowledgeGraph
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:34 KnowledgeMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:7 Lesson
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:29 LearningMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_compaction.py:8 MemoryCompactor
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py:6 MemoryIndexer
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:7 RecoverySnapshot
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:20 MemoryRecovery
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:7 MemoryRouter
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py:7 MemorySearch
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:7 MemorySnapshotManager
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:7 MemoryVersion
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:21 MemoryVersionManager
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:7 PromptMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:7 ResearchMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:7 SemanticMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:7 StrategyMemoryStore
+- layers/layer13_persistence/modules/ai_memory_persistence/working_memory_store.py:7 WorkingMemoryStore
+- layers/layer13_persistence/modules/backup_dr/backup_encryption.py:6 BackupEncryptor
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:7 BackupHistoryEntry
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:24 BackupHistory
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:7 BackupSchedule
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:24 BackupScheduler
+- layers/layer13_persistence/modules/backup_dr/backup_validator.py:6 BackupValidator
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:7 DRPlan
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:25 DisasterRecoveryManager
+- layers/layer13_persistence/modules/backup_dr/exceptions.py:4 BackupCRError
+- layers/layer13_persistence/modules/backup_dr/exceptions.py:5 BackupError
+- layers/layer13_persistence/modules/backup_dr/exceptions.py:6 RestoreCRError
+- layers/layer13_persistence/modules/backup_dr/exceptions.py:7 ReplicationCRError
+- layers/layer13_persistence/modules/backup_dr/exceptions.py:8 FailoverCRError
+- layers/layer13_persistence/modules/backup_dr/exceptions.py:9 DisasterRecoveryCRError
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:7 FailoverEvent
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:22 FailoverManager
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:7 FullBackup
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:22 FullBackupManager
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:7 IncrementalBackup
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:22 IncrementalBackupManager
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:7 RecoveryPlan
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:21 RecoveryEngine
+- layers/layer13_persistence/modules/backup_dr/recovery_metrics.py:6 RecoveryMetrics
+- layers/layer13_persistence/modules/backup_dr/recovery_report.py:7 RecoveryReport
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:7 RecoveryTest
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:23 RecoveryTestManager
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:7 ReplicaNode
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:21 ReplicationEngine
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:7 SystemSnapshot
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:20 SnapshotEngine
+- layers/layer13_persistence/modules/event_store/event.py:7 Event
+- layers/layer13_persistence/modules/event_store/event_archive.py:8 EventArchive
+- layers/layer13_persistence/modules/event_store/event_bus.py:7 PersistenceEventBus
+- layers/layer13_persistence/modules/event_store/event_compression.py:8 EventCompressor
+- layers/layer13_persistence/modules/event_store/event_metrics.py:6 EventMetrics
+- layers/layer13_persistence/modules/event_store/event_recovery.py:7 EventRecovery
+- layers/layer13_persistence/modules/event_store/event_replication.py:7 EventReplicator
+- layers/layer13_persistence/modules/event_store/event_report.py:7 EventReport
+- layers/layer13_persistence/modules/event_store/event_search.py:7 EventSearcher
+- layers/layer13_persistence/modules/event_store/event_store.py:7 EventStore
+- layers/layer13_persistence/modules/event_store/event_stream.py:7 EventStream
+- layers/layer13_persistence/modules/event_store/event_versioning.py:6 EventVersion
+- layers/layer13_persistence/modules/event_store/event_versioning.py:20 EventVersionManager
+- layers/layer13_persistence/modules/event_store/exceptions.py:4 EventStoreError
+- layers/layer13_persistence/modules/event_store/exceptions.py:5 AppendError
+- layers/layer13_persistence/modules/event_store/exceptions.py:6 ReplayError
+- layers/layer13_persistence/modules/event_store/exceptions.py:7 SnapshotError
+- layers/layer13_persistence/modules/event_store/exceptions.py:8 VersionError
+- layers/layer13_persistence/modules/event_store/replay_engine.py:7 ReplayEngine
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:7 Snapshot
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:20 SnapshotManager
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:7 Bucket
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:21 BucketManager
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:6 CDNConfig
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:22 CDNManager
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:7 ChunkInfo
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:18 ChunkUploader
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py:5 CompressionEngine
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:7 DownloadResult
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:26 DownloadEngine
+- layers/layer13_persistence/modules/object_storage_platform/encryption_engine.py:6 EncryptionEngine
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:4 StorageError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:5 ConnectionError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:6 UploadError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:7 DownloadError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:8 EncryptionError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:9 CompressionError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:10 IntegrityError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:11 AccessError
+- layers/layer13_persistence/modules/object_storage_platform/exceptions.py:12 QuotaError
+- layers/layer13_persistence/modules/object_storage_platform/file_validator.py:6 FileValidator
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:7 FileVersion
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:28 FileVersionManager
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:6 LifecycleRule
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:28 LifecycleManager
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:6 LifecyclePolicy
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:26 LifecyclePolicyManager
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:6 ObjectMetadata
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:21 MetadataManager
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:7 MultipartUpload
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:26 MultipartUploader
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py:7 StorageAnalytics
+- layers/layer13_persistence/modules/object_storage_platform/storage_cleaner.py:6 StorageCleaner
+- layers/layer13_persistence/modules/object_storage_platform/storage_events.py:7 StorageEvents
+- layers/layer13_persistence/modules/object_storage_platform/storage_health.py:7 StorageHealth
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:7 StorageObject
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:30 StorageManager
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py:6 StorageMetrics
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:7 UploadResult
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:29 UploadEngine
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:5 PersistenceError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:9 StorageError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:13 ConnectionError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:17 TransactionError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:21 QueryError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:25 MigrationError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:29 BackupError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:33 RestoreError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:37 CacheError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:41 ValidationError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:45 ConfigurationError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:49 HealthCheckError
+- layers/layer13_persistence/modules/persistence_kernel/exceptions.py:53 VersionError
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:10 PersistenceBootstrap
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:6 PersistenceCapabilities
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:7 PersistenceClock
+- layers/layer13_persistence/modules/persistence_kernel/persistence_configuration.py:6 PersistenceConfiguration
+- layers/layer13_persistence/modules/persistence_kernel/persistence_context.py:7 PersistenceContext
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:7 PersistenceEvent
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:21 PersistenceEvents
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:7 PersistenceHealth
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:7 PersistenceHooks
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:12 PersistenceKernel
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:7 LifecycleEvent
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:24 PersistenceLifecycle
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:7 PersistenceManager
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:7 PersistenceMetrics
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:7 PersistenceMonitor
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:6 PersistenceRegistry
+- layers/layer13_persistence/modules/persistence_kernel/persistence_report.py:7 PersistenceReport
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:7 PersistenceState
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:7 TelemetrySpan
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:34 PersistenceTelemetry
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:7 ValidationResult
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:27 PersistenceValidator
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:7 PersistenceVersion
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py:13 BackupManager
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:12 DatabaseHealthChecker
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:16 TrackedConnection
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:25 ConnectionLeakDetector
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:24 ConnectionConfig
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:50 ConnectionPool
+- layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:11 SlowQueryLogger
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:17 TransactionRecovery
+- layers/layer13_persistence/modules/postgresql/manager.py:34 PostgreSQLManager
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:19 PerformanceBenchmark
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:12 BaseRepository
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:35 ConfigRepository
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:60 MemoryRepository
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:114 LogRepository
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:149 PostRepository
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:178 AnalyticsRepository
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:203 LearningRepository
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:231 JobRepository
+- layers/layer13_persistence/modules/postgresql/verification.py:33 PostgreSQLVerification
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:7 BloomFilter
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:7 CacheAnalytics
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:7 CacheEntry
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:22 CacheManager
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:7 ClusterNode
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:30 ClusterManager
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:7 DistributedLock
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:26 DistributedLockManager
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:4 RedisError
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:7 ConnectionError
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:10 CommandError
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:13 SerializationError
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:16 PubSubError
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:19 ClusterError
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:22 LockError
+- layers/layer13_persistence/modules/redis_platform/exceptions.py:25 QueueError
+- layers/layer13_persistence/modules/redis_platform/hyperloglog.py:6 HyperLogLog
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:8 PubSubMessage
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:24 PubSub
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:7 QueueItem
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:25 QueueManager
+- layers/layer13_persistence/modules/redis_platform/rate_limiter.py:7 RateLimiter
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:18 RedisCache
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:24 RedisConnectionConfig
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:47 RedisClient
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:561 InMemoryPipeline
+- layers/layer13_persistence/modules/redis_platform/redis_config.py:6 RedisConfig
+- layers/layer13_persistence/modules/redis_platform/redis_health.py:7 RedisHealth
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:28 RedisManager
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py:6 RedisMetrics
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:18 RedisPubSub
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:19 RedisQueue
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:16 RedisRateLimiter
+- layers/layer13_persistence/modules/redis_platform/redis_report.py:7 RedisReport
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:7 SentinelNode
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:21 RedisSentinel
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:17 RedisSession
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:7 Session
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:29 SessionManager
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:7 StreamEntry
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:22 StreamManager
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:7 TTLManager
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:7 AnalyticsEntity
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:24 AnalyticsRepository
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:7 AuditEntity
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:25 AuditRepository
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:9 BaseEntity
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:25 BaseRepository
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py:7 BrandEntity
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py:24 BrandRepository
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:7 ContentEntity
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:26 ContentRepository
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:7 EntityManager
+- layers/layer13_persistence/modules/repository_layer/exceptions.py:4 RepositoryError
+- layers/layer13_persistence/modules/repository_layer/exceptions.py:5 NotFoundError
+- layers/layer13_persistence/modules/repository_layer/exceptions.py:6 DuplicateError
+- layers/layer13_persistence/modules/repository_layer/exceptions.py:7 IntegrityError
+- layers/layer13_persistence/modules/repository_layer/exceptions.py:8 QueryError
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:7 GoalEntity
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:25 GoalRepository
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py:7 KnowledgeEntity
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py:25 KnowledgeRepository
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:7 LearningEntity
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:25 LearningRepository
+- layers/layer13_persistence/modules/repository_layer/media_repository.py:7 MediaEntity
+- layers/layer13_persistence/modules/repository_layer/media_repository.py:25 MediaRepository
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py:7 MemoryEntity
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py:25 MemoryRepository
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py:7 PlatformEntity
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py:25 PlatformRepository
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py:7 PluginEntity
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py:25 PluginRepository
+- layers/layer13_persistence/modules/repository_layer/project_repository.py:7 ProjectEntity
+- layers/layer13_persistence/modules/repository_layer/project_repository.py:23 ProjectRepository
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py:7 PromptEntity
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py:24 PromptRepository
+- layers/layer13_persistence/modules/repository_layer/report_repository.py:7 ReportEntity
+- layers/layer13_persistence/modules/repository_layer/report_repository.py:23 ReportRepository
+- layers/layer13_persistence/modules/repository_layer/research_repository.py:7 ResearchEntity
+- layers/layer13_persistence/modules/repository_layer/research_repository.py:25 ResearchRepository
+- layers/layer13_persistence/modules/repository_layer/task_repository.py:7 TaskEntity
+- layers/layer13_persistence/modules/repository_layer/task_repository.py:25 TaskRepository
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:7 UserEntity
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:23 UserRepository
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py:7 WorkflowEntity
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py:24 WorkflowRepository
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:7 BackupJob
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:29 BackupManager
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:7 DatabaseConnection
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:31 ConnectionManager
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:7 ConnectionMonitor
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:6 DatabaseConstraint
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:25 ConstraintManager
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:16 DatabaseEngine
+- layers/layer13_persistence/modules/sql_database_platform/database_events.py:7 DatabaseEvents
+- layers/layer13_persistence/modules/sql_database_platform/database_factory.py:7 DatabaseFactory
+- layers/layer13_persistence/modules/sql_database_platform/database_health.py:7 DatabaseHealth
+- layers/layer13_persistence/modules/sql_database_platform/database_report.py:7 DatabaseReport
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:7 LockRequest
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:18 DeadlockDetector
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:4 SQLError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:5 ConnectionError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:6 QueryError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:7 TransactionError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:8 MigrationError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:9 SchemaError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:10 PoolError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:11 DeadlockError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:12 LockError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:13 BackupError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:14 RestoreError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:15 ReplicationError
+- layers/layer13_persistence/modules/sql_database_platform/exceptions.py:16 IntegrityError
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:7 DatabaseIndex
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:24 IndexManager
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py:7 IsolationLevel
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py:22 IsolationManager
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:7 Lock
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:32 LockManager
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:7 MaterializedView
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:21 MaterializedViewManager
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:7 Migration
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:28 MigrationEngine
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:6 OptimizationSuggestion
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:25 QueryOptimizer
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:6 ORMModel
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:25 ORMBridge
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:7 Partition
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:27 PartitionManager
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:7 PoolEntry
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:21 PoolManager
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:7 PreparedStatement
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:25 PreparedStatementManager
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:7 QueryProfile
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:25 QueryAnalyzer
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:6 QueryBuilder
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:7 QueryResult
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:26 QueryExecutor
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:7 ReadReplica
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:22 ReadReplicaManager
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:7 ReplicaNode
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:27 ReplicationManager
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:7 RestoreJob
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:26 RestoreManager
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:7 RetryPolicy
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:7 SavePoint
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:20 SavePointManager
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:7 TableSchema
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:28 SchemaManager
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:6 DatabaseSequence
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:27 SequenceManager
+- layers/layer13_persistence/modules/sql_database_platform/sql_compiler.py:6 SQLCompiler
+- layers/layer13_persistence/modules/sql_database_platform/sql_health.py:7 SQLHealth
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:7 SQLMetrics
+- layers/layer13_persistence/modules/sql_database_platform/sql_report.py:7 SQLReport
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:7 StatisticsCollector
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:6 StoredProcedure
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:19 StoredProcedureManager
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:7 Transaction
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:31 TransactionManager
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:6 UnitOfWork
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:6 DatabaseView
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:20 ViewManager
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:7 AutoScaler
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py:7 BackupCoordinator
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py:6 CacheCoordinator
+- layers/layer13_persistence/modules/universal_orchestrator/consistency_checker.py:6 ConsistencyChecker
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:6 CostOptimizer
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py:4 OrchestratorError
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py:5 RoutingError
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py:6 TransactionCoordError
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py:7 CacheCoordError
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py:8 MigrationError
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py:9 OptimizationError
+- layers/layer13_persistence/modules/universal_orchestrator/exceptions.py:10 ConsistencyError
+- layers/layer13_persistence/modules/universal_orchestrator/garbage_collector.py:6 GarbageCollector
+- layers/layer13_persistence/modules/universal_orchestrator/health_coordinator.py:7 HealthCoordinator
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py:7 MigrationCoordinator
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py:6 OptimizationCoordinator
+- layers/layer13_persistence/modules/universal_orchestrator/performance_tuner.py:6 PerformanceTuner
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py:6 PersistenceAI
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py:6 PersistenceAPI
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_metrics.py:6 PersistenceMetricsAggregator
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:8 PersistenceOrchestrator
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_report.py:7 PersistenceReportGenerator
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:7 PersistenceSecurity
+- layers/layer13_persistence/modules/universal_orchestrator/recovery_coordinator.py:7 RecoveryCoordinator
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py:6 ReplicationCoordinator
+- layers/layer13_persistence/modules/universal_orchestrator/storage_advisor.py:6 StorageAdvisor
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py:6 StorageBalancer
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:6 StorageRouter
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:7 DistributedTransaction
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:21 TransactionCoordinator
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:7 VectorCollection
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:25 CollectionManager
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:8 EmbeddingCache
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:21 EmbeddingEngine
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py:8 EmbeddingGenerator
+- layers/layer13_persistence/modules/vector_database_platform/embedding_health.py:7 EmbeddingHealth
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:8 EmbeddingResult
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:29 EmbeddingManager
+- layers/layer13_persistence/modules/vector_database_platform/embedding_validator.py:6 EmbeddingValidator
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:7 EmbeddingVersion
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:20 EmbeddingVersionManager
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:4 VectorDBError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:7 ConnectionError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:10 EmbeddingError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:13 SearchError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:16 CollectionError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:19 IndexError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:22 ValidationError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:25 BackupError
+- layers/layer13_persistence/modules/vector_database_platform/exceptions.py:28 RestoreError
+- layers/layer13_persistence/modules/vector_database_platform/hybrid_search.py:6 HybridSearch
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py:17 KnowledgeRetrieval
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:21 MemoryType
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:30 Memory
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:72 LongTermMemory
+- layers/layer13_persistence/modules/vector_database_platform/metadata_search.py:6 MetadataSearch
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:6 Namespace
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:18 NamespaceManager
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:19 RAGPipeline
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:17 SemanticSearch
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:18 SimilarityDetector
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:6 SimilaritySearch
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:7 VectorBackup
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:26 VectorBackupManager
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py:7 VectorBackupRecord
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py:21 VectorBackupManager
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:28 VectorDBManager
+- layers/layer13_persistence/modules/vector_database_platform/vector_events.py:7 VectorEvents
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:6 VectorIndex
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:9 VectorManager
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:22 VectorRecord
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:33 VectorStore
+
+## Functions / methods
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:15 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:22 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:28 record_metric()
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:36 get_time_series()
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:39 add_insight()
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:42 get_insights()
+- layers/layer13_persistence/modules/ai_memory_persistence/analytics_memory_store.py:45 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:14 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:27 to_dict()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:36 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:43 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:47 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:50 delete()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:53 exists()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:56 count()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:59 list_keys()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:62 get_all()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:65 search()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:70 cleanup()
+- layers/layer13_persistence/modules/ai_memory_persistence/base_memory_store.py:79 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:15 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:22 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:28 set_guideline()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:31 get_guideline()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:34 get_all_guidelines()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:37 add_voice_sample()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:40 get_voice_samples()
+- layers/layer13_persistence/modules/ai_memory_persistence/brand_memory_store.py:43 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:15 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:22 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:28 store_campaign()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:31 get_campaign()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:34 record_revenue()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:39 get_revenue_history()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:42 total_revenue()
+- layers/layer13_persistence/modules/ai_memory_persistence/business_memory_store.py:45 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:14 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:21 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:27 save_context()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:30 load_context()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:33 list_contexts()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:36 delete_context()
+- layers/layer13_persistence/modules/ai_memory_persistence/context_memory_store.py:39 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:14 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:25 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:31 add_message()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:36 get_conversation()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:39 get_recent_messages()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:43 conversation_count()
+- layers/layer13_persistence/modules/ai_memory_persistence/conversation_memory_store.py:46 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:14 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:26 to_dict()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:34 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:38 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:47 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:56 store_episode()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:59 get_episode()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:62 search_by_importance()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:68 get_recent()
+- layers/layer13_persistence/modules/ai_memory_persistence/episodic_memory_store.py:72 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:13 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:25 to_dict()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:33 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:37 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:44 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:50 add_goal()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:53 get_goal()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:56 get_active_goals()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:59 complete_goal()
+- layers/layer13_persistence/modules/ai_memory_persistence/goal_memory_store.py:67 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:14 add_entity()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:18 add_relationship()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:21 get_entity()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:24 get_relationships()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:27 entity_count()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:30 relationship_count()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:37 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:41 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:48 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:54 get_graph()
+- layers/layer13_persistence/modules/ai_memory_persistence/knowledge_memory_store.py:57 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:13 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:24 to_dict()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:32 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:37 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:44 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:50 add_lesson()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:53 get_lessons()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:59 record_mistake()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:64 get_mistakes()
+- layers/layer13_persistence/modules/ai_memory_persistence/learning_memory_store.py:67 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_compaction.py:11 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_compaction.py:14 compact()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_compaction.py:28 compact_by_access()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_compaction.py:38 get_history()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_compaction.py:41 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py:9 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py:12 index_entry()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py:20 search()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py:31 remove_key()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py:35 word_count()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_indexer.py:38 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:12 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:23 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:27 create_snapshot()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:35 get_latest_snapshot()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:41 restore()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:45 list_snapshots()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:48 snapshot_count()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_recovery.py:51 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:14 register_store()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:17 route()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:20 get_store()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:24 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:31 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:38 list_stores()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_router.py:41 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py:13 register_store()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py:16 search()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py:26 search_all()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py:29 count_all()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_search.py:32 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:15 should_snapshot()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:18 take_snapshot()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:24 get_latest()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:27 get_all()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:30 clear()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_snapshot.py:35 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:12 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:24 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:27 create_version()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:36 get_current()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:43 get_history()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:46 rollback()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:56 total_versions()
+- layers/layer13_persistence/modules/ai_memory_persistence/memory_version.py:59 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:14 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:21 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:27 record_performance()
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:32 get_best_prompts()
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:41 get_performance()
+- layers/layer13_persistence/modules/ai_memory_persistence/prompt_memory_store.py:46 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:15 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:22 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:28 cache_result()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:32 get_cached()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:39 register_source()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:42 get_sources()
+- layers/layer13_persistence/modules/ai_memory_persistence/research_memory_store.py:45 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:14 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:21 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:27 store_with_embedding()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:33 search_by_similarity()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:44 _cosine()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:52 get_embedding()
+- layers/layer13_persistence/modules/ai_memory_persistence/semantic_memory_store.py:55 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:14 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:21 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:27 record_outcome()
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:32 get_outcomes()
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:35 get_best_strategy()
+- layers/layer13_persistence/modules/ai_memory_persistence/strategy_memory_store.py:44 stats()
+- layers/layer13_persistence/modules/ai_memory_persistence/working_memory_store.py:10 __init__()
+- layers/layer13_persistence/modules/ai_memory_persistence/working_memory_store.py:15 store()
+- layers/layer13_persistence/modules/ai_memory_persistence/working_memory_store.py:24 retrieve()
+- layers/layer13_persistence/modules/ai_memory_persistence/working_memory_store.py:36 cleanup_expired()
+- layers/layer13_persistence/modules/ai_memory_persistence/working_memory_store.py:45 stats()
+- layers/layer13_persistence/modules/backup_dr/backup_encryption.py:9 __init__()
+- layers/layer13_persistence/modules/backup_dr/backup_encryption.py:12 encrypt()
+- layers/layer13_persistence/modules/backup_dr/backup_encryption.py:16 decrypt()
+- layers/layer13_persistence/modules/backup_dr/backup_encryption.py:19 get_algorithm()
+- layers/layer13_persistence/modules/backup_dr/backup_encryption.py:22 verify()
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:13 __init__()
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:27 __init__()
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:30 record()
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:36 get_entries()
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:42 total_size()
+- layers/layer13_persistence/modules/backup_dr/backup_history.py:45 stats()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:13 __init__()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:27 __init__()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:31 add_schedule()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:35 remove_schedule()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:38 get_due_schedules()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:43 mark_completed()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:49 list_schedules()
+- layers/layer13_persistence/modules/backup_dr/backup_scheduler.py:52 stats()
+- layers/layer13_persistence/modules/backup_dr/backup_validator.py:9 __init__()
+- layers/layer13_persistence/modules/backup_dr/backup_validator.py:12 validate()
+- layers/layer13_persistence/modules/backup_dr/backup_validator.py:20 get_validations()
+- layers/layer13_persistence/modules/backup_dr/backup_validator.py:23 stats()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:13 __init__()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:28 __init__()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:32 create_plan()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:38 get_plan()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:41 run_drill()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:49 get_plans()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:52 get_drills()
+- layers/layer13_persistence/modules/backup_dr/disaster_recovery.py:55 stats()
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:12 __init__()
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:25 __init__()
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:29 set_active()
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:32 trigger_failover()
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:39 get_active_node()
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:42 get_events()
+- layers/layer13_persistence/modules/backup_dr/failover_manager.py:45 stats()
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:12 __init__()
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:25 __init__()
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:29 create()
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:38 get_latest()
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:41 get_all()
+- layers/layer13_persistence/modules/backup_dr/full_backup.py:44 stats()
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:12 __init__()
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:25 __init__()
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:28 create()
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:34 get_chain()
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:42 get_all()
+- layers/layer13_persistence/modules/backup_dr/incremental_backup.py:45 stats()
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:12 __init__()
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:24 __init__()
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:28 create_plan()
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:33 execute()
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:42 get_plan()
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:45 get_executed()
+- layers/layer13_persistence/modules/backup_dr/recovery_engine.py:48 stats()
+- layers/layer13_persistence/modules/backup_dr/recovery_metrics.py:9 __init__()
+- layers/layer13_persistence/modules/backup_dr/recovery_metrics.py:16 record_backup()
+- layers/layer13_persistence/modules/backup_dr/recovery_metrics.py:23 record_restore()
+- layers/layer13_persistence/modules/backup_dr/recovery_metrics.py:26 record_failover()
+- layers/layer13_persistence/modules/backup_dr/recovery_metrics.py:29 to_dict()
+- layers/layer13_persistence/modules/backup_dr/recovery_report.py:10 __init__()
+- layers/layer13_persistence/modules/backup_dr/recovery_report.py:13 generate()
+- layers/layer13_persistence/modules/backup_dr/recovery_report.py:19 get_history()
+- layers/layer13_persistence/modules/backup_dr/recovery_report.py:22 to_dict()
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:13 __init__()
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:26 __init__()
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:29 run_test()
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:35 get_tests()
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:40 success_rate()
+- layers/layer13_persistence/modules/backup_dr/recovery_testing.py:45 stats()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:12 __init__()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:24 __init__()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:28 add_node()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:33 remove_node()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:36 replicate()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:42 is_healthy()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:45 get_nodes()
+- layers/layer13_persistence/modules/backup_dr/replication_engine.py:48 stats()
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:12 __init__()
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:23 __init__()
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:27 take_snapshot()
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:35 get_latest()
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:40 restore()
+- layers/layer13_persistence/modules/backup_dr/snapshot_engine.py:44 count()
+- layers/layer13_persistence/modules/event_store/event.py:13 __init__()
+- layers/layer13_persistence/modules/event_store/event.py:25 to_dict()
+- layers/layer13_persistence/modules/event_store/event_archive.py:11 __init__()
+- layers/layer13_persistence/modules/event_store/event_archive.py:16 archive()
+- layers/layer13_persistence/modules/event_store/event_archive.py:23 get_archived()
+- layers/layer13_persistence/modules/event_store/event_archive.py:26 archived_count()
+- layers/layer13_persistence/modules/event_store/event_archive.py:29 stats()
+- layers/layer13_persistence/modules/event_store/event_bus.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_bus.py:14 subscribe()
+- layers/layer13_persistence/modules/event_store/event_bus.py:19 publish()
+- layers/layer13_persistence/modules/event_store/event_bus.py:31 get_events()
+- layers/layer13_persistence/modules/event_store/event_bus.py:37 clear()
+- layers/layer13_persistence/modules/event_store/event_bus.py:42 stats()
+- layers/layer13_persistence/modules/event_store/event_compression.py:11 __init__()
+- layers/layer13_persistence/modules/event_store/event_compression.py:14 compress_events()
+- layers/layer13_persistence/modules/event_store/event_compression.py:21 get_compression_ratio()
+- layers/layer13_persistence/modules/event_store/event_compression.py:26 stats()
+- layers/layer13_persistence/modules/event_store/event_metrics.py:9 __init__()
+- layers/layer13_persistence/modules/event_store/event_metrics.py:15 record_append()
+- layers/layer13_persistence/modules/event_store/event_metrics.py:19 record_read()
+- layers/layer13_persistence/modules/event_store/event_metrics.py:22 record_replay()
+- layers/layer13_persistence/modules/event_store/event_metrics.py:25 to_dict()
+- layers/layer13_persistence/modules/event_store/event_recovery.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_recovery.py:14 recover_from_store()
+- layers/layer13_persistence/modules/event_store/event_recovery.py:20 get_recovery_log()
+- layers/layer13_persistence/modules/event_store/event_recovery.py:23 stats()
+- layers/layer13_persistence/modules/event_store/event_replication.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_replication.py:14 register_node()
+- layers/layer13_persistence/modules/event_store/event_replication.py:17 replicate()
+- layers/layer13_persistence/modules/event_store/event_replication.py:27 get_node_events()
+- layers/layer13_persistence/modules/event_store/event_replication.py:30 get_nodes()
+- layers/layer13_persistence/modules/event_store/event_replication.py:33 stats()
+- layers/layer13_persistence/modules/event_store/event_report.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_report.py:13 generate()
+- layers/layer13_persistence/modules/event_store/event_report.py:19 get_history()
+- layers/layer13_persistence/modules/event_store/event_report.py:22 to_dict()
+- layers/layer13_persistence/modules/event_store/event_search.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_search.py:13 index()
+- layers/layer13_persistence/modules/event_store/event_search.py:20 search()
+- layers/layer13_persistence/modules/event_store/event_search.py:28 _extract_keys()
+- layers/layer13_persistence/modules/event_store/event_search.py:35 stats()
+- layers/layer13_persistence/modules/event_store/event_store.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_store.py:15 append()
+- layers/layer13_persistence/modules/event_store/event_store.py:26 get_events()
+- layers/layer13_persistence/modules/event_store/event_store.py:29 get_events_from()
+- layers/layer13_persistence/modules/event_store/event_store.py:32 get_global_events()
+- layers/layer13_persistence/modules/event_store/event_store.py:35 get_events_by_type()
+- layers/layer13_persistence/modules/event_store/event_store.py:38 get_version()
+- layers/layer13_persistence/modules/event_store/event_store.py:41 count()
+- layers/layer13_persistence/modules/event_store/event_store.py:46 aggregate_count()
+- layers/layer13_persistence/modules/event_store/event_store.py:49 stats()
+- layers/layer13_persistence/modules/event_store/event_stream.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_stream.py:14 subscribe()
+- layers/layer13_persistence/modules/event_store/event_stream.py:19 publish()
+- layers/layer13_persistence/modules/event_store/event_stream.py:36 get_history()
+- layers/layer13_persistence/modules/event_store/event_stream.py:39 clear_history()
+- layers/layer13_persistence/modules/event_store/event_stream.py:44 stats()
+- layers/layer13_persistence/modules/event_store/event_versioning.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/event_versioning.py:16 to_dict()
+- layers/layer13_persistence/modules/event_store/event_versioning.py:23 __init__()
+- layers/layer13_persistence/modules/event_store/event_versioning.py:26 register()
+- layers/layer13_persistence/modules/event_store/event_versioning.py:34 get_latest()
+- layers/layer13_persistence/modules/event_store/event_versioning.py:38 get_all()
+- layers/layer13_persistence/modules/event_store/event_versioning.py:41 stats()
+- layers/layer13_persistence/modules/event_store/replay_engine.py:10 __init__()
+- layers/layer13_persistence/modules/event_store/replay_engine.py:14 register_handler()
+- layers/layer13_persistence/modules/event_store/replay_engine.py:17 replay()
+- layers/layer13_persistence/modules/event_store/replay_engine.py:26 replay_aggregate()
+- layers/layer13_persistence/modules/event_store/replay_engine.py:31 get_replay_count()
+- layers/layer13_persistence/modules/event_store/replay_engine.py:34 stats()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:12 __init__()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:23 __init__()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:27 save()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:32 get()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:35 should_snapshot()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:41 delete()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:44 count()
+- layers/layer13_persistence/modules/event_store/snapshot_manager.py:47 stats()
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:12 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:24 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:27 create()
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:32 delete()
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:35 get()
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:38 list_all()
+- layers/layer13_persistence/modules/object_storage_platform/bucket_manager.py:41 count()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:10 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:17 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:25 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:29 add_config()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:32 get_config()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:35 get_url()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:41 set_cache_ttl()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:44 get_cache_ttl()
+- layers/layer13_persistence/modules/object_storage_platform/cdn_manager.py:47 list_configs()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:11 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:21 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:25 start_upload()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:28 add_chunk()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:35 get_chunks()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:38 is_complete()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:41 calculate_chunks()
+- layers/layer13_persistence/modules/object_storage_platform/chunk_uploader.py:44 delete_upload()
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py:8 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py:12 compress()
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py:19 decompress()
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py:26 get_algorithms()
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py:29 set_default()
+- layers/layer13_persistence/modules/object_storage_platform/compression_engine.py:32 ratio()
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:12 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:21 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:29 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:33 download()
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:41 download_range()
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:44 get_downloads()
+- layers/layer13_persistence/modules/object_storage_platform/download_engine.py:47 stats()
+- layers/layer13_persistence/modules/object_storage_platform/encryption_engine.py:9 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/encryption_engine.py:12 encrypt()
+- layers/layer13_persistence/modules/object_storage_platform/encryption_engine.py:16 decrypt()
+- layers/layer13_persistence/modules/object_storage_platform/encryption_engine.py:19 hash()
+- layers/layer13_persistence/modules/object_storage_platform/encryption_engine.py:22 get_algorithm()
+- layers/layer13_persistence/modules/object_storage_platform/file_validator.py:9 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/file_validator.py:14 set_allowed_types()
+- layers/layer13_persistence/modules/object_storage_platform/file_validator.py:17 set_blocked_types()
+- layers/layer13_persistence/modules/object_storage_platform/file_validator.py:20 validate()
+- layers/layer13_persistence/modules/object_storage_platform/file_validator.py:31 is_valid()
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:13 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:23 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:31 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:34 add_version()
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:45 get_latest()
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:52 get_all_versions()
+- layers/layer13_persistence/modules/object_storage_platform/file_versioning.py:55 total_versions()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:12 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:22 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:31 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:34 add_rule()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:37 remove_rule()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:40 get_rules()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:43 evaluate()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_manager.py:52 count()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:12 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:21 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:29 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:32 add()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:35 remove()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:38 evaluate()
+- layers/layer13_persistence/modules/object_storage_platform/lifecycle_policy.py:47 list_all()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:10 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:16 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:24 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:27 set_metadata()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:32 get_metadata()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:35 get_value()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:39 set_tags()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:44 search_by_tag()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:47 delete()
+- layers/layer13_persistence/modules/object_storage_platform/metadata_manager.py:50 count()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:12 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:21 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:29 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:32 initiate()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:37 add_part()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:44 complete()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:51 abort()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:58 get_upload()
+- layers/layer13_persistence/modules/object_storage_platform/multipart_uploader.py:61 list_uploads()
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py:10 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py:14 record_operation()
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py:25 get_bucket_stats()
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py:28 get_total_operations()
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py:31 get_total_bytes()
+- layers/layer13_persistence/modules/object_storage_platform/storage_analytics.py:34 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/storage_cleaner.py:9 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/storage_cleaner.py:13 add_rule()
+- layers/layer13_persistence/modules/object_storage_platform/storage_cleaner.py:18 clean()
+- layers/layer13_persistence/modules/object_storage_platform/storage_cleaner.py:31 get_rules()
+- layers/layer13_persistence/modules/object_storage_platform/storage_cleaner.py:34 stats()
+- layers/layer13_persistence/modules/object_storage_platform/storage_events.py:10 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/storage_events.py:14 subscribe()
+- layers/layer13_persistence/modules/object_storage_platform/storage_events.py:19 publish()
+- layers/layer13_persistence/modules/object_storage_platform/storage_events.py:30 get_history()
+- layers/layer13_persistence/modules/object_storage_platform/storage_events.py:33 stats()
+- layers/layer13_persistence/modules/object_storage_platform/storage_health.py:10 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/storage_health.py:14 check()
+- layers/layer13_persistence/modules/object_storage_platform/storage_health.py:20 is_healthy()
+- layers/layer13_persistence/modules/object_storage_platform/storage_health.py:25 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:13 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:25 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:33 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:38 register_backend()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:41 put()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:50 get()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:53 delete()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:56 list_objects()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:61 exists()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:64 count()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:69 total_size()
+- layers/layer13_persistence/modules/object_storage_platform/storage_manager.py:72 stats()
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py:9 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py:16 record_object()
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py:20 record_operation()
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py:26 get_error_rate()
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py:29 reset()
+- layers/layer13_persistence/modules/object_storage_platform/storage_metrics.py:36 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:13 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:24 to_dict()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:32 __init__()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:36 upload()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:44 upload_large()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:47 get_upload()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:53 get_uploads()
+- layers/layer13_persistence/modules/object_storage_platform/upload_engine.py:56 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:15 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:22 bootstrap()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:29 shutdown()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:36 register_store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:40 get_kernel()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:43 get_manager()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:46 get_lifecycle()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:49 is_bootstrapped()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_bootstrap.py:52 status()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:9 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:12 register()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:18 has()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:22 enable()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:26 disable()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:30 get_features()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:34 list_all()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:37 enabled_count()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_capabilities.py:40 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:10 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:14 tick()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:19 now()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:22 wall_time()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:25 update_if_greater()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:31 reset()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_clock.py:35 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_configuration.py:14 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_configuration.py:31 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_configuration.py:35 from_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_configuration.py:43 for_development()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_configuration.py:51 for_production()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_context.py:15 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_context.py:27 add_trace()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_context.py:30 set_transaction()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_context.py:33 elapsed_ms()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_context.py:36 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:11 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:16 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:26 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:31 subscribe()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:36 publish()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:53 get_recent()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:56 get_by_type()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:59 clear()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_events.py:62 get_stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:12 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:17 check_store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:25 _recalculate_status()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:32 mark_started()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:35 mark_stopped()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:38 get_store_health()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:41 is_healthy()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:44 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_health.py:48 get_status()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:10 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:14 register()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:19 unregister()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:25 fire()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:37 get_history()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:40 list_events()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_hooks.py:43 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:18 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:29 start()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:38 stop()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:46 register_store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:51 unregister_store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:57 get_store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:60 get_all_stores()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:63 is_running()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:66 get_uptime()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:71 get_health()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:74 get_metrics()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:77 get_events()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:80 get_version()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_kernel.py:83 status()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:11 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:19 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:29 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:35 register()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:39 on()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:44 initialize_store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:60 close_store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:71 get_state()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:74 get_all_states()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:77 get_events()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:83 _fire_event()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_lifecycle.py:91 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:12 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:18 initialize()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:23 shutdown()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:28 route()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:32 get_route()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:35 store()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:42 retrieve()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:49 delete()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:56 get_all_routes()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:59 get_kernel()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:62 is_initialized()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_manager.py:65 status()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:13 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:21 record_store_registered()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:24 record_operation()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:30 record_count()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:33 get_total()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:36 get_error_rate()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_metrics.py:41 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:10 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:15 set_threshold()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:18 record()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:29 get_metric()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:32 get_alerts()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:35 clear_alerts()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_monitor.py:40 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:9 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:13 register()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:18 unregister()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:25 get()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:28 has()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:31 list_all()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:34 list_by_type()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:39 count()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_registry.py:42 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_report.py:12 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_report.py:15 generate()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_report.py:23 _build_summary()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_report.py:30 get_history()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_report.py:33 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:15 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:21 get_state()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:24 set_state()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:32 set_sub_state()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:35 get_sub_state()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:38 get_all_sub_states()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:41 is_ready()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:44 get_transitions()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_state.py:47 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:12 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:21 finish()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:25 duration_ms()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:29 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:38 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:42 start_span()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:47 increment()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:50 get_spans()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:53 get_counters()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_telemetry.py:56 stats()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:11 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:16 add_error()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:20 add_warning()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:23 to_dict()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:30 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:33 validate_config()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:49 add_rule()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_validator.py:52 validate_state()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:12 __init__()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:18 get_current()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:21 upgrade()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:27 get_history()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:30 register_migration()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:35 get_migrations()
+- layers/layer13_persistence/modules/persistence_kernel/persistence_version.py:38 to_dict()
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py:16 __init__()
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py:21 backup()
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py:53 restore()
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py:84 verify_backup()
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py:107 list_backups()
+- layers/layer13_persistence/modules/postgresql/backup/backup_manager.py:124 auto_backup()
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:15 __init__()
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:24 check()
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:65 start_monitoring()
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:73 stop_monitoring()
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:80 _monitor_loop()
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:89 get_history()
+- layers/layer13_persistence/modules/postgresql/connection/health_checker.py:94 get_summary()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:28 __init__()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:41 _next_id()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:45 acquire()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:59 release()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:71 check_leaks()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:92 start_monitoring()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:100 stop_monitoring()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:107 _monitor_loop()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:115 get_stats()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:133 get_active_connections()
+- layers/layer13_persistence/modules/postgresql/connection/leak_detector.py:147 reset()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:38 from_env()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:53 __init__()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:73 initialize()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:113 _auto_reconnect()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:125 connection()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:157 _execute_with_retry()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:190 execute()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:201 execute_and_fetch()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:220 execute_and_fetch_one()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:242 _identifier()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:247 _placeholder()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:250 insert()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:271 insert_many()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:289 update()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:306 delete()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:321 query()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:325 query_one()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:329 count()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:339 table_exists()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:350 get_tables()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:361 begin_transaction()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:365 commit()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:369 rollback()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:373 is_healthy()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:381 get_pool_metrics()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:416 health_check()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:420 close()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:192 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:203 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:222 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:252 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:275 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:291 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:308 _do()
+- layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:14 __init__()
+- layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:23 record()
+- layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:41 get_slow_queries()
+- layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:46 get_stats()
+- layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:74 reset()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:20 __init__()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:26 _table()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:29 _log()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:33 test_rollback()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:59 test_crash_recovery()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:97 test_commit_persistence()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:124 test_insert_update_commit()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:157 test_concurrent_rollback()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:214 run_all()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:232 get_journal()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:163 do_committed_insert()
+- layers/layer13_persistence/modules/postgresql/connection/transaction_recovery.py:172 do_rollback_insert()
+- layers/layer13_persistence/modules/postgresql/manager.py:246 get_database()
+- layers/layer13_persistence/modules/postgresql/manager.py:37 __init__()
+- layers/layer13_persistence/modules/postgresql/manager.py:59 initialize()
+- layers/layer13_persistence/modules/postgresql/manager.py:92 _create_tables()
+- layers/layer13_persistence/modules/postgresql/manager.py:101 health_check()
+- layers/layer13_persistence/modules/postgresql/manager.py:123 get_db_status()
+- layers/layer13_persistence/modules/postgresql/manager.py:178 get_stats()
+- layers/layer13_persistence/modules/postgresql/manager.py:189 run_benchmark()
+- layers/layer13_persistence/modules/postgresql/manager.py:195 backup()
+- layers/layer13_persistence/modules/postgresql/manager.py:201 restore()
+- layers/layer13_persistence/modules/postgresql/manager.py:207 get_slow_queries()
+- layers/layer13_persistence/modules/postgresql/manager.py:213 get_pool_metrics()
+- layers/layer13_persistence/modules/postgresql/manager.py:219 run_transaction_recovery()
+- layers/layer13_persistence/modules/postgresql/manager.py:225 check_leaks()
+- layers/layer13_persistence/modules/postgresql/manager.py:231 close()
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py:145 get_create_table_sql()
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py:150 get_all_create_sql()
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py:154 get_all_indexes_sql()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:296 _latency_stats()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:22 __init__()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:27 run_insert_benchmark()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:59 run_read_benchmark()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:96 run_update_benchmark()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:133 run_delete_benchmark()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:166 run_concurrent_benchmark()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:208 run_repository_benchmark()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:277 run_all()
+- layers/layer13_persistence/modules/postgresql/performance/benchmark.py:171 worker()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:15 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:19 get_by_id()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:22 get_all()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:25 count()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:28 delete_by_id()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:31 delete_all()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:38 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:41 get()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:45 set()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:53 get_by_category()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:56 delete()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:63 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:66 save()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:83 load()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:90 search()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:101 increment_access()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:107 get_by_level()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:110 delete_by_level()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:117 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:120 log()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:126 get_by_level()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:132 get_by_module()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:138 get_recent()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:143 cleanup()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:152 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:155 save_post()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:162 get_by_platform()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:168 get_by_status()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:174 update_engagement()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:181 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:184 record()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:190 get_metric()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:196 get_latest()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:206 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:209 save_lesson()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:215 get_by_type()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:221 mark_applied()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:224 get_unapplied()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:234 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:237 save_job()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:244 get_by_type()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:250 get_enabled()
+- layers/layer13_persistence/modules/postgresql/repositories/repositories.py:253 update_last_run()
+- layers/layer13_persistence/modules/postgresql/verification.py:584 run_verification()
+- layers/layer13_persistence/modules/postgresql/verification.py:36 __init__()
+- layers/layer13_persistence/modules/postgresql/verification.py:41 run_all()
+- layers/layer13_persistence/modules/postgresql/verification.py:74 _test_connection()
+- layers/layer13_persistence/modules/postgresql/verification.py:96 _test_table_creation()
+- layers/layer13_persistence/modules/postgresql/verification.py:125 _test_insert_update_delete()
+- layers/layer13_persistence/modules/postgresql/verification.py:146 _test_transactions()
+- layers/layer13_persistence/modules/postgresql/verification.py:168 _test_concurrent_access()
+- layers/layer13_persistence/modules/postgresql/verification.py:207 _test_performance()
+- layers/layer13_persistence/modules/postgresql/verification.py:233 _test_recovery()
+- layers/layer13_persistence/modules/postgresql/verification.py:252 _test_repositories()
+- layers/layer13_persistence/modules/postgresql/verification.py:307 _test_transaction_recovery()
+- layers/layer13_persistence/modules/postgresql/verification.py:332 _test_leak_detection()
+- layers/layer13_persistence/modules/postgresql/verification.py:376 _test_slow_query_logger()
+- layers/layer13_persistence/modules/postgresql/verification.py:409 _test_health_checker()
+- layers/layer13_persistence/modules/postgresql/verification.py:435 _test_pool_metrics()
+- layers/layer13_persistence/modules/postgresql/verification.py:470 _test_performance_benchmark()
+- layers/layer13_persistence/modules/postgresql/verification.py:499 _test_repository_benchmark()
+- layers/layer13_persistence/modules/postgresql/verification.py:526 _header()
+- layers/layer13_persistence/modules/postgresql/verification.py:532 _print()
+- layers/layer13_persistence/modules/postgresql/verification.py:536 _final_report()
+- layers/layer13_persistence/modules/postgresql/verification.py:175 worker()
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:10 __init__()
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:16 _hashes()
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:23 add()
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:28 might_contain()
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:31 count()
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:34 fill_rate()
+- layers/layer13_persistence/modules/redis_platform/bloom_filter.py:37 clear()
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:10 __init__()
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:16 record_hit()
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:25 record_miss()
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:34 get_hit_rate()
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:38 get_pattern_stats()
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:45 get_recent_events()
+- layers/layer13_persistence/modules/redis_platform/cache_analytics.py:48 to_dict()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:11 __init__()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:18 is_expired()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:25 __init__()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:32 get()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:43 set()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:49 delete()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:52 exists()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:55 _evict_lru()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:60 invalidate_pattern()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:67 flush()
+- layers/layer13_persistence/modules/redis_platform/cache_manager.py:72 get_stats()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:12 __init__()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:22 is_healthy()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:25 to_dict()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:33 __init__()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:37 enable_cluster()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:40 disable_cluster()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:43 add_node()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:47 remove_node()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:50 get_node()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:53 get_masters()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:56 get_replicas()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:59 is_healthy()
+- layers/layer13_persistence/modules/redis_platform/cluster_manager.py:62 stats()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:11 __init__()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:18 is_expired()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:21 to_dict()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:29 __init__()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:32 acquire()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:40 release()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:47 is_locked()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:51 force_release()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:54 cleanup_expired()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:60 get_lock()
+- layers/layer13_persistence/modules/redis_platform/distributed_lock.py:63 stats()
+- layers/layer13_persistence/modules/redis_platform/hyperloglog.py:9 __init__()
+- layers/layer13_persistence/modules/redis_platform/hyperloglog.py:14 add()
+- layers/layer13_persistence/modules/redis_platform/hyperloglog.py:30 count()
+- layers/layer13_persistence/modules/redis_platform/hyperloglog.py:35 merge()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:13 __init__()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:19 to_dict()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:27 __init__()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:32 subscribe()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:35 unsubscribe()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:41 publish()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:54 get_messages()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:57 subscriber_count()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:60 channel_count()
+- layers/layer13_persistence/modules/redis_platform/pubsub.py:63 stats()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:12 __init__()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:20 to_dict()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:28 __init__()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:32 enqueue()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:40 dequeue()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:48 peek()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:52 size()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:55 clear()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:59 list_queues()
+- layers/layer13_persistence/modules/redis_platform/queue_manager.py:62 stats()
+- layers/layer13_persistence/modules/redis_platform/rate_limiter.py:10 __init__()
+- layers/layer13_persistence/modules/redis_platform/rate_limiter.py:16 is_allowed()
+- layers/layer13_persistence/modules/redis_platform/rate_limiter.py:29 get_remaining()
+- layers/layer13_persistence/modules/redis_platform/rate_limiter.py:35 reset()
+- layers/layer13_persistence/modules/redis_platform/rate_limiter.py:43 stats()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:21 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:33 _key()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:37 _tag_key()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:41 get()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:56 set()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:79 get_or_set()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:89 delete()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:98 invalidate_tag()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:111 exists()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:115 keys()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:123 clear()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:134 get_many()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:152 set_many()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:162 get_stats()
+- layers/layer13_persistence/modules/redis_platform/redis_cache.py:176 reset_stats()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:37 from_env()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:50 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:73 initialize()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:100 _auto_reconnect()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:111 _execute_with_retry()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:153 get()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:159 set()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:169 delete()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:179 exists()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:185 expire()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:195 ttl()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:207 keys()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:216 mget()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:222 mset()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:231 incr()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:237 decr()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:243 incrby()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:253 hset()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:263 hget()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:270 hgetall()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:277 hdel()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:292 lpush()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:303 rpush()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:314 lpop()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:324 rpop()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:334 lrange()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:344 llen()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:353 sadd()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:364 smembers()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:371 srem()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:384 scard()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:393 publish()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:402 pipeline()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:410 ping()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:416 dbsize()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:424 flushdb()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:437 info()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:450 get_metrics()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:482 close()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:491 connect()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:496 is_connected()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:500 disconnect()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:505 flush()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:511 _memory_cleanup_expired()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:519 _cleanup_expired()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:522 _memory_get()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:526 _memory_set()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:533 _memory_delete()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:543 _memory_exists()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:548 _memory_incr()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:554 _memory_decr()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:564 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:568 set()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:572 get()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:576 delete()
+- layers/layer13_persistence/modules/redis_platform/redis_client.py:580 execute()
+- layers/layer13_persistence/modules/redis_platform/redis_config.py:13 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_config.py:26 to_dict()
+- layers/layer13_persistence/modules/redis_platform/redis_config.py:30 from_dict()
+- layers/layer13_persistence/modules/redis_platform/redis_health.py:10 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_health.py:14 check()
+- layers/layer13_persistence/modules/redis_platform/redis_health.py:20 is_healthy()
+- layers/layer13_persistence/modules/redis_platform/redis_health.py:25 to_dict()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:194 get_redis()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:31 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:43 initialize()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:60 get_queue()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:68 cache_get()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:72 cache_set()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:76 cache_delete()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:82 create_session()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:86 get_session()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:92 check_rate_limit()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:101 publish_event()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:105 subscribe_event()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:112 enqueue_task()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:118 dequeue_task()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:125 health_check()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:137 get_redis_status()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:172 get_stats()
+- layers/layer13_persistence/modules/redis_platform/redis_manager.py:183 close()
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py:9 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py:15 record()
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py:22 get_avg_latency()
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py:25 get_error_rate()
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py:28 reset()
+- layers/layer13_persistence/modules/redis_platform/redis_metrics.py:34 to_dict()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:21 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:36 _history_key()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:39 publish()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:101 subscribe()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:106 subscribe_pattern()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:111 unsubscribe()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:122 get_history()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:135 get_channels()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:140 get_subscriber_count()
+- layers/layer13_persistence/modules/redis_platform/redis_pubsub.py:145 get_stats()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:22 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:35 _queue_key()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:38 _task_key()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:41 _dlq_key()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:44 enqueue()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:86 dequeue()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:130 complete()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:149 fail()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:185 peek()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:205 get_task()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:215 size()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:227 clear()
+- layers/layer13_persistence/modules/redis_platform/redis_queue.py:234 get_stats()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:19 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:29 _key()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:32 sliding_window()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:85 token_bucket()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:145 check_and_consume()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:150 reset()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:160 get_usage()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:172 get_stats()
+- layers/layer13_persistence/modules/redis_platform/redis_rate_limiter.py:182 reset_stats()
+- layers/layer13_persistence/modules/redis_platform/redis_report.py:10 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_report.py:13 generate()
+- layers/layer13_persistence/modules/redis_platform/redis_report.py:20 get_history()
+- layers/layer13_persistence/modules/redis_platform/redis_report.py:23 to_dict()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:12 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:24 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:28 add_sentinel()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:33 set_master()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:37 get_master()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:40 get_replicas()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:43 failover()
+- layers/layer13_persistence/modules/redis_platform/redis_sentinel.py:53 stats()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:20 __init__()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:25 _key()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:28 _user_index_key()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:31 create()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:61 get()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:88 update()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:106 update_context()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:122 destroy()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:137 get_user_sessions()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:147 get_active_sessions()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:154 snapshot()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:170 restore()
+- layers/layer13_persistence/modules/redis_platform/redis_session.py:179 get_stats()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:12 __init__()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:21 is_expired()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:24 to_dict()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:32 __init__()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:36 create()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:41 get()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:48 destroy()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:51 get_user_sessions()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:54 cleanup_expired()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:60 active_count()
+- layers/layer13_persistence/modules/redis_platform/session_manager.py:63 to_dict()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:12 __init__()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:18 to_dict()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:25 __init__()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:29 add()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:38 read()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:41 trim()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:47 length()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:50 delete_stream()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:53 list_streams()
+- layers/layer13_persistence/modules/redis_platform/stream_manager.py:56 stats()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:10 __init__()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:13 set()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:16 get_ttl()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:23 is_expired()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:27 delete()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:30 cleanup_expired()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:36 get_all()
+- layers/layer13_persistence/modules/redis_platform/ttl_manager.py:39 stats()
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:17 to_dict()
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:25 __init__()
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:28 find_by_metric()
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:31 find_by_platform()
+- layers/layer13_persistence/modules/repository_layer/analytics_repository.py:34 get_metric_total()
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:29 find_by_action()
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:32 find_by_entity_type()
+- layers/layer13_persistence/modules/repository_layer/audit_repository.py:35 find_by_user()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:14 __init__()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:21 to_dict()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:28 __init__()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:33 create()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:38 get_by_id()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:41 get_all()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:44 update()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:54 delete()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:57 count()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:60 exists()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:63 find()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:75 find_one()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:79 clear()
+- layers/layer13_persistence/modules/repository_layer/base_repository.py:84 stats()
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py:17 to_dict()
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py:25 __init__()
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py:28 find_by_platform()
+- layers/layer13_persistence/modules/repository_layer/brand_repository.py:31 find_by_type()
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:19 to_dict()
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:27 __init__()
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:30 find_by_platform()
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:33 find_by_status()
+- layers/layer13_persistence/modules/repository_layer/content_repository.py:36 find_published()
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:14 register()
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:17 get_repository()
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:20 find()
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:23 find_by_type()
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:27 count()
+- layers/layer13_persistence/modules/repository_layer/entity_manager.py:30 stats()
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:29 find_active()
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:32 find_completed()
+- layers/layer13_persistence/modules/repository_layer/goal_repository.py:35 find_by_priority()
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py:29 find_by_category()
+- layers/layer13_persistence/modules/repository_layer/knowledge_repository.py:32 find_by_topic()
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:29 find_by_type()
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:32 find_applied()
+- layers/layer13_persistence/modules/repository_layer/learning_repository.py:35 find_unapplied()
+- layers/layer13_persistence/modules/repository_layer/media_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/media_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/media_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/media_repository.py:29 find_by_type()
+- layers/layer13_persistence/modules/repository_layer/media_repository.py:32 total_size()
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py:29 find_by_type()
+- layers/layer13_persistence/modules/repository_layer/memory_repository.py:32 find_by_key()
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py:29 find_by_type()
+- layers/layer13_persistence/modules/repository_layer/platform_repository.py:32 find_enabled()
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py:29 find_by_platform()
+- layers/layer13_persistence/modules/repository_layer/plugin_repository.py:32 find_enabled()
+- layers/layer13_persistence/modules/repository_layer/project_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/project_repository.py:17 to_dict()
+- layers/layer13_persistence/modules/repository_layer/project_repository.py:24 __init__()
+- layers/layer13_persistence/modules/repository_layer/project_repository.py:27 find_by_owner()
+- layers/layer13_persistence/modules/repository_layer/project_repository.py:30 find_by_status()
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py:17 to_dict()
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py:25 __init__()
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py:28 find_by_name()
+- layers/layer13_persistence/modules/repository_layer/prompt_repository.py:31 find_best()
+- layers/layer13_persistence/modules/repository_layer/report_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/report_repository.py:17 to_dict()
+- layers/layer13_persistence/modules/repository_layer/report_repository.py:24 __init__()
+- layers/layer13_persistence/modules/repository_layer/report_repository.py:27 find_by_type()
+- layers/layer13_persistence/modules/repository_layer/research_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/research_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/research_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/research_repository.py:29 find_by_source()
+- layers/layer13_persistence/modules/repository_layer/research_repository.py:32 find_high_confidence()
+- layers/layer13_persistence/modules/repository_layer/task_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/task_repository.py:18 to_dict()
+- layers/layer13_persistence/modules/repository_layer/task_repository.py:26 __init__()
+- layers/layer13_persistence/modules/repository_layer/task_repository.py:29 find_pending()
+- layers/layer13_persistence/modules/repository_layer/task_repository.py:32 find_by_assignee()
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:17 to_dict()
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:24 __init__()
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:27 find_by_email()
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:30 find_by_username()
+- layers/layer13_persistence/modules/repository_layer/user_repository.py:33 find_by_role()
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py:10 __init__()
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py:17 to_dict()
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py:25 __init__()
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py:28 find_running()
+- layers/layer13_persistence/modules/repository_layer/workflow_repository.py:31 find_completed()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:13 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:24 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:32 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:36 create_full_backup()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:45 create_incremental_backup()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:54 get_job()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:57 get_completed()
+- layers/layer13_persistence/modules/sql_database_platform/backup_manager.py:60 stats()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:13 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:26 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:34 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:38 configure()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:42 connect()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:50 disconnect()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:57 disconnect_all()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:64 get_connection()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:67 get_active()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:70 count()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:73 is_connected()
+- layers/layer13_persistence/modules/sql_database_platform/connection_manager.py:77 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:14 record_connect()
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:19 record_disconnect()
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:23 record_error()
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:27 get_connection()
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:30 get_events()
+- layers/layer13_persistence/modules/sql_database_platform/connection_monitor.py:33 stats()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:11 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:20 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:28 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:31 add()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:34 remove()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:37 get()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:40 get_for_table()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:43 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/constraint_manager.py:46 stats()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:21 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:32 configure()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:37 connect()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:68 disconnect()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:77 is_connected()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:80 get_type()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:83 _ensure_connected()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:87 execute()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:111 transaction()
+- layers/layer13_persistence/modules/sql_database_platform/database_engine.py:126 stats()
+- layers/layer13_persistence/modules/sql_database_platform/database_events.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/database_events.py:14 subscribe()
+- layers/layer13_persistence/modules/sql_database_platform/database_events.py:19 publish()
+- layers/layer13_persistence/modules/sql_database_platform/database_events.py:31 get_history()
+- layers/layer13_persistence/modules/sql_database_platform/database_events.py:34 stats()
+- layers/layer13_persistence/modules/sql_database_platform/database_factory.py:13 create()
+- layers/layer13_persistence/modules/sql_database_platform/database_factory.py:20 supported()
+- layers/layer13_persistence/modules/sql_database_platform/database_health.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/database_health.py:14 check()
+- layers/layer13_persistence/modules/sql_database_platform/database_health.py:22 is_healthy()
+- layers/layer13_persistence/modules/sql_database_platform/database_health.py:27 get_component()
+- layers/layer13_persistence/modules/sql_database_platform/database_health.py:30 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/database_report.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/database_report.py:13 generate()
+- layers/layer13_persistence/modules/sql_database_platform/database_report.py:20 get_history()
+- layers/layer13_persistence/modules/sql_database_platform/database_report.py:23 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:11 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:21 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:25 add_request()
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:28 detect()
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:42 clear()
+- layers/layer13_persistence/modules/sql_database_platform/deadlock_detector.py:45 stats()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:11 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:19 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:27 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:30 create_index()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:34 drop_index()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:37 get_index()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:40 get_indexes_for_table()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:43 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/index_manager.py:46 stats()
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py:25 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py:29 set_level()
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py:33 get_level()
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py:36 get_level_name()
+- layers/layer13_persistence/modules/sql_database_platform/isolation_level.py:39 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:13 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:24 is_expired()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:27 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:35 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:38 acquire()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:50 release()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:57 is_locked()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:60 get_lock()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:63 get_all_locks()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:66 clear_expired()
+- layers/layer13_persistence/modules/sql_database_platform/lock_manager.py:72 stats()
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:24 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:27 create()
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:30 refresh()
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:37 needs_refresh()
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:43 drop()
+- layers/layer13_persistence/modules/sql_database_platform/materialized_view_manager.py:46 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:13 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:23 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:31 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:36 add_migration()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:39 migrate_up()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:51 migrate_down()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:62 get_current_version()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:65 get_pending()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:68 get_applied()
+- layers/layer13_persistence/modules/sql_database_platform/migration_engine.py:71 stats()
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:11 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:20 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:28 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:39 analyze()
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:49 get_all_suggestions()
+- layers/layer13_persistence/modules/sql_database_platform/optimizer.py:52 get_rules()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:17 add_field()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:20 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:28 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:32 set_framework()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:35 register_model()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:38 get_model()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:41 to_create_table()
+- layers/layer13_persistence/modules/sql_database_platform/orm_bridge.py:48 get_all_models()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:22 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:30 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:33 create_partition()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:37 drop_partition()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:40 get_partitions_for_table()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:43 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/partition_manager.py:46 stats()
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:24 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:32 initialize()
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:36 acquire()
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:53 release()
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:62 get_stats()
+- layers/layer13_persistence/modules/sql_database_platform/pool_manager.py:69 close_all()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:20 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:28 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:31 prepare()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:36 get()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:39 execute()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:46 drop()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:52 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/prepared_statement.py:55 stats()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:20 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:28 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:31 profile()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:36 get_slow_queries()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:39 get_all_profiles()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:42 get_avg_time()
+- layers/layer13_persistence/modules/sql_database_platform/query_analyzer.py:47 stats()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:9 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:19 table()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:23 select()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:27 where()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:31 order_by()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:35 limit()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:39 offset()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:43 join()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:47 build()
+- layers/layer13_persistence/modules/sql_database_platform/query_builder.py:62 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:21 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:29 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:34 execute()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:50 execute_many()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:56 fetch_one()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:60 fetch_all()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:63 get_history()
+- layers/layer13_persistence/modules/sql_database_platform/query_executor.py:66 stats()
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:25 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:29 add()
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:34 remove()
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:37 get_next()
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:45 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/read_replica_manager.py:48 stats()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:22 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:30 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:34 enable()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:37 disable()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:40 add_replica()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:44 remove_replica()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:47 get_node()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:50 get_all_nodes()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:53 is_healthy()
+- layers/layer13_persistence/modules/sql_database_platform/replication_manager.py:56 stats()
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:21 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:29 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:32 restore()
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:40 get_job()
+- layers/layer13_persistence/modules/sql_database_platform/restore_manager.py:43 list_jobs()
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:18 get_delay()
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:22 should_retry()
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:25 execute()
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:37 get_retry_count()
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:40 reset()
+- layers/layer13_persistence/modules/sql_database_platform/retry_policy.py:43 stats()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:23 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:26 create()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:31 release()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:38 rollback_to()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:45 get()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:48 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/savepoint_manager.py:51 stats()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:12 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:20 add_column()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:23 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:31 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:35 create_table()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:41 drop_table()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:49 alter_table()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:59 get_schema()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:62 list_tables()
+- layers/layer13_persistence/modules/sql_database_platform/schema_manager.py:65 get_history()
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:11 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:19 next_value()
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:30 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:33 create()
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:38 next_value()
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:42 get()
+- layers/layer13_persistence/modules/sql_database_platform/sequence_manager.py:45 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/sql_compiler.py:9 compile_select()
+- layers/layer13_persistence/modules/sql_database_platform/sql_compiler.py:18 compile_insert()
+- layers/layer13_persistence/modules/sql_database_platform/sql_compiler.py:23 compile_update()
+- layers/layer13_persistence/modules/sql_database_platform/sql_compiler.py:29 compile_delete()
+- layers/layer13_persistence/modules/sql_database_platform/sql_health.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/sql_health.py:14 check()
+- layers/layer13_persistence/modules/sql_database_platform/sql_health.py:21 is_healthy()
+- layers/layer13_persistence/modules/sql_database_platform/sql_health.py:26 get_component()
+- layers/layer13_persistence/modules/sql_database_platform/sql_health.py:29 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:17 record_query()
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:24 get_avg_time()
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:27 get_error_rate()
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:30 get_queries_per_second()
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:34 reset()
+- layers/layer13_persistence/modules/sql_database_platform/sql_metrics.py:40 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/sql_report.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/sql_report.py:13 generate()
+- layers/layer13_persistence/modules/sql_database_platform/sql_report.py:20 get_history()
+- layers/layer13_persistence/modules/sql_database_platform/sql_report.py:23 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:10 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:14 record_table_stat()
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:18 record_query_stat()
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:24 get_table_stat()
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:27 get_slow_queries()
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:30 get_all_table_stats()
+- layers/layer13_persistence/modules/sql_database_platform/statistics_collector.py:33 stats()
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:11 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:22 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:26 register()
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:29 call()
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:36 get()
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:39 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/stored_procedure_manager.py:42 stats()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:13 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:23 add_operation()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:26 to_dict()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:34 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:39 begin()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:44 commit()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:53 rollback()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:62 execute_in_transaction()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:72 get_transaction()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:75 get_active()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:78 get_completed()
+- layers/layer13_persistence/modules/sql_database_platform/transaction_manager.py:81 stats()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:9 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:16 register_new()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:19 register_dirty()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:22 register_removed()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:25 commit()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:29 rollback()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:35 is_committed()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:38 get_pending()
+- layers/layer13_persistence/modules/sql_database_platform/unit_of_work.py:42 clear()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:11 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:23 __init__()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:26 create()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:29 drop()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:32 get()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:35 list_all()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:38 list_materialized()
+- layers/layer13_persistence/modules/sql_database_platform/view_manager.py:41 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:10 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:16 should_scale_up()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:19 should_scale_down()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:22 scale_up()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:29 scale_down()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:36 get_capacity()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:39 get_events()
+- layers/layer13_persistence/modules/universal_orchestrator/auto_scaler.py:42 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py:10 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py:15 schedule_backup()
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py:18 trigger_backup()
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py:23 get_schedule()
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py:26 get_last_backup()
+- layers/layer13_persistence/modules/universal_orchestrator/backup_coordinator.py:29 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py:13 invalidate()
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py:19 invalidate_all()
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py:25 get_pending()
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py:28 get_patterns()
+- layers/layer13_persistence/modules/universal_orchestrator/cache_coordinator.py:31 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/consistency_checker.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/consistency_checker.py:12 check()
+- layers/layer13_persistence/modules/universal_orchestrator/consistency_checker.py:17 get_history()
+- layers/layer13_persistence/modules/universal_orchestrator/consistency_checker.py:20 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:14 record_cost()
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:17 get_total_cost()
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:20 get_remaining_budget()
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:23 suggest_optimization()
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:30 get_optimizations()
+- layers/layer13_persistence/modules/universal_orchestrator/cost_optimizer.py:33 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/garbage_collector.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/garbage_collector.py:13 collect()
+- layers/layer13_persistence/modules/universal_orchestrator/garbage_collector.py:18 get_stats()
+- layers/layer13_persistence/modules/universal_orchestrator/garbage_collector.py:23 get_all_stats()
+- layers/layer13_persistence/modules/universal_orchestrator/health_coordinator.py:10 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/health_coordinator.py:14 check()
+- layers/layer13_persistence/modules/universal_orchestrator/health_coordinator.py:20 is_healthy()
+- layers/layer13_persistence/modules/universal_orchestrator/health_coordinator.py:25 get_store_health()
+- layers/layer13_persistence/modules/universal_orchestrator/health_coordinator.py:28 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py:10 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py:14 register_migration()
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py:20 apply_pending()
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py:31 get_pending()
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py:34 get_applied()
+- layers/layer13_persistence/modules/universal_orchestrator/migration_coordinator.py:37 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py:13 suggest()
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py:18 apply()
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py:25 get_suggestions()
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py:28 get_applied()
+- layers/layer13_persistence/modules/universal_orchestrator/optimization_coordinator.py:31 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/performance_tuner.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/performance_tuner.py:13 analyze()
+- layers/layer13_persistence/modules/universal_orchestrator/performance_tuner.py:23 apply_tuning()
+- layers/layer13_persistence/modules/universal_orchestrator/performance_tuner.py:27 get_tunings()
+- layers/layer13_persistence/modules/universal_orchestrator/performance_tuner.py:30 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py:13 analyze_patterns()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py:23 predict_growth()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py:35 get_insights()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py:38 get_predictions()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_ai.py:41 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py:14 register_backend()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py:17 store()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py:24 retrieve()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py:31 delete()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_api.py:41 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_metrics.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_metrics.py:14 record_store()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_metrics.py:21 get_store_metrics()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_metrics.py:24 get_global_error_rate()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_metrics.py:27 to_dict()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:11 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:17 initialize()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:22 shutdown()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:26 route_data()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:29 store()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:37 retrieve()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:43 get_router()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:46 is_initialized()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_orchestrator.py:49 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_report.py:10 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_report.py:13 generate()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_report.py:22 get_history()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_report.py:25 to_dict()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:10 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:15 allow_origin()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:18 block_pattern()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:21 is_allowed()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:28 audit()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:32 get_audit_log()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:35 hash_data()
+- layers/layer13_persistence/modules/universal_orchestrator/persistence_security.py:38 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/recovery_coordinator.py:10 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/recovery_coordinator.py:15 register_plan()
+- layers/layer13_persistence/modules/universal_orchestrator/recovery_coordinator.py:18 execute_recovery()
+- layers/layer13_persistence/modules/universal_orchestrator/recovery_coordinator.py:25 get_plan()
+- layers/layer13_persistence/modules/universal_orchestrator/recovery_coordinator.py:28 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py:13 register_store()
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py:16 replicate()
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py:21 get_replicas()
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py:24 is_replicated()
+- layers/layer13_persistence/modules/universal_orchestrator/replication_coordinator.py:27 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_advisor.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_advisor.py:12 analyze()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_advisor.py:23 get_recommendations()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_advisor.py:26 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py:13 register()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py:16 distribute()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py:23 get_load()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py:26 get_all_loads()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_balancer.py:29 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:9 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:14 register_backend()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:17 route()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:20 get_backend()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:23 set_default()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:26 get_backend_instance()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:30 list_routes()
+- layers/layer13_persistence/modules/universal_orchestrator/storage_router.py:33 stats()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:12 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:24 __init__()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:28 begin()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:33 add_operation()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:40 commit()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:49 rollback()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:57 get_active()
+- layers/layer13_persistence/modules/universal_orchestrator/transaction_coordinator.py:60 stats()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:12 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:20 to_dict()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:28 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:31 create()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:36 delete()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:39 get()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:42 list_all()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:45 list_names()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:48 count()
+- layers/layer13_persistence/modules/vector_database_platform/collection_manager.py:51 stats()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:11 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:18 _make_key()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:21 get()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:31 set()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:38 invalidate()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:42 flush()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_cache.py:47 get_stats()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:24 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:44 embed()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:88 batch_embed()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:92 _tfidf_embed()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:124 _contextual_embed()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:151 _hybrid_embed()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:163 _hash_embed()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:173 _update_vocab()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:183 _tokenize()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:193 _l2_normalize()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:200 _cache_key()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:203 _get_cached()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:214 _set_cached()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:225 similarity()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:232 _cosine()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_engine.py:240 stats()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py:11 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py:16 register_model()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py:19 generate()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py:28 batch_generate()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py:32 get_models()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_generator.py:35 stats()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_health.py:10 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_health.py:13 check()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_health.py:18 is_healthy()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_health.py:23 to_dict()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:14 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:24 to_dict()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:32 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:36 generate()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:51 batch_generate()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:55 get()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:58 delete()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:61 count()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:64 similarity()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_manager.py:74 stats()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_validator.py:9 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_validator.py:12 validate()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_validator.py:24 is_valid()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_validator.py:27 validate_batch()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_validator.py:33 fix()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:12 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:23 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:26 add_version()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:33 get_latest()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:37 get_all()
+- layers/layer13_persistence/modules/vector_database_platform/embedding_version.py:40 count()
+- layers/layer13_persistence/modules/vector_database_platform/hybrid_search.py:9 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/hybrid_search.py:13 search()
+- layers/layer13_persistence/modules/vector_database_platform/hybrid_search.py:25 _cosine()
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py:20 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py:38 retrieve()
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py:91 _rank_results()
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py:125 _enforce_diversity()
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py:153 get_context_window()
+- layers/layer13_persistence/modules/vector_database_platform/knowledge_retrieval.py:193 stats()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:33 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:47 access()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:52 decay()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:60 to_dict()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:75 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:96 remember()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:135 forget()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:151 forget_by_type()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:161 recall()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:169 search()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:208 consolidate()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:251 get_by_type()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:258 get_recent()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:266 get_important()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:274 count()
+- layers/layer13_persistence/modules/vector_database_platform/long_term_memory.py:287 stats()
+- layers/layer13_persistence/modules/vector_database_platform/metadata_search.py:9 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/metadata_search.py:22 filter()
+- layers/layer13_persistence/modules/vector_database_platform/metadata_search.py:31 _matches()
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:10 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:21 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:24 create()
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:29 delete()
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:32 get()
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:35 list_all()
+- layers/layer13_persistence/modules/vector_database_platform/namespace_manager.py:38 count()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:22 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:41 ingest()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:92 retrieve()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:115 augment()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:169 generate()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:215 _chunk_text()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:225 _chunk_fixed()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:235 _chunk_sentences()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:251 _chunk_semantic()
+- layers/layer13_persistence/modules/vector_database_platform/rag_pipeline.py:266 stats()
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:20 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:33 search()
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:106 multi_query_search()
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:141 find_similar()
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:166 get_history()
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:171 stats()
+- layers/layer13_persistence/modules/vector_database_platform/semantic_search.py:56 filter_fn()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:21 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:37 check_exact()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:53 check_near_duplicate()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:93 register()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:135 unregister()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:144 find_clusters()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:183 _normalize_and_hash()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_detector.py:190 stats()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:9 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:12 set_metric()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:15 search()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:24 _compute()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:33 _cosine()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:41 _euclidean()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:47 _dot()
+- layers/layer13_persistence/modules/vector_database_platform/similarity_search.py:52 batch_search()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:12 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:21 to_dict()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:29 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:32 create_backup()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:37 get_backup()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:40 list_backups()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup.py:46 stats()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py:12 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py:24 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py:27 backup()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py:32 list_backups()
+- layers/layer13_persistence/modules/vector_database_platform/vector_backup_manager.py:38 count()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:201 get_vectordb()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:31 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:45 initialize()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:83 ingest_text()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:88 ingest_batch()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:99 search()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:103 multi_search()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:109 query()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:113 retrieve_context()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:119 remember()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:124 recall()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:128 forget()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:132 search_memory()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:138 check_duplicate()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:150 get_vector_db_status()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:182 health_check()
+- layers/layer13_persistence/modules/vector_database_platform/vector_db_manager.py:192 close()
+- layers/layer13_persistence/modules/vector_database_platform/vector_events.py:10 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_events.py:14 subscribe()
+- layers/layer13_persistence/modules/vector_database_platform/vector_events.py:19 publish()
+- layers/layer13_persistence/modules/vector_database_platform/vector_events.py:30 get_history()
+- layers/layer13_persistence/modules/vector_database_platform/vector_events.py:33 stats()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:9 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:14 add()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:17 remove()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:20 search()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:28 _cosine()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:36 count()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:39 rebuild()
+- layers/layer13_persistence/modules/vector_database_platform/vector_index.py:42 stats()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:12 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:17 create_store()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:23 get_store()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:26 upsert()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:36 search()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:42 delete()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:48 list_stores()
+- layers/layer13_persistence/modules/vector_database_platform/vector_manager.py:51 stats()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:36 __init__()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:52 set_metric()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:56 upsert()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:95 batch_upsert()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:110 get()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:114 delete()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:126 batch_delete()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:134 delete_namespace()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:144 search()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:189 batch_search()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:194 get_all()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:201 count()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:207 list_namespaces()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:211 _compute_distance()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:224 _cosine()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:233 _euclidean()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:240 _dot()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:246 _manhattan()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:253 _hash_bucket()
+- layers/layer13_persistence/modules/vector_database_platform/vector_store.py:256 stats()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

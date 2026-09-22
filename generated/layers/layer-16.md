@@ -1,0 +1,237 @@
+# Layer 16 — Database
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer16_database_engineering
+
+## Source inventory
+- Python modules: **31**
+- Classes: **36**
+- Functions/methods: **152**
+
+## Python modules
+- layers/layer16_database_engineering/__init__.py
+- layers/layer16_database_engineering/modules/audit_trail/__init__.py
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py
+- layers/layer16_database_engineering/modules/backup_manager/__init__.py
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py
+- layers/layer16_database_engineering/modules/cache_layer/__init__.py
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py
+- layers/layer16_database_engineering/modules/connection_pool/__init__.py
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py
+- layers/layer16_database_engineering/modules/data_mapper/__init__.py
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py
+- layers/layer16_database_engineering/modules/index_manager/__init__.py
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py
+- layers/layer16_database_engineering/modules/migration_engine/__init__.py
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py
+- layers/layer16_database_engineering/modules/object_mapper/__init__.py
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py
+- layers/layer16_database_engineering/modules/orm_layer/__init__.py
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py
+- layers/layer16_database_engineering/modules/query_builder/__init__.py
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py
+- layers/layer16_database_engineering/modules/recovery_manager/__init__.py
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py
+- layers/layer16_database_engineering/modules/repository_pattern/__init__.py
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py
+- layers/layer16_database_engineering/modules/repository_registry/__init__.py
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py
+- layers/layer16_database_engineering/modules/schema_validator/__init__.py
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py
+- layers/layer16_database_engineering/modules/transaction_manager/__init__.py
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py
+
+## Classes
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:9 AuditAction
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:13 AuditEntry
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:35 AuditTrail
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:9 BackupEntry
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:25 BackupManager
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:7 CacheEntry
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:28 CacheLayer
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:9 ConnectionState
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:13 PooledConnection
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:31 ConnectionPool
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:6 MappingRule
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:18 DataMapper
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:7 IndexType
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:11 IndexInfo
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:32 IndexManager
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:9 MigrationStatus
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:14 Migration
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:35 MigrationEngine
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:6 ObjectMapping
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:22 ObjectMapper
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:7 Field
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:29 ModelMeta
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:40 BaseModel
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:7 QueryBuilder
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:9 RecoveryState
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:13 RecoveryPlan
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:31 RecoveryManager
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:10 BaseRepository
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:6 RepositoryRegistry
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:7 ColumnType
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:12 ColumnDef
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:34 TableSchema
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:49 SchemaValidator
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:9 TxState
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:13 DBTransaction
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:31 DBTransactionManager
+
+## Functions / methods
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:17 __init__()
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:29 to_dict()
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:36 __init__()
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:40 log()
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:52 query()
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:65 count()
+- layers/layer16_database_engineering/modules/audit_trail/audit_trail.py:68 clear()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:12 __init__()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:20 to_dict()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:26 __init__()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:29 create_backup()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:34 restore()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:38 delete_backup()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:44 list_backups()
+- layers/layer16_database_engineering/modules/backup_manager/backup_manager.py:47 count()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:10 __init__()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:18 is_expired()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:23 to_dict()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:29 __init__()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:35 get()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:46 set()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:51 has()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:55 delete()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:61 clear()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:66 cleanup_expired()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:72 _evict_lru()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:78 keys()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:81 size()
+- layers/layer16_database_engineering/modules/cache_layer/cache_layer.py:84 stats()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:17 __init__()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:26 to_dict()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:32 __init__()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:41 initialize()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:48 _create_connection()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:54 acquire()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:69 release()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:76 close()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:84 close_all()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:92 stats()
+- layers/layer16_database_engineering/modules/connection_pool/connection_pool.py:98 list_connections()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:9 __init__()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:19 __init__()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:23 add_rule()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:28 to_domain()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:37 to_db()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:46 to_domain_batch()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:49 to_db_batch()
+- layers/layer16_database_engineering/modules/data_mapper/data_mapper.py:52 list_rules()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:15 __init__()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:26 to_dict()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:33 __init__()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:36 create_index()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:43 drop_index()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:49 get_index()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:52 list_indexes()
+- layers/layer16_database_engineering/modules/index_manager/index_manager.py:57 count()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:18 __init__()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:30 to_dict()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:36 __init__()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:41 add_migration()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:48 migrate_up()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:70 migrate_down()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:88 current_version()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:93 pending()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:96 applied()
+- layers/layer16_database_engineering/modules/migration_engine/migration_engine.py:99 list_migrations()
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:9 __init__()
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:15 map_field()
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:23 __init__()
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:26 register()
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:32 map_object()
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:46 map_batch()
+- layers/layer16_database_engineering/modules/object_mapper/object_mapper.py:50 list_mappings()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:11 __init__()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:24 to_dict()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:30 __init__()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:35 to_dict()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:44 __init__()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:51 save()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:61 get_by_id()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:65 all()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:69 filter_by()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:77 delete()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:84 count()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:88 clear()
+- layers/layer16_database_engineering/modules/orm_layer/orm_layer.py:93 to_dict()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:11 _identifier()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:16 __init__()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:28 table()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:32 select()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:36 where()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:42 where_eq()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:45 where_in()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:50 order_by()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:56 limit()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:60 offset()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:64 group_by()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:68 join()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:72 build()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:96 build_params()
+- layers/layer16_database_engineering/modules/query_builder/query_builder.py:99 reset()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:17 __init__()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:26 to_dict()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:32 __init__()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:37 create_plan()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:42 execute_plan()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:54 get_state()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:57 list_plans()
+- layers/layer16_database_engineering/modules/recovery_manager/recovery_manager.py:60 get_history()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:11 __init__()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:16 _generate_id()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:19 add()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:26 get()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:29 update()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:36 delete()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:42 list_all()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:45 find_by()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:48 find_one_by()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:54 count()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:57 exists()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:60 find_by_index()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:64 create_index()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:70 _update_index()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:75 clear()
+- layers/layer16_database_engineering/modules/repository_pattern/repository_pattern.py:81 bulk_add()
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:7 __init__()
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:10 register()
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:13 unregister()
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:19 get()
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:22 has()
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:25 list_repositories()
+- layers/layer16_database_engineering/modules/repository_registry/repository_registry.py:28 count()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:16 __init__()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:29 to_dict()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:35 __init__()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:39 add_column()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:42 get_column()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:50 __init__()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:54 register_schema()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:57 validate()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:75 validate_batch()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:80 get_errors()
+- layers/layer16_database_engineering/modules/schema_validator/schema_validator.py:83 list_schemas()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:17 __init__()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:26 to_dict()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:32 __init__()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:36 begin()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:41 add_operation()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:51 commit()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:75 rollback()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:89 get_transaction()
+- layers/layer16_database_engineering/modules/transaction_manager/transaction_manager.py:92 list_transactions()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

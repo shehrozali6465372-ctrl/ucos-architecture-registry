@@ -1,0 +1,2378 @@
+# Layer 12 — AI Foundation
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer12_ai_foundation
+
+## Source inventory
+- Python modules: **318**
+- Classes: **428**
+- Functions/methods: **1614**
+
+## Python modules
+- layers/layer12_ai_foundation/__init__.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/__init__.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_ranker.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_report.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_validator.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/__init__.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/accuracy_checker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/bias_detector.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/brand_voice_checker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/consistency_checker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/creativity_checker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_config.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_context.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_enforcer.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_events.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_health.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_profiler.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_ranker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_report.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_validator.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/exceptions.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/grammar_checker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/hallucination_detector.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/models.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/quality_checker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/safety_checker.py
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/seo_checker.py
+- layers/layer12_ai_foundation/modules/ai_governance/__init__.py
+- layers/layer12_ai_foundation/modules/ai_governance/copyright_checker.py
+- layers/layer12_ai_foundation/modules/ai_governance/ethics_engine.py
+- layers/layer12_ai_foundation/modules/ai_governance/exceptions.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_analyzer.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_config.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_events.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_health.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_metrics.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_profiler.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_registry.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_report.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_router.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py
+- layers/layer12_ai_foundation/modules/ai_governance/governance_validator.py
+- layers/layer12_ai_foundation/modules/ai_governance/models.py
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py
+- layers/layer12_ai_foundation/modules/ai_governance/privacy_engine.py
+- layers/layer12_ai_foundation/modules/ai_governance/safety_policy.py
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/__init__.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_analyzer.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_compression.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_config.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_consolidation.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_health.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_lifecycle.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_profiler.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_ranker.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_report.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_search.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_sync.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_validator.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/__init__.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_analyzer.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_cache.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_coordinator.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_diff_engine.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_enforcer.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_events.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_fallback.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_gateway.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_health.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_linker.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_logger.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_policy.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_profiler.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_report.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_request.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_response.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_retry.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_router.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_validator.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_version_manager.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/models.py
+- layers/layer12_ai_foundation/modules/ai_orchestrator/orchestrator_config.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/__init__.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analogy_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analytical_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_validator.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/counterfactual_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/creative_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/decision_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/logical_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/meta_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/planning_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_config.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_enforcer.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_ensemble.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_fallback.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_health.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_optimizer.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_pipeline.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_profiler.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_report.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_router.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/strategic_reasoner.py
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/__init__.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_config.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_context.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_factory.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_loader.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py
+- layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py
+- layers/layer12_ai_foundation/modules/model_router/__init__.py
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py
+- layers/layer12_ai_foundation/modules/model_router/model_router.py
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/__init__.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ensemble_ai.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_config.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_executor.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_fallback.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_report.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_request.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_router.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_strategy.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_validator.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_generation.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_reasoning.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_review.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ranking_engine.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/response_selector.py
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/__init__.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_analyzer.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_config.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_health.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_orchestrator.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_profiler.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_ranker.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_report.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_similarity.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_strategy.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_suggester.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_validator.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/reflection_prompt.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py
+- layers/layer12_ai_foundation/modules/prompt_intelligence/zeroshot_manager.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/__init__.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/constants.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_config.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_context.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_events.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_factory.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_monitor.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_optimizer.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_policy.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_profiler.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_rate_limit.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_request.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_response.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_router.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_selector.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_session.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_stream.py
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_validator.py
+
+## Classes
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:7 BudgetManager
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:6 CostAnalytics
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:5 CostAnalyzer
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:5 CostConfig
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:4 CostContext
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:6 CostEvents
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:5 CostFallback
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:5 CostForecaster
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py:5 CostHealth
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:6 CostMemory
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:6 CostMonitor
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:6 CostOptimizer
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:15 CostOrchestrator
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py:5 CostProfiler
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_ranker.py:6 CostRanker
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:5 CostRegistry
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_report.py:7 CostReportGenerator
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py:8 CostJob
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py:13 CostScheduler
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:7 CostTracker
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_validator.py:6 CostValidator
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:3 CostError
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:5 BudgetExceededError
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:7 TrackingError
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:9 OptimizationError
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:11 PredictionError
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:13 ReportError
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:5 ModelSwitcher
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:9 CostEntry
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:26 BudgetLimit
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:5 PricePerToken
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:19 PriceCalculator
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:5 TokenCounter
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/accuracy_checker.py:7 AccuracyChecker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/bias_detector.py:6 BiasDetector
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/brand_voice_checker.py:6 BrandVoiceChecker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/consistency_checker.py:6 ConsistencyChecker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/creativity_checker.py:6 CreativityChecker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py:6 EvalCache
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_config.py:5 EvalConfig
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_context.py:5 EvalContext
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_enforcer.py:6 EvalEnforcer
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_events.py:6 EvalEvents
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_health.py:6 EvalHealth
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py:6 EvalMemory
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py:5 EvalMetrics
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py:22 EvalOrchestrator
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_profiler.py:6 EvalProfiler
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_ranker.py:6 EvalRanker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py:5 EvalRegistry
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_report.py:6 EvalReportGenerator
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py:8 EvalJob
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py:13 EvalScheduler
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_validator.py:5 EvalValidator
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/exceptions.py:3 EvalError
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/exceptions.py:5 HallucinationDetected
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/exceptions.py:6 BiasDetected
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/exceptions.py:7 SafetyViolation
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/exceptions.py:8 QualityBelowThreshold
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/exceptions.py:9 EvaluationTimeout
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/grammar_checker.py:7 GrammarChecker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/hallucination_detector.py:6 HallucinationDetector
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/models.py:9 EvalType
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/models.py:15 EvalResult
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/models.py:28 EvalCriteria
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/quality_checker.py:6 QualityChecker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/safety_checker.py:6 SafetyChecker
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/seo_checker.py:6 SEOChecker
+- layers/layer12_ai_foundation/modules/ai_governance/copyright_checker.py:6 CopyrightChecker
+- layers/layer12_ai_foundation/modules/ai_governance/ethics_engine.py:6 EthicsEngine
+- layers/layer12_ai_foundation/modules/ai_governance/exceptions.py:3 GovernanceError
+- layers/layer12_ai_foundation/modules/ai_governance/exceptions.py:4 PolicyViolationError
+- layers/layer12_ai_foundation/modules/ai_governance/exceptions.py:5 EthicsViolationError
+- layers/layer12_ai_foundation/modules/ai_governance/exceptions.py:6 CopyrightViolationError
+- layers/layer12_ai_foundation/modules/ai_governance/exceptions.py:7 PrivacyViolationError
+- layers/layer12_ai_foundation/modules/ai_governance/exceptions.py:8 SafetyViolationError
+- layers/layer12_ai_foundation/modules/ai_governance/governance_analyzer.py:5 GovernanceAnalyzer
+- layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:6 GovernanceCache
+- layers/layer12_ai_foundation/modules/ai_governance/governance_config.py:5 GovernanceConfig
+- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:5 GovernanceEnforcer
+- layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:6 GovernanceEvents
+- layers/layer12_ai_foundation/modules/ai_governance/governance_health.py:6 GovernanceHealth
+- layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py:6 GovernanceMemory
+- layers/layer12_ai_foundation/modules/ai_governance/governance_metrics.py:5 GovernanceMetrics
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py:16 GovernanceOrchestrator
+- layers/layer12_ai_foundation/modules/ai_governance/governance_profiler.py:5 GovernanceProfiler
+- layers/layer12_ai_foundation/modules/ai_governance/governance_registry.py:5 GovernanceRegistry
+- layers/layer12_ai_foundation/modules/ai_governance/governance_report.py:6 GovernanceReportGenerator
+- layers/layer12_ai_foundation/modules/ai_governance/governance_router.py:5 GovernanceRouter
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py:8 GovJob
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py:12 GovernanceScheduler
+- layers/layer12_ai_foundation/modules/ai_governance/governance_validator.py:6 GovernanceValidator
+- layers/layer12_ai_foundation/modules/ai_governance/models.py:9 PolicyType
+- layers/layer12_ai_foundation/modules/ai_governance/models.py:14 Policy
+- layers/layer12_ai_foundation/modules/ai_governance/models.py:26 Violation
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:6 PolicyManager
+- layers/layer12_ai_foundation/modules/ai_governance/privacy_engine.py:7 PrivacyEngine
+- layers/layer12_ai_foundation/modules/ai_governance/safety_policy.py:6 SafetyPolicy
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:6 ViolationTracker
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:10 ConversationMemory
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:9 EpisodicMemory
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:5 MemoryLayerError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:9 StorageError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:13 RetrievalError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:17 IndexingError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:21 SyncError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:25 MemoryFullError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:29 MemoryCorruptionError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/exceptions.py:33 EmbeddingError
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:10 LongTermMemory
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_analyzer.py:10 MemoryAnalyzer
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:10 MemoryCache
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_compression.py:9 MemoryCompression
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_config.py:7 MemoryConfig
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_consolidation.py:9 MemoryConsolidation
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py:7 MemoryContext
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py:8 MemoryEvents
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py:9 MemoryFallback
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py:10 MemoryForgetting
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_health.py:8 MemoryHealth
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:9 MemoryIndexer
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_lifecycle.py:10 MemoryLifecycle
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:8 MemoryMetrics
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:20 MemoryOrchestrator
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_profiler.py:8 MemoryProfiler
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_ranker.py:9 MemoryRanker
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:7 MemoryRegistry
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_report.py:8 MemoryReportGenerator
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:9 MemoryRouter
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_search.py:9 MemorySearch
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_sync.py:10 MemorySync
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_validator.py:9 MemoryValidator
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py:11 MemoryType
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py:22 MemoryEntry
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py:58 MemoryQuery
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:9 SemanticMemory
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:10 VectorMemory
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:9 WorkingMemory
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_analyzer.py:5 AIAnalyzer
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_cache.py:6 AICache
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py:5 AIConfigManager
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py:5 AIContext
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_coordinator.py:5 AICoordinator
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_diff_engine.py:5 AIDiffEngine
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_enforcer.py:5 AIEnforcer
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_events.py:6 AIEvents
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_fallback.py:5 AIFallback
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_gateway.py:5 AIGateway
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_health.py:6 AIHealth
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_linker.py:5 AILinker
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_logger.py:6 AILogger
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py:6 AIMemory
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:6 AIMetrics
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py:6 AIMonitor
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:22 AIOrchestrator
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:7 AIPipeline
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_policy.py:5 AIPolicy
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_profiler.py:6 AIProfiler
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:5 AIRegistry
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_report.py:6 AIReportGenerator
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_request.py:7 AIRequest
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_response.py:5 AIResponse
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_retry.py:6 AIRetry
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_router.py:5 AIRouter
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py:8 ScheduledJob
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py:12 AIScheduler
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:6 AIStateManager
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:6 AITaskManager
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_validator.py:5 AIValidator
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_version_manager.py:6 AIVersionManager
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py:3 OrchestratorError
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py:4 PipelineError
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py:5 RoutingError
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py:6 ExecutionError
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py:7 TimeoutError
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py:8 StateError
+- layers/layer12_ai_foundation/modules/ai_orchestrator/exceptions.py:9 ResourceError
+- layers/layer12_ai_foundation/modules/ai_orchestrator/models.py:9 TaskStatus
+- layers/layer12_ai_foundation/modules/ai_orchestrator/models.py:13 PipelineStatus
+- layers/layer12_ai_foundation/modules/ai_orchestrator/models.py:18 Task
+- layers/layer12_ai_foundation/modules/ai_orchestrator/models.py:31 Pipeline
+- layers/layer12_ai_foundation/modules/ai_orchestrator/orchestrator_config.py:5 OrchestratorConfig
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analogy_reasoner.py:10 AnalogyReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analytical_reasoner.py:10 AnalyticalReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:8 ChainBuilder
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_validator.py:9 ChainValidator
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/counterfactual_reasoner.py:10 CounterfactualReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/creative_reasoner.py:10 CreativeReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/decision_reasoner.py:10 DecisionReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:7 EvidenceCollector
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:5 ReasoningError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:9 LogicalReasoningError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:13 AnalyticalReasoningError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:17 CreativeReasoningError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:21 StrategicReasoningError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:25 ReflectionError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:29 DecisionError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:33 VerificationError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:37 ReasoningTimeoutError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/exceptions.py:41 ReasoningChainError
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/logical_reasoner.py:10 LogicalReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/meta_reasoner.py:10 MetaReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:11 ReasoningType
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:25 ReasoningStep
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:41 ReasoningChain
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:68 ReasoningResult
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/planning_reasoner.py:10 PlanningReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:8 ReasoningCache
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_config.py:7 ReasoningConfig
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py:7 ReasoningContext
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_enforcer.py:9 ReasoningEnforcer
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_ensemble.py:9 ReasoningEnsemble
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py:8 ReasoningEvents
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_fallback.py:9 ReasoningFallback
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_health.py:8 ReasoningHealth
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:10 ReasoningMemory
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:8 ReasoningMetrics
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:8 ReasoningMonitor
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_optimizer.py:9 ReasoningOptimizer
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py:24 ReasoningOrchestrator
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_pipeline.py:8 ReasoningPipeline
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_profiler.py:8 ReasoningProfiler
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:7 ReasoningRegistry
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_report.py:8 ReasoningReportGenerator
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_router.py:9 ReasoningRouter
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:10 ReasoningJob
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:19 ReasoningScheduler
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py:10 ReflectionReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/strategic_reasoner.py:10 StrategicReasoner
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:9 VerificationReasoner
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:11 ClaudeProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:11 CohereProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:11 DeepSeekProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:5 ProviderFrameworkError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:9 ProviderNotFoundError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:13 ProviderInitializationError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:17 ProviderUnavailableError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:21 ProviderRateLimitError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:25 ProviderAuthenticationError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:29 ProviderTimeoutError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:33 ProviderCostLimitError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:37 ProviderValidationError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:41 ProviderCacheError
+- layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:45 ProviderFallbackExhaustedError
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:11 GeminiProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:11 GrokProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py:11 LlamaProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py:11 MistralProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:11 OllamaProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:11 OpenAIProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:11 OpenRouterProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:7 ABTest
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:29 ProviderABTest
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:7 ProviderAnalytics
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:8 ProviderResponse
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:30 ProviderRequest
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:48 BaseProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:7 BatchJob
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:23 ProviderBatch
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:7 ProviderCache
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_config.py:6 ProviderConfig
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_context.py:10 ProviderContext
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:22 ProviderCost
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:9 EmbeddingResult
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:22 ProviderEmbed
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:7 ProviderEvent
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:22 ProviderEvents
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_factory.py:7 ProviderFactory
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:6 FallbackChain
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:21 ProviderFallback
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:10 FineTuneJob
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:29 ProviderFineTune
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:7 ProviderHealth
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:18 ProviderLimits
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_loader.py:8 ProviderLoader
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:7 ProviderLogger
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:7 ProviderMetrics
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:7 ProviderRegistry
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:6 ProviderReport
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:7 ProviderRetry
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:7 ProviderSecurity
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:6 StreamChunk
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:21 ProviderStream
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py:6 ProviderTimeout
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py:7 ProviderValidator
+- layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:11 QwenProvider
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:27 GeminiConfig
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:40 GeminiProvider
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:25 KeyStatus
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:34 KeyHealth
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:182 KeyManager
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:9 RequestType
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:17 ModelProvider
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:27 ModelRequest
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:40 ModelResponse
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:63 ProviderAdapter
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:81 ModelRouter
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:15 PromptStyle
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:24 PromptTemplate
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:51 PromptBuilder
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:10 ConfidenceEngine
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:10 ConsensusEngine
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ensemble_ai.py:14 EnsembleAI
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:5 MultiModelError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:9 ConsensusError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:13 VotingError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:17 RankingError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:21 ParallelExecutionError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:25 EnsembleError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:29 SelectionError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:33 MergeError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:37 ConfidenceError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:41 ModelTimeoutError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:45 AllModelsFailedError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/exceptions.py:49 InsufficientResponsesError
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:11 ModelResponse
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:40 VoteResult
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:53 RankEntry
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:67 ConsensusResult
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:8 MultiModelCache
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_config.py:7 MultiModelConfig
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:9 MultiModelContext
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py:8 MultiModelEvents
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_executor.py:10 MultiModelExecutor
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_fallback.py:9 MultiModelFallback
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:8 MultiModelHealth
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:8 MultiModelMemory
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:8 MultiModelMetrics
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:8 MultiModelMonitor
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:9 MultiModelOptimizer
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:7 MultiModelPolicy
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py:8 MultiModelProfiler
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:7 MultiModelRegistry
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_report.py:8 MultiModelReportGenerator
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_request.py:9 MultiModelRequest
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py:10 MultiModelResponse
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_router.py:7 MultiModelRouter
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:10 ScheduledJob
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:19 MultiModelScheduler
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_strategy.py:7 MultiModelStrategy
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_validator.py:9 MultiModelValidator
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_generation.py:10 ParallelGeneration
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_reasoning.py:10 ParallelReasoning
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_review.py:10 ParallelReview
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ranking_engine.py:9 RankingEngine
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py:9 ReasoningMerger
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/response_selector.py:9 ResponseSelector
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:9 VotingEngine
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:7 CotEngine
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:8 DynamicPrompt
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:5 PromptIntelligenceError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:9 OptimizationError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:13 TemplateError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:17 FewShotError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:21 PromptBuildError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:25 PromptValidationError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:29 MemoryError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/exceptions.py:33 ChainOfThoughtError
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:9 FewShotManager
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py:11 PromptTemplate
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py:39 FewShotExample
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py:57 OptimizedPrompt
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_analyzer.py:8 PromptAnalyzer
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:7 PromptBuilder
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:8 PromptCache
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_config.py:7 PromptConfig
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:7 PromptContext
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py:8 PromptEvents
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_health.py:8 PromptHealth
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:9 PromptLibrary
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:8 PromptMemory
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:8 PromptMetrics
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:9 PromptOptimizer
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_orchestrator.py:23 PromptOrchestrator
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_profiler.py:8 PromptProfiler
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_ranker.py:7 PromptRanker
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_report.py:8 PromptReportGenerator
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_similarity.py:7 PromptSimilarity
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_strategy.py:7 PromptStrategy
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_suggester.py:9 PromptSuggester
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:8 PromptTemplates
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_validator.py:8 PromptValidator
+- layers/layer12_ai_foundation/modules/prompt_intelligence/reflection_prompt.py:7 ReflectionPrompt
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py:7 SystemPromptManager
+- layers/layer12_ai_foundation/modules/prompt_intelligence/zeroshot_manager.py:7 ZeroShotManager
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:4 AIError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:5 LLMError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:6 ProviderError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:7 ModelNotFoundError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:8 RateLimitError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:9 TokenLimitError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:10 AuthenticationError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:11 TimeoutError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/exceptions.py:12 QuotaExceededError
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:7 LLMBuilder
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:7 LLMCache
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_config.py:5 LLMConfig
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_context.py:6 LLMContext
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:6 CostEntry
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:13 LLMCostTracker
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_events.py:6 LLMEvents
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_factory.py:7 LLMFactory
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py:5 LLMFallback
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:6 ProviderHealth
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:12 LLMHealth
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:5 LLMLoader
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:21 LLMManager
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:6 LLMCacheEntry
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:17 LLMMemory
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:6 LLMMetrics
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_monitor.py:6 LLMMonitor
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_optimizer.py:6 LLMOptimizer
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_policy.py:6 LLMPolicy
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:5 PoolEntry
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:16 LLMPool
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_profiler.py:6 LLMProfiler
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_rate_limit.py:6 LLMRateLimit
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:6 ModelInfo
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:15 LLMRegistry
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:6 LLMReport
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:20 LLMReportGenerator
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_request.py:6 LLMRequest
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_response.py:6 LLMResponse
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_router.py:5 LLMRouter
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_selector.py:5 LLMSelector
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_session.py:6 LLMSession
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_stream.py:6 LLMStream
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_validator.py:6 LLMValidator
+
+## Functions / methods
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:12 can_spend()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:19 record_spend()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:22 today_spent()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:24 is_over_daily()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:26 remaining_daily()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:28 budget_usage_pct()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:30 get_alerts()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:32 to_dict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:9 add_entries()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:11 total_cost()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:13 cost_by_provider()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:18 cost_by_model()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:23 avg_cost_per_request()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:25 total_tokens()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:27 most_expensive()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:30 summary()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:8 analyze()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:14 detect_anomalies()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:16 to_dict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:5 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:7 set()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:9 get()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:11 clear()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:11 subscribe()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:13 unsubscribe()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:16 publish()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:22 get_log()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:25 clear()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:8 get_fallback_model()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:12 log()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:14 get_log()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:8 predict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:18 predict_monthly()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:21 get_history()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py:11 is_healthy()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py:13 get_unhealthy()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py:15 overall_health()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:10 store()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:15 get_avg_cost()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:18 get_spending_by_provider()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:23 get_spending_by_model()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:28 count()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:30 clear()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:11 add_spend()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:13 alert()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:15 get_alerts()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:18 status()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:20 reset()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:9 find_cheapest()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:13 optimize_batch()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:31 suggest_model()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:16 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:27 start()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:29 stop()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:31 record_cost()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:40 estimate_cost()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:42 find_best_model()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:45 get_health()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:47 get_stats()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py:8 record()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py:10 get_avg()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py:13 summary()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py:15 clear()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_ranker.py:7 rank()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_ranker.py:14 cheapest()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:8 register()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:10 unregister()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:12 get()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:14 list_components()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:16 count()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_registry.py:18 to_dict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_report.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_report.py:10 generate()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_report.py:19 export_json()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_report.py:21 get_reports()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py:14 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py:16 schedule()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py:21 get_next()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py:25 complete()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_scheduler.py:30 queue_size()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:12 record()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:20 today_total()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:23 is_over_daily_budget()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:25 total_spent()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:27 entries_count()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:29 get_entries()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:32 daily_totals()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:34 clear()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:37 to_dict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_validator.py:7 validate_entry()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_validator.py:14 validate_budget()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:13 switch_down()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:17 switch_up()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:21 suggest_tier()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:25 log_switch()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:27 get_switches()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:18 total_tokens()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:20 to_dict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:32 to_dict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:21 calculate()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:26 compare_models()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:7 count_words()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:10 estimate_tokens()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:15 count_batch()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/accuracy_checker.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/accuracy_checker.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/accuracy_checker.py:16 _calculate()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/accuracy_checker.py:26 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/bias_detector.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/bias_detector.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/bias_detector.py:19 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/brand_voice_checker.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/brand_voice_checker.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/brand_voice_checker.py:19 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/consistency_checker.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/consistency_checker.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/consistency_checker.py:22 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/creativity_checker.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/creativity_checker.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/creativity_checker.py:18 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py:11 get()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py:15 set()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py:19 invalidate()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py:20 clear()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_cache.py:21 stats()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_config.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_config.py:13 to_dict()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_context.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_context.py:8 set()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_context.py:9 get()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_context.py:10 clear()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_enforcer.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_enforcer.py:9 enforce()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_events.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_events.py:9 subscribe()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_events.py:10 publish()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_events.py:15 get_log()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_events.py:18 clear()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_health.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_health.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_health.py:10 is_healthy()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_health.py:11 get_unhealthy()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_health.py:12 overall_health()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py:9 store()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py:13 get_by_type()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py:15 success_rate()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py:18 count()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_memory.py:19 clear()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py:9 record()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py:15 avg_score()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py:17 pass_rate()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py:18 reset()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_metrics.py:19 to_dict()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py:23 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py:40 start()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py:42 stop()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py:44 evaluate()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py:68 get_health()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_orchestrator.py:70 get_stats()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_profiler.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_profiler.py:9 record()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_profiler.py:10 get_avg()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_profiler.py:13 summary()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_profiler.py:15 clear()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_ranker.py:7 rank()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py:8 register()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py:9 unregister()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py:10 get()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py:11 list_components()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_registry.py:12 count()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_report.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_report.py:9 generate()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_report.py:14 get_reports()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py:14 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py:16 schedule()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py:21 get_next()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py:25 complete()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_scheduler.py:30 queue_size()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_validator.py:6 validate_content()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/eval_validator.py:11 validate_criteria()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/grammar_checker.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/grammar_checker.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/grammar_checker.py:19 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/hallucination_detector.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/hallucination_detector.py:13 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/hallucination_detector.py:22 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/models.py:23 to_dict()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/quality_checker.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/quality_checker.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/quality_checker.py:15 _calculate_score()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/quality_checker.py:23 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/safety_checker.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/safety_checker.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/safety_checker.py:19 get_results()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/seo_checker.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/seo_checker.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_evaluation_engine/seo_checker.py:21 get_results()
+- layers/layer12_ai_foundation/modules/ai_governance/copyright_checker.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/copyright_checker.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_governance/copyright_checker.py:23 get_violations()
+- layers/layer12_ai_foundation/modules/ai_governance/ethics_engine.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/ethics_engine.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_governance/ethics_engine.py:23 get_violations()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_analyzer.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_analyzer.py:8 analyze()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_analyzer.py:21 get_history()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:10 get()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:14 set()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:18 clear()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:19 stats()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_config.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_config.py:14 to_dict()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:8 enforce()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:9 subscribe()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:10 publish()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:15 get_log()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:18 clear()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_health.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_health.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_health.py:10 is_healthy()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_health.py:11 overall_health()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py:9 store()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py:13 recall()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py:17 count()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py:18 clear()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_metrics.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_metrics.py:9 record()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_metrics.py:16 compliance_rate()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_metrics.py:17 reset()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_metrics.py:18 to_dict()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py:17 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py:30 start()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py:32 stop()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py:34 check()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py:49 get_health()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_orchestrator.py:51 get_stats()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_profiler.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_profiler.py:8 record()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_profiler.py:9 summary()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_profiler.py:11 clear()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_registry.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_registry.py:8 register()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_registry.py:9 get()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_registry.py:10 list_components()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_registry.py:11 count()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_report.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_report.py:9 generate()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_report.py:15 get_reports()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_router.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_router.py:9 route()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_router.py:11 register()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_router.py:13 list_routes()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py:15 schedule()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py:19 get_next()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py:23 complete()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_scheduler.py:28 queue_size()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_validator.py:7 validate_content()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_validator.py:11 validate_policy()
+- layers/layer12_ai_foundation/modules/ai_governance/models.py:21 to_dict()
+- layers/layer12_ai_foundation/modules/ai_governance/models.py:31 to_dict()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:9 add()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:11 get()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:13 remove()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:15 list_active()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:17 list_by_type()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:19 count()
+- layers/layer12_ai_foundation/modules/ai_governance/policy_manager.py:21 to_dict()
+- layers/layer12_ai_foundation/modules/ai_governance/privacy_engine.py:14 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/privacy_engine.py:16 check()
+- layers/layer12_ai_foundation/modules/ai_governance/privacy_engine.py:26 get_violations()
+- layers/layer12_ai_foundation/modules/ai_governance/safety_policy.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/safety_policy.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_governance/safety_policy.py:18 get_violations()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:9 track()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:11 get_all()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:13 get_by_type()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:15 get_by_severity()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:17 count()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:19 count_critical()
+- layers/layer12_ai_foundation/modules/ai_governance/violation_tracker.py:21 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:18 add_turn()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:34 get_history()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:37 get_last_user_message()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:44 get_summary()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:51 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:63 clear_session()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/conversation_memory.py:66 count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:16 store_event()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:28 recall_recent()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:31 recall_by_time()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:34 recall_important()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:38 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:50 count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/episodic_memory.py:53 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:18 store()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:29 retrieve()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:36 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:49 get_important()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:53 apply_decay()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:65 _evict_if_needed()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:70 count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/long_term_memory.py:73 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_analyzer.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_analyzer.py:16 analyze()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_analyzer.py:43 get_slow_access()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_analyzer.py:47 get_stale()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:20 get()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:28 set()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:34 invalidate()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:37 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:43 hit_rate()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_cache.py:47 stats()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_compression.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_compression.py:15 compress()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_compression.py:32 summarize_batch()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_compression.py:38 get_stats()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_config.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_config.py:25 to_dict()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_consolidation.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_consolidation.py:15 consolidate()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_consolidation.py:39 get_history()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_consolidation.py:42 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py:14 set()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py:17 get()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py:20 record_operation()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py:23 get_operations()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_context.py:26 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py:17 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py:21 subscribe()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py:24 unsubscribe()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py:28 publish()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py:37 get_log()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_events.py:42 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py:16 emergency_store()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py:21 get_emergency_entries()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py:24 replay_emergency()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py:30 get_log()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_fallback.py:33 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py:16 ebbinghaus_retention()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py:22 should_forget()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py:30 prune()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py:38 get_forgetting_prone()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_forgetting.py:43 _forgetting_score()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_health.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_health.py:15 check()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_health.py:18 is_healthy()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_health.py:21 get_unhealthy()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_health.py:24 overall_health()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:16 index()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:26 remove()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:35 search_by_tag()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:38 search_by_word()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:41 search_by_words()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:53 rebuild()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:59 stats()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_indexer.py:62 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_lifecycle.py:15 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_lifecycle.py:21 get_stage()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_lifecycle.py:31 apply_lifecycle()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_lifecycle.py:38 get_transition_count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_lifecycle.py:41 to_dict()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:22 record_store()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:25 record_retrieval()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:32 record_search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:35 record_eviction()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:38 record_sync()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:41 record_latency()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:45 hit_rate()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:50 avg_latency_ms()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:54 reset()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_metrics.py:57 to_dict()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:23 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:37 start()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:42 stop()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:47 store()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:61 retrieve()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:74 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:83 get_health()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_orchestrator.py:86 get_stats()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_profiler.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_profiler.py:14 record()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_profiler.py:19 get_avg()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_profiler.py:23 summary()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_profiler.py:29 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_ranker.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_ranker.py:17 rank()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_ranker.py:47 get_top()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:13 register()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:16 unregister()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:19 get()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:22 list_stores()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:25 count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_registry.py:28 to_dict()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_report.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_report.py:14 generate()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_report.py:31 get_reports()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:16 store()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:27 retrieve()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:35 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:57 count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:62 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_router.py:69 stats()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_search.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_search.py:15 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_search.py:38 get_history()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_sync.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_sync.py:17 sync()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_sync.py:33 merge()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_sync.py:42 get_last_sync_time()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_sync.py:45 get_sync_log()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_validator.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_validator.py:15 validate_entry()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_validator.py:35 validate_query()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/memory_validator.py:43 get_errors()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py:38 is_expired()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py:43 touch()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py:47 to_dict()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/models.py:68 to_dict()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:16 store()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:28 retrieve()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:35 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:54 get_by_tag()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:57 count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/semantic_memory.py:60 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:18 store()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:32 similarity_search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:44 find_similar()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:60 delete()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:65 count()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:68 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:72 _generate_embedding()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/vector_memory.py:87 _cosine_similarity()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:17 add()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:29 set_focus()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:32 get_focus()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:35 get_items()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:38 search()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:50 clear()
+- layers/layer12_ai_foundation/modules/ai_memory_layer/working_memory.py:54 count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_analyzer.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_analyzer.py:8 analyze()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_analyzer.py:15 get_history()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_cache.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_cache.py:11 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_cache.py:15 set()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_cache.py:19 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_cache.py:20 stats()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py:8 set()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py:9 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py:10 remove()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py:11 list_configs()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_config_manager.py:12 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py:8 set()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py:9 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py:10 merge()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py:11 keys()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_context.py:12 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_coordinator.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_coordinator.py:9 register()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_coordinator.py:11 set_order()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_coordinator.py:13 coordinate()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_coordinator.py:23 list_components()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_diff_engine.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_diff_engine.py:8 compare()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_diff_engine.py:17 get_history()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_enforcer.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_enforcer.py:8 add_rule()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_enforcer.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_enforcer.py:16 list_rules()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_enforcer.py:17 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_events.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_events.py:9 subscribe()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_events.py:10 publish()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_events.py:15 get_log()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_events.py:18 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_fallback.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_fallback.py:8 handle_failure()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_fallback.py:11 get_log()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_gateway.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_gateway.py:9 register_handler()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_gateway.py:11 handle()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_gateway.py:19 list_endpoints()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_gateway.py:20 request_count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_health.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_health.py:9 check()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_health.py:10 is_healthy()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_health.py:11 get_unhealthy()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_health.py:12 overall_health()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_linker.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_linker.py:8 link()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_linker.py:10 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_linker.py:12 list_links()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_linker.py:14 count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_logger.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_logger.py:9 log()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_logger.py:11 get_logs()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_logger.py:14 count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_logger.py:15 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py:9 store()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py:13 recall()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py:15 recent()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py:17 count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_memory.py:18 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:11 record_task()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:18 success_rate()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:20 avg_latency()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:22 uptime()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:23 reset()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_metrics.py:24 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py:10 increment()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py:12 alert()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py:14 get_alerts()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py:17 status()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_monitor.py:19 reset()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:25 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:43 start()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:49 stop()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:55 link_module()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:59 process()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:89 get_status()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:98 generate_report()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_orchestrator.py:101 get_health()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:10 create()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:17 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:19 execute()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:43 list_pipelines()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:45 delete()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_pipeline.py:47 count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_policy.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_policy.py:8 set()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_policy.py:9 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_policy.py:10 check()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_policy.py:16 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_profiler.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_profiler.py:9 record()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_profiler.py:10 get_avg()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_profiler.py:13 summary()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_profiler.py:15 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:8 register()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:9 unregister()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:10 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:11 list_components()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:12 count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_registry.py:13 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_report.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_report.py:9 generate()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_report.py:15 get_reports()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_request.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_request.py:13 complete()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_request.py:15 fail()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_request.py:17 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_response.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_response.py:11 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_retry.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_retry.py:10 retry()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_retry.py:24 get_log()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_router.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_router.py:13 route()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_router.py:15 register()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_router.py:17 list_routes()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py:15 schedule()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py:19 get_next()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py:23 complete()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_scheduler.py:28 queue_size()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:10 set()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:12 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:14 transition()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:18 get_state()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:20 get_history()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_state_manager.py:22 reset()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:9 create()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:13 get()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:15 complete()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:19 fail()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:23 list_by_status()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:25 count()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:26 clear()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_task_manager.py:27 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_validator.py:6 validate_task()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_validator.py:10 validate_pipeline()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_validator.py:15 validate_config()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_version_manager.py:7 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_version_manager.py:10 set_version()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_version_manager.py:13 rollback()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_version_manager.py:18 get_versions()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/ai_version_manager.py:20 get_current()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/models.py:26 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/models.py:36 to_dict()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/orchestrator_config.py:6 __init__()
+- layers/layer12_ai_foundation/modules/ai_orchestrator/orchestrator_config.py:17 to_dict()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analogy_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analogy_reasoner.py:16 draw_analogy()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analogy_reasoner.py:33 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analytical_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analytical_reasoner.py:16 analyze()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analytical_reasoner.py:39 compare()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/analytical_reasoner.py:51 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:14 add_premise()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:18 add_observation()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:22 add_inference()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:26 add_evidence()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:30 set_conclusion()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:36 build()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_builder.py:39 reset()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/chain_validator.py:15 validate()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/counterfactual_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/counterfactual_reasoner.py:16 what_if()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/counterfactual_reasoner.py:31 compare_paths()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/counterfactual_reasoner.py:42 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/creative_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/creative_reasoner.py:16 brainstorm()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/creative_reasoner.py:32 lateral_thinking()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/creative_reasoner.py:45 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/decision_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/decision_reasoner.py:16 decide()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/decision_reasoner.py:44 tradeoff_analysis()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/decision_reasoner.py:57 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:13 add()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:20 get_sorted()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:23 get_top()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:26 filter_by_source()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:29 aggregate_confidence()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:36 count()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/evidence_collector.py:39 clear()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/logical_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/logical_reasoner.py:16 deductive()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/logical_reasoner.py:33 inductive()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/logical_reasoner.py:47 abductive()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/logical_reasoner.py:61 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/meta_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/meta_reasoner.py:16 evaluate_strategy()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/meta_reasoner.py:32 suggest_improvement()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/meta_reasoner.py:45 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:34 to_dict()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:53 step_count()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:56 add_step()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:59 to_dict()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/models.py:77 to_dict()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/planning_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/planning_reasoner.py:16 decompose()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/planning_reasoner.py:32 schedule()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/planning_reasoner.py:44 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:18 get()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:26 set()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:32 invalidate()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:35 clear()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:41 hit_rate()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_cache.py:45 stats()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_config.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_config.py:21 to_dict()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py:14 set()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py:17 get()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py:20 log_step()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py:23 get_steps()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_context.py:26 clear()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_enforcer.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_enforcer.py:18 enforce()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_ensemble.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_ensemble.py:15 ensemble()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_ensemble.py:30 voting()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py:17 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py:21 subscribe()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py:24 unsubscribe()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py:28 publish()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py:37 get_log()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_events.py:42 clear()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_fallback.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_fallback.py:15 attempt_fallback()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_fallback.py:27 get_log()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_health.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_health.py:15 check()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_health.py:18 is_healthy()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_health.py:21 get_unhealthy()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_health.py:24 overall_health()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:17 store()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:28 recall_by_type()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:32 recall_successful()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:36 recall_recent()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:40 success_rate()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:45 count()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_memory.py:48 clear()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:19 record()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:26 record_verification()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:31 avg_confidence()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:35 avg_latency_ms()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:39 verification_rate()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:42 reset()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_metrics.py:45 to_dict()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:16 increment()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:19 alert()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:22 get_alerts()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:27 get_counter()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:30 status()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_monitor.py:35 reset()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_optimizer.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_optimizer.py:15 optimize()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_optimizer.py:26 prune_duplicates()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_optimizer.py:37 get_optimizations()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py:27 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py:44 start()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py:49 stop()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py:54 reason()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py:81 get_health()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_orchestrator.py:84 get_stats()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_pipeline.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_pipeline.py:14 add_stage()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_pipeline.py:18 execute()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_pipeline.py:31 stage_count()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_pipeline.py:34 clear()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_profiler.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_profiler.py:14 record()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_profiler.py:19 get_avg()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_profiler.py:23 summary()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_profiler.py:29 clear()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:13 register()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:16 unregister()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:19 get()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:22 list_components()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:25 count()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_registry.py:28 to_dict()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_report.py:11 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_report.py:14 generate()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_report.py:26 get_reports()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_router.py:21 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_router.py:24 route()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_router.py:29 register_route()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_router.py:32 get_all_routes()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:22 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:27 schedule()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:37 get_next()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:44 complete()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:53 queue_size()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reasoning_scheduler.py:56 get_queue()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py:17 reflect_on_decision()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py:37 reflect_on_reasoning()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py:52 get_decisions()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py:55 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/strategic_reasoner.py:13 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/strategic_reasoner.py:16 plan()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/strategic_reasoner.py:34 risk_assessment()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/strategic_reasoner.py:47 get_history()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:12 __init__()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:15 verify()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:33 cross_check()
+- layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:42 get_history()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:21 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:26 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:39 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:44 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:20 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:25 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:38 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:43 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:19 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:24 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:37 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:42 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:20 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:25 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:38 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:43 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:19 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:24 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:37 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:42 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py:21 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py:26 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py:39 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py:44 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py:21 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py:26 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py:39 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py:44 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:20 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:25 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:38 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:43 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:22 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:27 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:40 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:45 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:22 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:27 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:40 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:45 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:12 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:22 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:32 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:35 create_test()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:41 select_provider()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:47 record_result()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:53 evaluate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:63 get_test()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:66 get_all_tests()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:15 start_session()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:20 record()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:31 end_session()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:34 get_session()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:37 get_global_stats()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:40 get_provider_stats()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_analytics.py:49 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:13 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:24 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:35 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:54 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:63 name()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:67 supported_models()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:71 is_initialized()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:75 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:80 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:85 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:90 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:94 validate_model()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:97 get_model_info()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:100 get_stats()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_base.py:104 reset_metrics()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:11 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:18 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:26 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:30 create_job()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:35 process()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:49 get_job()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:52 get_all_jobs()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_batch.py:55 clear()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:17 _make_key()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:20 get()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:31 set()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:38 invalidate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:46 get_stats()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cache.py:52 clear()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_config.py:13 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_config.py:26 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_config.py:30 from_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_context.py:16 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_context.py:27 add_trace()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_context.py:30 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:25 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:30 set_budget()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:33 record()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:45 _calculate_cost()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:51 get_cost()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:54 get_total_cost()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:57 get_remaining_budget()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:60 is_over_budget()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:63 get_breakdown()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_cost.py:66 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:13 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:25 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:28 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:43 batch_generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:47 similarity()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_embed.py:57 get_cache_stats()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:11 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:17 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:25 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:29 subscribe()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:34 unsubscribe()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:38 publish()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:47 get_history()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_events.py:55 clear()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_factory.py:13 register()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_factory.py:17 create()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_factory.py:24 get_supported()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_factory.py:28 clear()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_factory.py:32 has_provider()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:16 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:24 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:28 add_chain()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:33 get_next_provider()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:39 advance()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:46 reset()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:51 record_failure()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:55 get_failures()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:58 get_chain()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fallback.py:61 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:15 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:24 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:32 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:35 create_job()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:41 get_job()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:44 list_jobs()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:50 cancel_job()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_fine_tune.py:57 get_stats()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:13 check()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:29 get()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:32 is_healthy()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:35 get_all()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:38 get_failure_rate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_health.py:43 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:21 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:26 set_limits()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:36 check()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:48 record()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:54 get_usage()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:59 reset()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_limits.py:65 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_loader.py:11 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_loader.py:15 load_all()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_loader.py:22 load()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_loader.py:30 get_loaded()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_loader.py:33 unload()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:14 log()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:22 info()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:25 warning()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:28 error()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:31 debug()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:34 get_entries()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:43 clear()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_logger.py:46 get_stats()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:13 record()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:29 get()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:32 get_all()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:35 get_error_rate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:40 get_success_rate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:43 get_total_cost()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:46 reset()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:52 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:14 register()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:19 unregister()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:26 get()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:34 get_all()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:37 get_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:40 has_provider()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:43 add_alias()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:46 count()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:49 list_names()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:52 clear()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:56 get_by_capability()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:60 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:9 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:12 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:19 _build_summary()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:29 get_history()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:32 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:18 get_delay()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:22 should_retry()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:28 execute_with_retry()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:42 get_retry_count()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:45 reset()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:51 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:14 store_key()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:20 get_key()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:23 has_key()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:26 remove_key()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:32 validate_key_format()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:37 get_masked_key()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:43 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:16 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:24 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:27 on_chunk()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:30 create_stream()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:44 get_full_content()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py:9 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py:13 set_timeout()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py:16 get_timeout()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py:19 set_default()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py:22 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py:10 validate_request()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py:22 is_valid_request()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py:25 validate_config()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py:34 validate_model()
+- layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:14 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:20 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:25 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:38 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:43 is_available()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:31 __init__()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:61 __init__()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:74 add_key()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:79 generate()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:143 chat()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:205 _max_key_attempts()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:215 _remember()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:220 _real_api_call()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:299 _real_chat_call()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:362 _simulated_response()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:377 count_tokens()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:381 list_models()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:384 get_stats()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:396 get_history()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:49 __init__()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:80 is_available()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:98 record_success()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:122 record_error()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:150 set_cooldown()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:154 reset_daily()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:164 to_dict()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:189 __init__()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:197 register_key()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:211 unregister_key()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:219 set_strategy()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:225 select_key_with_id()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:246 select_key()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:270 key_id_for_secret()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:278 select_healthiest_key()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:290 report_success()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:300 report_error()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:310 force_cooldown()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:317 reset_daily()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:322 get_key_health()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:326 get_all_health()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:329 get_healthy_keys()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:332 get_stats()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:350 list_keys()
+- layers/layer12_ai_foundation/modules/model_router/key_manager.py:353 get_history()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:30 __init__()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:43 __init__()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:52 to_dict()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:66 __init__()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:74 supports()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:77 to_dict()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:84 __init__()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:93 register_provider()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:98 unregister_provider()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:106 set_routing()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:109 _provider_order()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:124 _select_provider()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:130 _record()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:144 _apply_result()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:164 route()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:204 generate_text()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:207 generate_chat()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:214 generate_image()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:217 generate_embedding()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:220 list_providers()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:223 get_stats()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:229 get_history()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:28 __init__()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:38 render()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:44 to_dict()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:58 __init__()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:63 add_template()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:66 build()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:116 build_text()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:123 record_outcome()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:130 get_best_style()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:142 list_templates()
+- layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:145 get_stats()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:13 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:17 calculate()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:45 is_confident()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:48 _calibrate()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:53 _agreement_score()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:61 _std_dev()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/confidence_engine.py:68 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:15 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:19 find_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:39 _majority_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:69 _weighted_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:92 _best_match_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:127 _normalize()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:134 _similarity()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/consensus_engine.py:143 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ensemble_ai.py:17 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ensemble_ai.py:26 ensemble()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ensemble_ai.py:57 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:26 is_success()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:29 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:47 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:60 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/models.py:75 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:11 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:18 _make_key()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:22 get()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:31 set()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:39 invalidate()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:46 clear()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:52 hit_rate()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_cache.py:56 stats()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_config.py:10 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_config.py:31 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:12 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:20 set()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:23 get()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:26 add_response()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:29 set_result()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:32 record_stage()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:35 get_stages()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:38 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_context.py:42 clear()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py:17 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py:21 subscribe()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py:24 unsubscribe()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py:30 publish()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py:39 get_log()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_events.py:44 clear_log()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_executor.py:13 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_executor.py:18 execute()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_executor.py:58 execution_count()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_fallback.py:12 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_fallback.py:16 attempt_fallback()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_fallback.py:44 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:11 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:15 check_model()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:24 get_model_health()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:27 is_model_healthy()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:33 get_healthy_models()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:36 get_unhealthy_models()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:39 overall_health()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_health.py:51 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:11 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:15 store()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:29 recall()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:36 get_best_model_for_type()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:45 count()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:48 clear()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_memory.py:51 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:11 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:22 record_request()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:40 success_rate()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:44 avg_latency_ms()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:48 avg_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:51 reset()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_metrics.py:54 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:11 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:16 increment()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:19 alert()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:22 get_alerts()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:27 get_counter()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:30 get_all_counters()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:33 status()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:41 reset()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:12 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:15 optimize_model_selection()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:38 optimize_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:58 reduce_cost()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:61 get_log()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:21 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:25 get()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:28 set()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:31 check()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:51 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py:11 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py:15 start()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py:18 stop()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py:24 get_profile()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py:29 summary()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_profiler.py:39 clear()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:10 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:14 _load_defaults()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:29 register()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:35 unregister()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:38 get()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:41 list_models()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:44 get_by_capability()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_registry.py:48 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_report.py:11 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_report.py:14 generate()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_report.py:41 get_reports()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_report.py:44 export_json()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_request.py:12 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_request.py:22 set()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_request.py:25 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py:13 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py:22 add_response()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py:25 set_best()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py:29 successful_count()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py:33 failed_count()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_response.py:36 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_router.py:19 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_router.py:22 route()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_router.py:30 register_route()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_router.py:33 unregister_route()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_router.py:39 get_all_routes()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:22 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:27 schedule()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:36 get_next()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:43 complete()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:52 cancel()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:60 queue_size()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_scheduler.py:63 get_queue()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_strategy.py:18 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_strategy.py:23 set()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_strategy.py:26 get()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_strategy.py:29 to_dict()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_strategy.py:36 available_strategies()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_validator.py:12 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_validator.py:18 validate_request()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_validator.py:28 validate_responses()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_validator.py:39 validate_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_validator.py:43 validate_confidence()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_generation.py:13 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_generation.py:17 generate()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_generation.py:43 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_reasoning.py:13 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_reasoning.py:17 reason()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_reasoning.py:43 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_review.py:13 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_review.py:17 review()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/parallel_review.py:43 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ranking_engine.py:17 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ranking_engine.py:21 rank()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ranking_engine.py:46 get_top()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ranking_engine.py:51 _score_criterion()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/ranking_engine.py:73 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py:12 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py:16 merge()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py:37 _weighted_merge()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py:58 _concatenate_merge()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py:68 _best_pick_merge()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/reasoning_merger.py:73 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/response_selector.py:14 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/response_selector.py:18 select()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/response_selector.py:40 get_history()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:14 __init__()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:19 vote()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:36 _plurality_vote()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:52 _ranked_choice_vote()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:62 _borda_count_vote()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:76 _weighted_vote()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/voting_engine.py:92 get_history()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:12 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:16 generate_prompt()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:30 analyze_steps()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:46 _basic_cot()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:50 _structured_cot()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:59 _tree_cot()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:66 _reflexion_cot()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:73 _self_consistency_cot()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/cot_engine.py:78 get_history()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:16 set_context()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:19 get_context()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:22 add_feedback()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:29 add_rule()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:33 adapt()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:40 _evaluate_condition()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:51 get_recent_feedback()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/dynamic_prompt.py:54 clear()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:12 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:16 add()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:19 remove()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:24 get_for_prompt()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:35 get_by_category()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:38 count()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:41 clear()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:45 _calculate_relevance()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/fewshot_manager.py:53 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py:23 render()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py:29 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py:48 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/models.py:65 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_analyzer.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_analyzer.py:14 analyze()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_analyzer.py:45 compare()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:10 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:15 set_system()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:19 add_instruction()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:23 add_context()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:27 add_constraint()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:31 add_example()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:35 add_input()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:39 set_variable()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:43 build()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_builder.py:50 reset()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:18 get()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:26 set()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:32 invalidate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:35 clear()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:41 hit_rate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_cache.py:45 stats()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_config.py:10 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_config.py:26 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:10 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:14 set()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:17 get()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:20 push()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:23 pop()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:27 merge()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:30 keys()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_context.py:33 clear()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py:17 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py:21 subscribe()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py:24 unsubscribe()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py:28 publish()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py:37 get_log()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_events.py:42 clear()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_health.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_health.py:15 check()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_health.py:19 is_healthy()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_health.py:22 get_unhealthy()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_health.py:25 overall_health()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:12 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:16 _load_defaults()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:32 add()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:35 get()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:38 remove()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:41 list_templates()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:44 search()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:52 count()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_library.py:55 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:16 store_success()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:28 store_failure()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:40 recall_successful()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:43 recall_failures()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:47 success_rate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:51 count()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:54 clear()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_memory.py:58 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:19 record_prompt()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:25 record_optimization()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:28 record_error()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:32 avg_latency_ms()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:36 error_rate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:39 reset()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_metrics.py:42 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:18 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:21 optimize()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:71 _apply_clarity()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:77 _apply_specificity()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:85 _apply_context()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:91 _apply_constraints()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:97 _apply_role()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:106 _apply_format()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:114 _apply_steps()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_optimizer.py:119 get_history()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_orchestrator.py:26 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_orchestrator.py:43 start()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_orchestrator.py:48 stop()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_orchestrator.py:53 generate_prompt()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_orchestrator.py:87 get_health()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_profiler.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_profiler.py:14 record()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_profiler.py:19 get_avg()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_profiler.py:23 summary()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_profiler.py:29 clear()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_ranker.py:10 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_ranker.py:13 rank()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_ranker.py:27 get_top()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_ranker.py:30 get_history()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_report.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_report.py:14 generate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_report.py:30 get_reports()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_similarity.py:11 cosine_similarity_tokens()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_similarity.py:20 jaccard_similarity()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_similarity.py:31 overlap_coefficient()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_similarity.py:38 find_most_similar()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_similarity.py:46 cluster()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_strategy.py:18 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_strategy.py:23 set()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_strategy.py:26 get()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_strategy.py:29 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_strategy.py:36 available()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_suggester.py:12 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_suggester.py:15 suggest()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_suggester.py:36 suggest_role()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:14 register()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:17 render()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:28 list_variables()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:32 validate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:38 get()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:41 remove()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:44 count()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_templates.py:47 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_validator.py:11 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_validator.py:17 validate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_validator.py:43 is_safe()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/prompt_validator.py:46 estimate_tokens()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/reflection_prompt.py:34 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/reflection_prompt.py:37 generate()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/reflection_prompt.py:46 register()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/reflection_prompt.py:49 list_templates()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/reflection_prompt.py:52 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py:21 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py:25 get_prompt()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py:31 register_role()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py:34 remove_role()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py:40 list_roles()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/system_prompt_manager.py:43 to_dict()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/zeroshot_manager.py:21 __init__()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/zeroshot_manager.py:24 generate_prompt()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/zeroshot_manager.py:34 register_task()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/zeroshot_manager.py:37 list_tasks()
+- layers/layer12_ai_foundation/modules/prompt_intelligence/zeroshot_manager.py:40 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:8 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:10 provider()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:12 model()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:14 temperature()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:16 max_tokens()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:18 budget()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:20 enable_cache()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:22 enable_streaming()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_builder.py:24 build()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:8 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:13 _make_key()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:17 get()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:27 set()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:34 clear()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:37 get_hit_rate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cache.py:41 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_config.py:11 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_config.py:24 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_config.py:28 from_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_context.py:10 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_context.py:19 add_message()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_context.py:22 get_messages()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_context.py:27 clear()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_context.py:32 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:8 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:14 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:19 record()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:28 get_daily_cost()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:32 get_monthly_cost()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:36 is_over_daily_budget()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:39 is_over_monthly_budget()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:42 get_remaining_daily()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:45 get_by_provider()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:51 get_by_model()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_cost_tracker.py:57 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_events.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_events.py:9 record()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_events.py:13 get_recent()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_events.py:15 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_factory.py:19 create()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_factory.py:23 create_multi_provider()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_factory.py:29 get_presets()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py:6 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py:9 set_chain()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py:12 get_next()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py:20 report_failure()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py:24 report_success()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_fallback.py:26 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:8 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:13 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:15 check()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:20 is_healthy()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:25 get_all()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:27 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:6 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:8 load()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:13 unload()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:16 is_loaded()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:18 get_loaded()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:20 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:24 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:39 start()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:43 stop()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:47 generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:86 generate_stream()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:90 chat()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:95 batch_generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:99 get_usage_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:102 get_cost_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:105 get_health()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:109 status()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:113 _simulate_response()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:8 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:14 is_expired()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:18 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:23 get()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:31 set()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:36 delete()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:38 clear()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:42 get_hit_rate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:45 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:16 record_request()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:29 get_avg_latency()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:34 get_error_rate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:39 get_tokens_per_request()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:44 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:52 reset()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_monitor.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_monitor.py:9 record()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_monitor.py:13 get_recent()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_monitor.py:15 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_optimizer.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_optimizer.py:9 record()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_optimizer.py:13 get_recent()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_optimizer.py:15 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_policy.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_policy.py:9 record()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_policy.py:13 get_recent()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_policy.py:15 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:13 is_available()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:17 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:19 register()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:24 acquire()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:30 release()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_pool.py:32 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_profiler.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_profiler.py:9 record()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_profiler.py:13 get_recent()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_profiler.py:15 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_rate_limit.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_rate_limit.py:13 check()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_rate_limit.py:26 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:8 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:12 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:16 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:18 register()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:28 get()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:30 get_by_provider()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:32 get_all()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_registry.py:34 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:12 add_insight()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:14 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:17 export_json()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:21 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:23 generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:28 get_recent()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_report.py:30 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_request.py:12 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_request.py:29 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_response.py:11 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_response.py:24 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_response.py:30 total_tokens()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_router.py:6 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_router.py:9 add_route()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_router.py:13 route()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_router.py:15 get_all_routes()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_router.py:17 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_selector.py:6 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_selector.py:9 select()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_selector.py:21 set_criteria()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_selector.py:24 get_stats()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_session.py:10 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_session.py:21 record_usage()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_session.py:26 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_stream.py:9 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_stream.py:16 add_chunk()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_stream.py:21 complete()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_stream.py:25 get_full_content()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_stream.py:28 to_dict()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_validator.py:7 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_validator.py:9 record()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_validator.py:13 get_recent()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_validator.py:15 get_stats()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

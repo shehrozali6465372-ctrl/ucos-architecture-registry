@@ -1,0 +1,307 @@
+# Layer 04 — Writing
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer04_writing
+
+## Source inventory
+- Python modules: **37**
+- Classes: **61**
+- Functions/methods: **191**
+
+## Python modules
+- layers/layer04_writing/__init__.py
+- layers/layer04_writing/modules/caption_engine/__init__.py
+- layers/layer04_writing/modules/caption_engine/caption_engine.py
+- layers/layer04_writing/modules/content_optimizer/__init__.py
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py
+- layers/layer04_writing/modules/content_planner/__init__.py
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py
+- layers/layer04_writing/modules/content_planner/constraint_manager.py
+- layers/layer04_writing/modules/content_planner/content_artifact.py
+- layers/layer04_writing/modules/content_planner/content_structure.py
+- layers/layer04_writing/modules/content_planner/exceptions.py
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py
+- layers/layer04_writing/modules/content_planner/plan_validator.py
+- layers/layer04_writing/modules/content_planner/planner_manager.py
+- layers/layer04_writing/modules/content_planner/platform_planner.py
+- layers/layer04_writing/modules/content_planner/tone_selector.py
+- layers/layer04_writing/modules/content_planner/writing_plan.py
+- layers/layer04_writing/modules/cta_engine/__init__.py
+- layers/layer04_writing/modules/cta_engine/cta_engine.py
+- layers/layer04_writing/modules/draft_generator/__init__.py
+- layers/layer04_writing/modules/draft_generator/draft_manager.py
+- layers/layer04_writing/modules/draft_generator/draft_memory.py
+- layers/layer04_writing/modules/draft_generator/draft_validator.py
+- layers/layer04_writing/modules/draft_generator/exceptions.py
+- layers/layer04_writing/modules/draft_generator/llm_provider.py
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py
+- layers/layer04_writing/modules/draft_generator/variant_generator.py
+- layers/layer04_writing/modules/hashtag_engine/__init__.py
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py
+- layers/layer04_writing/modules/hook_engine/__init__.py
+- layers/layer04_writing/modules/hook_engine/hook_engine.py
+- layers/layer04_writing/modules/tone_adapter/__init__.py
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py
+- layers/layer04_writing/modules/writing_memory/__init__.py
+- layers/layer04_writing/modules/writing_memory/writing_memory.py
+- layers/layer04_writing/modules/writing_orchestrator/__init__.py
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py
+
+## Classes
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:20 CaptionResult
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:43 CaptionEngine
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:16 OptimizationResult
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:44 ContentOptimizer
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:24 AudienceAnalysis
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:53 AudienceAnalyzer
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:6 WritingConstraint
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:27 ConstraintManager
+- layers/layer04_writing/modules/content_planner/content_artifact.py:9 ContentArtifact
+- layers/layer04_writing/modules/content_planner/content_structure.py:38 ContentStructure
+- layers/layer04_writing/modules/content_planner/content_structure.py:61 ContentStructureBuilder
+- layers/layer04_writing/modules/content_planner/exceptions.py:4 ContentPlannerError
+- layers/layer04_writing/modules/content_planner/exceptions.py:8 InvalidPlanError
+- layers/layer04_writing/modules/content_planner/exceptions.py:12 GoalConflictError
+- layers/layer04_writing/modules/content_planner/exceptions.py:16 PlatformConstraintError
+- layers/layer04_writing/modules/content_planner/exceptions.py:20 AudienceMismatchError
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:20 GoalAnalysis
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:46 GoalAnalyzer
+- layers/layer04_writing/modules/content_planner/plan_validator.py:20 ValidationResult
+- layers/layer04_writing/modules/content_planner/plan_validator.py:48 PlanValidator
+- layers/layer04_writing/modules/content_planner/planner_manager.py:16 PlannerResult
+- layers/layer04_writing/modules/content_planner/planner_manager.py:50 PlannerManager
+- layers/layer04_writing/modules/content_planner/platform_planner.py:60 PlatformConstraints
+- layers/layer04_writing/modules/content_planner/platform_planner.py:92 PlatformPlanner
+- layers/layer04_writing/modules/content_planner/tone_selector.py:20 ToneSelection
+- layers/layer04_writing/modules/content_planner/tone_selector.py:41 ToneSelector
+- layers/layer04_writing/modules/content_planner/writing_plan.py:7 WritingPlan
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:48 CTAResult
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:69 CTAGenerator
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:14 GeneratedDraft
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:50 DraftManagerResult
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:74 DraftManager
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:7 DraftRecord
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:36 DraftMemory
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:10 DraftValidationResult
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:36 DraftValidator
+- layers/layer04_writing/modules/draft_generator/exceptions.py:4 DraftGeneratorError
+- layers/layer04_writing/modules/draft_generator/exceptions.py:8 LLMProviderError
+- layers/layer04_writing/modules/draft_generator/exceptions.py:12 PromptBuildError
+- layers/layer04_writing/modules/draft_generator/exceptions.py:16 DraftValidationError
+- layers/layer04_writing/modules/draft_generator/exceptions.py:20 RateLimitError
+- layers/layer04_writing/modules/draft_generator/exceptions.py:24 ProviderNotConfiguredError
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:8 LLMResponse
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:31 BaseLLMProvider
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:76 MockLLMProvider
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:8 PromptSet
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:27 PromptBuilder
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:22 DraftVariant
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:45 VariantGenerator
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:22 HashtagResult
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:42 HashtagEngine
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:60 HookResult
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:81 HookEngine
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:29 ToneAdaptResult
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:50 ToneAdapter
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:7 BrandVoice
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:34 DraftRecord
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:60 WritingMemory
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:19 PlatformOutput
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:46 OrchestratorResult
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:73 WritingOrchestrator
+
+## Functions / methods
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:25 __init__()
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:33 to_dict()
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:46 __init__()
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:49 generate()
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:69 generate_multi_platform()
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:75 _apply_style()
+- layers/layer04_writing/modules/caption_engine/caption_engine.py:87 generation_count()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:21 __init__()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:31 to_dict()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:47 __init__()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:50 optimize()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:91 optimize_seo()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:102 _calculate_readability()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:112 _calculate_seo()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:120 optimization_count()
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:30 __init__()
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:40 to_dict()
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:56 __init__()
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:59 analyze()
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:89 _detect_audience()
+- layers/layer04_writing/modules/content_planner/audience_analyzer.py:121 analysis_count()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:10 __init__()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:18 to_dict()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:30 __init__()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:33 add()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:41 remove()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:44 get()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:47 check()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:73 get_all()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:76 count()
+- layers/layer04_writing/modules/content_planner/constraint_manager.py:79 clear()
+- layers/layer04_writing/modules/content_planner/content_artifact.py:24 validate()
+- layers/layer04_writing/modules/content_planner/content_artifact.py:29 variant()
+- layers/layer04_writing/modules/content_planner/content_structure.py:43 __init__()
+- layers/layer04_writing/modules/content_planner/content_structure.py:51 to_dict()
+- layers/layer04_writing/modules/content_planner/content_structure.py:72 __init__()
+- layers/layer04_writing/modules/content_planner/content_structure.py:75 build()
+- layers/layer04_writing/modules/content_planner/content_structure.py:90 get_available_templates()
+- layers/layer04_writing/modules/content_planner/content_structure.py:93 add_custom_template()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:25 __init__()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:34 to_dict()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:49 __init__()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:52 analyze()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:87 _detect_goal()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:116 _find_secondary()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:130 _build_direction()
+- layers/layer04_writing/modules/content_planner/goal_analyzer.py:134 goal_history()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:24 __init__()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:30 add_error()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:35 add_warning()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:39 to_dict()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:51 __init__()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:54 validate()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:117 add_rule()
+- layers/layer04_writing/modules/content_planner/plan_validator.py:121 quick_check()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:22 __init__()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:35 to_dict()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:61 __init__()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:80 create_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:152 update_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:167 validate_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:171 export_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:175 import_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:179 get_history()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:184 plan_count()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:66 __init__()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:78 to_dict()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:95 __init__()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:98 get_constraints()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:104 recommend()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:128 validate_length()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:140 supported_platforms()
+- layers/layer04_writing/modules/content_planner/tone_selector.py:24 __init__()
+- layers/layer04_writing/modules/content_planner/tone_selector.py:31 to_dict()
+- layers/layer04_writing/modules/content_planner/tone_selector.py:52 __init__()
+- layers/layer04_writing/modules/content_planner/tone_selector.py:55 select()
+- layers/layer04_writing/modules/content_planner/tone_selector.py:97 get_profile()
+- layers/layer04_writing/modules/content_planner/tone_selector.py:102 available_tones()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:21 __init__()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:42 to_dict()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:66 from_dict()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:81 is_valid()
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:52 __init__()
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:59 to_dict()
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:72 __init__()
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:75 generate()
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:94 generate_batch()
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:106 append_to_content()
+- layers/layer04_writing/modules/cta_engine/cta_engine.py:111 generation_count()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:20 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:35 to_dict()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:55 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:63 to_dict()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:81 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:96 generate()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:147 generate_variants()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:194 get_history()
+- layers/layer04_writing/modules/draft_generator/draft_manager.py:201 draft_count()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:12 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:24 to_dict()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:39 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:44 store()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:61 get_by_topic()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:65 get_by_plan()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:68 get_recent()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:72 count()
+- layers/layer04_writing/modules/draft_generator/draft_memory.py:76 total_tokens()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:15 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:24 to_dict()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:39 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:42 validate()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:106 _find_repeated_words()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:116 _detect_profanity()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:123 check_count()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:13 __init__()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:21 to_dict()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:34 __init__()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:47 generate()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:53 is_configured()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:57 generate_batch()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:61 _record_call()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:67 stats()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:79 __init__()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:85 generate()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:101 is_configured()
+- layers/layer04_writing/modules/draft_generator/llm_provider.py:104 set_responses()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:12 __init__()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:18 to_dict()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:64 __init__()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:67 build()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:86 build_variant()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:99 _build_system_prompt()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:124 _build_user_prompt()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:152 _estimate_tokens()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:156 _temperature_for_goal()
+- layers/layer04_writing/modules/draft_generator/prompt_builder.py:162 prompt_count()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:27 __init__()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:36 to_dict()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:48 __init__()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:52 generate_variants()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:70 score_variants()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:88 generation_count()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:26 __init__()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:33 to_dict()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:45 __init__()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:48 generate()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:74 generate_seo()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:84 _extract_from_text()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:88 _extract_keywords()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:98 generation_count()
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:64 __init__()
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:71 to_dict()
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:84 __init__()
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:87 generate()
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:116 generate_batch()
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:124 _select_type()
+- layers/layer04_writing/modules/hook_engine/hook_engine.py:132 generation_count()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:33 __init__()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:40 to_dict()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:53 __init__()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:56 adapt()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:84 adapt_to_multi_platform()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:89 get_platform_default()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:92 get_tone_profile()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:95 _make_professional()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:102 _make_punchy()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:108 _make_playful()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:111 _make_enthusiastic()
+- layers/layer04_writing/modules/tone_adapter/tone_adapter.py:115 adaptation_count()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:12 __init__()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:22 to_dict()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:39 __init__()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:50 to_dict()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:63 __init__()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:69 set_voice()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:82 get_voice()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:85 store_draft()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:100 get_by_platform()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:104 get_history()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:109 get_recent()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:112 check_consistency()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:124 count()
+- layers/layer04_writing/modules/writing_memory/writing_memory.py:128 voice_count()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:24 __init__()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:34 to_dict()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:51 __init__()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:61 to_dict()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:81 __init__()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:93 run()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:165 get_history()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:171 run_count()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

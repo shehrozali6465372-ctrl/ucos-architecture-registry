@@ -1,0 +1,234 @@
+# Layer 18 — Monitoring
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer18_monitoring
+
+## Source inventory
+- Python modules: **27**
+- Classes: **32**
+- Functions/methods: **157**
+
+## Python modules
+- layers/layer18_monitoring/__init__.py
+- layers/layer18_monitoring/modules/alert_manager/__init__.py
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py
+- layers/layer18_monitoring/modules/dashboard_backend/__init__.py
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py
+- layers/layer18_monitoring/modules/error_tracker/__init__.py
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py
+- layers/layer18_monitoring/modules/health_monitor/__init__.py
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py
+- layers/layer18_monitoring/modules/metrics_engine/__init__.py
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py
+- layers/layer18_monitoring/modules/monitoring_engine/__init__.py
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py
+- layers/layer18_monitoring/modules/performance_analyzer/__init__.py
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py
+- layers/layer18_monitoring/modules/profiler/__init__.py
+- layers/layer18_monitoring/modules/profiler/profiler.py
+- layers/layer18_monitoring/modules/resource_monitor/__init__.py
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py
+- layers/layer18_monitoring/modules/tracer/__init__.py
+- layers/layer18_monitoring/modules/tracer/tracer.py
+- layers/layer18_monitoring/modules/usage_analytics/__init__.py
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py
+
+## Classes
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:9 AlertSeverity
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:13 AlertState
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:17 AlertRule
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:34 Alert
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:54 AlertManager
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:7 DashboardPanel
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:24 DashboardBackend
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:9 ErrorSeverity
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:13 ErrorEntry
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:37 ErrorTracker
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:9 HealthLevel
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:13 HealthCheck
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:29 HealthMonitor
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:10 MetricType
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:14 MetricPoint
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:27 MetricsEngine
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:17 APILatencyTracker
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:18 ErrorTracker
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:16 HealthDashboard
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:21 MonitoringManager
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:19 SystemMonitor
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:7 PerformanceSnapshot
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:35 PerformanceAnalyzer
+- layers/layer18_monitoring/modules/profiler/profiler.py:9 ProfileEntry
+- layers/layer18_monitoring/modules/profiler/profiler.py:40 Profiler
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:8 ResourceSnapshot
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:31 ResourceMonitor
+- layers/layer18_monitoring/modules/tracer/tracer.py:9 SpanStatus
+- layers/layer18_monitoring/modules/tracer/tracer.py:13 Span
+- layers/layer18_monitoring/modules/tracer/tracer.py:52 Tracer
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:9 UsageEvent
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:30 UsageAnalytics
+
+## Functions / methods
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:21 __init__()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:38 __init__()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:48 to_dict()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:55 __init__()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:60 add_rule()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:66 evaluate()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:84 resolve_alert()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:92 list_alerts()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:98 list_rules()
+- layers/layer18_monitoring/modules/alert_manager/alert_manager.py:102 stats()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:11 __init__()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:19 to_dict()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:25 __init__()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:29 add_panel()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:34 update_panel_data()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:41 get_panel()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:49 list_panels()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:52 get_dashboard()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:56 snapshot()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:61 get_snapshots()
+- layers/layer18_monitoring/modules/dashboard_backend/dashboard_backend.py:64 remove_panel()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:17 __init__()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:30 to_dict()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:38 __init__()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:42 track()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:54 get_error()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:60 list_errors()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:66 get_top_errors()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:70 clear()
+- layers/layer18_monitoring/modules/error_tracker/error_tracker.py:75 stats()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:17 __init__()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:30 __init__()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:35 register()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:42 unregister()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:49 check()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:81 check_all()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:91 get_unhealthy()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:95 list_checks()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:98 get_history()
+- layers/layer18_monitoring/modules/health_monitor/health_monitor.py:103 count()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:17 __init__()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:28 __init__()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:35 increment()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:41 decrement()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:44 gauge_set()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:50 histogram_observe()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:56 get_counter()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:60 get_gauge()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:64 get_histogram()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:78 _make_key()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:84 summary()
+- layers/layer18_monitoring/modules/metrics_engine/metrics_engine.py:89 reset()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:20 __init__()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:32 record()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:66 get_endpoint_stats()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:79 get_all_stats()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:86 get_slow_endpoints()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:96 get_throughput()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:112 get_error_rate()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:130 _compute_stats()
+- layers/layer18_monitoring/modules/monitoring_engine/api_latency_tracker.py:153 stats()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:21 __init__()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:32 record()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:88 get_recent()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:101 get_top_errors()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:109 get_errors_by_module()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:120 get_errors_by_type()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:131 get_error_rate()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:144 get_trend()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:160 clear()
+- layers/layer18_monitoring/modules/monitoring_engine/error_tracker.py:167 stats()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:19 __init__()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:30 update_component()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:49 get_component_health()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:53 get_overall_health()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:99 get_health_history()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:104 get_unhealthy_components()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:112 get_score_trend()
+- layers/layer18_monitoring/modules/monitoring_engine/health_dashboard.py:135 stats()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:177 get_monitoring()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:24 __init__()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:34 initialize()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:48 _setup_default_alerts()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:69 _update_health_from_system()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:90 record_api_request()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:95 record_error()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:100 evaluate_alerts()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:116 run_health_check()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:143 get_monitoring_status()
+- layers/layer18_monitoring/modules/monitoring_engine/monitoring_manager.py:168 close()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:22 __init__()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:44 snapshot()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:83 _get_cpu_percent()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:96 _get_memory_info()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:121 _get_disk_info()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:137 _get_load_average()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:146 _check_thresholds()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:176 get_current()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:182 get_trend()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:219 detect_anomalies()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:255 set_threshold()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:259 get_history()
+- layers/layer18_monitoring/modules/monitoring_engine/system_monitor.py:268 stats()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:10 __init__()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:17 _calculate_score()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:22 _calculate_grade()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:30 to_dict()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:36 __init__()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:40 set_threshold()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:43 analyze()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:48 get_latest()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:51 get_history()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:54 check_violations()
+- layers/layer18_monitoring/modules/performance_analyzer/performance_analyzer.py:67 summary()
+- layers/layer18_monitoring/modules/profiler/profiler.py:13 __init__()
+- layers/layer18_monitoring/modules/profiler/profiler.py:22 record()
+- layers/layer18_monitoring/modules/profiler/profiler.py:31 to_dict()
+- layers/layer18_monitoring/modules/profiler/profiler.py:41 __init__()
+- layers/layer18_monitoring/modules/profiler/profiler.py:45 start()
+- layers/layer18_monitoring/modules/profiler/profiler.py:48 stop()
+- layers/layer18_monitoring/modules/profiler/profiler.py:56 record_error()
+- layers/layer18_monitoring/modules/profiler/profiler.py:61 profile()
+- layers/layer18_monitoring/modules/profiler/profiler.py:75 get_profile()
+- layers/layer18_monitoring/modules/profiler/profiler.py:78 list_profiles()
+- layers/layer18_monitoring/modules/profiler/profiler.py:81 summary()
+- layers/layer18_monitoring/modules/profiler/profiler.py:87 reset()
+- layers/layer18_monitoring/modules/profiler/profiler.py:63 wrapper()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:13 __init__()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:25 to_dict()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:32 __init__()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:37 collect()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:58 get_latest()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:61 check_alerts()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:74 set_threshold()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:77 get_history()
+- layers/layer18_monitoring/modules/resource_monitor/resource_monitor.py:80 summary()
+- layers/layer18_monitoring/modules/tracer/tracer.py:18 __init__()
+- layers/layer18_monitoring/modules/tracer/tracer.py:33 duration_ms()
+- layers/layer18_monitoring/modules/tracer/tracer.py:38 finish()
+- layers/layer18_monitoring/modules/tracer/tracer.py:42 log()
+- layers/layer18_monitoring/modules/tracer/tracer.py:45 to_dict()
+- layers/layer18_monitoring/modules/tracer/tracer.py:53 __init__()
+- layers/layer18_monitoring/modules/tracer/tracer.py:57 start_trace()
+- layers/layer18_monitoring/modules/tracer/tracer.py:64 start_span()
+- layers/layer18_monitoring/modules/tracer/tracer.py:71 finish_span()
+- layers/layer18_monitoring/modules/tracer/tracer.py:78 get_trace()
+- layers/layer18_monitoring/modules/tracer/tracer.py:82 list_traces()
+- layers/layer18_monitoring/modules/tracer/tracer.py:85 stats()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:13 __init__()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:24 to_dict()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:31 __init__()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:36 track()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:45 get_counts()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:50 get_user_activity()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:53 get_top_users()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:57 list_events()
+- layers/layer18_monitoring/modules/usage_analytics/usage_analytics.py:64 summary()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

@@ -1,0 +1,585 @@
+# Layer 06 — Quality
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer06_quality
+
+## Source inventory
+- Python modules: **75**
+- Classes: **118**
+- Functions/methods: **374**
+
+## Python modules
+- layers/layer06_quality/__init__.py
+- layers/layer06_quality/modules/brand_voice_engine/__init__.py
+- layers/layer06_quality/modules/brand_voice_engine/brand_profile.py
+- layers/layer06_quality/modules/brand_voice_engine/brand_voice_engine.py
+- layers/layer06_quality/modules/brand_voice_engine/exceptions.py
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py
+- layers/layer06_quality/modules/brand_voice_engine/tone_checker.py
+- layers/layer06_quality/modules/brand_voice_engine/vocabulary_checker.py
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py
+- layers/layer06_quality/modules/content_quality_analyzer/__init__.py
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py
+- layers/layer06_quality/modules/fact_citation_validator/__init__.py
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py
+- layers/layer06_quality/modules/fact_citation_validator/exceptions.py
+- layers/layer06_quality/modules/fact_citation_validator/fact_validator.py
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py
+- layers/layer06_quality/modules/human_review_engine/__init__.py
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py
+- layers/layer06_quality/modules/human_review_engine/exceptions.py
+- layers/layer06_quality/modules/human_review_engine/review_manager.py
+- layers/layer06_quality/modules/human_review_engine/review_models.py
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/__init__.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/exceptions.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/plagiarism_engine.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py
+- layers/layer06_quality/modules/platform_compliance_engine/__init__.py
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py
+- layers/layer06_quality/modules/platform_compliance_engine/content_policy_checker.py
+- layers/layer06_quality/modules/platform_compliance_engine/exceptions.py
+- layers/layer06_quality/modules/platform_compliance_engine/format_checker.py
+- layers/layer06_quality/modules/platform_compliance_engine/platform_rules.py
+- layers/layer06_quality/modules/quality_orchestrator/__init__.py
+- layers/layer06_quality/modules/quality_orchestrator/exceptions.py
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py
+- layers/layer06_quality/modules/quality_scoring_engine/__init__.py
+- layers/layer06_quality/modules/quality_scoring_engine/confidence_fusion.py
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py
+- layers/layer06_quality/modules/quality_scoring_engine/exceptions.py
+- layers/layer06_quality/modules/quality_scoring_engine/explainability_engine.py
+- layers/layer06_quality/modules/quality_scoring_engine/quality_engine.py
+- layers/layer06_quality/modules/quality_scoring_engine/quality_grader.py
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py
+- layers/layer06_quality/modules/safety_policy_checker/__init__.py
+- layers/layer06_quality/modules/safety_policy_checker/exceptions.py
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py
+- layers/layer06_quality/modules/safety_policy_checker/safety_engine.py
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py
+- layers/layer06_quality/modules/seo_discoverability_engine/__init__.py
+- layers/layer06_quality/modules/seo_discoverability_engine/exceptions.py
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_engine.py
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py
+
+## Classes
+- layers/layer06_quality/modules/brand_voice_engine/brand_profile.py:6 BrandProfile
+- layers/layer06_quality/modules/brand_voice_engine/brand_voice_engine.py:13 BrandVoiceEngine
+- layers/layer06_quality/modules/brand_voice_engine/exceptions.py:5 BrandVoiceError
+- layers/layer06_quality/modules/brand_voice_engine/exceptions.py:9 ProfileLoadError
+- layers/layer06_quality/modules/brand_voice_engine/exceptions.py:13 VoiceMismatchError
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:24 StyleAnalyzer
+- layers/layer06_quality/modules/brand_voice_engine/tone_checker.py:34 ToneChecker
+- layers/layer06_quality/modules/brand_voice_engine/vocabulary_checker.py:9 VocabularyChecker
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:6 VoiceIssue
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:39 VoiceComponentScore
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:69 VoiceReport
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py:9 ClarityResult
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py:37 ClarityAnalyzer
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py:6 EngagementScore
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py:44 EngagementScorer
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:20 GrammarIssue
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:40 GrammarChecker
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py:14 QualityReport
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py:48 ContentQualityAnalyzer
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py:6 ReadabilityResult
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py:36 ReadabilityAnalyzer
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py:6 StructureResult
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py:43 StructureAnalyzer
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:37 CitationCheck
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:62 CitationChecker
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:21 ParsedClaim
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:53 ClaimParser
+- layers/layer06_quality/modules/fact_citation_validator/exceptions.py:5 FactValidationError
+- layers/layer06_quality/modules/fact_citation_validator/exceptions.py:9 InvalidClaimError
+- layers/layer06_quality/modules/fact_citation_validator/exceptions.py:13 CitationFormatError
+- layers/layer06_quality/modules/fact_citation_validator/exceptions.py:17 ValidatorConfigError
+- layers/layer06_quality/modules/fact_citation_validator/fact_validator.py:23 FactValidator
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:32 NumericalAccuracyChecker
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:22 UnsupportedClaim
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:60 UnsupportedClaimDetector
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:6 ClaimValidation
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:50 CitationValidation
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:85 NumericalAccuracy
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:111 ValidationReport
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:15 RoutingDecision
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:46 ConfidenceRouter
+- layers/layer06_quality/modules/human_review_engine/exceptions.py:5 ReviewError
+- layers/layer06_quality/modules/human_review_engine/exceptions.py:9 ApprovalError
+- layers/layer06_quality/modules/human_review_engine/exceptions.py:13 WorkflowError
+- layers/layer06_quality/modules/human_review_engine/exceptions.py:17 AuditError
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:13 ReviewManager
+- layers/layer06_quality/modules/human_review_engine/review_models.py:11 ReviewComment
+- layers/layer06_quality/modules/human_review_engine/review_models.py:52 AuditEntry
+- layers/layer06_quality/modules/human_review_engine/review_models.py:86 ReviewRequest
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py:20 WorkflowManager
+- layers/layer06_quality/modules/plagiarism_originality_engine/exceptions.py:5 PlagiarismCheckError
+- layers/layer06_quality/modules/plagiarism_originality_engine/exceptions.py:9 OriginalityScoreError
+- layers/layer06_quality/modules/plagiarism_originality_engine/exceptions.py:13 SelfPlagiarismError
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:6 FlaggedSegment
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:47 SelfPlagiarismMatch
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:79 OriginalityReport
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:16 OriginalityScorer
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py:49 PhraseDetector
+- layers/layer06_quality/modules/plagiarism_originality_engine/plagiarism_engine.py:20 PlagiarismEngine
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:39 RewriteSuggestion
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:69 RewriteSuggester
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:22 SelfPlagiarismChecker
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:18 ComplianceEngine
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:6 RuleViolation
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:45 PlatformComplianceResult
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:89 ComplianceReport
+- layers/layer06_quality/modules/platform_compliance_engine/content_policy_checker.py:13 ContentPolicyChecker
+- layers/layer06_quality/modules/platform_compliance_engine/exceptions.py:5 ComplianceCheckError
+- layers/layer06_quality/modules/platform_compliance_engine/exceptions.py:9 PlatformConfigError
+- layers/layer06_quality/modules/platform_compliance_engine/exceptions.py:13 RuleViolationError
+- layers/layer06_quality/modules/platform_compliance_engine/format_checker.py:13 FormatChecker
+- layers/layer06_quality/modules/quality_orchestrator/exceptions.py:5 OrchestratorError
+- layers/layer06_quality/modules/quality_orchestrator/exceptions.py:9 ModuleExecutionError
+- layers/layer06_quality/modules/quality_orchestrator/exceptions.py:13 PipelineError
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py:23 PipelineRunner
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:21 QualityOrchestrator
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:6 ModuleExecutionRecord
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:33 QualityReport
+- layers/layer06_quality/modules/quality_scoring_engine/confidence_fusion.py:8 ConfidenceFusion
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:22 DecisionResult
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:42 DecisionEngine
+- layers/layer06_quality/modules/quality_scoring_engine/exceptions.py:5 ScoringError
+- layers/layer06_quality/modules/quality_scoring_engine/exceptions.py:9 InsufficientDataError
+- layers/layer06_quality/modules/quality_scoring_engine/explainability_engine.py:8 ExplainabilityEngine
+- layers/layer06_quality/modules/quality_scoring_engine/quality_engine.py:21 QualityEngine
+- layers/layer06_quality/modules/quality_scoring_engine/quality_grader.py:14 QualityGrader
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:11 ModuleScore
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:42 ExplanationItem
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:57 QualityResult
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:8 RiskLevel
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:28 RiskAnalyzer
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:20 ScoreAggregator
+- layers/layer06_quality/modules/safety_policy_checker/exceptions.py:5 SafetyCheckError
+- layers/layer06_quality/modules/safety_policy_checker/exceptions.py:9 PolicyViolationError
+- layers/layer06_quality/modules/safety_policy_checker/exceptions.py:13 HarmfulContentError
+- layers/layer06_quality/modules/safety_policy_checker/exceptions.py:17 SafetyConfigError
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:70 HarmfulContentDetector
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:118 PlatformPolicyChecker
+- layers/layer06_quality/modules/safety_policy_checker/safety_engine.py:16 SafetyEngine
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:6 SafetyFlag
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:42 PolicyCheckResult
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:81 CopyrightResult
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:104 SafetyReport
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:48 SpamDetector
+- layers/layer06_quality/modules/seo_discoverability_engine/exceptions.py:5 SEOCheckError
+- layers/layer06_quality/modules/seo_discoverability_engine/exceptions.py:9 KeywordAnalysisError
+- layers/layer06_quality/modules/seo_discoverability_engine/exceptions.py:13 MetadataError
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:29 HashtagOptimizer
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:27 KeywordAnalyzer
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py:23 MetadataChecker
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_engine.py:17 SEOEngine
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:6 SEOIssue
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:36 KeywordResult
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:68 HashtagResult
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:95 MetadataResult
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:122 PlatformDiscoverability
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:155 SEODiscoverabilityReport
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:56 SocialSearchOptimizer
+
+## Functions / methods
+- layers/layer06_quality/modules/brand_voice_engine/brand_profile.py:94 create_default_profile()
+- layers/layer06_quality/modules/brand_voice_engine/brand_profile.py:20 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/brand_profile.py:43 to_dict()
+- layers/layer06_quality/modules/brand_voice_engine/brand_profile.py:69 from_dict()
+- layers/layer06_quality/modules/brand_voice_engine/brand_voice_engine.py:16 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/brand_voice_engine.py:27 check()
+- layers/layer06_quality/modules/brand_voice_engine/brand_voice_engine.py:59 check_quick()
+- layers/layer06_quality/modules/brand_voice_engine/brand_voice_engine.py:70 check_batch()
+- layers/layer06_quality/modules/brand_voice_engine/brand_voice_engine.py:77 check_count()
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:27 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:30 check()
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:65 _check_emoji()
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:97 _check_hashtag_style()
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:128 _check_cta()
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:153 _check_sentence_length()
+- layers/layer06_quality/modules/brand_voice_engine/style_analyzer.py:181 check_count()
+- layers/layer06_quality/modules/brand_voice_engine/tone_checker.py:37 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/tone_checker.py:40 check()
+- layers/layer06_quality/modules/brand_voice_engine/tone_checker.py:95 _detect_tones()
+- layers/layer06_quality/modules/brand_voice_engine/tone_checker.py:104 check_count()
+- layers/layer06_quality/modules/brand_voice_engine/vocabulary_checker.py:12 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/vocabulary_checker.py:15 check()
+- layers/layer06_quality/modules/brand_voice_engine/vocabulary_checker.py:76 check_count()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:12 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:28 to_dict()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:44 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:50 compute_status()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:60 to_dict()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:77 __init__()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:85 compute_overall()
+- layers/layer06_quality/modules/brand_voice_engine/voice_report.py:105 to_dict()
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py:15 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py:25 to_dict()
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py:40 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py:43 analyze()
+- layers/layer06_quality/modules/content_quality_analyzer/clarity_analyzer.py:88 analysis_count()
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py:12 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py:23 to_dict()
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py:47 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py:50 score()
+- layers/layer06_quality/modules/content_quality_analyzer/engagement_scorer.py:104 score_count()
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:24 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:31 to_dict()
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:43 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:46 check()
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:60 check_batch()
+- layers/layer06_quality/modules/content_quality_analyzer/grammar_checker.py:65 check_count()
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py:20 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py:33 to_dict()
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py:57 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py:65 analyze()
+- layers/layer06_quality/modules/content_quality_analyzer/quality_analyzer.py:166 analysis_count()
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py:12 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py:23 to_dict()
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py:39 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py:42 analyze()
+- layers/layer06_quality/modules/content_quality_analyzer/readability_analyzer.py:84 analysis_count()
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py:12 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py:24 to_dict()
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py:46 __init__()
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py:49 analyze()
+- layers/layer06_quality/modules/content_quality_analyzer/structure_analyzer.py:106 analysis_count()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:43 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:51 to_dict()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:65 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:68 check_inline_citation()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:97 check_batch()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:101 check_content_citations()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:131 _validate_format()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:139 _extract_source()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:151 _assess_reliability()
+- layers/layer06_quality/modules/fact_citation_validator/citation_checker.py:169 check_count()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:29 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:43 to_dict()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:56 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:67 parse()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:84 parse_statistical()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:88 _find_citation_context()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:104 get_claims_without_citations()
+- layers/layer06_quality/modules/fact_citation_validator/claim_parser.py:111 parse_count()
+- layers/layer06_quality/modules/fact_citation_validator/fact_validator.py:26 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/fact_validator.py:39 validate()
+- layers/layer06_quality/modules/fact_citation_validator/fact_validator.py:93 validate_batch()
+- layers/layer06_quality/modules/fact_citation_validator/fact_validator.py:101 validate_quick()
+- layers/layer06_quality/modules/fact_citation_validator/fact_validator.py:115 validate_count()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:35 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:38 check()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:50 check_batch()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:54 _check_percentages()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:72 _check_currency()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:101 _check_years()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:119 _check_large_numbers()
+- layers/layer06_quality/modules/fact_citation_validator/numerical_accuracy_checker.py:148 check_count()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:30 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:48 to_dict()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:63 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:68 detect()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:105 detect_batch()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:111 get_high_severity()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:117 _is_hedged()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:122 _determine_severity()
+- layers/layer06_quality/modules/fact_citation_validator/unsupported_claim_detector.py:137 detection_count()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:17 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:37 to_dict()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:58 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:74 to_dict()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:90 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:102 to_dict()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:120 __init__()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:129 add_claim()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:132 add_citation()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:135 add_numerical()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:138 compute_overall()
+- layers/layer06_quality/modules/fact_citation_validator/validation_report.py:188 to_dict()
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:21 __init__()
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:35 to_dict()
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:49 __init__()
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:52 route()
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:86 route_batch()
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:90 get_auto_approvable()
+- layers/layer06_quality/modules/human_review_engine/confidence_router.py:95 route_count()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:16 __init__()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:27 create_request()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:56 submit_for_review()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:63 approve()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:81 reject()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:88 schedule()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:95 publish()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:102 add_comment()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:125 get_request()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:128 get_by_stage()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:131 get_pending_review()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:134 get_statistics()
+- layers/layer06_quality/modules/human_review_engine/review_manager.py:146 check_count()
+- layers/layer06_quality/modules/human_review_engine/review_models.py:18 __init__()
+- layers/layer06_quality/modules/human_review_engine/review_models.py:38 to_dict()
+- layers/layer06_quality/modules/human_review_engine/review_models.py:58 __init__()
+- layers/layer06_quality/modules/human_review_engine/review_models.py:74 to_dict()
+- layers/layer06_quality/modules/human_review_engine/review_models.py:97 __init__()
+- layers/layer06_quality/modules/human_review_engine/review_models.py:120 to_dict()
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py:23 __init__()
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py:26 can_transition()
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py:31 transition()
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py:54 get_valid_transitions()
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py:58 get_stage_history()
+- layers/layer06_quality/modules/human_review_engine/workflow_manager.py:66 transition_count()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:14 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:34 to_dict()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:55 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:69 to_dict()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:88 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:97 compute_overall()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_report.py:125 to_dict()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:19 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:22 score()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:33 get_overall_score()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:52 _vocabulary_diversity()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:61 _sentence_variety()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:75 _unique_ideas_density()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:86 _phrase_uniqueness()
+- layers/layer06_quality/modules/plagiarism_originality_engine/originality_scorer.py:102 _structural_variety()
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py:52 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py:63 detect_exact_repeats()
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py:97 detect_cliches()
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py:119 detect_ngram_duplicates()
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py:147 _split_sentences()
+- layers/layer06_quality/modules/plagiarism_originality_engine/phrase_detector.py:151 check_count()
+- layers/layer06_quality/modules/plagiarism_originality_engine/plagiarism_engine.py:23 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/plagiarism_engine.py:36 check()
+- layers/layer06_quality/modules/plagiarism_originality_engine/plagiarism_engine.py:87 check_quick()
+- layers/layer06_quality/modules/plagiarism_originality_engine/plagiarism_engine.py:98 check_batch()
+- layers/layer06_quality/modules/plagiarism_originality_engine/plagiarism_engine.py:103 check_count()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:45 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:59 to_dict()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:72 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:75 suggest_for_segments()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:85 suggest_for_cliches()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:108 suggest_vocabulary_enhancement()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:132 _generate_suggestion()
+- layers/layer06_quality/modules/plagiarism_originality_engine/rewrite_suggester.py:161 suggest_count()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:25 __init__()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:30 add_published()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:37 check()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:65 check_batch()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:69 get_high_similarity()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:73 clear_history()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:78 history_size()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:81 _extract_words()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:86 _jaccard_similarity()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:94 _check_sentences()
+- layers/layer06_quality/modules/plagiarism_originality_engine/self_plagiarism_checker.py:119 check_count()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:21 __init__()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:30 check()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:58 check_batch()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:75 check_quick()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:86 get_fixable_violations()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:90 _count_rules()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_engine.py:116 check_count()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:12 __init__()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:32 to_dict()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:53 __init__()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:61 add_violation()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:72 compute_score()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:77 to_dict()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:98 __init__()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:105 compute_overall()
+- layers/layer06_quality/modules/platform_compliance_engine/compliance_report.py:129 to_dict()
+- layers/layer06_quality/modules/platform_compliance_engine/content_policy_checker.py:16 __init__()
+- layers/layer06_quality/modules/platform_compliance_engine/content_policy_checker.py:19 check()
+- layers/layer06_quality/modules/platform_compliance_engine/content_policy_checker.py:118 check_count()
+- layers/layer06_quality/modules/platform_compliance_engine/format_checker.py:16 __init__()
+- layers/layer06_quality/modules/platform_compliance_engine/format_checker.py:19 check()
+- layers/layer06_quality/modules/platform_compliance_engine/format_checker.py:93 check_count()
+- layers/layer06_quality/modules/platform_compliance_engine/platform_rules.py:170 get_rules()
+- layers/layer06_quality/modules/platform_compliance_engine/platform_rules.py:175 get_all_platforms()
+- layers/layer06_quality/modules/platform_compliance_engine/platform_rules.py:180 get_rules_version()
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py:26 __init__()
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py:30 run_module()
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py:62 run_pipeline()
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py:85 get_slowest_modules()
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py:89 get_failed_modules()
+- layers/layer06_quality/modules/quality_orchestrator/pipeline_runner.py:94 execution_count()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:24 __init__()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:34 run()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:116 run_quick()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:130 get_history()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:133 get_latest()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:136 get_average_score()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:141 get_statistics()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:154 _records_to_scores()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:170 _create_simulated_records()
+- layers/layer06_quality/modules/quality_orchestrator/quality_orchestrator.py:259 orchestration_count()
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:12 __init__()
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:21 to_dict()
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:43 __init__()
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:59 is_publishable()
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:63 get_publish_readiness_label()
+- layers/layer06_quality/modules/quality_orchestrator/quality_report.py:74 to_dict()
+- layers/layer06_quality/modules/quality_scoring_engine/confidence_fusion.py:11 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/confidence_fusion.py:14 fuse()
+- layers/layer06_quality/modules/quality_scoring_engine/confidence_fusion.py:50 fuse_with_context()
+- layers/layer06_quality/modules/quality_scoring_engine/confidence_fusion.py:67 fuse_count()
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:27 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:33 to_dict()
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:45 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:48 decide()
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:94 _check_hard_stops()
+- layers/layer06_quality/modules/quality_scoring_engine/decision_engine.py:104 decision_count()
+- layers/layer06_quality/modules/quality_scoring_engine/explainability_engine.py:11 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/explainability_engine.py:14 explain()
+- layers/layer06_quality/modules/quality_scoring_engine/explainability_engine.py:68 format_summary()
+- layers/layer06_quality/modules/quality_scoring_engine/explainability_engine.py:84 explain_count()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_engine.py:24 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_engine.py:41 score()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_engine.py:96 score_quick()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_engine.py:107 format_summary()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_engine.py:115 check_count()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_grader.py:17 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_grader.py:20 grade()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_grader.py:27 grade_description()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_grader.py:44 is_passing()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_grader.py:49 is_publish_ready()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:17 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:31 to_dict()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:47 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:53 to_dict()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:66 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:77 get_module_score()
+- layers/layer06_quality/modules/quality_scoring_engine/quality_result.py:83 to_dict()
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:13 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:19 to_dict()
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:31 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:34 analyze()
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:106 _get_score()
+- layers/layer06_quality/modules/quality_scoring_engine/risk_analyzer.py:113 analyze_count()
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:23 __init__()
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:27 aggregate()
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:47 aggregate_confidence()
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:61 get_missing_modules()
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:66 set_weight()
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:70 get_weights()
+- layers/layer06_quality/modules/quality_scoring_engine/score_aggregator.py:73 _normalize_weights()
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:73 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:77 detect()
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:105 detect_category()
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:110 has_critical_issues()
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:114 _calculate_confidence()
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:130 _classify_severity()
+- layers/layer06_quality/modules/safety_policy_checker/harmful_content_detector.py:141 check_count()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:121 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:124 check()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:147 check_batch()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:153 check_all_platforms()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:157 get_compliant_platforms()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:161 _check_length()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:172 _check_hashtags()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:195 _check_mentions()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:218 _check_caps()
+- layers/layer06_quality/modules/safety_policy_checker/platform_policy_checker.py:233 check_count()
+- layers/layer06_quality/modules/safety_policy_checker/safety_engine.py:19 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/safety_engine.py:30 check()
+- layers/layer06_quality/modules/safety_policy_checker/safety_engine.py:69 check_quick()
+- layers/layer06_quality/modules/safety_policy_checker/safety_engine.py:81 check_batch()
+- layers/layer06_quality/modules/safety_policy_checker/safety_engine.py:88 check_count()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:12 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:30 to_dict()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:47 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:59 add_flag()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:70 to_dict()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:87 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:94 to_dict()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:113 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:123 add_flag()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:126 compute_overall()
+- layers/layer06_quality/modules/safety_policy_checker/safety_report.py:162 to_dict()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:51 __init__()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:55 detect()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:68 _check_clickbait()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:83 _check_spammy_phrases()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:98 _check_excessive_caps()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:116 _check_excessive_punctuation()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:138 _check_repetition()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:156 _check_urgency()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:169 _check_misleading()
+- layers/layer06_quality/modules/safety_policy_checker/spam_detector.py:183 check_count()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:32 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:35 analyze()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:48 suggest_hashtags()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:59 optimize()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:75 _extract_hashtags()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:79 _compute_relevance()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:93 _compute_diversity()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:104 _find_issues()
+- layers/layer06_quality/modules/seo_discoverability_engine/hashtag_optimizer.py:144 check_count()
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:34 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:37 analyze()
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:72 extract_keywords()
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:82 check_keyword_stuffing()
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:91 _compute_placement_score()
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:106 _find_issues()
+- layers/layer06_quality/modules/seo_discoverability_engine/keyword_analyzer.py:150 check_count()
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py:31 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py:34 check_title()
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py:64 check_description()
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py:90 check_alt_text()
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py:100 full_check()
+- layers/layer06_quality/modules/seo_discoverability_engine/metadata_checker.py:151 check_count()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_engine.py:20 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_engine.py:33 check()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_engine.py:79 check_quick()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_engine.py:91 check_multi_platform()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_engine.py:116 check_count()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:12 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:26 to_dict()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:45 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:55 to_dict()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:76 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:84 to_dict()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:103 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:111 to_dict()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:128 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:135 compute_level()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:145 to_dict()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:164 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:173 compute_overall()
+- layers/layer06_quality/modules/seo_discoverability_engine/seo_report.py:197 to_dict()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:59 __init__()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:62 optimize()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:98 optimize_all()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:105 get_best_platforms()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:109 _run_check()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:140 _check_length()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:151 _check_keyword_in_content()
+- layers/layer06_quality/modules/seo_discoverability_engine/social_search_optimizer.py:164 check_count()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

@@ -1,0 +1,785 @@
+# Layer 14 — Enterprise Integration
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer14_enterprise_integration
+
+## Source inventory
+- Python modules: **84**
+- Classes: **103**
+- Functions/methods: **580**
+
+## Python modules
+- layers/layer14_enterprise_integration/__init__.py
+- layers/layer14_enterprise_integration/modules/api_gateway/__init__.py
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py
+- layers/layer14_enterprise_integration/modules/async_wiring/__init__.py
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py
+- layers/layer14_enterprise_integration/modules/backup_wiring/__init__.py
+- layers/layer14_enterprise_integration/modules/backup_wiring/backup_system.py
+- layers/layer14_enterprise_integration/modules/command_bus/__init__.py
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py
+- layers/layer14_enterprise_integration/modules/config/__init__.py
+- layers/layer14_enterprise_integration/modules/config/config_loader.py
+- layers/layer14_enterprise_integration/modules/config/config_validator.py
+- layers/layer14_enterprise_integration/modules/context_sync/__init__.py
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py
+- layers/layer14_enterprise_integration/modules/db_adapters/__init__.py
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py
+- layers/layer14_enterprise_integration/modules/dependency_graph/__init__.py
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py
+- layers/layer14_enterprise_integration/modules/di_container/__init__.py
+- layers/layer14_enterprise_integration/modules/di_container/di_builder.py
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py
+- layers/layer14_enterprise_integration/modules/documentation/__init__.py
+- layers/layer14_enterprise_integration/modules/documentation/doc_generator.py
+- layers/layer14_enterprise_integration/modules/event_bridge/__init__.py
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py
+- layers/layer14_enterprise_integration/modules/event_bus/__init__.py
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py
+- layers/layer14_enterprise_integration/modules/execution_context/__init__.py
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py
+- layers/layer14_enterprise_integration/modules/health_check/__init__.py
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py
+- layers/layer14_enterprise_integration/modules/health_manager/__init__.py
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py
+- layers/layer14_enterprise_integration/modules/integration/__init__.py
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py
+- layers/layer14_enterprise_integration/modules/integration_kernel/__init__.py
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py
+- layers/layer14_enterprise_integration/modules/layer_registry/__init__.py
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/__init__.py
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py
+- layers/layer14_enterprise_integration/modules/logging/__init__.py
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py
+- layers/layer14_enterprise_integration/modules/master_orchestrator/__init__.py
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py
+- layers/layer14_enterprise_integration/modules/memory_bridge/__init__.py
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py
+- layers/layer14_enterprise_integration/modules/metrics/__init__.py
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py
+- layers/layer14_enterprise_integration/modules/pipeline_engine/__init__.py
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py
+- layers/layer14_enterprise_integration/modules/production/__init__.py
+- layers/layer14_enterprise_integration/modules/production/docker_config.py
+- layers/layer14_enterprise_integration/modules/production_certification/__init__.py
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py
+- layers/layer14_enterprise_integration/modules/query_bus/__init__.py
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py
+- layers/layer14_enterprise_integration/modules/real_integrations/__init__.py
+- layers/layer14_enterprise_integration/modules/real_integrations/config.py
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py
+- layers/layer14_enterprise_integration/modules/response_router/__init__.py
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py
+- layers/layer14_enterprise_integration/modules/security/__init__.py
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py
+- layers/layer14_enterprise_integration/modules/service_locator/__init__.py
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py
+- layers/layer14_enterprise_integration/modules/shared_state/__init__.py
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py
+- layers/layer14_enterprise_integration/modules/system_verifier/__init__.py
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py
+- layers/layer14_enterprise_integration/modules/transaction_manager/__init__.py
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py
+- layers/layer14_enterprise_integration/modules/workflow_engine/__init__.py
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py
+
+## Classes
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:8 APIResponse
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:19 APIGateway
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:68 Handler
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py:7 AsyncBridge
+- layers/layer14_enterprise_integration/modules/backup_wiring/backup_system.py:8 BackupSystem
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:8 Command
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:26 CommandResult
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:41 CommandBus
+- layers/layer14_enterprise_integration/modules/config/config_loader.py:7 ConfigLoader
+- layers/layer14_enterprise_integration/modules/config/config_validator.py:5 ConfigValidator
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:8 SyncBarrier
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:28 ContextSync
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:6 DBAdapterInterface
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:25 InMemoryDBAdapter
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:7 DependencyNode
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:21 DependencyGraph
+- layers/layer14_enterprise_integration/modules/di_container/di_builder.py:6 DIBuilder
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:7 DIContainer
+- layers/layer14_enterprise_integration/modules/documentation/doc_generator.py:7 DocGenerator
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:8 Event
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:25 EventSubscription
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:37 EventBridge
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:6 EventBusIntegration
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:8 ExecutionContext
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py:7 HealthStatus
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py:10 HealthSystem
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:8 HealthLevel
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:12 HealthCheck
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:31 HealthManager
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:6 IntegrationTest
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:11 IntegrationSuite
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:36 IntegrationFramework
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:9 KernelState
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:18 IntegrationKernel
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:8 LayerStatus
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:16 LayerInfo
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:40 LayerRegistry
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:8 ComponentState
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:13 LifecycleComponent
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:35 LifecycleManager
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py:6 LogManager
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:9 LogLevel
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:14 StructuredLogger
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:13 ControlPlane
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:21 IntegrationOrchestrator
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:19 PipelinePersistence
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:20 ContentRequest
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:39 PipelineStepResult
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:54 ContentResponse
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:90 PipelineLogger
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:99 PipelineWiring
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:18 ProductionPipeline
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:8 MemoryEntry
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:32 MemoryBridge
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:6 MetricsSystem
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:8 StageStatus
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:12 PipelineMode
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:16 PipelineStage
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:35 Pipeline
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:61 PipelineEngine
+- layers/layer14_enterprise_integration/modules/production/docker_config.py:5 DockerConfig
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:26 LiveTest
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:56 LiveProof
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:27 CertStatus
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:35 CertResult
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:49 ProductionCertifier
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:28 TestEvidence
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:54 LayerCertification
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:82 ProofVerifier
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:28 LevelResult
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:49 LayerReport
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:77 ProveAll
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:8 Query
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:24 QueryResult
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:39 QueryBus
+- layers/layer14_enterprise_integration/modules/real_integrations/config.py:11 IntegrationConfig
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:13 IntegrationGateway
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:14 IntegrationError
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:18 IntegrationConfigurationError
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:23 HTTPResponse
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:29 HTTPClient
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:22 LineageEvent
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:41 LineageStore
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:7 ResponseEnvelope
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:23 ResponseRouter
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:7 RateLimiter
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:28 InputSanitizer
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:42 APIKeyManager
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:68 SecurityMiddleware
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:7 ServiceDescriptor
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:23 ServiceLocator
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:8 SharedState
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:9 LayerStatus
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:17 LayerResult
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:27 SystemVerifier
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:9 TxStatus
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:15 Transaction
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:33 TransactionManager
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:8 StepStatus
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:13 WorkflowStatus
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:18 WorkflowStep
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:41 Workflow
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:65 WorkflowEngine
+
+## Functions / methods
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:10 __init__()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:13 to_json()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:23 __init__()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:27 _register_routes()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:29 _requires_auth()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:31 _authorized()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:38 _aios_authorized()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:66 start()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:101 stop()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:103 is_running()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:104 _handle_status()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:106 _handle_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:116 _handle_heartbeat()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:119 _handle_aios_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:135 _account_id()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:138 _require_account()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:144 _handle_analytics()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:152 _handle_history()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:162 _handle_stats()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:167 _handle_accounts()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:174 _handle_account_create()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:186 _handle_generate()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:194 _handle_templates()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:203 _handle_tiktok_reconcile()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:210 _handle_atoz_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:219 _handle_meta_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:228 _handle_meta_discover()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:235 _handle_platforms()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:69 do_GET()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:78 do_POST()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:93 _send()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:97 log_message()
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py:8 __init__()
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py:12 execute_sync()
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py:21 execute_parallel()
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py:29 run_async()
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py:40 shutdown()
+- layers/layer14_enterprise_integration/modules/async_wiring/async_bridge.py:43 stats()
+- layers/layer14_enterprise_integration/modules/backup_wiring/backup_system.py:9 __init__()
+- layers/layer14_enterprise_integration/modules/backup_wiring/backup_system.py:13 create_backup()
+- layers/layer14_enterprise_integration/modules/backup_wiring/backup_system.py:23 restore()
+- layers/layer14_enterprise_integration/modules/backup_wiring/backup_system.py:28 list_backups()
+- layers/layer14_enterprise_integration/modules/backup_wiring/backup_system.py:32 delete_backup()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:11 __init__()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:20 to_dict()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:29 __init__()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:36 to_dict()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:42 __init__()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:46 register()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:51 unregister()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:60 dispatch()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:82 get_history()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:85 list_commands()
+- layers/layer14_enterprise_integration/modules/command_bus/command_bus.py:88 clear_history()
+- layers/layer14_enterprise_integration/modules/config/config_loader.py:8 __init__()
+- layers/layer14_enterprise_integration/modules/config/config_loader.py:11 from_env()
+- layers/layer14_enterprise_integration/modules/config/config_loader.py:27 from_file()
+- layers/layer14_enterprise_integration/modules/config/config_loader.py:34 merge()
+- layers/layer14_enterprise_integration/modules/config/config_validator.py:18 __init__()
+- layers/layer14_enterprise_integration/modules/config/config_validator.py:21 validate()
+- layers/layer14_enterprise_integration/modules/config/config_validator.py:31 validate_all()
+- layers/layer14_enterprise_integration/modules/config/config_validator.py:39 get_errors()
+- layers/layer14_enterprise_integration/modules/config/config_validator.py:42 clear()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:11 __init__()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:18 wait()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:29 __init__()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:35 create_context()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:39 get()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:43 set()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:52 merge()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:58 snapshot()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:61 restore()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:64 create_barrier()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:69 wait_barrier()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:75 delete_context()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:82 list_contexts()
+- layers/layer14_enterprise_integration/modules/context_sync/context_sync.py:85 get_history()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:8 connect()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:10 disconnect()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:12 store()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:14 retrieve()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:16 search()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:18 update()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:20 delete()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:22 health()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:27 __init__()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:31 connect()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:32 disconnect()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:34 store()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:40 retrieve()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:43 search()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:52 update()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:57 delete()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:62 health()
+- layers/layer14_enterprise_integration/modules/db_adapters/adapter_interface.py:67 count()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:10 __init__()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:16 to_dict()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:22 __init__()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:25 add_node()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:30 remove_node()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:43 add_dependency()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:49 get_dependencies()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:53 get_all_dependencies()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:65 topological_sort()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:83 has_cycle()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:86 get_roots()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:89 get_leaves()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:92 get_node()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:95 list_nodes()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:98 count()
+- layers/layer14_enterprise_integration/modules/dependency_graph/dependency_graph.py:101 validate()
+- layers/layer14_enterprise_integration/modules/di_container/di_builder.py:7 __init__()
+- layers/layer14_enterprise_integration/modules/di_container/di_builder.py:11 register_layer()
+- layers/layer14_enterprise_integration/modules/di_container/di_builder.py:19 resolve_chain()
+- layers/layer14_enterprise_integration/modules/di_container/di_builder.py:34 verify_all()
+- layers/layer14_enterprise_integration/modules/di_container/di_builder.py:23 dfs()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:10 __new__()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:18 register()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:21 register_factory()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:24 register_singleton()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:27 get()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:38 has()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:41 list_services()
+- layers/layer14_enterprise_integration/modules/di_container/di_container.py:48 clear()
+- layers/layer14_enterprise_integration/modules/documentation/doc_generator.py:8 __init__()
+- layers/layer14_enterprise_integration/modules/documentation/doc_generator.py:12 generate_layer_docs()
+- layers/layer14_enterprise_integration/modules/documentation/doc_generator.py:29 generate_all()
+- layers/layer14_enterprise_integration/modules/documentation/doc_generator.py:37 api_docs()
+- layers/layer14_enterprise_integration/modules/documentation/doc_generator.py:53 get_generated()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:11 __init__()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:20 to_dict()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:28 __init__()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:38 __init__()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:44 subscribe()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:57 unsubscribe()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:64 publish()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:81 emit()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:86 list_subscriptions()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:97 get_history()
+- layers/layer14_enterprise_integration/modules/event_bridge/event_bridge.py:102 clear_history()
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:7 __init__()
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:12 register_layer_bus()
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:15 publish_global()
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:29 subscribe_global()
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:32 get_log()
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:39 count()
+- layers/layer14_enterprise_integration/modules/event_bus/event_bus_integration.py:42 clear()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:9 __init__()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:18 set()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:24 get()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:27 has()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:30 delete()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:37 clear()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:41 update()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:45 keys()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:48 values()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:51 items()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:54 add_tag()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:58 has_tag()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:61 remove_tag()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:67 snapshot()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:71 restore()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:75 get_history()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:78 to_dict()
+- layers/layer14_enterprise_integration/modules/execution_context/execution_context.py:83 fork()
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py:11 __init__()
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py:15 register()
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py:20 check()
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py:33 check_all()
+- layers/layer14_enterprise_integration/modules/health_check/health_system.py:47 get_unhealthy()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:16 __init__()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:26 to_dict()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:32 __init__()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:36 register()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:42 unregister()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:48 check()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:66 check_all()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:80 get_unhealthy()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:84 list_checks()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:87 get_history()
+- layers/layer14_enterprise_integration/modules/health_manager/health_manager.py:92 count()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:7 __init__()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:12 __init__()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:15 add_test()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:19 run()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:37 __init__()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:40 create_suite()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:45 get_suite()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:48 run_all()
+- layers/layer14_enterprise_integration/modules/integration/integration_framework.py:58 list_suites()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:21 __init__()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:34 state()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:38 uptime()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:43 register_subsystem()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:47 get_subsystem()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:50 list_subsystems()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:53 add_hook()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:57 _fire_hooks()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:64 start()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:76 stop()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:87 status()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:97 get_errors()
+- layers/layer14_enterprise_integration/modules/integration_kernel/integration_kernel.py:100 clear_errors()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:20 __init__()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:30 to_dict()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:41 __init__()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:45 register()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:52 unregister()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:61 get()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:64 list_layers()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:67 register_service()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:75 get_service()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:83 get_layer_for_service()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:86 set_status()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:93 get_dependencies()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:97 get_dependents()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:100 count()
+- layers/layer14_enterprise_integration/modules/layer_registry/layer_registry.py:103 summary()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:17 __init__()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:30 to_dict()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:36 __init__()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:41 register()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:49 unregister()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:56 start_component()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:73 stop_component()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:90 start_all()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:97 stop_all()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:104 health_check()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:115 status()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:121 get_component()
+- layers/layer14_enterprise_integration/modules/lifecycle_manager/lifecycle_manager.py:124 get_history()
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py:9 __new__()
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py:15 get_logger()
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py:22 register()
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py:25 list_loggers()
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py:28 set_level()
+- layers/layer14_enterprise_integration/modules/logging/log_manager.py:33 count()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:15 __init__()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:20 _log_entry()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:34 debug()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:36 info()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:38 warning()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:40 error()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:42 critical()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:45 get_logs()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:54 count()
+- layers/layer14_enterprise_integration/modules/logging/structured_logger.py:57 clear()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:14 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:17 _account_learning_store()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:21 sync_meta_accounts()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:26 _learning_scores()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:41 execute()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:22 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:40 start()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:48 stop()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:55 health_check()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:58 system_status()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:66 full_report()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:22 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:26 save_content()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:40 save_analytics()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:50 save_learning()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:62 save_log()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:72 save_config()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:84 save_pipeline_run()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:146 get_content_history()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:158 get_analytics_summary()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:166 get_learning_history()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:172 get_db_stats()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_persistence.py:176 close()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:23 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:33 to_dict()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:42 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:49 to_dict()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:59 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:74 to_dict()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:91 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:94 log()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:102 __init__()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:109 _init_ai()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:147 _run_step()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:164 _research()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:196 _intelligence()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:206 _writing()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:214 _ai()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:240 _image()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:254 _quality()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:263 _publisher()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:277 _publish()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:312 _analytics()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:323 _learning()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:343 execute()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:377 _persist()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:527 status()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:122 gemini_handler()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:21 _credentials()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:40 _publisher()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:53 _policy_check()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:70 _publish()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:11 __init__()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:21 is_expired()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:26 to_dict()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:33 __init__()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:38 _make_key()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:41 put()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:49 get()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:56 has()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:61 delete()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:71 list_keys()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:75 list_namespaces()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:78 clear_namespace()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:85 clear_all()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:91 cleanup_expired()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:98 count()
+- layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:103 get_history()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:7 __init__()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:13 increment()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:15 gauge()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:17 histogram()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:19 get_counter()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:21 get_gauge()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:23 histogram_stats()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:32 export_all()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:37 prometheus_format()
+- layers/layer14_enterprise_integration/modules/metrics/metrics_system.py:49 reset()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:20 __init__()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:30 to_dict()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:39 __init__()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:50 add_stage()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:54 to_dict()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:62 __init__()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:65 create_pipeline()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:71 add_stage()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:80 execute()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:105 get_pipeline()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:108 list_pipelines()
+- layers/layer14_enterprise_integration/modules/pipeline_engine/pipeline_engine.py:111 count()
+- layers/layer14_enterprise_integration/modules/production/docker_config.py:7 generate_dockerfile()
+- layers/layer14_enterprise_integration/modules/production/docker_config.py:18 generate_compose()
+- layers/layer14_enterprise_integration/modules/production/docker_config.py:32 generate_requirements()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:36 __post_init__()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:40 to_dict()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:59 __init__()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:65 run()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:80 _header()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:90 _test_facebook_publish()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:153 _test_gemini_generate()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:202 _test_gemini_chat()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:254 _test_database_persist()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:304 _test_pipeline_e2e()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:341 _test_analytics_record()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:364 _test_learning_store()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:387 _test_image_generate()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:428 _get_gemini_key()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:435 _print()
+- layers/layer14_enterprise_integration/modules/production_certification/live_proof.py:439 _final_report()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:44 _make_request()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:52 __init__()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:56 run_full_certification()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:73 _print_header()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:80 _test_pipeline_integrity()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:120 _test_load_performance()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:184 _test_chaos_resilience()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:234 _test_memory_leaks()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:278 _test_security_audit()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:352 _test_long_run_stability()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:395 _test_database_integrity()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:469 _test_error_recovery()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:505 _test_real_component_execution()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:538 _test_production_benchmark()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:591 _p()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:598 _generate_report()
+- layers/layer14_enterprise_integration/modules/production_certification/production_certifier.py:441 write_thread()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:36 __post_init__()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:40 to_dict()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:64 __post_init__()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:68 to_dict()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:85 __init__()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:91 run_full_verification()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:132 _print_header()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:141 _cert_layer01()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:176 _cert_layer02()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:213 _cert_layer03()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:240 _cert_layer04()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:267 _cert_layer05()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:296 _cert_layer06()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:321 _cert_layer07()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:343 _cert_layer08()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:365 _cert_layer09()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:389 _cert_layer10()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:410 _cert_layer11()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:432 _cert_layer12()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:459 _cert_layer13()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:479 _cert_layer14()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:499 _test_import_init()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:520 _test_memory_manager()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:543 _test_logger()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:564 _test_config_functional()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:585 _test_trend_add()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:606 _test_trend_failure()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:637 _test_semantic_analyze()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:658 _test_keyword_analyze()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:679 _test_planner_create_plan()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:700 _test_draft_functional()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:720 _test_infographic_generate()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:744 _test_quality_run()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:765 _test_quality_score_range()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:787 _test_quality_failure()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:807 _test_publisher_functional()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:827 _test_publisher_failure()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:857 _test_analytics_functional()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:877 _test_analytics_failure()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:897 _test_learning_functional()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:917 _test_async_runtime_functional()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:940 _test_async_parallel()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:967 _test_key_rotation()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:990 _test_gemini_no_simulated()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1012 _test_sqlite_operations()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1039 _test_concurrent_writes()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1068 _test_db_recovery()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1099 _test_pipeline_integrity()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1125 _test_pipeline_performance()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1151 _test_pipeline_stability()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1182 _generate_report()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:1045 writer()
+- layers/layer14_enterprise_integration/modules/production_certification/proof_verifier.py:947 slow_task()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:36 to_dict()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:59 __post_init__()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:63 to_dict()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:80 __init__()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:86 run()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:121 _header()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:128 _print_layer()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:136 _import_test()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:150 _safe_call()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:160 _prove_l01()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:286 _prove_l02()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:383 _prove_l03()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:478 _prove_l04()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:580 _prove_l05()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:682 _prove_l06()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:768 _prove_l07()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:837 _prove_l08()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:882 _prove_l09()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:935 _prove_l10()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:970 _prove_l11()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:1017 _prove_l12()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:1080 _prove_l13()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:1159 _prove_l14()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:1248 _final_report()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:1131 writer()
+- layers/layer14_enterprise_integration/modules/production_certification/prove_all.py:995 task()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:11 __init__()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:19 to_dict()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:27 __init__()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:34 to_dict()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:40 __init__()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:44 register()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:47 unregister()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:53 execute()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:72 list_queries()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:75 get_history()
+- layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:78 clear_history()
+- layers/layer14_enterprise_integration/modules/real_integrations/config.py:26 from_env()
+- layers/layer14_enterprise_integration/modules/real_integrations/config.py:43 _https()
+- layers/layer14_enterprise_integration/modules/real_integrations/config.py:46 validation()
+- layers/layer14_enterprise_integration/modules/real_integrations/config.py:58 status()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:16 __init__()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:28 status()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:31 search()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:68 affiliate_search()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:88 analytics_report()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:119 wordpress_publish()
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:32 __init__()
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:37 _validate_url()
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:49 _decode()
+- layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:58 request()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:37 to_dict()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:44 __init__()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:53 _execute()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:60 _query()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:65 _init_schema()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:85 _payload_hash()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:90 _event_id()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:94 record()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:143 get_lineage()
+- layers/layer14_enterprise_integration/modules/real_integrations/lineage.py:150 close()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:10 __init__()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:18 to_dict()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:24 __init__()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:28 add_route()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:31 remove_route()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:37 route()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:55 route_all()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:61 aggregate()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:67 list_routes()
+- layers/layer14_enterprise_integration/modules/response_router/response_router.py:70 get_history()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:8 __init__()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:12 allow()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:22 remaining()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:31 sanitize()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:43 __init__()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:46 register()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:53 validate()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:59 revoke()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:64 list_keys()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:69 __init__()
+- layers/layer14_enterprise_integration/modules/security/security_middleware.py:74 check_request()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:10 __init__()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:19 to_dict()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:24 __init__()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:27 register()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:33 unregister()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:39 resolve()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:43 has()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:46 list_services()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:49 find_by_layer()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:52 find_by_tag()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:55 count()
+- layers/layer14_enterprise_integration/modules/service_locator/service_locator.py:58 get_descriptor()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:9 __init__()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:15 get()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:19 set()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:31 has()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:35 delete()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:42 update()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:46 watch()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:52 unwatch()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:59 keys()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:63 items()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:67 clear()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:73 snapshot()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:77 restore()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:81 get_changelog()
+- layers/layer14_enterprise_integration/modules/shared_state/shared_state.py:84 count()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:340 run_verification()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:28 __init__()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:32 run_full_verification()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:55 _test_layer01_core()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:79 _test_layer02_research()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:107 _test_layer03_intelligence()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:128 _test_layer04_writing()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:148 _test_layer05_image()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:173 _test_layer06_quality()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:189 _test_layer07_publishing()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:201 _test_layer08_analytics()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:217 _test_layer09_learning()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:231 _test_layer10_monetization()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:244 _test_layer11_async()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:254 _test_layer12_ai_foundation()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:278 _test_layer13_persistence()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:293 _test_layer14_integration()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:305 _test_layer15_22_infrastructure()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:318 _p()
+- layers/layer14_enterprise_integration/modules/system_verifier/system_verifier.py:325 _generate_report()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:19 __init__()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:28 to_dict()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:34 __init__()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:38 begin()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:44 add_operation()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:54 commit()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:76 _rollback()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:83 rollback()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:94 get_transaction()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:97 list_transactions()
+- layers/layer14_enterprise_integration/modules/transaction_manager/transaction_manager.py:100 get_history()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:22 __init__()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:35 to_dict()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:45 __init__()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:56 add_step()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:59 to_dict()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:66 __init__()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:70 create_workflow()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:75 add_step()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:84 execute()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:124 pause()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:131 cancel()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:138 get_workflow()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:141 list_workflows()
+- layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:144 count()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

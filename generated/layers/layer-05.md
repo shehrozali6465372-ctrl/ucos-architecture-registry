@@ -1,0 +1,183 @@
+# Layer 05 — Image
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer05_image
+
+## Source inventory
+- Python modules: **30**
+- Classes: **32**
+- Functions/methods: **103**
+
+## Python modules
+- layers/layer05_image/__init__.py
+- layers/layer05_image/modules/accessibility_engine/__init__.py
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py
+- layers/layer05_image/modules/carousel_planner/__init__.py
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py
+- layers/layer05_image/modules/image_memory/__init__.py
+- layers/layer05_image/modules/image_memory/image_memory.py
+- layers/layer05_image/modules/image_optimizer/__init__.py
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py
+- layers/layer05_image/modules/image_orchestrator/__init__.py
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py
+- layers/layer05_image/modules/image_planner/__init__.py
+- layers/layer05_image/modules/image_planner/image_planner.py
+- layers/layer05_image/modules/image_prompt/__init__.py
+- layers/layer05_image/modules/image_prompt/image_prompt.py
+- layers/layer05_image/modules/image_provider/__init__.py
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py
+- layers/layer05_image/modules/image_provider/image_provider.py
+- layers/layer05_image/modules/infographic_engine/__init__.py
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py
+- layers/layer05_image/modules/infographic_generator/__init__.py
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py
+- layers/layer05_image/modules/layout_engine/__init__.py
+- layers/layer05_image/modules/layout_engine/layout_engine.py
+- layers/layer05_image/modules/prompt_evaluator/__init__.py
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py
+- layers/layer05_image/modules/thumbnail_engine/__init__.py
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py
+- layers/layer05_image/modules/visual_quality/__init__.py
+- layers/layer05_image/modules/visual_quality/visual_quality.py
+
+## Classes
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:6 AccessibilityResult
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:29 AccessibilityEngine
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:7 CarouselSlide
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:31 CarouselPlan
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:52 CarouselPlanner
+- layers/layer05_image/modules/image_memory/image_memory.py:7 BrandVisualProfile
+- layers/layer05_image/modules/image_memory/image_memory.py:31 ImageMemory
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py:16 OptimizationResult
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py:39 ImageOptimizer
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:17 ImageOrchestratorResult
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:46 ImageOrchestrator
+- layers/layer05_image/modules/image_planner/image_planner.py:32 ImagePlan
+- layers/layer05_image/modules/image_planner/image_planner.py:62 ImagePlanner
+- layers/layer05_image/modules/image_prompt/image_prompt.py:20 ImagePrompt
+- layers/layer05_image/modules/image_prompt/image_prompt.py:45 ImagePromptBuilder
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:26 GeminiImageProvider
+- layers/layer05_image/modules/image_provider/image_provider.py:7 ImageResponse
+- layers/layer05_image/modules/image_provider/image_provider.py:30 BaseImageProvider
+- layers/layer05_image/modules/image_provider/image_provider.py:58 MockImageProvider
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:10 InfographicPlan
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:36 InfographicEngine
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:13 InfographicItem
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:25 InfographicConfig
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:43 InfographicGenerator
+- layers/layer05_image/modules/layout_engine/layout_engine.py:17 LayoutSpec
+- layers/layer05_image/modules/layout_engine/layout_engine.py:39 LayoutEngine
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:6 PromptEvaluation
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:29 PromptEvaluator
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:7 ThumbnailPlan
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:33 ThumbnailEngine
+- layers/layer05_image/modules/visual_quality/visual_quality.py:6 QualityScore
+- layers/layer05_image/modules/visual_quality/visual_quality.py:31 VisualQualityScorer
+
+## Functions / methods
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:10 __init__()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:18 to_dict()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:30 __init__()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:33 generate_alt_text()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:41 check_contrast()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:48 check_text_density()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:58 validate()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:74 _relative_luminance()
+- layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:85 check_count()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:12 __init__()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:21 to_dict()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:35 __init__()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:42 to_dict()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:55 __init__()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:58 plan()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:91 plan_count()
+- layers/layer05_image/modules/image_memory/image_memory.py:12 __init__()
+- layers/layer05_image/modules/image_memory/image_memory.py:22 to_dict()
+- layers/layer05_image/modules/image_memory/image_memory.py:34 __init__()
+- layers/layer05_image/modules/image_memory/image_memory.py:38 set_profile()
+- layers/layer05_image/modules/image_memory/image_memory.py:47 get_profile()
+- layers/layer05_image/modules/image_memory/image_memory.py:50 store_image()
+- layers/layer05_image/modules/image_memory/image_memory.py:57 get_history()
+- layers/layer05_image/modules/image_memory/image_memory.py:63 profile_count()
+- layers/layer05_image/modules/image_memory/image_memory.py:67 history_count()
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py:21 __init__()
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py:29 to_dict()
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py:42 __init__()
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py:45 optimize()
+- layers/layer05_image/modules/image_optimizer/image_optimizer.py:65 optimization_count()
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:22 __init__()
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:33 to_dict()
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:52 __init__()
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:66 run()
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:109 run_multi_platform()
+- layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:114 run_count()
+- layers/layer05_image/modules/image_planner/image_planner.py:37 __init__()
+- layers/layer05_image/modules/image_planner/image_planner.py:49 to_dict()
+- layers/layer05_image/modules/image_planner/image_planner.py:65 __init__()
+- layers/layer05_image/modules/image_planner/image_planner.py:68 plan()
+- layers/layer05_image/modules/image_planner/image_planner.py:80 plan_multi_platform()
+- layers/layer05_image/modules/image_planner/image_planner.py:89 suggest_type()
+- layers/layer05_image/modules/image_planner/image_planner.py:102 plan_count()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:25 __init__()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:34 to_dict()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:48 __init__()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:51 build()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:82 build_batch()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:88 build_count()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:45 __init__()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:51 generate()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:107 generate_with_reference()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:114 generate_batch()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:125 _enhance_prompt()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:149 _real_generate()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:227 _get_api_key()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:233 _parse_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:241 is_configured()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:245 get_stats()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:255 get_history()
+- layers/layer05_image/modules/image_provider/image_provider.py:12 __init__()
+- layers/layer05_image/modules/image_provider/image_provider.py:21 to_dict()
+- layers/layer05_image/modules/image_provider/image_provider.py:33 __init__()
+- layers/layer05_image/modules/image_provider/image_provider.py:39 generate()
+- layers/layer05_image/modules/image_provider/image_provider.py:45 is_configured()
+- layers/layer05_image/modules/image_provider/image_provider.py:49 generate_batch()
+- layers/layer05_image/modules/image_provider/image_provider.py:54 stats()
+- layers/layer05_image/modules/image_provider/image_provider.py:61 __init__()
+- layers/layer05_image/modules/image_provider/image_provider.py:65 generate()
+- layers/layer05_image/modules/image_provider/image_provider.py:76 is_configured()
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:15 __init__()
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:25 to_dict()
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:39 __init__()
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:42 plan()
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:54 suggest_chart()
+- layers/layer05_image/modules/infographic_engine/infographic_engine.py:63 plan_count()
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:16 __init__()
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:30 __init__()
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:47 __init__()
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:51 generate()
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:111 generate_from_list()
+- layers/layer05_image/modules/infographic_generator/infographic_generator.py:124 _load_fonts()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:21 __init__()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:29 to_dict()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:42 __init__()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:45 get_layout()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:64 get_available_layouts()
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:10 __init__()
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:19 to_dict()
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:33 __init__()
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:36 evaluate()
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:61 _refine()
+- layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:70 eval_count()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:12 __init__()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:22 to_dict()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:36 __init__()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:39 plan()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:51 plan_count()
+- layers/layer05_image/modules/visual_quality/visual_quality.py:10 __init__()
+- layers/layer05_image/modules/visual_quality/visual_quality.py:19 to_dict()
+- layers/layer05_image/modules/visual_quality/visual_quality.py:34 __init__()
+- layers/layer05_image/modules/visual_quality/visual_quality.py:37 score()
+- layers/layer05_image/modules/visual_quality/visual_quality.py:88 score_count()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

@@ -1,0 +1,256 @@
+# Layer 15 — Async Runtime
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer15_async_runtime
+
+## Source inventory
+- Python modules: **31**
+- Classes: **42**
+- Functions/methods: **165**
+
+## Python modules
+- layers/layer15_async_runtime/__init__.py
+- layers/layer15_async_runtime/modules/async_event_loop/__init__.py
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py
+- layers/layer15_async_runtime/modules/async_scheduler/__init__.py
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py
+- layers/layer15_async_runtime/modules/background_jobs/__init__.py
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py
+- layers/layer15_async_runtime/modules/cancellation_engine/__init__.py
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py
+- layers/layer15_async_runtime/modules/coroutine_manager/__init__.py
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py
+- layers/layer15_async_runtime/modules/future_manager/__init__.py
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py
+- layers/layer15_async_runtime/modules/priority_queue/__init__.py
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py
+- layers/layer15_async_runtime/modules/promise_manager/__init__.py
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py
+- layers/layer15_async_runtime/modules/resource_pool/__init__.py
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py
+- layers/layer15_async_runtime/modules/retry_engine/__init__.py
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py
+- layers/layer15_async_runtime/modules/semaphore_manager/__init__.py
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py
+- layers/layer15_async_runtime/modules/task_queue/__init__.py
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py
+- layers/layer15_async_runtime/modules/thread_pool/__init__.py
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py
+- layers/layer15_async_runtime/modules/timeout_engine/__init__.py
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py
+- layers/layer15_async_runtime/modules/worker_pool/__init__.py
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py
+
+## Classes
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:10 LoopState
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:14 EventLoopInfo
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:34 AsyncEventLoop
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:10 TaskState
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:15 ScheduledTask
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:45 AsyncScheduler
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:10 JobState
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:15 BackgroundJob
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:44 BackgroundJobs
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:9 CancellationTokenState
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:13 CancellationToken
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:35 CancellationEngine
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:10 CoroutineState
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:15 ManagedCoroutine
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:41 CoroutineManager
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:9 FutureState
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:14 ManagedFuture
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:29 FutureManager
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:11 Priority
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:15 PriorityItem
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:30 PriorityQueue
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:8 PromiseState
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:12 Promise
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:55 PromiseManager
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:9 PooledResource
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:27 ResourcePool
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:9 RetryConfig
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:25 RetryResult
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:45 RetryEngine
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:8 ManagedSemaphore
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:28 SemaphoreManager
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:10 QueueState
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:14 QueueItem
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:35 TaskQueue
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:9 ThreadPoolTask
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:29 ThreadPool
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:10 TimeoutResult
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:14 TimeoutEntry
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:34 TimeoutEngine
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:10 WorkerState
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:14 Worker
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:34 WorkerPool
+
+## Functions / methods
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:18 __init__()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:28 to_dict()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:35 __init__()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:39 create_loop()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:45 set_active_loop()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:48 get_active_loop()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:51 run_coroutine()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:60 run_until_complete()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:66 stop_loop()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:74 list_loops()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:77 stats()
+- layers/layer15_async_runtime/modules/async_event_loop/async_event_loop.py:83 count()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:20 __init__()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:39 to_dict()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:46 __init__()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:54 _ensure_semaphore()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:59 schedule()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:69 execute_task()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:107 run_all()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:113 cancel()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:120 get_task()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:123 list_tasks()
+- layers/layer15_async_runtime/modules/async_scheduler/async_scheduler.py:126 stats()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:20 __init__()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:39 to_dict()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:45 __init__()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:50 add_job()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:57 remove_job()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:63 execute_job()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:84 cancel_job()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:91 run_all()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:95 get_job()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:98 list_jobs()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:101 get_history()
+- layers/layer15_async_runtime/modules/background_jobs/background_jobs.py:104 stats()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:16 __init__()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:24 is_cancelled()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:27 register_callback()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:30 to_dict()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:36 __init__()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:39 create_token()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:44 cancel()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:58 is_cancelled()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:62 get_token()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:65 list_tokens()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:68 cleanup()
+- layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py:75 count()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:20 __init__()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:36 to_dict()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:42 __init__()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:46 create()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:52 start()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:75 start_all()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:82 cancel()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:93 get()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:96 list_coroutines()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:99 count()
+- layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:102 get_history()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:17 __init__()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:24 to_dict()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:30 __init__()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:34 create_task()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:60 cancel_all()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:68 list_futures()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:71 stats()
+- layers/layer15_async_runtime/modules/future_manager/future_manager.py:40 wrapper()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:18 __init__()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:25 to_dict()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:31 __init__()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:36 push()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:43 pop()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:50 peek()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:55 remove()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:63 update_priority()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:73 size()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:76 is_empty()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:79 list_items()
+- layers/layer15_async_runtime/modules/priority_queue/priority_queue.py:82 stats()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:16 __init__()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:25 resolve()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:36 reject()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:47 handled()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:50 to_dict()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:56 __init__()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:59 create()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:64 get()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:67 resolve()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:74 reject()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:81 list_promises()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:86 stats()
+- layers/layer15_async_runtime/modules/promise_manager/promise_manager.py:93 clear_completed()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:13 __init__()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:22 to_dict()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:28 __init__()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:34 add_resource()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:40 initialize()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:45 acquire()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:60 release()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:69 size()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:72 available()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:75 in_use()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:78 list_resources()
+- layers/layer15_async_runtime/modules/resource_pool/resource_pool.py:81 stats()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:13 __init__()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:29 __init__()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:39 to_dict()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:46 __init__()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:49 _calculate_delay()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:56 execute_with_retry()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:81 execute_sync()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:103 get_history()
+- layers/layer15_async_runtime/modules/retry_engine/retry_engine.py:106 stats()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:12 __init__()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:22 to_dict()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:29 __init__()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:32 create()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:37 get()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:40 acquire_sync()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:50 release_sync()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:58 remove()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:64 list_semaphores()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:67 stats()
+- layers/layer15_async_runtime/modules/semaphore_manager/semaphore_manager.py:74 count()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:18 __init__()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:30 to_dict()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:36 __init__()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:44 enqueue()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:55 dequeue()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:64 complete()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:73 fail()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:82 pause()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:85 resume()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:88 stop()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:91 size()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:94 stats()
+- layers/layer15_async_runtime/modules/task_queue/task_queue.py:99 get_item()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:13 __init__()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:24 to_dict()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:30 __init__()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:36 start()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:39 stop()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:44 submit()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:53 get_result()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:72 map()
+- layers/layer15_async_runtime/modules/thread_pool/thread_pool.py:78 stats()
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:18 __init__()
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:28 to_dict()
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:35 __init__()
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:39 run_with_timeout()
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:67 get_entry()
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:70 get_history()
+- layers/layer15_async_runtime/modules/timeout_engine/timeout_engine.py:73 stats()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:18 __init__()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:28 to_dict()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:35 __init__()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:43 initialize()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:48 submit()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:52 _process_task()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:71 start()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:87 stop()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:94 get_result()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:97 list_workers()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:100 stats()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:108 pool_size()
+- layers/layer15_async_runtime/modules/worker_pool/worker_pool.py:75 worker_loop()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

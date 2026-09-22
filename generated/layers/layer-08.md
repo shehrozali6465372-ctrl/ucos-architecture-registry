@@ -1,0 +1,233 @@
+# Layer 08 — Analytics
+
+Implementation commit: 0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20
+Implementation path: layers/layer08_analytics
+
+## Source inventory
+- Python modules: **22**
+- Classes: **37**
+- Functions/methods: **156**
+
+## Python modules
+- layers/layer08_analytics/__init__.py
+- layers/layer08_analytics/modules/ab_test_engine/__init__.py
+- layers/layer08_analytics/modules/ab_test_engine/engine.py
+- layers/layer08_analytics/modules/analytics_orchestrator/__init__.py
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py
+- layers/layer08_analytics/modules/attribution_engine/__init__.py
+- layers/layer08_analytics/modules/attribution_engine/attribution.py
+- layers/layer08_analytics/modules/dashboard_service/__init__.py
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py
+- layers/layer08_analytics/modules/data_collector/__init__.py
+- layers/layer08_analytics/modules/data_collector/collector.py
+- layers/layer08_analytics/modules/exceptions.py
+- layers/layer08_analytics/modules/funnel_analyzer/__init__.py
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py
+- layers/layer08_analytics/modules/metric_engine/__init__.py
+- layers/layer08_analytics/modules/metric_engine/metrics.py
+- layers/layer08_analytics/modules/performance_analyzer/__init__.py
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py
+- layers/layer08_analytics/modules/report_generator/__init__.py
+- layers/layer08_analytics/modules/report_generator/reports.py
+- layers/layer08_analytics/modules/trend_detector/__init__.py
+- layers/layer08_analytics/modules/trend_detector/detector.py
+
+## Classes
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:7 ABVariant
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:40 ABTest
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:75 ABTestResult
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:101 ABTestEngine
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:17 AnalyticsResult
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:46 AnalyticsOrchestrator
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:7 AttributionTouchpoint
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:31 AttributionResult
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:59 AttributionEngine
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:7 DashboardWidget
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:35 DashboardLayout
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:66 DashboardSnapshot
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:86 DashboardService
+- layers/layer08_analytics/modules/data_collector/collector.py:7 DataPoint
+- layers/layer08_analytics/modules/data_collector/collector.py:31 DataSource
+- layers/layer08_analytics/modules/data_collector/collector.py:59 DataCollector
+- layers/layer08_analytics/modules/exceptions.py:5 AnalyticsError
+- layers/layer08_analytics/modules/exceptions.py:9 DataCollectionError
+- layers/layer08_analytics/modules/exceptions.py:13 MetricCalculationError
+- layers/layer08_analytics/modules/exceptions.py:17 ReportGenerationError
+- layers/layer08_analytics/modules/exceptions.py:21 InsightError
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:7 FunnelStep
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:43 FunnelDefinition
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:74 FunnelResult
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:101 FunnelAnalyzer
+- layers/layer08_analytics/modules/metric_engine/metrics.py:7 MetricDefinition
+- layers/layer08_analytics/modules/metric_engine/metrics.py:32 MetricValue
+- layers/layer08_analytics/modules/metric_engine/metrics.py:52 MetricEngine
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:7 PerformanceDimension
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:54 PerformanceResult
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:78 PerformanceAnalyzer
+- layers/layer08_analytics/modules/report_generator/reports.py:7 ReportSection
+- layers/layer08_analytics/modules/report_generator/reports.py:35 AnalyticsReport
+- layers/layer08_analytics/modules/report_generator/reports.py:75 ReportGenerator
+- layers/layer08_analytics/modules/trend_detector/detector.py:7 TrendPoint
+- layers/layer08_analytics/modules/trend_detector/detector.py:21 DetectedTrend
+- layers/layer08_analytics/modules/trend_detector/detector.py:50 TrendDetector
+
+## Functions / methods
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:13 __init__()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:22 conversion_rate()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:26 revenue_per_impression()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:29 to_dict()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:46 __init__()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:56 add_variant()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:59 get_variant()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:65 to_dict()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:81 __init__()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:90 to_dict()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:106 __init__()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:111 create_test()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:118 start_test()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:126 record_impression()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:136 record_conversion()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:147 analyze()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:175 get_test()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:178 get_all_tests()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:181 get_results()
+- layers/layer08_analytics/modules/ab_test_engine/engine.py:185 analysis_count()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:24 __init__()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:34 to_dict()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:52 __init__()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:65 run_pipeline()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:94 diagnose_performance()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:133 get_health()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:144 _generate_insights()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:155 pipeline_run_count()
+- layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:159 events()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:13 __init__()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:21 to_dict()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:38 __init__()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:47 to_dict()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:62 __init__()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:67 add_touchpoint()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:70 analyze_first_touch()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:73 analyze_last_touch()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:76 analyze_linear()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:79 analyze_weighted()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:82 _analyze()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:129 _position_weights()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:143 get_touchpoints()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:146 get_results()
+- layers/layer08_analytics/modules/attribution_engine/attribution.py:150 analysis_count()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:13 __init__()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:22 is_stale()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:25 to_dict()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:40 __init__()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:47 add_widget()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:50 get_widget()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:56 to_dict()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:71 __init__()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:77 to_dict()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:89 __init__()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:94 create_layout()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:99 add_widget()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:106 get_layout()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:109 get_all_layouts()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:112 take_snapshot()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:122 get_latest_snapshot()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:128 get_snapshots()
+- layers/layer08_analytics/modules/dashboard_service/dashboard.py:135 serving_count()
+- layers/layer08_analytics/modules/data_collector/collector.py:13 __init__()
+- layers/layer08_analytics/modules/data_collector/collector.py:21 to_dict()
+- layers/layer08_analytics/modules/data_collector/collector.py:37 __init__()
+- layers/layer08_analytics/modules/data_collector/collector.py:46 is_ready()
+- layers/layer08_analytics/modules/data_collector/collector.py:49 to_dict()
+- layers/layer08_analytics/modules/data_collector/collector.py:62 __init__()
+- layers/layer08_analytics/modules/data_collector/collector.py:68 register_source()
+- layers/layer08_analytics/modules/data_collector/collector.py:71 unregister_source()
+- layers/layer08_analytics/modules/data_collector/collector.py:77 collect()
+- layers/layer08_analytics/modules/data_collector/collector.py:97 collect_all()
+- layers/layer08_analytics/modules/data_collector/collector.py:104 collect_manual()
+- layers/layer08_analytics/modules/data_collector/collector.py:110 get_data()
+- layers/layer08_analytics/modules/data_collector/collector.py:118 get_sources()
+- layers/layer08_analytics/modules/data_collector/collector.py:121 get_source()
+- layers/layer08_analytics/modules/data_collector/collector.py:124 get_ready_sources()
+- layers/layer08_analytics/modules/data_collector/collector.py:128 total_points()
+- layers/layer08_analytics/modules/data_collector/collector.py:132 collection_count()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:13 __init__()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:23 conversion_rate()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:27 drop_off_rate()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:30 to_dict()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:48 __init__()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:55 add_step()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:59 get_step()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:65 to_dict()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:81 __init__()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:90 to_dict()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:104 __init__()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:109 create_funnel()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:116 update_step()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:128 analyze()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:156 get_funnel()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:159 get_all_funnels()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:162 get_results()
+- layers/layer08_analytics/modules/funnel_analyzer/analyzer.py:166 analysis_count()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:13 __init__()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:22 to_dict()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:37 __init__()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:44 to_dict()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:55 __init__()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:60 define()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:63 get_definition()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:66 calculate()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:116 aggregate()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:122 get_all_definitions()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:125 get_recent_values()
+- layers/layer08_analytics/modules/metric_engine/metrics.py:129 calculation_count()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:12 __init__()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:19 add_datapoint()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:24 count()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:28 mean()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:32 trend()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:44 to_dict()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:60 __init__()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:68 to_dict()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:87 __init__()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:92 add_dimension()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:95 analyze()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:109 analyze_all()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:117 get_dimension()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:120 get_all_dimensions()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:123 _get_rating()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:135 _generate_insights()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:145 _compare_benchmark()
+- layers/layer08_analytics/modules/performance_analyzer/analyzer.py:157 analysis_count()
+- layers/layer08_analytics/modules/report_generator/reports.py:12 __init__()
+- layers/layer08_analytics/modules/report_generator/reports.py:19 add_metric()
+- layers/layer08_analytics/modules/report_generator/reports.py:22 add_chart()
+- layers/layer08_analytics/modules/report_generator/reports.py:25 to_dict()
+- layers/layer08_analytics/modules/report_generator/reports.py:41 __init__()
+- layers/layer08_analytics/modules/report_generator/reports.py:51 add_section()
+- layers/layer08_analytics/modules/report_generator/reports.py:55 get_section()
+- layers/layer08_analytics/modules/report_generator/reports.py:61 set_summary()
+- layers/layer08_analytics/modules/report_generator/reports.py:64 to_dict()
+- layers/layer08_analytics/modules/report_generator/reports.py:78 __init__()
+- layers/layer08_analytics/modules/report_generator/reports.py:82 generate_summary_report()
+- layers/layer08_analytics/modules/report_generator/reports.py:108 generate_comparison_report()
+- layers/layer08_analytics/modules/report_generator/reports.py:129 get_reports()
+- layers/layer08_analytics/modules/report_generator/reports.py:132 get_report()
+- layers/layer08_analytics/modules/report_generator/reports.py:138 _generate_summary_text()
+- layers/layer08_analytics/modules/report_generator/reports.py:145 report_count()
+- layers/layer08_analytics/modules/trend_detector/detector.py:12 __init__()
+- layers/layer08_analytics/modules/trend_detector/detector.py:17 to_dict()
+- layers/layer08_analytics/modules/trend_detector/detector.py:28 __init__()
+- layers/layer08_analytics/modules/trend_detector/detector.py:39 to_dict()
+- layers/layer08_analytics/modules/trend_detector/detector.py:53 __init__()
+- layers/layer08_analytics/modules/trend_detector/detector.py:58 add_datapoint()
+- layers/layer08_analytics/modules/trend_detector/detector.py:61 add_batch()
+- layers/layer08_analytics/modules/trend_detector/detector.py:64 detect()
+- layers/layer08_analytics/modules/trend_detector/detector.py:106 detect_all()
+- layers/layer08_analytics/modules/trend_detector/detector.py:109 get_series()
+- layers/layer08_analytics/modules/trend_detector/detector.py:112 get_all_metrics()
+- layers/layer08_analytics/modules/trend_detector/detector.py:115 get_trends()
+- layers/layer08_analytics/modules/trend_detector/detector.py:119 detection_count()
+
+## Status discipline
+Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.
