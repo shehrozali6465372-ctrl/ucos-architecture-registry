@@ -1,0 +1,25 @@
+name: Validate Architecture Registry
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: shehrozali6465372-ctrl/universal-content-operating-system
+          ref: production/master-plan-hardening
+          path: ucos
+      - name: Validate registry boundaries
+        run: |
+          test -f architecture/UCOS_MASTER_ARCHITECTURE.md
+          test -f status/SYSTEM_STATUS.md
+          for n in $(seq -w 1 23); do test -f layers/layer-$n/README.md; done
+          python -m py_compile scripts/build_registry.py
+          python scripts/build_registry.py ucos /tmp/registry-generated
+          test $(find /tmp/registry-generated/generated/layers -name 'layer-*.md' | wc -l) -eq 23
