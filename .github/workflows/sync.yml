@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: shehrozali6465372-ctrl/universal-content-operating-system
-          ref: production/master-plan-hardening
+          ref: main
           path: ucos
       - name: Build verified layer inventory
         run: python registry/scripts/build_registry.py ucos registry
