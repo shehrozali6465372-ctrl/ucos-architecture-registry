@@ -1,7 +1,9 @@
 # UCOS Master Architecture
 
 **Implementation source of truth:** `shehrozali6465372-ctrl/universal-content-operating-system`
-**Verified implementation commit:** `0f0c92bdf2bc815df3ec1f9bdf033d0613e44a20`
+**Current implementation baseline:** `39b6fd682f18589fd8d104a5766bef50a10c0e75` (UCOS `main`)
+
+**Registry sync source:** UCOS `main`; open feature branches/PRs are not treated as architecture baseline until merged.
 **Registry purpose:** evidence-driven architecture, dependency, data-flow, contract, integration and operational record.
 
 ## Rules
