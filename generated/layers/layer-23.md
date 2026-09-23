@@ -1,12 +1,12 @@
 # Layer 23 — Website Manager
 
-Implementation commit: 61969fd436d1f678b469357df9c4edb476a8a2bb
+Implementation commit: 39b6fd682f18589fd8d104a5766bef50a10c0e75
 Implementation path: layers/layer23_website_manager
 
 ## Source inventory
-- Python modules: **402**
-- Classes: **407**
-- Functions/methods: **1405**
+- Python modules: **403**
+- Classes: **408**
+- Functions/methods: **1409**
 
 ## Python modules
 - layers/layer23_website_manager/__init__.py
@@ -36,6 +36,7 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/affiliate_manager/optimization/recommendation_engine.py
 - layers/layer23_website_manager/affiliate_manager/products/__init__.py
 - layers/layer23_website_manager/affiliate_manager/products/product_database.py
+- layers/layer23_website_manager/affiliate_manager/providers/hostinger_referral.py
 - layers/layer23_website_manager/affiliate_manager/services/__init__.py
 - layers/layer23_website_manager/affiliate_manager/utils/__init__.py
 - layers/layer23_website_manager/affiliate_manager/validation/__init__.py
@@ -443,6 +444,7 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/affiliate_manager/optimization/optimization_engine.py:9 OptimizationEngine
 - layers/layer23_website_manager/affiliate_manager/optimization/recommendation_engine.py:8 AffiliateRecommendationEngine
 - layers/layer23_website_manager/affiliate_manager/products/product_database.py:13 ProductDatabase
+- layers/layer23_website_manager/affiliate_manager/providers/hostinger_referral.py:17 HostingerReferral
 - layers/layer23_website_manager/affiliate_manager/validation/link_validator.py:9 LinkValidator
 - layers/layer23_website_manager/analytics_manager/affiliate/affiliate_analytics.py:9 AffiliateAnalytics
 - layers/layer23_website_manager/analytics_manager/analytics_manager.py:29 AnalyticsManager
@@ -924,6 +926,10 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/affiliate_manager/products/product_database.py:147 update_stats()
 - layers/layer23_website_manager/affiliate_manager/products/product_database.py:160 get_top_products()
 - layers/layer23_website_manager/affiliate_manager/products/product_database.py:164 get_stats()
+- layers/layer23_website_manager/affiliate_manager/providers/hostinger_referral.py:29 load_hostinger_referral()
+- layers/layer23_website_manager/affiliate_manager/providers/hostinger_referral.py:38 normalize_hostinger_referral()
+- layers/layer23_website_manager/affiliate_manager/providers/hostinger_referral.py:60 ingest_dashboard_rows()
+- layers/layer23_website_manager/affiliate_manager/providers/hostinger_referral.py:25 has_live_metrics()
 - layers/layer23_website_manager/affiliate_manager/validation/link_validator.py:12 __init__()
 - layers/layer23_website_manager/affiliate_manager/validation/link_validator.py:15 validate_link()
 - layers/layer23_website_manager/affiliate_manager/validation/link_validator.py:47 check_broken()
