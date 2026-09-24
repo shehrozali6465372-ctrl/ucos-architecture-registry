@@ -1,7 +1,7 @@
 # UCOS Master Architecture
 
 **Implementation source of truth:** `shehrozali6465372-ctrl/universal-content-operating-system`
-**Current implementation baseline:** `39b6fd682f18589fd8d104a5766bef50a10c0e75` (UCOS `main`)
+**Current implementation baseline:** `528539b19848c275e363407199998bb9e3fd9d10` (UCOS `main`)
 
 **Registry sync source:** UCOS `main`; open feature branches/PRs are not treated as architecture baseline until merged.
 **Registry purpose:** evidence-driven architecture, dependency, data-flow, contract, integration and operational record.
@@ -63,10 +63,12 @@ Real integrations are adapter-based. Missing credentials/provider configuration 
 Critical paths require bounded retries, timeouts, idempotency, transactional persistence, recovery/reconciliation and clear failure states.
 
 ## Evidence baseline
-- Latest certified CI run: **#501**, run ID **35730437434**, conclusion **success**.
-- Latest certified result: **10,162 passed, 87 warnings, 0 failures, 0 errors**.
+- Latest Layer 1 certified CI run: **#639**, run ID **35941752342**, conclusion **success**.
+- Latest Layer 1 result: **10,209 passed, 87 warnings, 0 failures/errors**.
+- Layer 1 static inventory: **51 modules, 167 classes, 795 functions/methods, 0 syntax errors**.
 - Boot certification: **23/23 layers loaded, 0 errors**.
-- These CI facts certify the tested commit only; they do not constitute live external-provider verification.
+- Layer 1 production-hardening PR **#16** was merged into `main` at **528539b19848c275e363407199998bb9e3fd9d10**.
+- These CI facts certify the tested commit and local CI PostgreSQL/runtime paths; they do not constitute live external-provider certification.
 
 ## Detailed layer inventory policy
 Each `layers/layer-XX/README.md` records verified implementation paths, functions/modules, contracts, dependencies, data flow, tests, failure boundaries, live/integration-ready status and remaining evidence. The registry must be updated from implementation evidence rather than assumptions.
