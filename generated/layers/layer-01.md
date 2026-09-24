@@ -6,7 +6,7 @@ Implementation path: layers/layer01_core
 ## Source inventory
 - Python modules: **51**
 - Classes: **167**
-- Functions/methods: **795**
+- Functions/methods: **796**
 
 ## Python modules
 - layers/layer01_core/__init__.py
