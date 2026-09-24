@@ -63,7 +63,7 @@ Real integrations are adapter-based. Missing credentials/provider configuration 
 Critical paths require bounded retries, timeouts, idempotency, transactional persistence, recovery/reconciliation and clear failure states.
 
 ## Evidence baseline
-- Latest Layer 1 certified CI run: **#639**, run ID **35941752342**, conclusion **success**.
+- Latest Layer 1 certified CI run: **#640**, run ID **35942475355**, conclusion **success** (post-merge `main` verification; PR certification was #639 / 35941752342).
 - Latest Layer 1 result: **10,209 passed, 87 warnings, 0 failures/errors**.
 - Layer 1 static inventory: **51 modules, 167 classes, 795 functions/methods, 0 syntax errors**.
 - Boot certification: **23/23 layers loaded, 0 errors**.
