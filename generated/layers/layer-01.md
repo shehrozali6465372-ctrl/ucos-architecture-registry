@@ -1,12 +1,12 @@
 # Layer 01 — Core
 
-Implementation commit: 39b6fd682f18589fd8d104a5766bef50a10c0e75
+Implementation commit: 528539b19848c275e363407199998bb9e3fd9d10
 Implementation path: layers/layer01_core
 
 ## Source inventory
 - Python modules: **51**
-- Classes: **165**
-- Functions/methods: **743**
+- Classes: **167**
+- Functions/methods: **795**
 
 ## Python modules
 - layers/layer01_core/__init__.py
@@ -973,5 +973,19 @@ Implementation path: layers/layer01_core
 - layers/layer01_core/tests/test_settings_manager.py:444 test_snapshot()
 - layers/layer01_core/tests/test_settings_manager.py:301 on_change()
 
+## Production verification evidence
+
+- Layer 1 production-hardening PR #16 merged into `main` at commit **528539b19848c275e363407199998bb9e3fd9d10**.
+- CI run **#639** (run ID **35941752342**) completed successfully on the final Layer 1 branch head before merge.
+- Final CI result: **10,209 passed, 87 warnings, 0 failures/errors**.
+- Static audit: **51 modules, 167 classes, 795 functions/methods, 0 syntax errors**.
+- Static audit reported 3 duplicate-body groups; all three are documented as intentional lifecycle/public-API duplication in `docs/architecture/LAYER_01_STATIC_AUDIT_RECONCILIATION.md`.
+- Static audit reported 51 orphan candidates; the reconciliation record classifies them as public API, lifecycle entry points, exported types/errors, properties, introspection helpers, or externally callable operations rather than deletion candidates.
+- Integration/runtime evidence includes a real Layer 13 PostgreSQL-backed Layer 1 production contract test; the memory lifecycle adapter delegates to the real Layer 13 `MemoryRepository`.
+- CI system boot evidence: **23/23 layers loaded, 0 errors**.
+- CI provider status remains fail-closed when external credentials are absent; this is not a live external-provider certification.
+- Secret-pattern repository scans performed for common private-key/token prefixes returned no matches.
+
 ## Status discipline
-Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.
+
+Generated from the implementation tree and verified CI evidence. Source presence is not live-provider certification. External providers remain **integration-ready / not live** unless separately verified with real credentials and runtime evidence.
