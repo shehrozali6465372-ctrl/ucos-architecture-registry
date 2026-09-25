@@ -1,6 +1,6 @@
 # Layer 05 — Image
 
-Implementation commit: 631c24bab150acffb2c453c278f713c0f7fd6a74
+Implementation commit: 62f2c84857b428510cad81dcd07aa96ac2a43656
 Implementation path: layers/layer05_image
 
 ## Source inventory
@@ -43,9 +43,9 @@ Implementation path: layers/layer05_image
 ## Classes
 - layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:6 AccessibilityResult
 - layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:29 AccessibilityEngine
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:7 CarouselSlide
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:31 CarouselPlan
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:52 CarouselPlanner
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:8 CarouselSlide
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:22 CarouselPlan
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:34 CarouselPlanner
 - layers/layer05_image/modules/image_memory/image_memory.py:7 BrandVisualProfile
 - layers/layer05_image/modules/image_memory/image_memory.py:31 ImageMemory
 - layers/layer05_image/modules/image_optimizer/image_optimizer.py:16 OptimizationResult
@@ -55,7 +55,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_planner/image_planner.py:32 ImagePlan
 - layers/layer05_image/modules/image_planner/image_planner.py:66 ImagePlanner
 - layers/layer05_image/modules/image_prompt/image_prompt.py:20 ImagePrompt
-- layers/layer05_image/modules/image_prompt/image_prompt.py:45 ImagePromptBuilder
+- layers/layer05_image/modules/image_prompt/image_prompt.py:34 ImagePromptBuilder
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:29 GeminiImageProvider
 - layers/layer05_image/modules/image_provider/image_provider.py:7 ImageResponse
 - layers/layer05_image/modules/image_provider/image_provider.py:31 BaseImageProvider
@@ -69,8 +69,8 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/layout_engine/layout_engine.py:43 LayoutEngine
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:6 PromptEvaluation
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:29 PromptEvaluator
-- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:7 ThumbnailPlan
-- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:33 ThumbnailEngine
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:8 ThumbnailPlan
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:23 ThumbnailEngine
 - layers/layer05_image/modules/visual_quality/visual_quality.py:6 QualityScore
 - layers/layer05_image/modules/visual_quality/visual_quality.py:31 VisualQualityScorer
 
@@ -84,13 +84,13 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:58 validate()
 - layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:74 _relative_luminance()
 - layers/layer05_image/modules/accessibility_engine/accessibility_engine.py:85 check_count()
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:12 __init__()
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:21 to_dict()
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:35 __init__()
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:42 to_dict()
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:55 __init__()
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:58 plan()
-- layers/layer05_image/modules/carousel_planner/carousel_planner.py:95 plan_count()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:11 __init__()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:19 to_dict()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:25 __init__()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:31 to_dict()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:36 __init__()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:38 plan()
+- layers/layer05_image/modules/carousel_planner/carousel_planner.py:68 plan_count()
 - layers/layer05_image/modules/image_memory/image_memory.py:12 __init__()
 - layers/layer05_image/modules/image_memory/image_memory.py:22 to_dict()
 - layers/layer05_image/modules/image_memory/image_memory.py:36 __init__()
@@ -118,12 +118,12 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_planner/image_planner.py:92 plan_multi_platform()
 - layers/layer05_image/modules/image_planner/image_planner.py:101 suggest_type()
 - layers/layer05_image/modules/image_planner/image_planner.py:114 plan_count()
-- layers/layer05_image/modules/image_prompt/image_prompt.py:25 __init__()
-- layers/layer05_image/modules/image_prompt/image_prompt.py:34 to_dict()
-- layers/layer05_image/modules/image_prompt/image_prompt.py:48 __init__()
-- layers/layer05_image/modules/image_prompt/image_prompt.py:51 build()
-- layers/layer05_image/modules/image_prompt/image_prompt.py:86 build_batch()
-- layers/layer05_image/modules/image_prompt/image_prompt.py:92 build_count()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:23 __init__()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:31 to_dict()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:36 __init__()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:38 build()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:59 build_batch()
+- layers/layer05_image/modules/image_prompt/image_prompt.py:62 build_count()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:49 __init__()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:55 generate()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:81 generate_with_reference()
@@ -171,11 +171,11 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:36 evaluate()
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:61 _refine()
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:70 eval_count()
-- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:12 __init__()
-- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:22 to_dict()
-- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:36 __init__()
-- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:39 plan()
-- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:53 plan_count()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:11 __init__()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:20 to_dict()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:25 __init__()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:27 plan()
+- layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:41 plan_count()
 - layers/layer05_image/modules/visual_quality/visual_quality.py:10 __init__()
 - layers/layer05_image/modules/visual_quality/visual_quality.py:19 to_dict()
 - layers/layer05_image/modules/visual_quality/visual_quality.py:34 __init__()
