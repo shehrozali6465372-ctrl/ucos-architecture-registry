@@ -1,6 +1,6 @@
 # Layer 03 — Intelligence
 
-Implementation commit: f41eaeb1791208367dc7d12af225fff9775a8945
+Implementation commit: 6c82618e60b24f9397771c15407c814a2b105294
 Implementation path: layers/layer03_intelligence
 
 ## Source inventory
@@ -173,8 +173,8 @@ Implementation path: layers/layer03_intelligence
 - layers/layer03_intelligence/modules/content_understanding/intent_detector.py:40 IntentDetector
 - layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:20 KeywordAnalysis
 - layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:42 KeywordAnalyzer
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:112 SemanticResult
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:187 SemanticAnalyzer
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:115 SemanticResult
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:190 SemanticAnalyzer
 - layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:20 Cluster
 - layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:58 SemanticClusterer
 - layers/layer03_intelligence/modules/content_understanding/topic_extractor.py:27 TopicExtractor
@@ -503,27 +503,27 @@ Implementation path: layers/layer03_intelligence
 - layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:89 analyze_batch()
 - layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:93 get_common_keywords()
 - layers/layer03_intelligence/modules/content_understanding/keyword_analyzer.py:102 add_domain()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:139 __init__()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:157 to_dict()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:177 __repr__()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:200 __init__()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:211 analyze()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:267 extract_topics()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:301 detect_intent()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:310 detect_context()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:332 semantic_score()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:337 semantic_similarity()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:358 _tokenize()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:391 _split_sentences()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:396 _extract_bigrams()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:409 _classify_intent()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:431 _extract_entities()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:460 _analyze_sentiment()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:487 _score_complexity()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:511 _compute_semantic_score()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:539 _compute_confidence()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:562 _build_reasoning()
-- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:605 _publish_event()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:142 __init__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:160 to_dict()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:180 __repr__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:203 __init__()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:214 analyze()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:270 extract_topics()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:304 detect_intent()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:313 detect_context()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:335 semantic_score()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:340 semantic_similarity()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:361 _tokenize()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:394 _split_sentences()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:399 _extract_bigrams()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:412 _classify_intent()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:434 _extract_entities()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:463 _analyze_sentiment()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:490 _score_complexity()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:514 _compute_semantic_score()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:542 _compute_confidence()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:565 _build_reasoning()
+- layers/layer03_intelligence/modules/content_understanding/semantic_analyzer.py:608 _publish_event()
 - layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:25 __init__()
 - layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:32 add()
 - layers/layer03_intelligence/modules/content_understanding/semantic_clusterer.py:37 _update_centroid()
