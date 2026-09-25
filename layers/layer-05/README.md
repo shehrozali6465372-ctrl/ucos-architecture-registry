@@ -42,3 +42,10 @@ topic → image plan → prompt → layout → configured provider → real imag
 9. No mock/synthetic result can cross the production boundary.
 
 **Certification rule:** Until all gates above have evidence, Layer 05 remains NOT CERTIFIED.
+
+
+## Latest hardening evidence
+- UCOS commit: `333a09023d6ccaa6b124c3488a2f35b326cbc0d1` — corrected the Gemini image-generation request contract to use the documented `responseFormat.image` fields and added supported 1K/2K/4K resolution mapping.
+- UCOS commit: `3312ebf45342b2b2d59e0136caf571e06570c9c5` — added regression coverage for the current Gemini request contract and fail-closed reference URL behavior.
+- UCOS commit: `e7228c9b7e5f83120f9d53feefd0f8af3253819e` — added the Layer 5 provider tests to the main CI workflow.
+- Current certification state remains **NOT CERTIFIED** because no verified post-hardening CI run or real Gemini credential smoke-test evidence is available yet.
