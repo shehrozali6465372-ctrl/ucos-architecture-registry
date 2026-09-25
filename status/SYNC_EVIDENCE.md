@@ -1,6 +1,6 @@
 # Registry Sync Evidence
 
-Implementation commit scanned: c8d213f0fce07af22c4f329c3378cc5423737549
-Scanned at: 2026-09-25T16:36:43.470052+00:00
+Implementation commit scanned: 631c24bab150acffb2c453c278f713c0f7fd6a74
+Scanned at: 2026-09-25T18:41:46.083969+00:00
 
 Generated inventories are source-derived and do not constitute live-provider certification.
