@@ -25,7 +25,11 @@ Image planning, prompt construction, layout, accessibility checks, visual-qualit
 - Orchestrator requires a complete real asset.
 - Image planning, prompt, carousel, thumbnail and infographic IDs use UUIDs instead of time-based IDs.
 - Invalid platforms, image types, styles, chart types, dimensions, layouts and colors fail closed.
-- Boundary tests were added for missing credentials, invalid sizes and real-response persistence.
+- Boundary tests were added for missing credentials, invalid sizes, real-response persistence, and reference URL fail-closed behavior.
+- ImageMemory now rejects empty/invalid records and bounds in-memory history to 1,000 records.
+- ImagePlan and LayoutSpec constructors reject unsupported values instead of silently falling back.
+- Main CI now includes a Layer 5 Ruff lint gate in addition to the targeted provider tests.
+- Latest UCOS hardening commits: `75d6d7761b74e93024a49749b069fc50d79e5915`, `23bf3124f83a3ff48e850145c4c44fee5b2fa766`, `b5362797c95e9846a1186d9b7e356b9e60a37fbf`, `d9392372b358e145bfba6f6f5070aec7e41637d5`, `7118219945d3568f644ec71d51680ab56d49649c`.
 
 ## Critical flow
 topic → image plan → prompt → layout → configured provider → real image bytes → atomic persistence → provenance hash → optimization → Layer 5 result
@@ -48,4 +52,4 @@ topic → image plan → prompt → layout → configured provider → real imag
 - UCOS commit: `333a09023d6ccaa6b124c3488a2f35b326cbc0d1` — corrected the Gemini image-generation request contract to use the documented `responseFormat.image` fields and added supported 1K/2K/4K resolution mapping.
 - UCOS commit: `3312ebf45342b2b2d59e0136caf571e06570c9c5` — added regression coverage for the current Gemini request contract and fail-closed reference URL behavior.
 - UCOS commit: `e7228c9b7e5f83120f9d53feefd0f8af3253819e` — added the Layer 5 provider tests to the main CI workflow.
-- Current certification state remains **NOT CERTIFIED** because no verified post-hardening CI run or real Gemini credential smoke-test evidence is available yet.
+- Current certification state remains **NOT CERTIFIED**. The latest main commit is `7118219945d3568f644ec71d51680ab56d49649c`; its CI run is currently pending, so no green post-hardening CI evidence exists yet. Real Gemini credential smoke-test evidence is also still absent.
