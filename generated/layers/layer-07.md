@@ -1,6 +1,6 @@
 # Layer 07 — Publishing
 
-Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
+Implementation commit: 1eaf1ff7602c700c47d4f7a3b570e49c06f728d8
 Implementation path: layers/layer07_publishing
 
 ## Source inventory

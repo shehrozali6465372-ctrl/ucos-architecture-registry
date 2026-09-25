@@ -1,12 +1,12 @@
 # Layer 10 — Affiliate
 
-Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
+Implementation commit: 1eaf1ff7602c700c47d4f7a3b570e49c06f728d8
 Implementation path: layers/layer10_monetization
 
 ## Source inventory
 - Python modules: **158**
-- Classes: **296**
-- Functions/methods: **1417**
+- Classes: **298**
+- Functions/methods: **1431**
 
 ## Python modules
 - layers/layer10_monetization/__init__.py
@@ -272,6 +272,8 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/business_intelligence/business_intelligence_api.py:13 BusinessIntelligenceAPI
 - layers/layer10_monetization/modules/business_intelligence/business_metrics.py:6 BusinessMetrics
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:20 BusinessOrchestrator
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:11 BusinessReport
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:39 BusinessReportGenerator
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:13 Campaign
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:42 CampaignManager
 - layers/layer10_monetization/modules/business_intelligence/exceptions.py:5 BusinessError
@@ -1015,6 +1017,20 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:49 run_pipeline()
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:101 get_api()
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:104 get_health()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:14 __init__()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:22 add_insight()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:23 add_recommendation()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:24 to_dict()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:27 export_json()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:28 export_markdown()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:40 __init__()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:43 generate()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:49 generate_insight()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:51 generate_recommendation()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:53 get_recent()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:56 get_by_type()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:57 get_revenue_dashboard()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:61 get_stats()
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:14 __init__()
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:29 get_roi()
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:32 get_remaining_budget()
@@ -1751,19 +1767,19 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/universal_os/system_report_generator.py:64 get_by_type()
 - layers/layer10_monetization/modules/universal_os/system_report_generator.py:67 get_stats()
 - layers/layer10_monetization/modules/universal_os/universal_ai_os.py:20 __init__()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:31 start()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:41 stop()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:51 pause()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:59 resume()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:66 restart()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:72 shutdown()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:75 status()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:86 health()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:94 register_component()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:97 register_service()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:100 get_component()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:103 get_service()
-- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:106 _record_event()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:32 start()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:44 stop()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:54 pause()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:62 resume()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:69 restart()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:79 shutdown()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:82 status()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:93 health()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:101 register_component()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:104 register_service()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:107 get_component()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:110 get_service()
+- layers/layer10_monetization/modules/universal_os/universal_ai_os.py:113 _record_event()
 - layers/layer10_monetization/modules/universal_os/universal_os_orchestrator.py:34 __init__()
 - layers/layer10_monetization/modules/universal_os/universal_os_orchestrator.py:56 start()
 - layers/layer10_monetization/modules/universal_os/universal_os_orchestrator.py:63 stop()

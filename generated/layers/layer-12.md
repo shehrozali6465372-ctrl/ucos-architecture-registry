@@ -1,12 +1,12 @@
 # Layer 12 — AI Foundation
 
-Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
+Implementation commit: 1eaf1ff7602c700c47d4f7a3b570e49c06f728d8
 Implementation path: layers/layer12_ai_foundation
 
 ## Source inventory
 - Python modules: **318**
 - Classes: **428**
-- Functions/methods: **1613**
+- Functions/methods: **1612**
 
 ## Python modules
 - layers/layer12_ai_foundation/__init__.py
@@ -1810,15 +1810,14 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:74 add_key()
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:79 generate()
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:143 chat()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:205 _max_key_attempts()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:215 _remember()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:220 _real_api_call()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:299 _real_chat_call()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:362 _simulated_response()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:377 count_tokens()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:381 list_models()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:384 get_stats()
-- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:396 get_history()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:203 _max_key_attempts()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:213 _remember()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:218 _real_api_call()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:297 _real_chat_call()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:360 count_tokens()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:364 list_models()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:367 get_stats()
+- layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:379 get_history()
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:49 __init__()
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:80 is_available()
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:98 record_success()
