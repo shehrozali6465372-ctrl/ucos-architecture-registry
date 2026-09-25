@@ -1,12 +1,12 @@
 # Layer 08 — Analytics
 
-Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
+Implementation commit: 1eaf1ff7602c700c47d4f7a3b570e49c06f728d8
 Implementation path: layers/layer08_analytics
 
 ## Source inventory
-- Python modules: **22**
-- Classes: **37**
-- Functions/methods: **156**
+- Python modules: **23**
+- Classes: **39**
+- Functions/methods: **159**
 
 ## Python modules
 - layers/layer08_analytics/__init__.py
@@ -14,6 +14,7 @@ Implementation path: layers/layer08_analytics
 - layers/layer08_analytics/modules/ab_test_engine/engine.py
 - layers/layer08_analytics/modules/analytics_orchestrator/__init__.py
 - layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py
+- layers/layer08_analytics/modules/analytics_persistence.py
 - layers/layer08_analytics/modules/attribution_engine/__init__.py
 - layers/layer08_analytics/modules/attribution_engine/attribution.py
 - layers/layer08_analytics/modules/dashboard_service/__init__.py
@@ -39,6 +40,8 @@ Implementation path: layers/layer08_analytics
 - layers/layer08_analytics/modules/ab_test_engine/engine.py:101 ABTestEngine
 - layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:17 AnalyticsResult
 - layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:46 AnalyticsOrchestrator
+- layers/layer08_analytics/modules/analytics_persistence.py:6 AnalyticsPersistence
+- layers/layer08_analytics/modules/analytics_persistence.py:11 PostgreSQLAnalyticsPersistence
 - layers/layer08_analytics/modules/attribution_engine/attribution.py:7 AttributionTouchpoint
 - layers/layer08_analytics/modules/attribution_engine/attribution.py:31 AttributionResult
 - layers/layer08_analytics/modules/attribution_engine/attribution.py:59 AttributionEngine
@@ -101,6 +104,8 @@ Implementation path: layers/layer08_analytics
 - layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:144 _generate_insights()
 - layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:155 pipeline_run_count()
 - layers/layer08_analytics/modules/analytics_orchestrator/orchestrator.py:159 events()
+- layers/layer08_analytics/modules/analytics_persistence.py:11 __init__()
+- layers/layer08_analytics/modules/analytics_persistence.py:18 record_metric()
 - layers/layer08_analytics/modules/attribution_engine/attribution.py:13 __init__()
 - layers/layer08_analytics/modules/attribution_engine/attribution.py:21 to_dict()
 - layers/layer08_analytics/modules/attribution_engine/attribution.py:38 __init__()
@@ -229,5 +234,9 @@ Implementation path: layers/layer08_analytics
 - layers/layer08_analytics/modules/trend_detector/detector.py:115 get_trends()
 - layers/layer08_analytics/modules/trend_detector/detector.py:119 detection_count()
 
-## Status discipline
-Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.
+## Production certification
+- Status: **PRODUCTION CERTIFIED**
+- UCOS main merge commit: `1eaf1ff7602c700c47d4f7a3b570e49c06f728d8`
+- Dedicated Layer 8 certification workflow: run `36150811344` — **success**
+- Dedicated gate included compile, Ruff F-series correctness, real PostgreSQL persistence, and reconnect persistence verification.
+- Certification does not claim live-provider posting; provider runtime certification belongs to connector/publishing layers.
