@@ -1,12 +1,12 @@
 # Layer 12 — AI Foundation
 
-Implementation commit: 6c82618e60b24f9397771c15407c814a2b105294
+Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
 Implementation path: layers/layer12_ai_foundation
 
 ## Source inventory
 - Python modules: **318**
 - Classes: **428**
-- Functions/methods: **1614**
+- Functions/methods: **1613**
 
 ## Python modules
 - layers/layer12_ai_foundation/__init__.py
@@ -408,7 +408,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_governance/governance_analyzer.py:5 GovernanceAnalyzer
 - layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:6 GovernanceCache
 - layers/layer12_ai_foundation/modules/ai_governance/governance_config.py:5 GovernanceConfig
-- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:5 GovernanceEnforcer
+- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:7 GovernanceEnforcer
 - layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:6 GovernanceEvents
 - layers/layer12_ai_foundation/modules/ai_governance/governance_health.py:6 GovernanceHealth
 - layers/layer12_ai_foundation/modules/ai_governance/governance_memory.py:6 GovernanceMemory
@@ -608,7 +608,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_metrics.py:7 ProviderMetrics
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_registry.py:7 ProviderRegistry
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:6 ProviderReport
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:7 ProviderRetry
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:8 ProviderRetry
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:7 ProviderSecurity
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:6 StreamChunk
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_stream.py:21 ProviderStream
@@ -735,7 +735,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:6 ProviderHealth
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:12 LLMHealth
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:5 LLMLoader
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:21 LLMManager
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:22 LLMManager
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:6 LLMCacheEntry
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:17 LLMMemory
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:6 LLMMetrics
@@ -992,8 +992,8 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_governance/governance_cache.py:19 stats()
 - layers/layer12_ai_foundation/modules/ai_governance/governance_config.py:6 __init__()
 - layers/layer12_ai_foundation/modules/ai_governance/governance_config.py:14 to_dict()
-- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:6 __init__()
-- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:8 enforce()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_governance/governance_enforcer.py:14 enforce()
 - layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:7 __init__()
 - layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:9 subscribe()
 - layers/layer12_ai_foundation/modules/ai_governance/governance_events.py:10 publish()
@@ -1770,13 +1770,13 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:19 _build_summary()
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:29 get_history()
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_report.py:32 to_dict()
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:10 __init__()
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:18 get_delay()
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:22 should_retry()
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:28 execute_with_retry()
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:42 get_retry_count()
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:45 reset()
-- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:51 to_dict()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:22 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:41 get_delay()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:46 should_retry()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:51 execute_with_retry()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:74 get_retry_count()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:77 reset()
+- layers/layer12_ai_foundation/modules/model_provider_framework/provider_retry.py:83 to_dict()
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:10 __init__()
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:14 store_key()
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_security.py:20 get_key()
@@ -1854,18 +1854,18 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_router/model_router.py:93 register_provider()
 - layers/layer12_ai_foundation/modules/model_router/model_router.py:98 unregister_provider()
 - layers/layer12_ai_foundation/modules/model_router/model_router.py:106 set_routing()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:109 _provider_order()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:124 _select_provider()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:130 _record()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:144 _apply_result()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:164 route()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:204 generate_text()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:207 generate_chat()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:214 generate_image()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:217 generate_embedding()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:220 list_providers()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:223 get_stats()
-- layers/layer12_ai_foundation/modules/model_router/model_router.py:229 get_history()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:114 _provider_order()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:129 _select_provider()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:135 _record()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:149 _apply_result()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:169 route()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:210 generate_text()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:213 generate_chat()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:220 generate_image()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:223 generate_embedding()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:226 list_providers()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:229 get_stats()
+- layers/layer12_ai_foundation/modules/model_router/model_router.py:235 get_history()
 - layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:28 __init__()
 - layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:38 render()
 - layers/layer12_ai_foundation/modules/model_router/prompt_builder.py:44 to_dict()
@@ -2277,18 +2277,17 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:16 is_loaded()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:18 get_loaded()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:20 get_stats()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:24 __init__()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:39 start()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:43 stop()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:47 generate()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:86 generate_stream()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:90 chat()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:95 batch_generate()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:99 get_usage_report()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:102 get_cost_report()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:105 get_health()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:109 status()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:113 _simulate_response()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:25 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:41 start()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:45 stop()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:49 generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:105 generate_stream()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:109 chat()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:114 batch_generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:118 get_usage_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:121 get_cost_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:124 get_health()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:128 status()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:8 __init__()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:14 is_expired()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:18 __init__()

@@ -1,6 +1,6 @@
 # Layer 04 — Writing
 
-Implementation commit: 6c82618e60b24f9397771c15407c814a2b105294
+Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
 Implementation path: layers/layer04_writing
 
 ## Source inventory
@@ -50,8 +50,8 @@ Implementation path: layers/layer04_writing
 ## Classes
 - layers/layer04_writing/modules/caption_engine/caption_engine.py:20 CaptionResult
 - layers/layer04_writing/modules/caption_engine/caption_engine.py:43 CaptionEngine
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:17 OptimizationResult
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:45 ContentOptimizer
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:18 OptimizationResult
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:46 ContentOptimizer
 - layers/layer04_writing/modules/content_planner/audience_analyzer.py:24 AudienceAnalysis
 - layers/layer04_writing/modules/content_planner/audience_analyzer.py:53 AudienceAnalyzer
 - layers/layer04_writing/modules/content_planner/constraint_manager.py:7 WritingConstraint
@@ -82,8 +82,8 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/draft_generator/draft_manager.py:77 DraftManager
 - layers/layer04_writing/modules/draft_generator/draft_memory.py:9 DraftRecord
 - layers/layer04_writing/modules/draft_generator/draft_memory.py:38 DraftMemory
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:10 DraftValidationResult
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:36 DraftValidator
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:11 DraftValidationResult
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:37 DraftValidator
 - layers/layer04_writing/modules/draft_generator/exceptions.py:4 DraftGeneratorError
 - layers/layer04_writing/modules/draft_generator/exceptions.py:8 LLMProviderError
 - layers/layer04_writing/modules/draft_generator/exceptions.py:12 PromptBuildError
@@ -97,8 +97,8 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/draft_generator/prompt_builder.py:28 PromptBuilder
 - layers/layer04_writing/modules/draft_generator/variant_generator.py:23 DraftVariant
 - layers/layer04_writing/modules/draft_generator/variant_generator.py:46 VariantGenerator
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:22 HashtagResult
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:42 HashtagEngine
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:23 HashtagResult
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:43 HashtagEngine
 - layers/layer04_writing/modules/hook_engine/hook_engine.py:60 HookResult
 - layers/layer04_writing/modules/hook_engine/hook_engine.py:81 HookEngine
 - layers/layer04_writing/modules/tone_adapter/tone_adapter.py:29 ToneAdaptResult
@@ -118,14 +118,14 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/caption_engine/caption_engine.py:73 generate_multi_platform()
 - layers/layer04_writing/modules/caption_engine/caption_engine.py:79 _apply_style()
 - layers/layer04_writing/modules/caption_engine/caption_engine.py:91 generation_count()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:22 __init__()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:32 to_dict()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:48 __init__()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:51 optimize()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:94 optimize_seo()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:105 _calculate_readability()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:115 _calculate_seo()
-- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:123 optimization_count()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:23 __init__()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:33 to_dict()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:49 __init__()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:53 optimize()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:97 optimize_seo()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:108 _calculate_readability()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:118 _calculate_seo()
+- layers/layer04_writing/modules/content_optimizer/content_optimizer.py:126 optimization_count()
 - layers/layer04_writing/modules/content_planner/audience_analyzer.py:30 __init__()
 - layers/layer04_writing/modules/content_planner/audience_analyzer.py:40 to_dict()
 - layers/layer04_writing/modules/content_planner/audience_analyzer.py:56 __init__()
@@ -172,11 +172,11 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/content_planner/planner_manager.py:63 __init__()
 - layers/layer04_writing/modules/content_planner/planner_manager.py:85 create_plan()
 - layers/layer04_writing/modules/content_planner/planner_manager.py:160 update_plan()
-- layers/layer04_writing/modules/content_planner/planner_manager.py:175 validate_plan()
-- layers/layer04_writing/modules/content_planner/planner_manager.py:179 export_plan()
-- layers/layer04_writing/modules/content_planner/planner_manager.py:183 import_plan()
-- layers/layer04_writing/modules/content_planner/planner_manager.py:193 get_history()
-- layers/layer04_writing/modules/content_planner/planner_manager.py:199 plan_count()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:191 validate_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:195 export_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:199 import_plan()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:209 get_history()
+- layers/layer04_writing/modules/content_planner/planner_manager.py:215 plan_count()
 - layers/layer04_writing/modules/content_planner/platform_planner.py:74 __init__()
 - layers/layer04_writing/modules/content_planner/platform_planner.py:88 to_dict()
 - layers/layer04_writing/modules/content_planner/platform_planner.py:105 __init__()
@@ -221,13 +221,13 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/draft_generator/draft_memory.py:95 _rebuild_index_locked()
 - layers/layer04_writing/modules/draft_generator/draft_memory.py:101 count()
 - layers/layer04_writing/modules/draft_generator/draft_memory.py:106 total_tokens()
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:15 __init__()
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:24 to_dict()
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:39 __init__()
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:42 validate()
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:106 _find_repeated_words()
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:116 _detect_profanity()
-- layers/layer04_writing/modules/draft_generator/draft_validator.py:123 check_count()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:16 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:25 to_dict()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:40 __init__()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:44 validate()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:109 _find_repeated_words()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:119 _detect_profanity()
+- layers/layer04_writing/modules/draft_generator/draft_validator.py:126 check_count()
 - layers/layer04_writing/modules/draft_generator/llm_provider.py:15 __init__()
 - layers/layer04_writing/modules/draft_generator/llm_provider.py:23 to_dict()
 - layers/layer04_writing/modules/draft_generator/llm_provider.py:36 __init__()
@@ -256,14 +256,14 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/draft_generator/variant_generator.py:53 generate_variants()
 - layers/layer04_writing/modules/draft_generator/variant_generator.py:76 score_variants()
 - layers/layer04_writing/modules/draft_generator/variant_generator.py:94 generation_count()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:26 __init__()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:33 to_dict()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:45 __init__()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:48 generate()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:76 generate_seo()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:86 _extract_from_text()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:90 _extract_keywords()
-- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:100 generation_count()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:27 __init__()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:34 to_dict()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:46 __init__()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:50 generate()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:79 generate_seo()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:90 _extract_from_text()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:94 _extract_keywords()
+- layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:104 generation_count()
 - layers/layer04_writing/modules/hook_engine/hook_engine.py:64 __init__()
 - layers/layer04_writing/modules/hook_engine/hook_engine.py:71 to_dict()
 - layers/layer04_writing/modules/hook_engine/hook_engine.py:84 __init__()

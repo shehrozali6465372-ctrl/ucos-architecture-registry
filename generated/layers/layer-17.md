@@ -1,6 +1,6 @@
 # Layer 17 — Security
 
-Implementation commit: 6c82618e60b24f9397771c15407c814a2b105294
+Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
 Implementation path: layers/layer17_security
 
 ## Source inventory

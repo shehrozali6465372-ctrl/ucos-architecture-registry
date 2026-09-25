@@ -1,12 +1,12 @@
 # Layer 11 — Integrations
 
-Implementation commit: 6c82618e60b24f9397771c15407c814a2b105294
+Implementation commit: 01277cf955a57f56d8a60ea9e8c9d56f33c64921
 Implementation path: layers/layer11_async_runtime
 
 ## Source inventory
 - Python modules: **218**
 - Classes: **237**
-- Functions/methods: **718**
+- Functions/methods: **721**
 
 ## Python modules
 - layers/layer11_async_runtime/__init__.py
@@ -302,9 +302,9 @@ Implementation path: layers/layer11_async_runtime
 - layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:33 ResourceExhaustedError
 - layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:37 ConfigurationError
 - layers/layer11_async_runtime/modules/async_runtime_engine/exceptions.py:41 HealthCheckError
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:11 TaskState
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:19 AsyncTask
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:35 AsyncRuntime
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:14 TaskState
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:22 AsyncTask
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:40 AsyncRuntime
 - layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:8 RuntimeBuilder
 - layers/layer11_async_runtime/modules/async_runtime_engine/runtime_config.py:6 RuntimeConfig
 - layers/layer11_async_runtime/modules/async_runtime_engine/runtime_context.py:7 RuntimeContext
@@ -645,22 +645,25 @@ Implementation path: layers/layer11_async_runtime
 - layers/layer11_async_runtime/modules/async_plugin_framework/validator.py:6 __init__()
 - layers/layer11_async_runtime/modules/async_plugin_framework/validator.py:8 process()
 - layers/layer11_async_runtime/modules/async_plugin_framework/validator.py:11 get_stats()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:23 __init__()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:45 __init__()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:59 start()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:63 stop()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:69 is_running()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:73 metrics()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:76 run_coroutine()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:104 execute_coroutine()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:128 gather()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:133 run_parallel()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:139 submit_to_thread()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:144 submit_to_thread_async()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:149 health()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:158 get_task()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:161 list_tasks()
-- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:135 _gather()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:28 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:43 __init__()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:63 start()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:73 stop()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:84 is_running()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:89 metrics()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:93 _begin_task()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:105 _finish_task()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:116 _prune_tasks_locked()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:128 run_coroutine()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:146 execute_coroutine()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:161 gather()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:165 run_parallel()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:169 _gather()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:172 submit_to_thread()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:183 submit_to_thread_async()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:195 health()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:204 get_task()
+- layers/layer11_async_runtime/modules/async_runtime_engine/runtime.py:208 list_tasks()
 - layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:11 __init__()
 - layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:14 max_workers()
 - layers/layer11_async_runtime/modules/async_runtime_engine/runtime_builder.py:18 max_tasks()
