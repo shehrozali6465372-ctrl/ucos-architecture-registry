@@ -1,12 +1,12 @@
 # Layer 09 — Learning
 
-Implementation commit: 1eaf1ff7602c700c47d4f7a3b570e49c06f728d8
+Implementation commit: f40ae804d4eb0ef5693e2adc11e7c94230b5d83d
 Implementation path: layers/layer09_learning
 
 ## Source inventory
 - Python modules: **140**
-- Classes: **262**
-- Functions/methods: **1178**
+- Classes: **263**
+- Functions/methods: **1181**
 
 ## Python modules
 - layers/layer09_learning/__init__.py
@@ -248,11 +248,12 @@ Implementation path: layers/layer09_learning
 - layers/layer09_learning/modules/learning_orchestrator/exceptions.py:9 PipelineError
 - layers/layer09_learning/modules/learning_orchestrator/exceptions.py:13 ModuleExecutionError
 - layers/layer09_learning/modules/learning_orchestrator/exceptions.py:17 AggregationError
+- layers/layer09_learning/modules/learning_orchestrator/exceptions.py:21 ProductionLearningDataRequired
 - layers/layer09_learning/modules/learning_orchestrator/health_monitor.py:7 ModuleHealth
 - layers/layer09_learning/modules/learning_orchestrator/health_monitor.py:57 HealthMonitor
 - layers/layer09_learning/modules/learning_orchestrator/learning_events.py:8 LearningSystemEvent
 - layers/layer09_learning/modules/learning_orchestrator/learning_events.py:32 LearningEventBus
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:25 LearningOrchestrator
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:79 LearningOrchestrator
 - layers/layer09_learning/modules/learning_orchestrator/learning_pipeline.py:7 PipelineStage
 - layers/layer09_learning/modules/learning_orchestrator/learning_pipeline.py:34 PipelineDefinition
 - layers/layer09_learning/modules/learning_orchestrator/learning_report.py:10 LearningReport
@@ -820,26 +821,29 @@ Implementation path: layers/layer09_learning
 - layers/layer09_learning/modules/learning_orchestrator/learning_events.py:53 get_events()
 - layers/layer09_learning/modules/learning_orchestrator/learning_events.py:59 get_event_count()
 - layers/layer09_learning/modules/learning_orchestrator/learning_events.py:64 clear()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:33 __init__()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:48 _register_default_events()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:52 _on_module_completed()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:57 _on_module_failed()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:64 orchestrate()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:137 _execute_stage()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:156 _stage_collect_feedback()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:159 _stage_optimize_prompts()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:162 _stage_optimize_strategy()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:165 _stage_learn_brand_voice()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:168 _stage_evolve_memory()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:171 _stage_self_improve()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:174 _stage_calibrate_quality()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:177 _stage_optimize_content()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:180 _stage_predict_engagement()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:183 _merge_stage_result()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:204 get_health()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:214 get_recent_reports()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:218 event_bus_instance()
-- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:222 orchestration_count()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:87 __init__()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:111 _register_default_events()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:115 _on_module_completed()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:120 _on_module_failed()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:125 orchestrate()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:219 _validate_production_context()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:226 _execute_stage()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:250 _signals()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:271 _stage_collect_feedback()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:284 _stage_optimize_prompts()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:303 _stage_optimize_strategy()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:325 _stage_learn_brand_voice()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:349 _stage_evolve_memory()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:361 _stage_self_improve()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:381 _stage_calibrate_quality()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:397 _stage_optimize_content()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:421 _stage_predict_engagement()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:443 _record_failure()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:454 _merge_stage_result()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:501 get_health()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:511 get_recent_reports()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:517 event_bus_instance()
+- layers/layer09_learning/modules/learning_orchestrator/learning_orchestrator.py:521 orchestration_count()
 - layers/layer09_learning/modules/learning_orchestrator/learning_pipeline.py:37 __init__()
 - layers/layer09_learning/modules/learning_orchestrator/learning_pipeline.py:40 get_execution_order()
 - layers/layer09_learning/modules/learning_orchestrator/learning_pipeline.py:59 get_dependencies()

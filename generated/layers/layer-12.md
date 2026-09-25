@@ -1,12 +1,12 @@
 # Layer 12 — AI Foundation
 
-Implementation commit: 1eaf1ff7602c700c47d4f7a3b570e49c06f728d8
+Implementation commit: f40ae804d4eb0ef5693e2adc11e7c94230b5d83d
 Implementation path: layers/layer12_ai_foundation
 
 ## Source inventory
 - Python modules: **318**
 - Classes: **428**
-- Functions/methods: **1612**
+- Functions/methods: **1614**
 
 ## Python modules
 - layers/layer12_ai_foundation/__init__.py
@@ -559,9 +559,9 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_reasoning_engine/reflection_reasoner.py:10 ReflectionReasoner
 - layers/layer12_ai_foundation/modules/ai_reasoning_engine/strategic_reasoner.py:10 StrategicReasoner
 - layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:9 VerificationReasoner
-- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:11 ClaudeProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:12 ClaudeProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:11 CohereProvider
-- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:11 DeepSeekProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:7 DeepSeekProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:5 ProviderFrameworkError
 - layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:9 ProviderNotFoundError
 - layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:13 ProviderInitializationError
@@ -573,12 +573,12 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:37 ProviderValidationError
 - layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:41 ProviderCacheError
 - layers/layer12_ai_foundation/modules/model_provider_framework/exceptions.py:45 ProviderFallbackExhaustedError
-- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:11 GeminiProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:12 GeminiProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:11 GrokProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/llama_provider.py:11 LlamaProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/mistral_provider.py:11 MistralProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:11 OllamaProvider
-- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:11 OpenAIProvider
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:12 OpenAIProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:11 OpenRouterProvider
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:7 ABTest
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_ab_test.py:29 ProviderABTest
@@ -1564,26 +1564,27 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:15 verify()
 - layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:33 cross_check()
 - layers/layer12_ai_foundation/modules/ai_reasoning_engine/verification_reasoner.py:42 get_history()
-- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:14 __init__()
-- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:21 initialize()
-- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:26 generate()
-- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:39 chat()
-- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:44 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:15 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:23 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:28 _call()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:60 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:65 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/claude_provider.py:70 is_available()
 - layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:14 __init__()
 - layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:20 initialize()
 - layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:25 generate()
 - layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:38 chat()
 - layers/layer12_ai_foundation/modules/model_provider_framework/cohere_provider.py:43 is_available()
-- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:14 __init__()
-- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:19 initialize()
-- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:24 generate()
-- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:37 chat()
-- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:42 is_available()
-- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:14 __init__()
-- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:20 initialize()
-- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:25 generate()
-- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:38 chat()
-- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:43 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:10 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:18 _call()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:23 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/deepseek_provider.py:27 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:15 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:23 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:28 _call()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:61 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:68 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/gemini_provider.py:73 is_available()
 - layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:14 __init__()
 - layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:19 initialize()
 - layers/layer12_ai_foundation/modules/model_provider_framework/grok_provider.py:24 generate()
@@ -1604,11 +1605,12 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:25 generate()
 - layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:38 chat()
 - layers/layer12_ai_foundation/modules/model_provider_framework/ollama_provider.py:43 is_available()
-- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:14 __init__()
-- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:22 initialize()
-- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:27 generate()
-- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:40 chat()
-- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:45 is_available()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:15 __init__()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:23 initialize()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:28 _call()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:62 generate()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:70 chat()
+- layers/layer12_ai_foundation/modules/model_provider_framework/openai_provider.py:75 is_available()
 - layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:14 __init__()
 - layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:22 initialize()
 - layers/layer12_ai_foundation/modules/model_provider_framework/openrouter_provider.py:27 generate()
@@ -2282,11 +2284,11 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:49 generate()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:105 generate_stream()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:109 chat()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:114 batch_generate()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:118 get_usage_report()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:121 get_cost_report()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:124 get_health()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:128 status()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:147 batch_generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:151 get_usage_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:154 get_cost_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:157 get_health()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:161 status()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:8 __init__()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:14 is_expired()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:18 __init__()

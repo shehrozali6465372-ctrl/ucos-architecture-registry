@@ -1,6 +1,6 @@
 # Layer 04 — Writing
 
-Implementation commit: 1eaf1ff7602c700c47d4f7a3b570e49c06f728d8
+Implementation commit: f40ae804d4eb0ef5693e2adc11e7c94230b5d83d
 Implementation path: layers/layer04_writing
 
 ## Source inventory
@@ -74,7 +74,7 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/content_planner/platform_planner.py:102 PlatformPlanner
 - layers/layer04_writing/modules/content_planner/tone_selector.py:20 ToneSelection
 - layers/layer04_writing/modules/content_planner/tone_selector.py:41 ToneSelector
-- layers/layer04_writing/modules/content_planner/writing_plan.py:8 WritingPlan
+- layers/layer04_writing/modules/content_planner/writing_plan.py:9 WritingPlan
 - layers/layer04_writing/modules/cta_engine/cta_engine.py:48 CTAResult
 - layers/layer04_writing/modules/cta_engine/cta_engine.py:69 CTAGenerator
 - layers/layer04_writing/modules/draft_generator/draft_manager.py:17 GeneratedDraft
@@ -95,8 +95,8 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/draft_generator/llm_provider.py:87 MockLLMProvider
 - layers/layer04_writing/modules/draft_generator/prompt_builder.py:9 PromptSet
 - layers/layer04_writing/modules/draft_generator/prompt_builder.py:28 PromptBuilder
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:23 DraftVariant
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:46 VariantGenerator
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:24 DraftVariant
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:47 VariantGenerator
 - layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:23 HashtagResult
 - layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:43 HashtagEngine
 - layers/layer04_writing/modules/hook_engine/hook_engine.py:60 HookResult
@@ -106,9 +106,9 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/writing_memory/writing_memory.py:9 BrandVoice
 - layers/layer04_writing/modules/writing_memory/writing_memory.py:36 DraftRecord
 - layers/layer04_writing/modules/writing_memory/writing_memory.py:62 WritingMemory
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:20 PlatformOutput
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:47 OrchestratorResult
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:74 WritingOrchestrator
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:21 PlatformOutput
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:48 OrchestratorResult
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:75 WritingOrchestrator
 
 ## Functions / methods
 - layers/layer04_writing/modules/caption_engine/caption_engine.py:25 __init__()
@@ -181,19 +181,19 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/content_planner/platform_planner.py:88 to_dict()
 - layers/layer04_writing/modules/content_planner/platform_planner.py:105 __init__()
 - layers/layer04_writing/modules/content_planner/platform_planner.py:109 get_constraints()
-- layers/layer04_writing/modules/content_planner/platform_planner.py:116 recommend()
-- layers/layer04_writing/modules/content_planner/platform_planner.py:140 validate_length()
-- layers/layer04_writing/modules/content_planner/platform_planner.py:152 supported_platforms()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:126 recommend()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:150 validate_length()
+- layers/layer04_writing/modules/content_planner/platform_planner.py:162 supported_platforms()
 - layers/layer04_writing/modules/content_planner/tone_selector.py:24 __init__()
 - layers/layer04_writing/modules/content_planner/tone_selector.py:31 to_dict()
 - layers/layer04_writing/modules/content_planner/tone_selector.py:52 __init__()
 - layers/layer04_writing/modules/content_planner/tone_selector.py:56 select()
 - layers/layer04_writing/modules/content_planner/tone_selector.py:102 get_profile()
 - layers/layer04_writing/modules/content_planner/tone_selector.py:107 available_tones()
-- layers/layer04_writing/modules/content_planner/writing_plan.py:22 __init__()
-- layers/layer04_writing/modules/content_planner/writing_plan.py:43 to_dict()
-- layers/layer04_writing/modules/content_planner/writing_plan.py:67 from_dict()
-- layers/layer04_writing/modules/content_planner/writing_plan.py:82 is_valid()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:23 __init__()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:44 to_dict()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:68 from_dict()
+- layers/layer04_writing/modules/content_planner/writing_plan.py:83 is_valid()
 - layers/layer04_writing/modules/cta_engine/cta_engine.py:52 __init__()
 - layers/layer04_writing/modules/cta_engine/cta_engine.py:59 to_dict()
 - layers/layer04_writing/modules/cta_engine/cta_engine.py:72 __init__()
@@ -250,12 +250,12 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/draft_generator/prompt_builder.py:156 _estimate_tokens()
 - layers/layer04_writing/modules/draft_generator/prompt_builder.py:160 _temperature_for_goal()
 - layers/layer04_writing/modules/draft_generator/prompt_builder.py:166 prompt_count()
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:28 __init__()
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:37 to_dict()
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:49 __init__()
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:53 generate_variants()
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:76 score_variants()
-- layers/layer04_writing/modules/draft_generator/variant_generator.py:94 generation_count()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:29 __init__()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:38 to_dict()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:50 __init__()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:55 generate_variants()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:79 score_variants()
+- layers/layer04_writing/modules/draft_generator/variant_generator.py:97 generation_count()
 - layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:27 __init__()
 - layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:34 to_dict()
 - layers/layer04_writing/modules/hashtag_engine/hashtag_engine.py:46 __init__()
@@ -300,15 +300,15 @@ Implementation path: layers/layer04_writing
 - layers/layer04_writing/modules/writing_memory/writing_memory.py:167 _rebuild_index_locked()
 - layers/layer04_writing/modules/writing_memory/writing_memory.py:173 count()
 - layers/layer04_writing/modules/writing_memory/writing_memory.py:178 voice_count()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:25 __init__()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:35 to_dict()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:52 __init__()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:62 to_dict()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:82 __init__()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:95 _run_locked()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:189 run()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:202 get_history()
-- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:208 run_count()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:26 __init__()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:36 to_dict()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:53 __init__()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:63 to_dict()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:83 __init__()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:96 _run_locked()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:207 run()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:220 get_history()
+- layers/layer04_writing/modules/writing_orchestrator/writing_orchestrator.py:226 run_count()
 
 ## Status discipline
 Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.
