@@ -1,6 +1,6 @@
 # Layer 05 — Image
 
-Implementation commit: f40ae804d4eb0ef5693e2adc11e7c94230b5d83d
+Implementation commit: c8d213f0fce07af22c4f329c3378cc5423737549
 Implementation path: layers/layer05_image
 
 ## Source inventory
@@ -53,7 +53,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:18 ImageOrchestratorResult
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:47 ImageOrchestrator
 - layers/layer05_image/modules/image_planner/image_planner.py:32 ImagePlan
-- layers/layer05_image/modules/image_planner/image_planner.py:62 ImagePlanner
+- layers/layer05_image/modules/image_planner/image_planner.py:66 ImagePlanner
 - layers/layer05_image/modules/image_prompt/image_prompt.py:20 ImagePrompt
 - layers/layer05_image/modules/image_prompt/image_prompt.py:45 ImagePromptBuilder
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:29 GeminiImageProvider
@@ -66,7 +66,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/infographic_generator/infographic_generator.py:25 InfographicConfig
 - layers/layer05_image/modules/infographic_generator/infographic_generator.py:43 InfographicGenerator
 - layers/layer05_image/modules/layout_engine/layout_engine.py:17 LayoutSpec
-- layers/layer05_image/modules/layout_engine/layout_engine.py:39 LayoutEngine
+- layers/layer05_image/modules/layout_engine/layout_engine.py:43 LayoutEngine
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:6 PromptEvaluation
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:29 PromptEvaluator
 - layers/layer05_image/modules/thumbnail_engine/thumbnail_engine.py:7 ThumbnailPlan
@@ -93,13 +93,13 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/carousel_planner/carousel_planner.py:95 plan_count()
 - layers/layer05_image/modules/image_memory/image_memory.py:12 __init__()
 - layers/layer05_image/modules/image_memory/image_memory.py:22 to_dict()
-- layers/layer05_image/modules/image_memory/image_memory.py:34 __init__()
-- layers/layer05_image/modules/image_memory/image_memory.py:38 set_profile()
-- layers/layer05_image/modules/image_memory/image_memory.py:47 get_profile()
-- layers/layer05_image/modules/image_memory/image_memory.py:50 store_image()
-- layers/layer05_image/modules/image_memory/image_memory.py:57 get_history()
-- layers/layer05_image/modules/image_memory/image_memory.py:63 profile_count()
-- layers/layer05_image/modules/image_memory/image_memory.py:67 history_count()
+- layers/layer05_image/modules/image_memory/image_memory.py:36 __init__()
+- layers/layer05_image/modules/image_memory/image_memory.py:40 set_profile()
+- layers/layer05_image/modules/image_memory/image_memory.py:53 get_profile()
+- layers/layer05_image/modules/image_memory/image_memory.py:56 store_image()
+- layers/layer05_image/modules/image_memory/image_memory.py:73 get_history()
+- layers/layer05_image/modules/image_memory/image_memory.py:81 profile_count()
+- layers/layer05_image/modules/image_memory/image_memory.py:85 history_count()
 - layers/layer05_image/modules/image_optimizer/image_optimizer.py:21 __init__()
 - layers/layer05_image/modules/image_optimizer/image_optimizer.py:29 to_dict()
 - layers/layer05_image/modules/image_optimizer/image_optimizer.py:42 __init__()
@@ -112,12 +112,12 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:130 run_multi_platform()
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:135 run_count()
 - layers/layer05_image/modules/image_planner/image_planner.py:37 __init__()
-- layers/layer05_image/modules/image_planner/image_planner.py:49 to_dict()
-- layers/layer05_image/modules/image_planner/image_planner.py:65 __init__()
-- layers/layer05_image/modules/image_planner/image_planner.py:68 plan()
-- layers/layer05_image/modules/image_planner/image_planner.py:88 plan_multi_platform()
-- layers/layer05_image/modules/image_planner/image_planner.py:97 suggest_type()
-- layers/layer05_image/modules/image_planner/image_planner.py:110 plan_count()
+- layers/layer05_image/modules/image_planner/image_planner.py:53 to_dict()
+- layers/layer05_image/modules/image_planner/image_planner.py:69 __init__()
+- layers/layer05_image/modules/image_planner/image_planner.py:72 plan()
+- layers/layer05_image/modules/image_planner/image_planner.py:92 plan_multi_platform()
+- layers/layer05_image/modules/image_planner/image_planner.py:101 suggest_type()
+- layers/layer05_image/modules/image_planner/image_planner.py:114 plan_count()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:25 __init__()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:34 to_dict()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:48 __init__()
@@ -130,14 +130,14 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:96 generate_batch()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:107 _enhance_prompt()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:131 _real_generate()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:187 _image_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:197 _aspect_ratio()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:204 _persist_image()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:226 _get_api_key()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:236 _parse_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:246 is_configured()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:250 get_stats()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:260 get_history()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:189 _image_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:199 _aspect_ratio()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:206 _persist_image()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:228 _get_api_key()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:238 _parse_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:248 is_configured()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:252 get_stats()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:262 get_history()
 - layers/layer05_image/modules/image_provider/image_provider.py:12 __init__()
 - layers/layer05_image/modules/image_provider/image_provider.py:21 to_dict()
 - layers/layer05_image/modules/image_provider/image_provider.py:34 __init__()
@@ -161,10 +161,10 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/infographic_generator/infographic_generator.py:111 generate_from_list()
 - layers/layer05_image/modules/infographic_generator/infographic_generator.py:124 _load_fonts()
 - layers/layer05_image/modules/layout_engine/layout_engine.py:21 __init__()
-- layers/layer05_image/modules/layout_engine/layout_engine.py:29 to_dict()
-- layers/layer05_image/modules/layout_engine/layout_engine.py:42 __init__()
-- layers/layer05_image/modules/layout_engine/layout_engine.py:45 get_layout()
-- layers/layer05_image/modules/layout_engine/layout_engine.py:68 get_available_layouts()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:33 to_dict()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:46 __init__()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:49 get_layout()
+- layers/layer05_image/modules/layout_engine/layout_engine.py:72 get_available_layouts()
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:10 __init__()
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:19 to_dict()
 - layers/layer05_image/modules/prompt_evaluator/prompt_evaluator.py:33 __init__()
