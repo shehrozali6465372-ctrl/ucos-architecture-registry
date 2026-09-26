@@ -1,7 +1,7 @@
 # UCOS Master Architecture
 
 **Implementation source of truth:** `shehrozali6465372-ctrl/universal-content-operating-system`
-**Current implementation baseline:** `528539b19848c275e363407199998bb9e3fd9d10` (UCOS `main`)
+**Current implementation baseline:** `733457c310d65ffbf3ccc4169662d485373beb6d` (UCOS `main`)
 
 **Registry sync source:** UCOS `main`; open feature branches/PRs are not treated as architecture baseline until merged.
 **Registry purpose:** evidence-driven architecture, dependency, data-flow, contract, integration and operational record.
@@ -75,3 +75,7 @@ Each `layers/layer-XX/README.md` records verified implementation paths, function
 
 ## Architecture evolution
 This document is the durable master architecture record. When implementation changes, update the affected layer record, dependency/data-flow impact, contracts and verification evidence. Preserve historical decisions rather than silently rewriting why a boundary exists.
+
+
+## Layer 17 certification record
+Layer 17 Security was production-certified on UCOS merge commit `733457c310d65ffbf3ccc4169662d485373beb6d` through dedicated workflow run #13. The dedicated gate passed compilation, strict lint, secret scanning, security invariants, legacy security regression tests, module regression checks, and evidence upload. Repository-wide CI remained blocked by an unrelated pytest collection collision between Layer 19 and Layer 20 production-certification test modules sharing the same basename.
