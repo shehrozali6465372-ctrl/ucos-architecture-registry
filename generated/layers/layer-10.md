@@ -1,6 +1,6 @@
 # Layer 10 — Affiliate
 
-Implementation commit: 62f2c84857b428510cad81dcd07aa96ac2a43656
+Implementation commit: 69b56124c22a339be67e260c1a568d189962481e
 Implementation path: layers/layer10_monetization
 
 ## Source inventory
@@ -186,7 +186,7 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/affiliate_engine/revenue_analytics.py:40 PostRevenue
 - layers/layer10_monetization/modules/affiliate_engine/revenue_analytics.py:89 NicheRevenue
 - layers/layer10_monetization/modules/affiliate_engine/revenue_analytics.py:123 RevenueAnalytics
-- layers/layer10_monetization/modules/affiliate_evidence_provider.py:15 AffiliateEvidenceProvider
+- layers/layer10_monetization/modules/affiliate_evidence_provider.py:21 AffiliateEvidenceProvider
 - layers/layer10_monetization/modules/ai_meta_controller/ai_coordinator.py:7 AICoordinator
 - layers/layer10_monetization/modules/ai_meta_controller/conflict_resolver.py:10 Conflict
 - layers/layer10_monetization/modules/ai_meta_controller/conflict_resolver.py:34 ConflictResolver
@@ -272,8 +272,8 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/business_intelligence/business_intelligence_api.py:13 BusinessIntelligenceAPI
 - layers/layer10_monetization/modules/business_intelligence/business_metrics.py:6 BusinessMetrics
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:20 BusinessOrchestrator
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:11 BusinessReport
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:39 BusinessReportGenerator
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:21 BusinessReport
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:79 BusinessReportGenerator
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:13 Campaign
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:42 CampaignManager
 - layers/layer10_monetization/modules/business_intelligence/exceptions.py:5 BusinessError
@@ -602,8 +602,8 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/affiliate_engine/revenue_analytics.py:238 get_daily_revenue()
 - layers/layer10_monetization/modules/affiliate_engine/revenue_analytics.py:242 get_analytics_summary()
 - layers/layer10_monetization/modules/affiliate_engine/revenue_analytics.py:269 stats()
-- layers/layer10_monetization/modules/affiliate_evidence_provider.py:16 search()
-- layers/layer10_monetization/modules/affiliate_evidence_provider.py:31 select()
+- layers/layer10_monetization/modules/affiliate_evidence_provider.py:22 search()
+- layers/layer10_monetization/modules/affiliate_evidence_provider.py:69 select()
 - layers/layer10_monetization/modules/ai_meta_controller/ai_coordinator.py:21 __init__()
 - layers/layer10_monetization/modules/ai_meta_controller/ai_coordinator.py:26 activate_engine()
 - layers/layer10_monetization/modules/ai_meta_controller/ai_coordinator.py:35 deactivate_engine()
@@ -1017,20 +1017,20 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:49 run_pipeline()
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:101 get_api()
 - layers/layer10_monetization/modules/business_intelligence/business_orchestrator.py:104 get_health()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:14 __init__()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:22 add_insight()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:23 add_recommendation()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:24 to_dict()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:27 export_json()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:28 export_markdown()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:40 __init__()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:43 generate()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:49 generate_insight()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:51 generate_recommendation()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:53 get_recent()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:56 get_by_type()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:57 get_revenue_dashboard()
-- layers/layer10_monetization/modules/business_intelligence/business_report.py:61 get_stats()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:34 __init__()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:45 add_insight()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:48 add_recommendation()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:51 to_dict()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:61 export_json()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:64 export_markdown()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:80 __init__()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:86 generate()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:97 generate_insight()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:104 generate_recommendation()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:111 get_recent()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:116 get_by_type()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:122 get_revenue_dashboard()
+- layers/layer10_monetization/modules/business_intelligence/business_report.py:132 get_stats()
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:14 __init__()
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:29 get_roi()
 - layers/layer10_monetization/modules/business_intelligence/campaign_manager.py:32 get_remaining_budget()

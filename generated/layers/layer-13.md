@@ -1,6 +1,6 @@
 # Layer 13 — Persistence
 
-Implementation commit: 62f2c84857b428510cad81dcd07aa96ac2a43656
+Implementation commit: 69b56124c22a339be67e260c1a568d189962481e
 Implementation path: layers/layer13_persistence
 
 ## Source inventory
@@ -1407,21 +1407,21 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py:56 get_by_level()
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py:59 delete_by_level()
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py:62 close()
-- layers/layer13_persistence/modules/postgresql/manager.py:292 get_database()
+- layers/layer13_persistence/modules/postgresql/manager.py:296 get_database()
 - layers/layer13_persistence/modules/postgresql/manager.py:37 __init__()
 - layers/layer13_persistence/modules/postgresql/manager.py:61 initialize()
 - layers/layer13_persistence/modules/postgresql/manager.py:115 _create_tables()
 - layers/layer13_persistence/modules/postgresql/manager.py:127 health_check()
 - layers/layer13_persistence/modules/postgresql/manager.py:153 get_db_status()
-- layers/layer13_persistence/modules/postgresql/manager.py:207 get_stats()
-- layers/layer13_persistence/modules/postgresql/manager.py:218 run_benchmark()
-- layers/layer13_persistence/modules/postgresql/manager.py:224 backup()
-- layers/layer13_persistence/modules/postgresql/manager.py:230 restore()
-- layers/layer13_persistence/modules/postgresql/manager.py:236 get_slow_queries()
-- layers/layer13_persistence/modules/postgresql/manager.py:242 get_pool_metrics()
-- layers/layer13_persistence/modules/postgresql/manager.py:248 run_transaction_recovery()
-- layers/layer13_persistence/modules/postgresql/manager.py:254 check_leaks()
-- layers/layer13_persistence/modules/postgresql/manager.py:260 close()
+- layers/layer13_persistence/modules/postgresql/manager.py:211 get_stats()
+- layers/layer13_persistence/modules/postgresql/manager.py:222 run_benchmark()
+- layers/layer13_persistence/modules/postgresql/manager.py:228 backup()
+- layers/layer13_persistence/modules/postgresql/manager.py:234 restore()
+- layers/layer13_persistence/modules/postgresql/manager.py:240 get_slow_queries()
+- layers/layer13_persistence/modules/postgresql/manager.py:246 get_pool_metrics()
+- layers/layer13_persistence/modules/postgresql/manager.py:252 run_transaction_recovery()
+- layers/layer13_persistence/modules/postgresql/manager.py:258 check_leaks()
+- layers/layer13_persistence/modules/postgresql/manager.py:264 close()
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py:144 get_create_table_sql()
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py:149 get_all_create_sql()
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py:153 get_all_indexes_sql()

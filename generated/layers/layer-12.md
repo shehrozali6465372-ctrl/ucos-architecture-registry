@@ -1,12 +1,12 @@
 # Layer 12 — AI Foundation
 
-Implementation commit: 62f2c84857b428510cad81dcd07aa96ac2a43656
+Implementation commit: 69b56124c22a339be67e260c1a568d189962481e
 Implementation path: layers/layer12_ai_foundation
 
 ## Source inventory
 - Python modules: **318**
 - Classes: **428**
-- Functions/methods: **1616**
+- Functions/methods: **1617**
 
 ## Python modules
 - layers/layer12_ai_foundation/__init__.py
@@ -332,15 +332,15 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/budget_manager.py:7 BudgetManager
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analytics.py:6 CostAnalytics
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:5 CostAnalyzer
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:5 CostConfig
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:7 CostConfig
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:4 CostContext
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:6 CostEvents
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:5 CostFallback
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:7 CostFallback
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:5 CostForecaster
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_health.py:5 CostHealth
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_memory.py:6 CostMemory
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:6 CostMonitor
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:6 CostOptimizer
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:9 CostOptimizer
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:15 CostOrchestrator
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_profiler.py:5 CostProfiler
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_ranker.py:6 CostRanker
@@ -356,11 +356,11 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:9 OptimizationError
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:11 PredictionError
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/exceptions.py:13 ReportError
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:5 ModelSwitcher
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:7 ModelSwitcher
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:9 CostEntry
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:26 BudgetLimit
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:5 PricePerToken
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:19 PriceCalculator
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:7 PricePerToken
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:30 PriceCalculator
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:5 TokenCounter
 - layers/layer12_ai_foundation/modules/ai_evaluation_engine/accuracy_checker.py:7 AccuracyChecker
 - layers/layer12_ai_foundation/modules/ai_evaluation_engine/bias_detector.py:6 BiasDetector
@@ -735,7 +735,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:6 ProviderHealth
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_health.py:12 LLMHealth
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:5 LLMLoader
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:50 LLMManager
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:51 LLMManager
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:6 LLMCacheEntry
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:17 LLMMemory
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_metrics.py:6 LLMMetrics
@@ -780,8 +780,8 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:6 __init__()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:8 analyze()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_analyzer.py:14 detect_anomalies()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:6 __init__()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:16 to_dict()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_config.py:19 to_dict()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:5 __init__()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:7 set()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_context.py:9 get()
@@ -792,10 +792,10 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:16 publish()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:22 get_log()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_events.py:25 clear()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:6 __init__()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:8 get_fallback_model()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:12 log()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:14 get_log()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:8 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:11 get_fallback_model()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:18 log()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_fallback.py:23 get_log()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:6 __init__()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:8 predict()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_forecaster.py:18 predict_monthly()
@@ -818,10 +818,10 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:15 get_alerts()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:18 status()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_monitor.py:20 reset()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:7 __init__()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:9 find_cheapest()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:13 optimize_batch()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:31 suggest_model()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:10 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:13 find_cheapest()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:22 optimize_batch()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_optimizer.py:50 suggest_model()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:16 __init__()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:27 start()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_orchestrator.py:29 stop()
@@ -865,17 +865,17 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_tracker.py:37 to_dict()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_validator.py:7 validate_entry()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/cost_validator.py:14 validate_budget()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:11 __init__()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:13 switch_down()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:17 switch_up()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:21 suggest_tier()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:25 log_switch()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:27 get_switches()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:14 __init__()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:17 switch_down()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:22 switch_up()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:27 suggest_tier()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:34 log_switch()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/model_switcher.py:39 get_switches()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:18 total_tokens()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:20 to_dict()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/models.py:32 to_dict()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:21 calculate()
-- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:26 compare_models()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:32 calculate()
+- layers/layer12_ai_foundation/modules/ai_cost_optimizer/price_calculator.py:45 compare_models()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:7 count_words()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:10 estimate_tokens()
 - layers/layer12_ai_foundation/modules/ai_cost_optimizer/token_counter.py:15 count_batch()
@@ -1963,9 +1963,9 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_monitor.py:41 reset()
 - layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:12 __init__()
 - layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:15 optimize_model_selection()
-- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:38 optimize_consensus()
-- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:58 reduce_cost()
-- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:61 get_log()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:47 optimize_consensus()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:79 reduce_cost()
+- layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_optimizer.py:82 get_log()
 - layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:21 __init__()
 - layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:25 get()
 - layers/layer12_ai_foundation/modules/multi_model_intelligence/multi_model_policy.py:28 set()
@@ -2280,17 +2280,18 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:16 is_loaded()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:18 get_loaded()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_loader.py:20 get_stats()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:53 __init__()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:71 start()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:75 stop()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:79 generate()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:197 generate_stream()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:206 chat()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:253 batch_generate()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:258 get_usage_report()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:261 get_cost_report()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:264 get_health()
-- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:272 status()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:54 __init__()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:72 start()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:76 stop()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:80 generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:199 _calculate_cost()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:213 generate_stream()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:222 chat()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:269 batch_generate()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:274 get_usage_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:277 get_cost_report()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:280 get_health()
+- layers/layer12_ai_foundation/modules/universal_llm_manager/llm_manager.py:288 status()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:8 __init__()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:14 is_expired()
 - layers/layer12_ai_foundation/modules/universal_llm_manager/llm_memory.py:18 __init__()
