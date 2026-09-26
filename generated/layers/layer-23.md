@@ -1,12 +1,12 @@
 # Layer 23 — Website Manager
 
-Implementation commit: c7f97876d5acfa813d28a1c90095c09097e50ab4
+Implementation commit: 733457c310d65ffbf3ccc4169662d485373beb6d
 Implementation path: layers/layer23_website_manager
 
 ## Source inventory
 - Python modules: **403**
 - Classes: **408**
-- Functions/methods: **1409**
+- Functions/methods: **1412**
 
 ## Python modules
 - layers/layer23_website_manager/__init__.py
@@ -821,7 +821,7 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/traffic_manager/sources/traffic_source_manager.py:11 TrafficSourceManager
 - layers/layer23_website_manager/traffic_manager/traffic_manager.py:30 TrafficManager
 - layers/layer23_website_manager/traffic_manager/visitors/visitor_tracker.py:12 VisitorTracker
-- layers/layer23_website_manager/website_manager.py:32 WebsiteManager
+- layers/layer23_website_manager/website_manager.py:33 WebsiteManager
 
 ## Functions / methods
 - layers/layer23_website_manager/affiliate_manager/affiliate_manager.py:267 get_affiliate_manager()
@@ -1276,12 +1276,13 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/health/website_health.py:128 find_related_articles()
 - layers/layer23_website_manager/health/website_health.py:157 generate_internal_links()
 - layers/layer23_website_manager/health/website_health.py:189 to_dict()
-- layers/layer23_website_manager/integration/atoz_bridge.py:25 _init_inbox()
-- layers/layer23_website_manager/integration/atoz_bridge.py:38 _payload_hash()
-- layers/layer23_website_manager/integration/atoz_bridge.py:41 _claim_request()
-- layers/layer23_website_manager/integration/atoz_bridge.py:68 _finish_request()
-- layers/layer23_website_manager/integration/atoz_bridge.py:82 _uuid()
-- layers/layer23_website_manager/integration/atoz_bridge.py:89 dispatch_job()
+- layers/layer23_website_manager/integration/atoz_bridge.py:32 _connect()
+- layers/layer23_website_manager/integration/atoz_bridge.py:40 _init_inbox()
+- layers/layer23_website_manager/integration/atoz_bridge.py:64 _payload_hash()
+- layers/layer23_website_manager/integration/atoz_bridge.py:70 _claim_request()
+- layers/layer23_website_manager/integration/atoz_bridge.py:118 _finish_request()
+- layers/layer23_website_manager/integration/atoz_bridge.py:137 _uuid()
+- layers/layer23_website_manager/integration/atoz_bridge.py:144 dispatch_job()
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py:16 __init__()
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py:20 record_metric()
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py:27 get_metrics()
@@ -2067,21 +2068,23 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/seo_richpins_manager/validation/seo_validator.py:14 validate_profile()
 - layers/layer23_website_manager/seo_richpins_manager/validation/seo_validator.py:88 get_stats()
 - layers/layer23_website_manager/services/publisher.py:18 __init__()
-- layers/layer23_website_manager/services/publisher.py:32 create_article()
-- layers/layer23_website_manager/services/publisher.py:53 get_article()
-- layers/layer23_website_manager/services/publisher.py:57 get_article_by_slug()
-- layers/layer23_website_manager/services/publisher.py:64 update_article()
-- layers/layer23_website_manager/services/publisher.py:87 delete_article()
-- layers/layer23_website_manager/services/publisher.py:95 get_all_articles()
-- layers/layer23_website_manager/services/publisher.py:109 publish_article()
-- layers/layer23_website_manager/services/publisher.py:136 draft_article()
-- layers/layer23_website_manager/services/publisher.py:144 schedule_article()
-- layers/layer23_website_manager/services/publisher.py:155 get_due_articles()
-- layers/layer23_website_manager/services/publisher.py:164 process_scheduled()
-- layers/layer23_website_manager/services/publisher.py:178 get_stats()
-- layers/layer23_website_manager/services/publisher.py:196 _generate_slug()
-- layers/layer23_website_manager/services/publisher.py:205 _load_from_disk()
-- layers/layer23_website_manager/services/publisher.py:218 save_to_disk()
+- layers/layer23_website_manager/services/publisher.py:28 create_article()
+- layers/layer23_website_manager/services/publisher.py:35 save_article()
+- layers/layer23_website_manager/services/publisher.py:44 get_article()
+- layers/layer23_website_manager/services/publisher.py:48 get_article_by_slug()
+- layers/layer23_website_manager/services/publisher.py:52 get_all_articles()
+- layers/layer23_website_manager/services/publisher.py:68 update_article()
+- layers/layer23_website_manager/services/publisher.py:93 delete_article()
+- layers/layer23_website_manager/services/publisher.py:101 publish_article()
+- layers/layer23_website_manager/services/publisher.py:119 draft_article()
+- layers/layer23_website_manager/services/publisher.py:128 schedule_article()
+- layers/layer23_website_manager/services/publisher.py:138 get_due_articles()
+- layers/layer23_website_manager/services/publisher.py:144 process_scheduled()
+- layers/layer23_website_manager/services/publisher.py:155 get_stats()
+- layers/layer23_website_manager/services/publisher.py:166 _generate_slug()
+- layers/layer23_website_manager/services/publisher.py:173 _load_from_disk()
+- layers/layer23_website_manager/services/publisher.py:204 _persist_locked()
+- layers/layer23_website_manager/services/publisher.py:229 save_to_disk()
 - layers/layer23_website_manager/services/site_structure_manager.py:13 __init__()
 - layers/layer23_website_manager/services/site_structure_manager.py:18 add_nav_item()
 - layers/layer23_website_manager/services/site_structure_manager.py:22 remove_nav_item()
@@ -2207,32 +2210,32 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/traffic_manager/visitors/visitor_tracker.py:29 get_visitor_count()
 - layers/layer23_website_manager/traffic_manager/visitors/visitor_tracker.py:40 simulate_visitors()
 - layers/layer23_website_manager/traffic_manager/visitors/visitor_tracker.py:49 get_stats()
-- layers/layer23_website_manager/website_manager.py:369 get_website()
-- layers/layer23_website_manager/website_manager.py:39 __init__()
-- layers/layer23_website_manager/website_manager.py:62 configure()
-- layers/layer23_website_manager/website_manager.py:100 get_config()
-- layers/layer23_website_manager/website_manager.py:106 create_article()
-- layers/layer23_website_manager/website_manager.py:171 get_article()
-- layers/layer23_website_manager/website_manager.py:174 get_article_by_slug()
-- layers/layer23_website_manager/website_manager.py:177 update_article()
-- layers/layer23_website_manager/website_manager.py:184 delete_article()
-- layers/layer23_website_manager/website_manager.py:191 publish_article()
-- layers/layer23_website_manager/website_manager.py:196 get_all_articles()
-- layers/layer23_website_manager/website_manager.py:202 _generate_article_seo()
-- layers/layer23_website_manager/website_manager.py:225 generate_article_seo()
-- layers/layer23_website_manager/website_manager.py:243 upload_media()
-- layers/layer23_website_manager/website_manager.py:248 get_media()
-- layers/layer23_website_manager/website_manager.py:251 get_all_media()
-- layers/layer23_website_manager/website_manager.py:256 generate_related_articles()
-- layers/layer23_website_manager/website_manager.py:263 apply_internal_links()
-- layers/layer23_website_manager/website_manager.py:279 check_health()
-- layers/layer23_website_manager/website_manager.py:299 generate_sitemap()
-- layers/layer23_website_manager/website_manager.py:303 generate_robots_txt()
-- layers/layer23_website_manager/website_manager.py:308 add_sitemap_entry()
-- layers/layer23_website_manager/website_manager.py:315 get_status()
-- layers/layer23_website_manager/website_manager.py:343 to_dict()
-- layers/layer23_website_manager/website_manager.py:348 _log_operation()
-- layers/layer23_website_manager/website_manager.py:358 get_operation_log()
+- layers/layer23_website_manager/website_manager.py:372 get_website()
+- layers/layer23_website_manager/website_manager.py:40 __init__()
+- layers/layer23_website_manager/website_manager.py:65 configure()
+- layers/layer23_website_manager/website_manager.py:103 get_config()
+- layers/layer23_website_manager/website_manager.py:109 create_article()
+- layers/layer23_website_manager/website_manager.py:174 get_article()
+- layers/layer23_website_manager/website_manager.py:177 get_article_by_slug()
+- layers/layer23_website_manager/website_manager.py:180 update_article()
+- layers/layer23_website_manager/website_manager.py:187 delete_article()
+- layers/layer23_website_manager/website_manager.py:194 publish_article()
+- layers/layer23_website_manager/website_manager.py:199 get_all_articles()
+- layers/layer23_website_manager/website_manager.py:205 _generate_article_seo()
+- layers/layer23_website_manager/website_manager.py:228 generate_article_seo()
+- layers/layer23_website_manager/website_manager.py:246 upload_media()
+- layers/layer23_website_manager/website_manager.py:251 get_media()
+- layers/layer23_website_manager/website_manager.py:254 get_all_media()
+- layers/layer23_website_manager/website_manager.py:259 generate_related_articles()
+- layers/layer23_website_manager/website_manager.py:266 apply_internal_links()
+- layers/layer23_website_manager/website_manager.py:282 check_health()
+- layers/layer23_website_manager/website_manager.py:302 generate_sitemap()
+- layers/layer23_website_manager/website_manager.py:306 generate_robots_txt()
+- layers/layer23_website_manager/website_manager.py:311 add_sitemap_entry()
+- layers/layer23_website_manager/website_manager.py:318 get_status()
+- layers/layer23_website_manager/website_manager.py:346 to_dict()
+- layers/layer23_website_manager/website_manager.py:351 _log_operation()
+- layers/layer23_website_manager/website_manager.py:361 get_operation_log()
 
 ## Status discipline
 Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

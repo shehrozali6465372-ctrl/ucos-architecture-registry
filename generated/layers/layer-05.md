@@ -1,12 +1,12 @@
 # Layer 05 — Image
 
-Implementation commit: c7f97876d5acfa813d28a1c90095c09097e50ab4
+Implementation commit: 733457c310d65ffbf3ccc4169662d485373beb6d
 Implementation path: layers/layer05_image
 
 ## Source inventory
 - Python modules: **31**
 - Classes: **33**
-- Functions/methods: **116**
+- Functions/methods: **120**
 
 ## Python modules
 - layers/layer05_image/__init__.py
@@ -126,22 +126,26 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_prompt/image_prompt.py:71 build()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:109 build_batch()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:124 build_count()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:51 __init__()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:59 generate()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:98 generate_with_reference()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:113 generate_batch()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:124 _enhance_prompt()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:148 _real_generate()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:225 _image_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:235 _aspect_ratio()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:242 _persist_image()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:264 _get_api_keys()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:281 _get_api_key()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:286 _parse_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:296 is_configured()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:300 get_stats()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:313 _record_history()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:319 get_history()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:52 __init__()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:60 generate()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:99 generate_with_reference()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:114 generate_batch()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:125 _enhance_prompt()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:149 _real_generate()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:164 _real_generate_interaction()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:197 _real_generate_legacy()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:239 _request_json()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:274 _extract_interaction_image()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:300 _image_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:310 _aspect_ratio()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:317 _persist_image()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:339 _get_api_keys()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:356 _get_api_key()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:361 _parse_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:371 is_configured()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:375 get_stats()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:388 _record_history()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:394 get_history()
 - layers/layer05_image/modules/image_provider/image_provider.py:13 __init__()
 - layers/layer05_image/modules/image_provider/image_provider.py:22 to_dict()
 - layers/layer05_image/modules/image_provider/image_provider.py:35 __init__()

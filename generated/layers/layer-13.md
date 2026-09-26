@@ -1,6 +1,6 @@
 # Layer 13 — Persistence
 
-Implementation commit: c7f97876d5acfa813d28a1c90095c09097e50ab4
+Implementation commit: 733457c310d65ffbf3ccc4169662d485373beb6d
 Implementation path: layers/layer13_persistence
 
 ## Source inventory
