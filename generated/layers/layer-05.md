@@ -1,12 +1,12 @@
 # Layer 05 — Image
 
-Implementation commit: 36a8cdee6a5610d1b34eb30fee4ac5f0c89593e5
+Implementation commit: c7f97876d5acfa813d28a1c90095c09097e50ab4
 Implementation path: layers/layer05_image
 
 ## Source inventory
 - Python modules: **31**
 - Classes: **33**
-- Functions/methods: **115**
+- Functions/methods: **116**
 
 ## Python modules
 - layers/layer05_image/__init__.py
@@ -54,7 +54,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:19 ImageOrchestratorResult
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:49 ImageOrchestrator
 - layers/layer05_image/modules/image_planner/image_planner.py:38 ImagePlan
-- layers/layer05_image/modules/image_planner/image_planner.py:72 ImagePlanner
+- layers/layer05_image/modules/image_planner/image_planner.py:81 ImagePlanner
 - layers/layer05_image/modules/image_prompt/image_prompt.py:36 ImagePrompt
 - layers/layer05_image/modules/image_prompt/image_prompt.py:64 ImagePromptBuilder
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:30 GeminiImageProvider
@@ -114,33 +114,34 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:127 run_multi_platform()
 - layers/layer05_image/modules/image_orchestrator/image_orchestrator.py:138 run_count()
 - layers/layer05_image/modules/image_planner/image_planner.py:43 __init__()
-- layers/layer05_image/modules/image_planner/image_planner.py:59 to_dict()
-- layers/layer05_image/modules/image_planner/image_planner.py:75 __init__()
-- layers/layer05_image/modules/image_planner/image_planner.py:79 plan()
-- layers/layer05_image/modules/image_planner/image_planner.py:100 plan_multi_platform()
-- layers/layer05_image/modules/image_planner/image_planner.py:111 suggest_type()
-- layers/layer05_image/modules/image_planner/image_planner.py:124 plan_count()
+- layers/layer05_image/modules/image_planner/image_planner.py:68 to_dict()
+- layers/layer05_image/modules/image_planner/image_planner.py:84 __init__()
+- layers/layer05_image/modules/image_planner/image_planner.py:88 plan()
+- layers/layer05_image/modules/image_planner/image_planner.py:118 plan_multi_platform()
+- layers/layer05_image/modules/image_planner/image_planner.py:129 suggest_type()
+- layers/layer05_image/modules/image_planner/image_planner.py:142 plan_count()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:44 __init__()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:53 to_dict()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:67 __init__()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:71 build()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:109 build_batch()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:124 build_count()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:50 __init__()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:58 generate()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:85 generate_with_reference()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:100 generate_batch()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:111 _enhance_prompt()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:135 _real_generate()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:212 _image_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:222 _aspect_ratio()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:229 _persist_image()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:251 _get_api_key()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:261 _parse_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:271 is_configured()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:275 get_stats()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:288 _record_history()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:294 get_history()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:51 __init__()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:59 generate()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:98 generate_with_reference()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:113 generate_batch()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:124 _enhance_prompt()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:148 _real_generate()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:225 _image_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:235 _aspect_ratio()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:242 _persist_image()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:264 _get_api_keys()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:281 _get_api_key()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:286 _parse_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:296 is_configured()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:300 get_stats()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:313 _record_history()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:319 get_history()
 - layers/layer05_image/modules/image_provider/image_provider.py:13 __init__()
 - layers/layer05_image/modules/image_provider/image_provider.py:22 to_dict()
 - layers/layer05_image/modules/image_provider/image_provider.py:35 __init__()
