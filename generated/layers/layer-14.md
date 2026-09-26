@@ -1,6 +1,6 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: 58b73a701debff978883e411410bf5b577d5159b
+Implementation commit: 36a8cdee6a5610d1b34eb30fee4ac5f0c89593e5
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory

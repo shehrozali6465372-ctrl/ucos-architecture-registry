@@ -1,6 +1,6 @@
 # Layer 05 — Image
 
-Implementation commit: 58b73a701debff978883e411410bf5b577d5159b
+Implementation commit: 36a8cdee6a5610d1b34eb30fee4ac5f0c89593e5
 Implementation path: layers/layer05_image
 
 ## Source inventory
@@ -132,15 +132,15 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:100 generate_batch()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:111 _enhance_prompt()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:135 _real_generate()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:193 _image_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:203 _aspect_ratio()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:210 _persist_image()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:232 _get_api_key()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:242 _parse_size()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:252 is_configured()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:256 get_stats()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:269 _record_history()
-- layers/layer05_image/modules/image_provider/gemini_image_provider.py:275 get_history()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:212 _image_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:222 _aspect_ratio()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:229 _persist_image()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:251 _get_api_key()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:261 _parse_size()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:271 is_configured()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:275 get_stats()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:288 _record_history()
+- layers/layer05_image/modules/image_provider/gemini_image_provider.py:294 get_history()
 - layers/layer05_image/modules/image_provider/image_provider.py:13 __init__()
 - layers/layer05_image/modules/image_provider/image_provider.py:22 to_dict()
 - layers/layer05_image/modules/image_provider/image_provider.py:35 __init__()
