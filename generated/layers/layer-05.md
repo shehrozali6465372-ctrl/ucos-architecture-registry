@@ -1,12 +1,12 @@
 # Layer 05 — Image
 
-Implementation commit: 733457c310d65ffbf3ccc4169662d485373beb6d
+Implementation commit: 964ca753c56465f7733d2adb077e0050efe8cf72
 Implementation path: layers/layer05_image
 
 ## Source inventory
-- Python modules: **31**
-- Classes: **33**
-- Functions/methods: **120**
+- Python modules: **32**
+- Classes: **34**
+- Functions/methods: **128**
 
 ## Python modules
 - layers/layer05_image/__init__.py
@@ -28,6 +28,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py
 - layers/layer05_image/modules/image_provider/image_provider.py
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py
+- layers/layer05_image/modules/image_provider/puter_image_provider.py
 - layers/layer05_image/modules/infographic_engine/__init__.py
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py
 - layers/layer05_image/modules/infographic_generator/__init__.py
@@ -62,6 +63,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_provider/image_provider.py:32 BaseImageProvider
 - layers/layer05_image/modules/image_provider/image_provider.py:63 MockImageProvider
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py:18 OpenRouterImageProvider
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:17 PuterImageProvider
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:17 InfographicPlan
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:44 InfographicEngine
 - layers/layer05_image/modules/infographic_generator/infographic_generator.py:13 InfographicItem
@@ -160,10 +162,18 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py:30 _get_api_key()
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py:36 is_configured()
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py:39 generate()
-- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:115 _parse_size()
-- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:125 _aspect_ratio()
-- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:136 _resolution()
-- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:146 _persist_image()
+- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:100 _request_json()
+- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:129 _parse_size()
+- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:139 _aspect_ratio()
+- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:150 _resolution()
+- layers/layer05_image/modules/image_provider/openrouter_image_provider.py:160 _persist_image()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:29 __init__()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:43 _get_auth_token()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:46 is_configured()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:49 generate()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:125 _decode_bridge_output()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:138 _parse_size()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:148 _persist_image()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:23 __init__()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:33 to_dict()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:47 __init__()

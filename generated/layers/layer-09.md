@@ -1,6 +1,6 @@
 # Layer 09 — Learning
 
-Implementation commit: 733457c310d65ffbf3ccc4169662d485373beb6d
+Implementation commit: 964ca753c56465f7733d2adb077e0050efe8cf72
 Implementation path: layers/layer09_learning
 
 ## Source inventory
