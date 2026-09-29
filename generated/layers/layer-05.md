@@ -1,12 +1,12 @@
 # Layer 05 — Image
 
-Implementation commit: 8110935b7597d92f10a7190d957b051a3b30aafe
+Implementation commit: 62fbe19ef89794ccab92e2504f9007ac6dfde8c7
 Implementation path: layers/layer05_image
 
 ## Source inventory
 - Python modules: **32**
 - Classes: **34**
-- Functions/methods: **128**
+- Functions/methods: **129**
 
 ## Python modules
 - layers/layer05_image/__init__.py
@@ -171,9 +171,10 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_provider/puter_image_provider.py:46 _get_auth_token()
 - layers/layer05_image/modules/image_provider/puter_image_provider.py:49 is_configured()
 - layers/layer05_image/modules/image_provider/puter_image_provider.py:52 generate()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:141 _decode_bridge_output()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:154 _parse_size()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:164 _persist_image()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:139 _image_signature_matches_mime()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:151 _decode_bridge_output()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:164 _parse_size()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:174 _persist_image()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:23 __init__()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:33 to_dict()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:47 __init__()
