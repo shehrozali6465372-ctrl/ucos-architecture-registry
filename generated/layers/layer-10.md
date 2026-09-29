@@ -1,12 +1,12 @@
 # Layer 10 — Affiliate
 
-Implementation commit: 62fbe19ef89794ccab92e2504f9007ac6dfde8c7
+Implementation commit: abcec5e655fd820f16d84fa70a31b8551ee18d75
 Implementation path: layers/layer10_monetization
 
 ## Source inventory
-- Python modules: **158**
-- Classes: **298**
-- Functions/methods: **1432**
+- Python modules: **159**
+- Classes: **299**
+- Functions/methods: **1436**
 
 ## Python modules
 - layers/layer10_monetization/__init__.py
@@ -34,6 +34,7 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/ai_meta_controller/policy_arbiter.py
 - layers/layer10_monetization/modules/ai_meta_controller/self_reflection_engine.py
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py
+- layers/layer10_monetization/modules/amazon_product_intake.py
 - layers/layer10_monetization/modules/analytics_intelligence/__init__.py
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_intelligence_manager.py
@@ -211,6 +212,7 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/ai_meta_controller/self_reflection_engine.py:31 SelfReflectionEngine
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:9 StrategyProfile
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:25 StrategySelector
+- layers/layer10_monetization/modules/amazon_product_intake.py:20 AmazonProductIntake
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py:12 CollectionTask
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py:28 AnalyticsCollector
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_intelligence_manager.py:19 AnalyticsIntelligenceManager
@@ -735,6 +737,10 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:60 get_strategy()
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:63 get_all_strategies()
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:66 get_history()
+- layers/layer10_monetization/modules/amazon_product_intake.py:34 _is_amazon_url()
+- layers/layer10_monetization/modules/amazon_product_intake.py:41 _extract_asin()
+- layers/layer10_monetization/modules/amazon_product_intake.py:56 normalize_amazon_product()
+- layers/layer10_monetization/modules/amazon_product_intake.py:30 to_dict()
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py:18 __init__()
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py:31 __init__()
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py:35 create_task()
