@@ -1,6 +1,6 @@
 # Layer 05 — Image
 
-Implementation commit: 964ca753c56465f7733d2adb077e0050efe8cf72
+Implementation commit: 8110935b7597d92f10a7190d957b051a3b30aafe
 Implementation path: layers/layer05_image
 
 ## Source inventory
@@ -167,13 +167,13 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py:139 _aspect_ratio()
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py:150 _resolution()
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py:160 _persist_image()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:29 __init__()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:43 _get_auth_token()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:46 is_configured()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:49 generate()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:125 _decode_bridge_output()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:138 _parse_size()
-- layers/layer05_image/modules/image_provider/puter_image_provider.py:148 _persist_image()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:30 __init__()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:46 _get_auth_token()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:49 is_configured()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:52 generate()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:141 _decode_bridge_output()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:154 _parse_size()
+- layers/layer05_image/modules/image_provider/puter_image_provider.py:164 _persist_image()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:23 __init__()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:33 to_dict()
 - layers/layer05_image/modules/infographic_engine/infographic_engine.py:47 __init__()
