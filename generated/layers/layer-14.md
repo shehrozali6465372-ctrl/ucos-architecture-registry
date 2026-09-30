@@ -1,6 +1,6 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: 01108125adbf3e8015f44729c2950c5b110246c2
+Implementation commit: 2e1bcc866726bffbe2885de3b5c373aa294b437f
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory
@@ -171,7 +171,7 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:24 QueryResult
 - layers/layer14_enterprise_integration/modules/query_bus/query_bus.py:39 QueryBus
 - layers/layer14_enterprise_integration/modules/real_integrations/config.py:11 IntegrationConfig
-- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:13 IntegrationGateway
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:14 IntegrationGateway
 - layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:14 IntegrationError
 - layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:18 IntegrationConfigurationError
 - layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:23 HTTPResponse
@@ -672,12 +672,12 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/real_integrations/config.py:43 _https()
 - layers/layer14_enterprise_integration/modules/real_integrations/config.py:46 validation()
 - layers/layer14_enterprise_integration/modules/real_integrations/config.py:58 status()
-- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:16 __init__()
-- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:28 status()
-- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:31 search()
-- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:68 affiliate_search()
-- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:88 analytics_report()
-- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:119 wordpress_publish()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:17 __init__()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:29 status()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:32 search()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:120 affiliate_search()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:140 analytics_report()
+- layers/layer14_enterprise_integration/modules/real_integrations/gateway.py:171 wordpress_publish()
 - layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:32 __init__()
 - layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:37 _validate_url()
 - layers/layer14_enterprise_integration/modules/real_integrations/http_client.py:49 _decode()
