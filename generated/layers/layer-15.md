@@ -1,6 +1,6 @@
 # Layer 15 — Async Runtime
 
-Implementation commit: 8bb3f14302536a6e71303222968f294ae5e7b51b
+Implementation commit: 01108125adbf3e8015f44729c2950c5b110246c2
 Implementation path: layers/layer15_async_runtime
 
 ## Source inventory
