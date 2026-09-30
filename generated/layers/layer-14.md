@@ -1,12 +1,12 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: 4e6efff570414cccb12dc2fd154c4860e73392ec
+Implementation commit: 8bb3f14302536a6e71303222968f294ae5e7b51b
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory
 - Python modules: **84**
 - Classes: **103**
-- Functions/methods: **584**
+- Functions/methods: **585**
 
 ## Python modules
 - layers/layer14_enterprise_integration/__init__.py
@@ -210,28 +210,29 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:70 start()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:105 stop()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:107 is_running()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:108 _handle_status()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:110 _handle_health()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:120 _handle_heartbeat()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:123 _handle_amazon_intake()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:154 _browser_request()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:173 _handle_browser_health()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:180 _handle_browser_task()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:194 _handle_aios_job()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:210 _account_id()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:213 _require_account()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:219 _handle_analytics()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:227 _handle_history()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:237 _handle_stats()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:242 _handle_accounts()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:249 _handle_account_create()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:261 _handle_generate()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:269 _handle_templates()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:278 _handle_tiktok_reconcile()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:285 _handle_atoz_job()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:294 _handle_meta_health()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:303 _handle_meta_discover()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:310 _handle_platforms()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:108 _handle_healthz()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:111 _handle_status()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:113 _handle_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:123 _handle_heartbeat()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:126 _handle_amazon_intake()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:157 _browser_request()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:176 _handle_browser_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:183 _handle_browser_task()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:197 _handle_aios_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:213 _account_id()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:216 _require_account()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:222 _handle_analytics()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:230 _handle_history()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:240 _handle_stats()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:245 _handle_accounts()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:252 _handle_account_create()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:264 _handle_generate()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:272 _handle_templates()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:281 _handle_tiktok_reconcile()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:288 _handle_atoz_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:297 _handle_meta_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:306 _handle_meta_discover()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:313 _handle_platforms()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:73 do_GET()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:82 do_POST()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:97 _send()
