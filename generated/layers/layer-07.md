@@ -1,12 +1,12 @@
 # Layer 07 — Publishing
 
-Implementation commit: 2e1bcc866726bffbe2885de3b5c373aa294b437f
+Implementation commit: c54aebd1f0c393e663f0bed90f171d2ac0b9694c
 Implementation path: layers/layer07_publishing
 
 ## Source inventory
 - Python modules: **149**
 - Classes: **239**
-- Functions/methods: **1181**
+- Functions/methods: **1182**
 
 ## Python modules
 - layers/layer07_publishing/__init__.py
@@ -958,21 +958,22 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:44 authenticate()
 - layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:71 validate()
 - layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:74 publish()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:105 _publish_with_media()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:114 upload_image()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:129 _upload_local_image()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:157 edit()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:167 delete()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:171 get_post()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:175 get_status()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:178 get_analytics()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:186 schedule()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:196 get_page_info()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:200 get_stats()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:203 _api_get()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:209 _post()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:216 _delete()
-- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:221 _http_error()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:109 _publish_with_media()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:118 upload_image()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:133 _upload_local_image()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:161 edit()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:171 delete()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:175 get_post()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:179 get_status()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:182 get_page_feed()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:190 get_analytics()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:198 schedule()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:208 get_page_info()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:212 get_stats()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:215 _api_get()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:221 _post()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:228 _delete()
+- layers/layer07_publishing/modules/platform_plugin_manager/facebook/facebook_publisher.py:233 _http_error()
 - layers/layer07_publishing/modules/platform_plugin_manager/instagram/instagram_publisher.py:14 __init__()
 - layers/layer07_publishing/modules/platform_plugin_manager/instagram/instagram_publisher.py:23 get_platform_name()
 - layers/layer07_publishing/modules/platform_plugin_manager/instagram/instagram_publisher.py:25 get_capabilities()
