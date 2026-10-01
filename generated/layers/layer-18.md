@@ -1,6 +1,6 @@
 # Layer 18 — Monitoring
 
-Implementation commit: c54aebd1f0c393e663f0bed90f171d2ac0b9694c
+Implementation commit: e2b993be7d18a5bd8b3b1fcd03df2d8b4bfbff92
 Implementation path: layers/layer18_monitoring
 
 ## Source inventory
