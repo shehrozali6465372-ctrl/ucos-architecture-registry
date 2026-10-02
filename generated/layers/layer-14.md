@@ -1,12 +1,12 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: e2b993be7d18a5bd8b3b1fcd03df2d8b4bfbff92
+Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory
 - Python modules: **84**
 - Classes: **103**
-- Functions/methods: **585**
+- Functions/methods: **587**
 
 ## Python modules
 - layers/layer14_enterprise_integration/__init__.py
@@ -489,21 +489,23 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:166 _research()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:198 _intelligence()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:208 _writing()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:225 _ai()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:251 _image()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:265 _quality()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:274 _publisher()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:288 _publish()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:323 _analytics()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:334 _learning()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:354 execute()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:388 _persist()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:538 status()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:225 _preflight()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:238 _ai()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:268 _image()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:282 _quality()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:291 _publisher()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:305 _publish()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:340 _analytics()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:351 _learning()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:371 execute()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:408 _persist()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:558 status()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:124 gemini_handler()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:21 _credentials()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:40 _publisher()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:53 _policy_check()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:70 _publish()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:40 _verify_public_submission()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:59 _publisher()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:72 _policy_check()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:89 _publish()
 - layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:11 __init__()
 - layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:21 is_expired()
 - layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:26 to_dict()
