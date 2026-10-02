@@ -438,7 +438,7 @@ Provider silence, timeout, process death or lost response MUST NOT become FAILED
 
 ## 12. Reservation and idempotency semantics
 
-Reservation, repetition check and INTENT_CREATED are one PostgreSQL transaction. PostgreSQL uniqueness/locking makes check-and-reserve atomic: two concurrent requests cannot both win the same policy slot. L06 supplies the decision; L07 owns the reservation ledger.
+Reservation, repetition check and INTENT_CREATED are one PostgreSQL transaction. The check-and-reserve operation is atomic and uses PostgreSQL uniqueness/locking: two concurrent requests cannot both win the same policy slot. L06 supplies the decision; L07 owns the reservation ledger.
 
 The logical publish identity is:
 
@@ -811,6 +811,8 @@ publish_mode is resolved server-side; a caller cannot select a privileged mode d
 ### Mode authority
 
 effective_mode = policy(deployment_environment, account_environment, requested_mode).
+
+The production deployment matrix is normative: production + staging account = staging only; production + production account = production only; no caller can elevate a production account into a lower-safety path that bypasses production gates.
 
 - A client may request only an equal-or-more-restrictive mode; it cannot elevate staging to production.
 - Production deployment + production account requires production mode and production authorization.
