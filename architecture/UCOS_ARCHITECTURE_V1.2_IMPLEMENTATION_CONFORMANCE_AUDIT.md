@@ -3,7 +3,7 @@
 **Scope:** `shehrozali6465372-ctrl/universal-content-operating-system` current default branch  
 **Architecture target:** `UCOS_ARCHITECTURE_FROZEN_PRODUCTION_BASELINE_v1.2.md`  
 **Audit posture:** adversarial / evidence-first  
-**Decision:** NOT CONFORMANT — DO NOT FREEZE
+**Decision:** IMPLEMENTATION NOT CONFORMANT — ARCHITECTURE FREEZE UNCHANGED
 
 ## Evidence inspected
 
@@ -131,9 +131,11 @@
 | L23 gateway enforcement | FAIL / P1 |
 | Generated vs observed lineage | FAIL / P1 |
 
-## Freeze decision
+## Freeze relationship
 
-**NOT FREEZE-READY.**
+The target architecture is now frozen as v1.2. This audit remains an implementation-conformance record and does not reopen or modify the architecture freeze.
+
+**Implementation status: NOT CONFORMANT — DO NOT CERTIFY PRODUCTION.**
 
 The architecture candidate now describes the required target correctly in these areas, but the implementation has not converged on that target. No architecture freeze approval should be recorded until the P0 conformance failures have either been implemented and tested or explicitly resolved by an architecture change.
 
