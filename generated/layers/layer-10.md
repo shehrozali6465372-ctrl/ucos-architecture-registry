@@ -1,6 +1,6 @@
 # Layer 10 — Affiliate
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer10_monetization
 
 ## Source inventory

@@ -1,12 +1,12 @@
 # Layer 23 — Website Manager
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer23_website_manager
 
 ## Source inventory
 - Python modules: **403**
 - Classes: **408**
-- Functions/methods: **1412**
+- Functions/methods: **1413**
 
 ## Python modules
 - layers/layer23_website_manager/__init__.py
@@ -784,7 +784,7 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/seo_richpins_manager/sitemap/sitemap_manager.py:9 SitemapManager
 - layers/layer23_website_manager/seo_richpins_manager/twitter/twitter_card_manager.py:8 TwitterCardManager
 - layers/layer23_website_manager/seo_richpins_manager/validation/seo_validator.py:8 SEOValidator
-- layers/layer23_website_manager/services/publisher.py:15 Publisher
+- layers/layer23_website_manager/services/publisher.py:19 Publisher
 - layers/layer23_website_manager/services/site_structure_manager.py:10 SiteStructureManager
 - layers/layer23_website_manager/services/url_manager.py:13 Redirect
 - layers/layer23_website_manager/services/url_manager.py:23 URLManager
@@ -2067,24 +2067,25 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/seo_richpins_manager/validation/seo_validator.py:11 __init__()
 - layers/layer23_website_manager/seo_richpins_manager/validation/seo_validator.py:14 validate_profile()
 - layers/layer23_website_manager/seo_richpins_manager/validation/seo_validator.py:88 get_stats()
-- layers/layer23_website_manager/services/publisher.py:18 __init__()
-- layers/layer23_website_manager/services/publisher.py:28 create_article()
-- layers/layer23_website_manager/services/publisher.py:35 save_article()
-- layers/layer23_website_manager/services/publisher.py:44 get_article()
-- layers/layer23_website_manager/services/publisher.py:48 get_article_by_slug()
-- layers/layer23_website_manager/services/publisher.py:52 get_all_articles()
-- layers/layer23_website_manager/services/publisher.py:68 update_article()
-- layers/layer23_website_manager/services/publisher.py:93 delete_article()
-- layers/layer23_website_manager/services/publisher.py:101 publish_article()
-- layers/layer23_website_manager/services/publisher.py:119 draft_article()
-- layers/layer23_website_manager/services/publisher.py:128 schedule_article()
-- layers/layer23_website_manager/services/publisher.py:138 get_due_articles()
-- layers/layer23_website_manager/services/publisher.py:144 process_scheduled()
-- layers/layer23_website_manager/services/publisher.py:155 get_stats()
-- layers/layer23_website_manager/services/publisher.py:166 _generate_slug()
-- layers/layer23_website_manager/services/publisher.py:173 _load_from_disk()
-- layers/layer23_website_manager/services/publisher.py:204 _persist_locked()
-- layers/layer23_website_manager/services/publisher.py:229 save_to_disk()
+- layers/layer23_website_manager/services/publisher.py:15 _production()
+- layers/layer23_website_manager/services/publisher.py:22 __init__()
+- layers/layer23_website_manager/services/publisher.py:32 create_article()
+- layers/layer23_website_manager/services/publisher.py:41 save_article()
+- layers/layer23_website_manager/services/publisher.py:50 get_article()
+- layers/layer23_website_manager/services/publisher.py:54 get_article_by_slug()
+- layers/layer23_website_manager/services/publisher.py:58 get_all_articles()
+- layers/layer23_website_manager/services/publisher.py:74 update_article()
+- layers/layer23_website_manager/services/publisher.py:99 delete_article()
+- layers/layer23_website_manager/services/publisher.py:107 publish_article()
+- layers/layer23_website_manager/services/publisher.py:127 draft_article()
+- layers/layer23_website_manager/services/publisher.py:136 schedule_article()
+- layers/layer23_website_manager/services/publisher.py:146 get_due_articles()
+- layers/layer23_website_manager/services/publisher.py:152 process_scheduled()
+- layers/layer23_website_manager/services/publisher.py:165 get_stats()
+- layers/layer23_website_manager/services/publisher.py:176 _generate_slug()
+- layers/layer23_website_manager/services/publisher.py:183 _load_from_disk()
+- layers/layer23_website_manager/services/publisher.py:214 _persist_locked()
+- layers/layer23_website_manager/services/publisher.py:239 save_to_disk()
 - layers/layer23_website_manager/services/site_structure_manager.py:13 __init__()
 - layers/layer23_website_manager/services/site_structure_manager.py:18 add_nav_item()
 - layers/layer23_website_manager/services/site_structure_manager.py:22 remove_nav_item()
@@ -2210,7 +2211,7 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/traffic_manager/visitors/visitor_tracker.py:29 get_visitor_count()
 - layers/layer23_website_manager/traffic_manager/visitors/visitor_tracker.py:40 simulate_visitors()
 - layers/layer23_website_manager/traffic_manager/visitors/visitor_tracker.py:49 get_stats()
-- layers/layer23_website_manager/website_manager.py:372 get_website()
+- layers/layer23_website_manager/website_manager.py:428 get_website()
 - layers/layer23_website_manager/website_manager.py:40 __init__()
 - layers/layer23_website_manager/website_manager.py:65 configure()
 - layers/layer23_website_manager/website_manager.py:103 get_config()
@@ -2220,22 +2221,22 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/website_manager.py:180 update_article()
 - layers/layer23_website_manager/website_manager.py:187 delete_article()
 - layers/layer23_website_manager/website_manager.py:194 publish_article()
-- layers/layer23_website_manager/website_manager.py:199 get_all_articles()
-- layers/layer23_website_manager/website_manager.py:205 _generate_article_seo()
-- layers/layer23_website_manager/website_manager.py:228 generate_article_seo()
-- layers/layer23_website_manager/website_manager.py:246 upload_media()
-- layers/layer23_website_manager/website_manager.py:251 get_media()
-- layers/layer23_website_manager/website_manager.py:254 get_all_media()
-- layers/layer23_website_manager/website_manager.py:259 generate_related_articles()
-- layers/layer23_website_manager/website_manager.py:266 apply_internal_links()
-- layers/layer23_website_manager/website_manager.py:282 check_health()
-- layers/layer23_website_manager/website_manager.py:302 generate_sitemap()
-- layers/layer23_website_manager/website_manager.py:306 generate_robots_txt()
-- layers/layer23_website_manager/website_manager.py:311 add_sitemap_entry()
-- layers/layer23_website_manager/website_manager.py:318 get_status()
-- layers/layer23_website_manager/website_manager.py:346 to_dict()
-- layers/layer23_website_manager/website_manager.py:351 _log_operation()
-- layers/layer23_website_manager/website_manager.py:361 get_operation_log()
+- layers/layer23_website_manager/website_manager.py:255 get_all_articles()
+- layers/layer23_website_manager/website_manager.py:261 _generate_article_seo()
+- layers/layer23_website_manager/website_manager.py:284 generate_article_seo()
+- layers/layer23_website_manager/website_manager.py:302 upload_media()
+- layers/layer23_website_manager/website_manager.py:307 get_media()
+- layers/layer23_website_manager/website_manager.py:310 get_all_media()
+- layers/layer23_website_manager/website_manager.py:315 generate_related_articles()
+- layers/layer23_website_manager/website_manager.py:322 apply_internal_links()
+- layers/layer23_website_manager/website_manager.py:338 check_health()
+- layers/layer23_website_manager/website_manager.py:358 generate_sitemap()
+- layers/layer23_website_manager/website_manager.py:362 generate_robots_txt()
+- layers/layer23_website_manager/website_manager.py:367 add_sitemap_entry()
+- layers/layer23_website_manager/website_manager.py:374 get_status()
+- layers/layer23_website_manager/website_manager.py:402 to_dict()
+- layers/layer23_website_manager/website_manager.py:407 _log_operation()
+- layers/layer23_website_manager/website_manager.py:417 get_operation_log()
 
 ## Status discipline
 Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

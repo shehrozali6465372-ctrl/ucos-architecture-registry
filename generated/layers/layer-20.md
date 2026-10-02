@@ -1,12 +1,12 @@
 # Layer 20 — Image Pipeline
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer20_image_pipeline
 
 ## Source inventory
-- Python modules: **11**
-- Classes: **13**
-- Functions/methods: **49**
+- Python modules: **14**
+- Classes: **16**
+- Functions/methods: **63**
 
 ## Python modules
 - layers/layer20_image_pipeline/__init__.py
@@ -14,6 +14,9 @@ Implementation path: layers/layer20_image_pipeline
 - layers/layer20_image_pipeline/modules/batch_generator/batch_generator.py
 - layers/layer20_image_pipeline/modules/composition_engine/__init__.py
 - layers/layer20_image_pipeline/modules/composition_engine/composition_engine.py
+- layers/layer20_image_pipeline/modules/media_lifecycle/__init__.py
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py
 - layers/layer20_image_pipeline/modules/prompt_builder/__init__.py
 - layers/layer20_image_pipeline/modules/prompt_builder/prompt_builder.py
 - layers/layer20_image_pipeline/modules/provider_router/__init__.py
@@ -28,6 +31,9 @@ Implementation path: layers/layer20_image_pipeline
 - layers/layer20_image_pipeline/modules/composition_engine/composition_engine.py:8 CompositionRule
 - layers/layer20_image_pipeline/modules/composition_engine/composition_engine.py:20 CompositionPlan
 - layers/layer20_image_pipeline/modules/composition_engine/composition_engine.py:88 CompositionEngine
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:14 MediaAsset
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:17 MediaLifecycleError
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:21 RuntimeMedia
 - layers/layer20_image_pipeline/modules/prompt_builder/prompt_builder.py:8 ImagePrompt
 - layers/layer20_image_pipeline/modules/prompt_builder/prompt_builder.py:40 PromptBuilder
 - layers/layer20_image_pipeline/modules/provider_router/provider_router.py:10 ProviderStatus
@@ -55,6 +61,20 @@ Implementation path: layers/layer20_image_pipeline
 - layers/layer20_image_pipeline/modules/composition_engine/composition_engine.py:116 add_rule()
 - layers/layer20_image_pipeline/modules/composition_engine/composition_engine.py:121 validate()
 - layers/layer20_image_pipeline/modules/composition_engine/composition_engine.py:148 list_layouts()
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:24 __init__()
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:43 compute_checksum()
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:55 get_extension()
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:58 is_image()
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:61 is_video()
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:64 is_document()
+- layers/layer20_image_pipeline/modules/media_lifecycle/media_asset.py:67 to_dict()
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:25 _workspace_root()
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:29 _account_root()
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:41 checksum()
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:52 validate_local_artifact()
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:70 image_to_video()
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:90 public_url()
+- layers/layer20_image_pipeline/modules/media_lifecycle/runtime_media.py:109 build_asset_ref()
 - layers/layer20_image_pipeline/modules/prompt_builder/prompt_builder.py:19 __init__()
 - layers/layer20_image_pipeline/modules/prompt_builder/prompt_builder.py:28 to_dict()
 - layers/layer20_image_pipeline/modules/prompt_builder/prompt_builder.py:41 __init__()

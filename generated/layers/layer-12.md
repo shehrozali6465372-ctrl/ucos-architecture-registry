@@ -1,12 +1,12 @@
 # Layer 12 — AI Foundation
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer12_ai_foundation
 
 ## Source inventory
-- Python modules: **318**
-- Classes: **428**
-- Functions/methods: **1617**
+- Python modules: **319**
+- Classes: **429**
+- Functions/methods: **1619**
 
 ## Python modules
 - layers/layer12_ai_foundation/__init__.py
@@ -230,6 +230,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py
 - layers/layer12_ai_foundation/modules/model_router/__init__.py
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py
+- layers/layer12_ai_foundation/modules/model_router/huggingface_provider.py
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py
 - layers/layer12_ai_foundation/modules/model_router/model_router.py
 - layers/layer12_ai_foundation/modules/model_router/prompt_builder.py
@@ -617,6 +618,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:11 QwenProvider
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:27 GeminiConfig
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:40 GeminiProvider
+- layers/layer12_ai_foundation/modules/model_router/huggingface_provider.py:15 HuggingFaceProvider
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:25 KeyStatus
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:34 KeyHealth
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:182 KeyManager
@@ -1819,6 +1821,8 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:364 list_models()
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:367 get_stats()
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:379 get_history()
+- layers/layer12_ai_foundation/modules/model_router/huggingface_provider.py:19 __init__()
+- layers/layer12_ai_foundation/modules/model_router/huggingface_provider.py:25 generate()
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:49 __init__()
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:80 is_available()
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py:98 record_success()

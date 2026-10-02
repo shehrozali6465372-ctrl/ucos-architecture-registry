@@ -1,12 +1,12 @@
 # Layer 11 — Integrations
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer11_async_runtime
 
 ## Source inventory
-- Python modules: **218**
-- Classes: **236**
-- Functions/methods: **740**
+- Python modules: **223**
+- Classes: **246**
+- Functions/methods: **776**
 
 ## Python modules
 - layers/layer11_async_runtime/__init__.py
@@ -227,6 +227,11 @@ Implementation path: layers/layer11_async_runtime
 - layers/layer11_async_runtime/modules/performance_optimization/report.py
 - layers/layer11_async_runtime/modules/performance_optimization/router.py
 - layers/layer11_async_runtime/modules/performance_optimization/validator.py
+- layers/layer11_async_runtime/modules/provider_integration/config.py
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py
 
 ## Classes
 - layers/layer11_async_runtime/modules/async_ai_engine/balancer.py:5 AIBalancer
@@ -465,6 +470,16 @@ Implementation path: layers/layer11_async_runtime
 - layers/layer11_async_runtime/modules/performance_optimization/report.py:6 Report
 - layers/layer11_async_runtime/modules/performance_optimization/router.py:5 PerfRouter
 - layers/layer11_async_runtime/modules/performance_optimization/validator.py:5 PerfValidator
+- layers/layer11_async_runtime/modules/provider_integration/config.py:9 IntegrationConfig
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py:14 IntegrationGateway
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:12 IntegrationError
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:15 IntegrationConfigurationError
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:19 HTTPResponse
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:24 HTTPClient
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py:20 MetaCredentialProvider
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:13 ProviderPublishResult
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:22 WordPressPublisher
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:37 Capabilities
 
 ## Functions / methods
 - layers/layer11_async_runtime/modules/async_ai_engine/balancer.py:6 __init__()
@@ -1207,6 +1222,42 @@ Implementation path: layers/layer11_async_runtime
 - layers/layer11_async_runtime/modules/performance_optimization/validator.py:6 __init__()
 - layers/layer11_async_runtime/modules/performance_optimization/validator.py:8 process()
 - layers/layer11_async_runtime/modules/performance_optimization/validator.py:11 get_stats()
+- layers/layer11_async_runtime/modules/provider_integration/config.py:24 from_env()
+- layers/layer11_async_runtime/modules/provider_integration/config.py:41 _https()
+- layers/layer11_async_runtime/modules/provider_integration/config.py:44 validation()
+- layers/layer11_async_runtime/modules/provider_integration/config.py:56 status()
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py:17 __init__()
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py:33 status()
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py:36 search()
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py:128 affiliate_search()
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py:148 analytics_report()
+- layers/layer11_async_runtime/modules/provider_integration/gateway.py:179 wordpress_publish()
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:25 __init__()
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:30 _validate_url()
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:42 _decode()
+- layers/layer11_async_runtime/modules/provider_integration/http_client.py:51 request()
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py:24 __init__()
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py:36 credentials_for()
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py:68 _find_page()
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py:74 _pages()
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py:80 _paged_get()
+- layers/layer11_async_runtime/modules/provider_integration/meta_credentials.py:102 _get()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:25 __init__()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:33 get_platform_name()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:36 get_capabilities()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:65 authenticate()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:87 validate()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:90 publish()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:132 get_post()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:143 get_status()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:147 get_analytics()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:150 edit()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:172 delete()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:187 schedule()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:198 _auth_header()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:205 _failure()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:52 supports()
+- layers/layer11_async_runtime/modules/provider_integration/wordpress_publisher.py:55 to_dict()
 
 ## Status discipline
 Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.

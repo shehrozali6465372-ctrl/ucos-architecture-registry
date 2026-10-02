@@ -1,12 +1,12 @@
 # Layer 15 — Async Runtime
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer15_async_runtime
 
 ## Source inventory
-- Python modules: **31**
-- Classes: **42**
-- Functions/methods: **169**
+- Python modules: **32**
+- Classes: **45**
+- Functions/methods: **187**
 
 ## Python modules
 - layers/layer15_async_runtime/__init__.py
@@ -20,6 +20,7 @@ Implementation path: layers/layer15_async_runtime
 - layers/layer15_async_runtime/modules/cancellation_engine/cancellation_engine.py
 - layers/layer15_async_runtime/modules/coroutine_manager/__init__.py
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py
 - layers/layer15_async_runtime/modules/future_manager/__init__.py
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py
 - layers/layer15_async_runtime/modules/priority_queue/__init__.py
@@ -57,6 +58,9 @@ Implementation path: layers/layer15_async_runtime
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:12 CoroutineState
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:21 ManagedCoroutine
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:51 CoroutineManager
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:25 DurableTask
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:39 DurableExecutionStore
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:410 DurableWorker
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:11 FutureState
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:19 ManagedFuture
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:33 FutureManager
@@ -145,6 +149,24 @@ Implementation path: layers/layer15_async_runtime
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:114 list_coroutines()
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:117 count()
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:120 get_history()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:42 __init__()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:52 _uuid()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:59 _json()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:62 ensure_workflow()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:91 enqueue()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:199 claim()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:251 heartbeat()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:265 complete()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:279 cancel()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:305 fail()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:346 reap_expired()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:384 get()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:413 __init__()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:427 register()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:432 run_once()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:461 _heartbeat()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:468 run_forever()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:477 stop()
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:22 __init__()
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:29 to_dict()
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:34 __init__()

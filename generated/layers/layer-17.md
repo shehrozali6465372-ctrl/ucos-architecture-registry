@@ -1,12 +1,12 @@
 # Layer 17 — Security
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer17_security
 
 ## Source inventory
-- Python modules: **27**
-- Classes: **29**
-- Functions/methods: **132**
+- Python modules: **28**
+- Classes: **30**
+- Functions/methods: **134**
 
 ## Python modules
 - layers/layer17_security/__init__.py
@@ -16,6 +16,7 @@ Implementation path: layers/layer17_security
 - layers/layer17_security/modules/authentication/authentication.py
 - layers/layer17_security/modules/authorization/__init__.py
 - layers/layer17_security/modules/authorization/authorization.py
+- layers/layer17_security/modules/credential_resolver/credential_resolver.py
 - layers/layer17_security/modules/encryption_engine/__init__.py
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py
 - layers/layer17_security/modules/firewall/__init__.py
@@ -48,6 +49,7 @@ Implementation path: layers/layer17_security
 - layers/layer17_security/modules/authorization/authorization.py:9 Permission
 - layers/layer17_security/modules/authorization/authorization.py:19 Role
 - layers/layer17_security/modules/authorization/authorization.py:36 AuthorizationManager
+- layers/layer17_security/modules/credential_resolver/credential_resolver.py:17 AccountCredentialResolver
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py:13 EncryptionEngine
 - layers/layer17_security/modules/firewall/firewall.py:10 FirewallRule
 - layers/layer17_security/modules/firewall/firewall.py:22 Firewall
@@ -104,6 +106,8 @@ Implementation path: layers/layer17_security
 - layers/layer17_security/modules/authorization/authorization.py:73 get_role_permissions()
 - layers/layer17_security/modules/authorization/authorization.py:77 list_roles()
 - layers/layer17_security/modules/authorization/authorization.py:80 stats()
+- layers/layer17_security/modules/credential_resolver/credential_resolver.py:23 _env_key()
+- layers/layer17_security/modules/credential_resolver/credential_resolver.py:28 resolve()
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py:14 __init__()
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py:17 set_key()
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py:22 generate_key()

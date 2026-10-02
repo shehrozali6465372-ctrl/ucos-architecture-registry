@@ -1,12 +1,12 @@
 # Layer 07 — Publishing
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer07_publishing
 
 ## Source inventory
-- Python modules: **149**
-- Classes: **239**
-- Functions/methods: **1183**
+- Python modules: **150**
+- Classes: **240**
+- Functions/methods: **1194**
 
 ## Python modules
 - layers/layer07_publishing/__init__.py
@@ -93,6 +93,7 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/publisher_engine/__init__.py
 - layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py
 - layers/layer07_publishing/modules/publisher_engine/exceptions.py
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py
 - layers/layer07_publishing/modules/publisher_engine/publish_audit.py
 - layers/layer07_publishing/modules/publisher_engine/publish_executor.py
 - layers/layer07_publishing/modules/publisher_engine/publish_request.py
@@ -161,14 +162,12 @@ Implementation path: layers/layer07_publishing
 
 ## Classes
 - layers/layer07_publishing/modules/account_control/account_data_store.py:15 AccountDataStore
-- layers/layer07_publishing/modules/account_control/account_registry.py:17 AccountSpec
-- layers/layer07_publishing/modules/account_control/account_registry.py:34 AccountRegistry
-- layers/layer07_publishing/modules/account_control/credential_resolver.py:7 AccountCredentialResolver
+- layers/layer07_publishing/modules/account_control/account_registry.py:18 AccountSpec
+- layers/layer07_publishing/modules/account_control/account_registry.py:56 AccountRegistry
 - layers/layer07_publishing/modules/account_control/decision_engine.py:10 Decision
 - layers/layer07_publishing/modules/account_control/decision_engine.py:21 DecisionEngine
 - layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:21 MetaAsset
 - layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:30 MetaAssetDiscovery
-- layers/layer07_publishing/modules/account_control/meta_credentials.py:14 MetaCredentialProvider
 - layers/layer07_publishing/modules/account_control/policy_registry.py:18 PlatformPolicy
 - layers/layer07_publishing/modules/account_control/policy_registry.py:33 PolicyRegistry
 - layers/layer07_publishing/modules/analytics_hook/analytics_event.py:10 AnalyticsEvent
@@ -244,13 +243,11 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/media_manager/exceptions.py:5 MediaError
 - layers/layer07_publishing/modules/media_manager/exceptions.py:9 MediaValidationError
 - layers/layer07_publishing/modules/media_manager/exceptions.py:13 MediaOptimizationError
-- layers/layer07_publishing/modules/media_manager/media_asset.py:14 MediaAsset
 - layers/layer07_publishing/modules/media_manager/media_manager.py:10 MediaManager
 - layers/layer07_publishing/modules/media_manager/media_optimizer.py:8 OptimizationResult
 - layers/layer07_publishing/modules/media_manager/media_optimizer.py:31 MediaOptimizer
 - layers/layer07_publishing/modules/media_manager/media_validator.py:11 ValidationIssue
 - layers/layer07_publishing/modules/media_manager/media_validator.py:26 MediaValidator
-- layers/layer07_publishing/modules/media_manager/runtime_media.py:6 RuntimeMedia
 - layers/layer07_publishing/modules/multi_platform_engine/account_manager.py:21 PlatformType
 - layers/layer07_publishing/modules/multi_platform_engine/account_manager.py:42 PlatformAccount
 - layers/layer07_publishing/modules/multi_platform_engine/account_manager.py:73 AccountManager
@@ -290,14 +287,19 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/publisher_engine/exceptions.py:13 PublishExecutionError
 - layers/layer07_publishing/modules/publisher_engine/exceptions.py:17 UploadError
 - layers/layer07_publishing/modules/publisher_engine/exceptions.py:21 RollbackError
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:89 PublicationConflictError
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:93 UnresolvedPublicationError
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:106 LedgerReservation
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:119 LedgerAttempt
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:127 PublicationLedger
 - layers/layer07_publishing/modules/publisher_engine/publish_audit.py:10 AuditEntry
 - layers/layer07_publishing/modules/publisher_engine/publish_audit.py:41 PublishAudit
 - layers/layer07_publishing/modules/publisher_engine/publish_executor.py:12 PublishExecutor
-- layers/layer07_publishing/modules/publisher_engine/publish_request.py:12 PublishRequest
-- layers/layer07_publishing/modules/publisher_engine/publish_result.py:9 PublisherResult
+- layers/layer07_publishing/modules/publisher_engine/publish_request.py:10 PublishRequest
+- layers/layer07_publishing/modules/publisher_engine/publish_result.py:7 PublisherResult
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:8 TransactionStep
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:29 PublishTransaction
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:22 PublisherManager
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:36 PublisherManager
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:6 PublisherMetrics
 - layers/layer07_publishing/modules/publisher_engine/response_parser.py:6 ResponseParser
 - layers/layer07_publishing/modules/publisher_engine/status_tracker.py:9 StatusRecord
@@ -407,15 +409,17 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/account_control/account_data_store.py:39 get()
 - layers/layer07_publishing/modules/account_control/account_data_store.py:45 append()
 - layers/layer07_publishing/modules/account_control/account_data_store.py:66 snapshot()
-- layers/layer07_publishing/modules/account_control/account_registry.py:29 validate()
-- layers/layer07_publishing/modules/account_control/account_registry.py:36 __init__()
-- layers/layer07_publishing/modules/account_control/account_registry.py:52 _safe()
-- layers/layer07_publishing/modules/account_control/account_registry.py:61 workspace_path()
-- layers/layer07_publishing/modules/account_control/account_registry.py:63 register()
-- layers/layer07_publishing/modules/account_control/account_registry.py:82 get()
-- layers/layer07_publishing/modules/account_control/account_registry.py:87 list()
-- layers/layer07_publishing/modules/account_control/account_registry.py:96 disable()
-- layers/layer07_publishing/modules/account_control/credential_resolver.py:9 resolve()
+- layers/layer07_publishing/modules/account_control/account_registry.py:52 _production()
+- layers/layer07_publishing/modules/account_control/account_registry.py:39 validate()
+- layers/layer07_publishing/modules/account_control/account_registry.py:59 __init__()
+- layers/layer07_publishing/modules/account_control/account_registry.py:82 _safe()
+- layers/layer07_publishing/modules/account_control/account_registry.py:90 workspace_path()
+- layers/layer07_publishing/modules/account_control/account_registry.py:97 _from_row()
+- layers/layer07_publishing/modules/account_control/account_registry.py:130 register()
+- layers/layer07_publishing/modules/account_control/account_registry.py:171 get()
+- layers/layer07_publishing/modules/account_control/account_registry.py:187 list()
+- layers/layer07_publishing/modules/account_control/account_registry.py:210 disable()
+- layers/layer07_publishing/modules/account_control/account_registry.py:98 decoded()
 - layers/layer07_publishing/modules/account_control/decision_engine.py:22 __init__()
 - layers/layer07_publishing/modules/account_control/decision_engine.py:25 _score()
 - layers/layer07_publishing/modules/account_control/decision_engine.py:27 choose_account()
@@ -427,16 +431,10 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:50 health()
 - layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:68 discover()
 - layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:79 provision()
-- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:115 _discover_pages()
-- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:137 _paged_get()
-- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:160 _page_instagram_account()
-- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:177 _get()
-- layers/layer07_publishing/modules/account_control/meta_credentials.py:20 __init__()
-- layers/layer07_publishing/modules/account_control/meta_credentials.py:26 credentials_for()
-- layers/layer07_publishing/modules/account_control/meta_credentials.py:57 _find_page()
-- layers/layer07_publishing/modules/account_control/meta_credentials.py:63 _pages()
-- layers/layer07_publishing/modules/account_control/meta_credentials.py:69 _paged_get()
-- layers/layer07_publishing/modules/account_control/meta_credentials.py:92 _get()
+- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:134 _discover_pages()
+- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:156 _paged_get()
+- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:179 _page_instagram_account()
+- layers/layer07_publishing/modules/account_control/meta_asset_discovery.py:196 _get()
 - layers/layer07_publishing/modules/account_control/policy_bootstrap.py:17 ensure_default_snapshots()
 - layers/layer07_publishing/modules/account_control/policy_registry.py:26 validate()
 - layers/layer07_publishing/modules/account_control/policy_registry.py:36 __init__()
@@ -803,13 +801,6 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/failure_recovery/rollback_manager.py:79 restore_previous_state()
 - layers/layer07_publishing/modules/failure_recovery/rollback_manager.py:84 action_count()
 - layers/layer07_publishing/modules/failure_recovery/rollback_manager.py:88 rollback_count()
-- layers/layer07_publishing/modules/media_manager/media_asset.py:25 __init__()
-- layers/layer07_publishing/modules/media_manager/media_asset.py:44 compute_checksum()
-- layers/layer07_publishing/modules/media_manager/media_asset.py:54 get_extension()
-- layers/layer07_publishing/modules/media_manager/media_asset.py:59 is_image()
-- layers/layer07_publishing/modules/media_manager/media_asset.py:64 is_video()
-- layers/layer07_publishing/modules/media_manager/media_asset.py:69 is_document()
-- layers/layer07_publishing/modules/media_manager/media_asset.py:74 to_dict()
 - layers/layer07_publishing/modules/media_manager/media_manager.py:13 __init__()
 - layers/layer07_publishing/modules/media_manager/media_manager.py:24 add_asset()
 - layers/layer07_publishing/modules/media_manager/media_manager.py:34 add_image()
@@ -840,8 +831,6 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/media_manager/media_validator.py:76 validate_batch()
 - layers/layer07_publishing/modules/media_manager/media_validator.py:80 validate_platform_limits()
 - layers/layer07_publishing/modules/media_manager/media_validator.py:93 check_count()
-- layers/layer07_publishing/modules/media_manager/runtime_media.py:8 image_to_video()
-- layers/layer07_publishing/modules/media_manager/runtime_media.py:21 public_url()
 - layers/layer07_publishing/modules/multi_platform_engine/account_manager.py:58 to_dict()
 - layers/layer07_publishing/modules/multi_platform_engine/account_manager.py:76 __init__()
 - layers/layer07_publishing/modules/multi_platform_engine/account_manager.py:89 create_account()
@@ -1045,20 +1034,20 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:130 _request()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:9 __init__()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:11 _register_builtin_plugins()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:24 register()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:25 authenticate()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:29 publish()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:31 edit()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:32 delete()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:33 get_post()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:34 get_status()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:35 get_analytics()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:36 get_capabilities()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:37 get_all_capabilities()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:38 supports()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:39 find_platforms_with_feature()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:40 _get_or_raise()
-- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:45 operation_count()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:25 register()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:26 authenticate()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:30 publish()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:32 edit()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:33 delete()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:34 get_post()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:35 get_status()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:36 get_analytics()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:37 get_capabilities()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:38 get_all_capabilities()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:39 supports()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:40 find_platforms_with_feature()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:41 _get_or_raise()
+- layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:46 operation_count()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_registry.py:11 __init__()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_registry.py:15 register()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_registry.py:19 unregister()
@@ -1123,18 +1112,38 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/platform_plugin_manager/youtube/youtube_publisher.py:62 _get()
 - layers/layer07_publishing/modules/platform_plugin_manager/youtube/youtube_publisher.py:63 _request()
 - layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:20 __init__()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:26 _connect()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:32 _schema()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:41 _init_db()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:73 _clear_stale_reservations()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:78 _normalize_content()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:86 fingerprints()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:97 reserve()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:110 has_unresolved()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:120 pending()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:132 mark_pending()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:137 finalize()
-- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:142 release()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:34 _connect()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:40 _schema()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:49 _init_db()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:81 _clear_stale_reservations()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:86 _normalize_content()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:94 fingerprints()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:105 reserve()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:118 has_unresolved()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:128 pending()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:140 mark_pending()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:145 finalize()
+- layers/layer07_publishing/modules/publisher_engine/content_repetition_guard.py:150 release()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:96 __init__()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:130 __init__()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:140 _uuid()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:150 _now_iso()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:154 _json()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:159 _content_hash()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:163 _template_hash()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:169 _age_seconds()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:178 _audit_insert()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:197 reserve()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:375 _transition_locked()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:404 ensure_intent_created()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:438 begin_attempt()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:501 record_provider_result()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:597 record_verification()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:659 get_provider_effect()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:673 record_operator_resolution()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:713 get_intent()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:720 has_unresolved()
+- layers/layer07_publishing/modules/publisher_engine/publication_ledger.py:732 unresolved_states()
 - layers/layer07_publishing/modules/publisher_engine/publish_audit.py:16 __init__()
 - layers/layer07_publishing/modules/publisher_engine/publish_audit.py:27 to_dict()
 - layers/layer07_publishing/modules/publisher_engine/publish_audit.py:44 __init__()
@@ -1150,16 +1159,16 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/publisher_engine/publish_executor.py:76 execute_reschedule()
 - layers/layer07_publishing/modules/publisher_engine/publish_executor.py:99 execution_count()
 - layers/layer07_publishing/modules/publisher_engine/publish_executor.py:103 avg_time_ms()
-- layers/layer07_publishing/modules/publisher_engine/publish_request.py:21 __init__()
-- layers/layer07_publishing/modules/publisher_engine/publish_request.py:39 has_media()
-- layers/layer07_publishing/modules/publisher_engine/publish_request.py:42 get_media_paths()
-- layers/layer07_publishing/modules/publisher_engine/publish_request.py:45 validate()
-- layers/layer07_publishing/modules/publisher_engine/publish_request.py:59 is_valid()
-- layers/layer07_publishing/modules/publisher_engine/publish_request.py:62 to_dict()
-- layers/layer07_publishing/modules/publisher_engine/publish_result.py:18 __init__()
-- layers/layer07_publishing/modules/publisher_engine/publish_result.py:31 set_error()
-- layers/layer07_publishing/modules/publisher_engine/publish_result.py:36 set_success()
-- layers/layer07_publishing/modules/publisher_engine/publish_result.py:42 to_dict()
+- layers/layer07_publishing/modules/publisher_engine/publish_request.py:23 __init__()
+- layers/layer07_publishing/modules/publisher_engine/publish_request.py:41 has_media()
+- layers/layer07_publishing/modules/publisher_engine/publish_request.py:44 get_media_paths()
+- layers/layer07_publishing/modules/publisher_engine/publish_request.py:47 validate()
+- layers/layer07_publishing/modules/publisher_engine/publish_request.py:61 is_valid()
+- layers/layer07_publishing/modules/publisher_engine/publish_request.py:64 to_dict()
+- layers/layer07_publishing/modules/publisher_engine/publish_result.py:16 __init__()
+- layers/layer07_publishing/modules/publisher_engine/publish_result.py:29 set_error()
+- layers/layer07_publishing/modules/publisher_engine/publish_result.py:34 set_success()
+- layers/layer07_publishing/modules/publisher_engine/publish_result.py:40 to_dict()
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:13 __init__()
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:20 to_dict()
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:32 __init__()
@@ -1171,18 +1180,22 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:78 is_rolled_back()
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:82 step_count()
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:85 to_dict()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:25 __init__()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:43 _account_repetition_guard()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:51 publish()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:122 publish_batch()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:125 edit()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:135 delete()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:140 get_status()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:143 _get_publisher()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:146 _default_uploader()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:152 _record_event()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:158 events()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:162 request_count()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:32 _production_mode()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:39 __init__()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:64 _account_repetition_guard()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:74 _canonical_publish()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:195 _verify_submission()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:308 publish()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:362 _legacy_publish()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:419 publish_batch()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:422 edit()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:432 delete()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:437 get_status()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:440 _get_publisher()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:443 _default_uploader()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:449 _record_event()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:460 events()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:464 request_count()
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:9 __init__()
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:20 record_publish()
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:28 record_upload()

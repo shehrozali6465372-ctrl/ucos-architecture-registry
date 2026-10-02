@@ -1,12 +1,12 @@
 # Layer 13 — Persistence
 
-Implementation commit: 4ab6787bcc0be65d8d68b83ae82a5d8a4b971906
+Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
 Implementation path: layers/layer13_persistence
 
 ## Source inventory
-- Python modules: **251**
-- Classes: **417**
-- Functions/methods: **1830**
+- Python modules: **253**
+- Classes: **419**
+- Functions/methods: **1842**
 
 ## Python modules
 - layers/layer13_persistence/__init__.py
@@ -119,6 +119,8 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/manager.py
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py
 - layers/layer13_persistence/modules/postgresql/verification.py
 - layers/layer13_persistence/modules/redis_platform/__init__.py
@@ -435,6 +437,8 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py:12 Layer1PostgreSQLMemoryBackend
 - layers/layer13_persistence/modules/postgresql/manager.py:34 PostgreSQLManager
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:19 PerformanceBenchmark
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:12 CredentialRepository
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:9 IdentityRepository
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:12 BaseRepository
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:35 ConfigRepository
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:60 MemoryRepository
@@ -1347,40 +1351,40 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/connection/pool.py:60 from_env()
 - layers/layer13_persistence/modules/postgresql/connection/pool.py:77 __init__()
 - layers/layer13_persistence/modules/postgresql/connection/pool.py:98 initialize()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:144 _auto_reconnect()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:159 connection()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:216 _record_latency()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:224 _is_retryable_error()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:239 _execute_with_retry()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:271 execute()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:282 execute_and_fetch()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:301 execute_and_fetch_one()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:323 _identifier()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:328 _placeholder()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:331 insert()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:354 insert_many()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:377 update()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:394 delete()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:409 query()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:413 query_one()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:417 count()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:427 table_exists()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:438 get_tables()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:450 transaction()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:460 begin_transaction()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:464 commit()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:468 rollback()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:472 is_healthy()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:480 get_pool_metrics()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:528 health_check()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:532 close()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:273 _do()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:284 _do()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:303 _do()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:335 _do()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:363 _do()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:379 _do()
-- layers/layer13_persistence/modules/postgresql/connection/pool.py:396 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:148 _auto_reconnect()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:163 connection()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:220 _record_latency()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:228 _is_retryable_error()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:243 _execute_with_retry()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:275 execute()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:286 execute_and_fetch()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:305 execute_and_fetch_one()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:327 _identifier()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:332 _placeholder()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:335 insert()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:358 insert_many()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:381 update()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:398 delete()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:413 query()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:417 query_one()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:421 count()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:431 table_exists()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:442 get_tables()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:454 transaction()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:464 begin_transaction()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:468 commit()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:472 rollback()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:476 is_healthy()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:484 get_pool_metrics()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:532 health_check()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:536 close()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:277 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:288 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:307 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:339 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:367 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:383 _do()
+- layers/layer13_persistence/modules/postgresql/connection/pool.py:400 _do()
 - layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:14 __init__()
 - layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:23 record()
 - layers/layer13_persistence/modules/postgresql/connection/slow_query_logger.py:41 get_slow_queries()
@@ -1407,24 +1411,25 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py:56 get_by_level()
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py:59 delete_by_level()
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py:62 close()
-- layers/layer13_persistence/modules/postgresql/manager.py:296 get_database()
+- layers/layer13_persistence/modules/postgresql/manager.py:298 get_database()
 - layers/layer13_persistence/modules/postgresql/manager.py:37 __init__()
 - layers/layer13_persistence/modules/postgresql/manager.py:61 initialize()
 - layers/layer13_persistence/modules/postgresql/manager.py:115 _create_tables()
-- layers/layer13_persistence/modules/postgresql/manager.py:127 health_check()
-- layers/layer13_persistence/modules/postgresql/manager.py:153 get_db_status()
-- layers/layer13_persistence/modules/postgresql/manager.py:211 get_stats()
-- layers/layer13_persistence/modules/postgresql/manager.py:222 run_benchmark()
-- layers/layer13_persistence/modules/postgresql/manager.py:228 backup()
-- layers/layer13_persistence/modules/postgresql/manager.py:234 restore()
-- layers/layer13_persistence/modules/postgresql/manager.py:240 get_slow_queries()
-- layers/layer13_persistence/modules/postgresql/manager.py:246 get_pool_metrics()
-- layers/layer13_persistence/modules/postgresql/manager.py:252 run_transaction_recovery()
-- layers/layer13_persistence/modules/postgresql/manager.py:258 check_leaks()
-- layers/layer13_persistence/modules/postgresql/manager.py:264 close()
-- layers/layer13_persistence/modules/postgresql/migrations/schema.py:144 get_create_table_sql()
-- layers/layer13_persistence/modules/postgresql/migrations/schema.py:149 get_all_create_sql()
-- layers/layer13_persistence/modules/postgresql/migrations/schema.py:153 get_all_indexes_sql()
+- layers/layer13_persistence/modules/postgresql/manager.py:129 health_check()
+- layers/layer13_persistence/modules/postgresql/manager.py:155 get_db_status()
+- layers/layer13_persistence/modules/postgresql/manager.py:213 get_stats()
+- layers/layer13_persistence/modules/postgresql/manager.py:224 run_benchmark()
+- layers/layer13_persistence/modules/postgresql/manager.py:230 backup()
+- layers/layer13_persistence/modules/postgresql/manager.py:236 restore()
+- layers/layer13_persistence/modules/postgresql/manager.py:242 get_slow_queries()
+- layers/layer13_persistence/modules/postgresql/manager.py:248 get_pool_metrics()
+- layers/layer13_persistence/modules/postgresql/manager.py:254 run_transaction_recovery()
+- layers/layer13_persistence/modules/postgresql/manager.py:260 check_leaks()
+- layers/layer13_persistence/modules/postgresql/manager.py:266 close()
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py:331 get_create_table_sql()
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py:336 get_all_create_sql()
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py:340 get_all_indexes_sql()
+- layers/layer13_persistence/modules/postgresql/migrations/schema.py:354 get_all_migration_sql()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:295 _latency_stats()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:22 __init__()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:27 run_insert_benchmark()
@@ -1435,6 +1440,17 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:207 run_repository_benchmark()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:276 run_all()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:170 worker()
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:15 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:30 _uuid()
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:36 upsert()
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:84 get_for_account()
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:115 revoke()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:12 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:22 _json()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:25 upsert()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:104 get()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:123 list()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:150 disable()
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:15 __init__()
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:19 get_by_id()
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:22 get_all()
