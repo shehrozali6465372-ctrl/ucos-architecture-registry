@@ -1,6 +1,6 @@
 # Layer 07 — Publishing
 
-Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
+Implementation commit: 130d8710d684e5c20bad17a54e1961469421e8e4
 Implementation path: layers/layer07_publishing
 
 ## Source inventory
@@ -299,7 +299,7 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/publisher_engine/publish_result.py:7 PublisherResult
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:8 TransactionStep
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:29 PublishTransaction
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:36 PublisherManager
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:38 PublisherManager
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:6 PublisherMetrics
 - layers/layer07_publishing/modules/publisher_engine/response_parser.py:6 ResponseParser
 - layers/layer07_publishing/modules/publisher_engine/status_tracker.py:9 StatusRecord
@@ -1180,22 +1180,22 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:78 is_rolled_back()
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:82 step_count()
 - layers/layer07_publishing/modules/publisher_engine/publish_transaction.py:85 to_dict()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:32 _production_mode()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:39 __init__()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:64 _account_repetition_guard()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:74 _canonical_publish()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:195 _verify_submission()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:308 publish()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:362 _legacy_publish()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:419 publish_batch()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:422 edit()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:432 delete()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:437 get_status()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:440 _get_publisher()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:443 _default_uploader()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:449 _record_event()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:460 events()
-- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:464 request_count()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:34 _production_mode()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:41 __init__()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:66 _account_repetition_guard()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:76 _canonical_publish()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:198 _verify_submission()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:311 publish()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:365 _legacy_publish()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:422 publish_batch()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:425 edit()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:435 delete()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:440 get_status()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:443 _get_publisher()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:446 _default_uploader()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:452 _record_event()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:463 events()
+- layers/layer07_publishing/modules/publisher_engine/publisher_manager.py:467 request_count()
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:9 __init__()
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:20 record_publish()
 - layers/layer07_publishing/modules/publisher_engine/publisher_metrics.py:28 record_upload()

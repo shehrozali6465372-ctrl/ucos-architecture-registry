@@ -1,6 +1,6 @@
 # Layer 04 — Writing
 
-Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
+Implementation commit: 130d8710d684e5c20bad17a54e1961469421e8e4
 Implementation path: layers/layer04_writing
 
 ## Source inventory

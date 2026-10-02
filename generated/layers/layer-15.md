@@ -1,6 +1,6 @@
 # Layer 15 — Async Runtime
 
-Implementation commit: 672686129769625f94baed13236f12f3e81a8fb1
+Implementation commit: 130d8710d684e5c20bad17a54e1961469421e8e4
 Implementation path: layers/layer15_async_runtime
 
 ## Source inventory
@@ -60,7 +60,7 @@ Implementation path: layers/layer15_async_runtime
 - layers/layer15_async_runtime/modules/coroutine_manager/coroutine_manager.py:51 CoroutineManager
 - layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:25 DurableTask
 - layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:39 DurableExecutionStore
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:410 DurableWorker
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:412 DurableWorker
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:11 FutureState
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:19 ManagedFuture
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:33 FutureManager
@@ -155,18 +155,18 @@ Implementation path: layers/layer15_async_runtime
 - layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:62 ensure_workflow()
 - layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:91 enqueue()
 - layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:199 claim()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:251 heartbeat()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:265 complete()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:279 cancel()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:305 fail()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:346 reap_expired()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:384 get()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:413 __init__()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:427 register()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:432 run_once()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:461 _heartbeat()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:468 run_forever()
-- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:477 stop()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:253 heartbeat()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:267 complete()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:281 cancel()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:307 fail()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:348 reap_expired()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:386 get()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:415 __init__()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:429 register()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:434 run_once()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:463 _heartbeat()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:470 run_forever()
+- layers/layer15_async_runtime/modules/durable_execution/durable_execution.py:479 stop()
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:22 __init__()
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:29 to_dict()
 - layers/layer15_async_runtime/modules/future_manager/future_manager.py:34 __init__()
