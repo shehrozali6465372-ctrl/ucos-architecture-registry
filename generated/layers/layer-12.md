@@ -1,12 +1,12 @@
 # Layer 12 — AI Foundation
 
-Implementation commit: 130d8710d684e5c20bad17a54e1961469421e8e4
+Implementation commit: a402d00dbd2c160a59d83df0fe76de3676deb447
 Implementation path: layers/layer12_ai_foundation
 
 ## Source inventory
-- Python modules: **319**
-- Classes: **429**
-- Functions/methods: **1619**
+- Python modules: **320**
+- Classes: **430**
+- Functions/methods: **1623**
 
 ## Python modules
 - layers/layer12_ai_foundation/__init__.py
@@ -229,6 +229,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py
 - layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py
 - layers/layer12_ai_foundation/modules/model_router/__init__.py
+- layers/layer12_ai_foundation/modules/model_router/deepseek_provider.py
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py
 - layers/layer12_ai_foundation/modules/model_router/huggingface_provider.py
 - layers/layer12_ai_foundation/modules/model_router/key_manager.py
@@ -616,6 +617,7 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_timeout.py:6 ProviderTimeout
 - layers/layer12_ai_foundation/modules/model_provider_framework/provider_validator.py:7 ProviderValidator
 - layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:11 QwenProvider
+- layers/layer12_ai_foundation/modules/model_router/deepseek_provider.py:12 DeepSeekProvider
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:27 GeminiConfig
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:40 GeminiProvider
 - layers/layer12_ai_foundation/modules/model_router/huggingface_provider.py:15 HuggingFaceProvider
@@ -1808,6 +1810,10 @@ Implementation path: layers/layer12_ai_foundation
 - layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:25 generate()
 - layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:38 chat()
 - layers/layer12_ai_foundation/modules/model_provider_framework/qwen_provider.py:43 is_available()
+- layers/layer12_ai_foundation/modules/model_router/deepseek_provider.py:19 __init__()
+- layers/layer12_ai_foundation/modules/model_router/deepseek_provider.py:23 generate()
+- layers/layer12_ai_foundation/modules/model_router/deepseek_provider.py:36 chat()
+- layers/layer12_ai_foundation/modules/model_router/deepseek_provider.py:44 _request()
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:31 __init__()
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:61 __init__()
 - layers/layer12_ai_foundation/modules/model_router/gemini_provider.py:74 add_key()
