@@ -1,12 +1,12 @@
 # Layer 05 — Image
 
-Implementation commit: a402d00dbd2c160a59d83df0fe76de3676deb447
+Implementation commit: 11280d0a13bda55043c563323ab66c4609cd226d
 Implementation path: layers/layer05_image
 
 ## Source inventory
-- Python modules: **32**
-- Classes: **34**
-- Functions/methods: **129**
+- Python modules: **33**
+- Classes: **35**
+- Functions/methods: **136**
 
 ## Python modules
 - layers/layer05_image/__init__.py
@@ -25,6 +25,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_prompt/__init__.py
 - layers/layer05_image/modules/image_prompt/image_prompt.py
 - layers/layer05_image/modules/image_provider/__init__.py
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py
 - layers/layer05_image/modules/image_provider/image_provider.py
 - layers/layer05_image/modules/image_provider/openrouter_image_provider.py
@@ -58,6 +59,7 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_planner/image_planner.py:81 ImagePlanner
 - layers/layer05_image/modules/image_prompt/image_prompt.py:36 ImagePrompt
 - layers/layer05_image/modules/image_prompt/image_prompt.py:64 ImagePromptBuilder
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:22 CloudflareImageProvider
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:30 GeminiImageProvider
 - layers/layer05_image/modules/image_provider/image_provider.py:8 ImageResponse
 - layers/layer05_image/modules/image_provider/image_provider.py:32 BaseImageProvider
@@ -128,6 +130,13 @@ Implementation path: layers/layer05_image
 - layers/layer05_image/modules/image_prompt/image_prompt.py:71 build()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:109 build_batch()
 - layers/layer05_image/modules/image_prompt/image_prompt.py:124 build_count()
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:28 __init__()
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:59 is_configured()
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:62 generate()
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:128 _decode_image_response()
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:153 _looks_like_image()
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:162 _parse_size()
+- layers/layer05_image/modules/image_provider/cloudflare_image_provider.py:172 _persist_image()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:52 __init__()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:60 generate()
 - layers/layer05_image/modules/image_provider/gemini_image_provider.py:99 generate_with_reference()

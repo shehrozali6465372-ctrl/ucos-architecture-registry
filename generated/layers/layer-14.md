@@ -1,6 +1,6 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: a402d00dbd2c160a59d83df0fe76de3676deb447
+Implementation commit: 11280d0a13bda55043c563323ab66c4609cd226d
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory
@@ -486,14 +486,14 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:287 _preflight()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:325 _ai()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:360 _image()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:374 _quality()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:383 _publisher()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:397 _publish()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:432 _analytics()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:443 _learning()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:463 execute()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:502 _persist()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:652 status()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:388 _quality()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:397 _publisher()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:411 _publish()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:446 _analytics()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:457 _learning()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:477 execute()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:516 _persist()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:666 status()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:131 gemini_handler()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:153 deepseek_handler()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:175 huggingface_handler()
@@ -502,8 +502,8 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:50 _publisher()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:76 _policy_check()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:101 _publish()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:272 _verify_public_submission()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:276 execute()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:264 _verify_public_submission()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/production_pipeline.py:268 execute()
 - layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:11 __init__()
 - layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:21 is_expired()
 - layers/layer14_enterprise_integration/modules/memory_bridge/memory_bridge.py:26 to_dict()
