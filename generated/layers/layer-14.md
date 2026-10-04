@@ -1,15 +1,16 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: affb81bb9c9bfa4da126b703f4f87696b2e33a5a
+Implementation commit: eecb1eeee1dfcb1c1f937eb6f3071bbd1d0ba14f
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory
-- Python modules: **84**
-- Classes: **97**
-- Functions/methods: **578**
+- Python modules: **85**
+- Classes: **98**
+- Functions/methods: **588**
 
 ## Python modules
 - layers/layer14_enterprise_integration/__init__.py
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py
 - layers/layer14_enterprise_integration/modules/api_gateway/__init__.py
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py
 - layers/layer14_enterprise_integration/modules/async_wiring/__init__.py
@@ -95,6 +96,7 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py
 
 ## Classes
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:54 PersonalBrowserAffiliateGateway
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:12 APIResponse
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:23 APIGateway
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:72 Handler
@@ -194,6 +196,13 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/workflow_engine/workflow_engine.py:65 WorkflowEngine
 
 ## Functions / methods
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:27 browser_request_from_environment()
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:57 __init__()
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:61 _amazon_host()
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:66 _product_ref()
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:71 _execute()
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:77 search_products()
+- layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:115 create_affiliate_link()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:14 __init__()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:17 to_json()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:27 __init__()
@@ -210,23 +219,25 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:123 _handle_heartbeat()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:126 _handle_amazon_intake()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:157 _browser_request()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:176 _handle_browser_health()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:183 _handle_browser_task()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:197 _handle_aios_job()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:213 _account_id()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:216 _require_account()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:222 _handle_analytics()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:230 _handle_history()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:240 _handle_stats()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:245 _handle_accounts()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:252 _handle_account_create()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:264 _handle_generate()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:272 _handle_templates()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:281 _handle_tiktok_reconcile()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:288 _handle_atoz_job()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:297 _handle_meta_health()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:306 _handle_meta_discover()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:313 _handle_platforms()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:176 _handle_amazon_browser_status()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:208 _handle_amazon_browser_search()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:239 _handle_browser_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:246 _handle_browser_task()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:260 _handle_aios_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:276 _account_id()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:279 _require_account()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:285 _handle_analytics()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:293 _handle_history()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:303 _handle_stats()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:308 _handle_accounts()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:315 _handle_account_create()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:327 _handle_generate()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:335 _handle_templates()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:344 _handle_tiktok_reconcile()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:351 _handle_atoz_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:360 _handle_meta_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:369 _handle_meta_discover()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:376 _handle_platforms()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:73 do_GET()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:82 do_POST()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:97 _send()
@@ -450,7 +461,8 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:17 _account_learning_store()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:21 sync_meta_accounts()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:26 _learning_scores()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:41 execute()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:41 _affiliate_evidence()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/control_plane.py:82 execute()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:22 __init__()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:40 start()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/integration_orchestrator.py:48 stop()
@@ -489,11 +501,11 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:388 _quality()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:397 _publisher()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:411 _publish()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:446 _analytics()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:457 _learning()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:477 execute()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:516 _persist()
-- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:666 status()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:459 _analytics()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:470 _learning()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:490 execute()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:529 _persist()
+- layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:679 status()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:131 gemini_handler()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:153 deepseek_handler()
 - layers/layer14_enterprise_integration/modules/master_orchestrator/pipeline_wiring.py:175 huggingface_handler()
