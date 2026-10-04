@@ -1,6 +1,6 @@
 # Layer 03 — Intelligence
 
-Implementation commit: 1c3b7a1b5dc7dd2251e4eebceb1a02d5d7324f83
+Implementation commit: affb81bb9c9bfa4da126b703f4f87696b2e33a5a
 Implementation path: layers/layer03_intelligence
 
 ## Source inventory

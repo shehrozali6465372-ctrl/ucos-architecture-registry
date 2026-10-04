@@ -1,15 +1,18 @@
 # Layer 10 — Affiliate
 
-Implementation commit: 1c3b7a1b5dc7dd2251e4eebceb1a02d5d7324f83
+Implementation commit: affb81bb9c9bfa4da126b703f4f87696b2e33a5a
 Implementation path: layers/layer10_monetization
 
 ## Source inventory
-- Python modules: **159**
-- Classes: **299**
-- Functions/methods: **1436**
+- Python modules: **164**
+- Classes: **317**
+- Functions/methods: **1461**
 
 ## Python modules
 - layers/layer10_monetization/__init__.py
+- layers/layer10_monetization/modules/__init__.py
+- layers/layer10_monetization/modules/affiliate_browser.py
+- layers/layer10_monetization/modules/affiliate_browser_session.py
 - layers/layer10_monetization/modules/affiliate_engine/__init__.py
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_engine_manager.py
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_manager.py
@@ -34,6 +37,7 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/ai_meta_controller/policy_arbiter.py
 - layers/layer10_monetization/modules/ai_meta_controller/self_reflection_engine.py
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py
 - layers/layer10_monetization/modules/amazon_product_intake.py
 - layers/layer10_monetization/modules/analytics_intelligence/__init__.py
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py
@@ -168,8 +172,21 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_metrics.py
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_report.py
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_stage.py
+- layers/layer10_monetization/tests/test_affiliate_browser.py
 
 ## Classes
+- layers/layer10_monetization/modules/affiliate_browser.py:16 BrowserAffiliateError
+- layers/layer10_monetization/modules/affiliate_browser.py:21 AffiliateSearchRequest
+- layers/layer10_monetization/modules/affiliate_browser.py:40 AffiliateProduct
+- layers/layer10_monetization/modules/affiliate_browser.py:50 AffiliateSearchResult
+- layers/layer10_monetization/modules/affiliate_browser.py:58 AffiliateLink
+- layers/layer10_monetization/modules/affiliate_browser.py:67 AffiliateBrowserGateway
+- layers/layer10_monetization/modules/affiliate_browser.py:79 AffiliateBrowserClient
+- layers/layer10_monetization/modules/affiliate_browser_session.py:13 AffiliateSessionError
+- layers/layer10_monetization/modules/affiliate_browser_session.py:18 AffiliateAccountProfile
+- layers/layer10_monetization/modules/affiliate_browser_session.py:25 AffiliateSessionStatus
+- layers/layer10_monetization/modules/affiliate_browser_session.py:33 PersistentAffiliateBrowser
+- layers/layer10_monetization/modules/affiliate_browser_session.py:43 AffiliateAccountService
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_engine_manager.py:14 AffiliateEngineManager
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_manager.py:10 AffiliateProgram
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_manager.py:72 AffiliateLink
@@ -212,6 +229,10 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/ai_meta_controller/self_reflection_engine.py:31 SelfReflectionEngine
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:9 StrategyProfile
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:25 StrategySelector
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:14 AmazonAffiliateBrowserError
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:19 AmazonBrowserAccount
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:24 AmazonAffiliateBrowser
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:37 AmazonAffiliateService
 - layers/layer10_monetization/modules/amazon_product_intake.py:20 AmazonProductIntake
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py:12 CollectionTask
 - layers/layer10_monetization/modules/analytics_intelligence/analytics_collector.py:28 AnalyticsCollector
@@ -469,8 +490,23 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_metrics.py:6 WorkflowMetrics
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_report.py:10 WorkflowReport
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_stage.py:10 WorkflowStage
+- layers/layer10_monetization/tests/test_affiliate_browser.py:11 FakeGateway
+- layers/layer10_monetization/tests/test_affiliate_browser.py:59 BadGateway
 
 ## Functions / methods
+- layers/layer10_monetization/modules/affiliate_browser.py:28 __post_init__()
+- layers/layer10_monetization/modules/affiliate_browser.py:70 search_products()
+- layers/layer10_monetization/modules/affiliate_browser.py:73 create_affiliate_link()
+- layers/layer10_monetization/modules/affiliate_browser.py:82 __init__()
+- layers/layer10_monetization/modules/affiliate_browser.py:85 search_and_get_link()
+- layers/layer10_monetization/modules/affiliate_browser.py:96 _validate_search_result()
+- layers/layer10_monetization/modules/affiliate_browser.py:107 _validate_link()
+- layers/layer10_monetization/modules/affiliate_browser_session.py:34 session_status()
+- layers/layer10_monetization/modules/affiliate_browser_session.py:37 search_and_get_affiliate_link()
+- layers/layer10_monetization/modules/affiliate_browser_session.py:51 __init__()
+- layers/layer10_monetization/modules/affiliate_browser_session.py:54 status()
+- layers/layer10_monetization/modules/affiliate_browser_session.py:57 require_authenticated()
+- layers/layer10_monetization/modules/affiliate_browser_session.py:69 find_product_link()
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_engine_manager.py:156 get_affiliate_engine()
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_engine_manager.py:19 __new__()
 - layers/layer10_monetization/modules/affiliate_engine/affiliate_engine_manager.py:27 __init__()
@@ -737,6 +773,11 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:60 get_strategy()
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:63 get_all_strategies()
 - layers/layer10_monetization/modules/ai_meta_controller/strategy_selector.py:66 get_history()
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:25 status()
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:28 search()
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:31 get_link()
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:38 __init__()
+- layers/layer10_monetization/modules/amazon_browser_affiliate.py:41 search_and_get_link()
 - layers/layer10_monetization/modules/amazon_product_intake.py:34 _is_amazon_url()
 - layers/layer10_monetization/modules/amazon_product_intake.py:41 _extract_asin()
 - layers/layer10_monetization/modules/amazon_product_intake.py:56 normalize_amazon_product()
@@ -1907,6 +1948,13 @@ Implementation path: layers/layer10_monetization
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_stage.py:59 retry()
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_stage.py:67 is_terminal()
 - layers/layer10_monetization/modules/workflow_coordinator/workflow_stage.py:70 to_dict()
+- layers/layer10_monetization/tests/test_affiliate_browser.py:40 test_search_and_get_link_requires_real_browser_provenance()
+- layers/layer10_monetization/tests/test_affiliate_browser.py:49 test_fabricated_source_is_rejected()
+- layers/layer10_monetization/tests/test_affiliate_browser.py:58 test_http_affiliate_url_is_rejected()
+- layers/layer10_monetization/tests/test_affiliate_browser.py:12 __init__()
+- layers/layer10_monetization/tests/test_affiliate_browser.py:15 search_products()
+- layers/layer10_monetization/tests/test_affiliate_browser.py:29 create_affiliate_link()
+- layers/layer10_monetization/tests/test_affiliate_browser.py:60 create_affiliate_link()
 
 ## Status discipline
 Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.
