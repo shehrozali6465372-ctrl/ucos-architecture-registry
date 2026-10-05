@@ -1,12 +1,12 @@
 # Layer 23 — Website Manager
 
-Implementation commit: eecb1eeee1dfcb1c1f937eb6f3071bbd1d0ba14f
+Implementation commit: 09472b527974905abf68c2600078d6a5ca432f52
 Implementation path: layers/layer23_website_manager
 
 ## Source inventory
-- Python modules: **403**
-- Classes: **408**
-- Functions/methods: **1413**
+- Python modules: **404**
+- Classes: **410**
+- Functions/methods: **1421**
 
 ## Python modules
 - layers/layer23_website_manager/__init__.py
@@ -148,6 +148,7 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/health/website_health.py
 - layers/layer23_website_manager/integration/__init__.py
 - layers/layer23_website_manager/integration/atoz_bridge.py
+- layers/layer23_website_manager/integration/atoz_content_api_client.py
 - layers/layer23_website_manager/learning_connector/__init__.py
 - layers/layer23_website_manager/learning_connector/analyzer/__init__.py
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py
@@ -564,6 +565,8 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/exceptions.py:40 DuplicateArticleError
 - layers/layer23_website_manager/health/website_health.py:8 WebsiteHealthChecker
 - layers/layer23_website_manager/health/website_health.py:122 InternalLinkManager
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:18 AtozContentApiError
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:22 AtozContentApiClient
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py:13 PerformanceAnalyzer
 - layers/layer23_website_manager/learning_connector/api/learning_api.py:6 LearningAPI
 - layers/layer23_website_manager/learning_connector/collector/learning_collector.py:12 LearningCollector
@@ -1283,6 +1286,14 @@ Implementation path: layers/layer23_website_manager
 - layers/layer23_website_manager/integration/atoz_bridge.py:118 _finish_request()
 - layers/layer23_website_manager/integration/atoz_bridge.py:137 _uuid()
 - layers/layer23_website_manager/integration/atoz_bridge.py:144 dispatch_job()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:23 __init__()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:33 from_env()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:54 _json_request()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:72 _token()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:92 _admin_request()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:117 list_niches()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:127 create_article()
+- layers/layer23_website_manager/integration/atoz_content_api_client.py:130 lifecycle()
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py:16 __init__()
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py:20 record_metric()
 - layers/layer23_website_manager/learning_connector/analyzer/performance_analyzer.py:27 get_metrics()

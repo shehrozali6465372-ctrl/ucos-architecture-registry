@@ -1,6 +1,6 @@
 # Layer 11 — Integrations
 
-Implementation commit: eecb1eeee1dfcb1c1f937eb6f3071bbd1d0ba14f
+Implementation commit: 09472b527974905abf68c2600078d6a5ca432f52
 Implementation path: layers/layer11_async_runtime
 
 ## Source inventory
