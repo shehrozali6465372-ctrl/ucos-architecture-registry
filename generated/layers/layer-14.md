@@ -1,12 +1,12 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: eba52baa995e2c9216a65cc246e537a98113665d
+Implementation commit: 75a2eb96026428776a1513e0c5b9ea0187366d28
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory
 - Python modules: **85**
 - Classes: **98**
-- Functions/methods: **588**
+- Functions/methods: **592**
 
 ## Python modules
 - layers/layer14_enterprise_integration/__init__.py
@@ -231,13 +231,17 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:303 _handle_stats()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:308 _handle_accounts()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:315 _handle_account_create()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:327 _handle_generate()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:335 _handle_templates()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:344 _handle_tiktok_reconcile()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:351 _handle_atoz_job()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:360 _handle_meta_health()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:369 _handle_meta_discover()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:376 _handle_platforms()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:327 _handle_pinterest_credential_store()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:387 _handle_pinterest_credential_revoke()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:410 _handle_pinterest_operation()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:502 _handle_pinterest_credentials()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:525 _handle_generate()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:533 _handle_templates()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:542 _handle_tiktok_reconcile()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:549 _handle_atoz_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:558 _handle_meta_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:567 _handle_meta_discover()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:574 _handle_platforms()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:73 do_GET()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:82 do_POST()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:97 _send()

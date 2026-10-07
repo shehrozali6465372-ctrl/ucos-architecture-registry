@@ -1,6 +1,6 @@
 # Layer 17 — Security
 
-Implementation commit: eba52baa995e2c9216a65cc246e537a98113665d
+Implementation commit: 75a2eb96026428776a1513e0c5b9ea0187366d28
 Implementation path: layers/layer17_security
 
 ## Source inventory
@@ -106,8 +106,8 @@ Implementation path: layers/layer17_security
 - layers/layer17_security/modules/authorization/authorization.py:73 get_role_permissions()
 - layers/layer17_security/modules/authorization/authorization.py:77 list_roles()
 - layers/layer17_security/modules/authorization/authorization.py:80 stats()
-- layers/layer17_security/modules/credential_resolver/credential_resolver.py:23 _env_key()
-- layers/layer17_security/modules/credential_resolver/credential_resolver.py:28 resolve()
+- layers/layer17_security/modules/credential_resolver/credential_resolver.py:21 _production()
+- layers/layer17_security/modules/credential_resolver/credential_resolver.py:25 resolve()
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py:14 __init__()
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py:17 set_key()
 - layers/layer17_security/modules/encryption_engine/encryption_engine.py:22 generate_key()
