@@ -1,6 +1,6 @@
 # Layer 12 — AI Foundation
 
-Implementation commit: ba320ef4d9b15deb2fd48abf469e589438bc3e41
+Implementation commit: eba52baa995e2c9216a65cc246e537a98113665d
 Implementation path: layers/layer12_ai_foundation
 
 ## Source inventory
