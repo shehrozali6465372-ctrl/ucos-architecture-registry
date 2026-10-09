@@ -1,6 +1,6 @@
 # Layer 07 — Publishing
 
-Implementation commit: 14b5f43ee681d3d938fc9392dbedd7e1b84741cc
+Implementation commit: 7be9e15fab20788960b92b3fbb8c5cc9d062d4e6
 Implementation path: layers/layer07_publishing
 
 ## Source inventory
@@ -1023,15 +1023,15 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:23 get_platform_name()
 - layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:26 get_capabilities()
 - layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:36 authenticate()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:52 validate()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:55 publish()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:92 edit()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:104 delete()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:111 get_post()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:117 get_status()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:120 get_analytics()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:125 schedule()
-- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:130 _request()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:50 validate()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:53 publish()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:97 edit()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:109 delete()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:116 get_post()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:122 get_status()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:125 get_analytics()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:128 schedule()
+- layers/layer07_publishing/modules/platform_plugin_manager/pinterest/pinterest_publisher.py:133 _request()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:9 __init__()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:11 _register_builtin_plugins()
 - layers/layer07_publishing/modules/platform_plugin_manager/plugin_manager.py:25 register()
