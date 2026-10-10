@@ -1,12 +1,12 @@
 # Layer 13 — Persistence
 
-Implementation commit: ea0f3a89a79e6b4a465ca691f859183ceff7e481
+Implementation commit: 16ef0622aaef78877fe030585a33162c7851d52b
 Implementation path: layers/layer13_persistence
 
 ## Source inventory
-- Python modules: **253**
+- Python modules: **254**
 - Classes: **419**
-- Functions/methods: **1842**
+- Functions/methods: **1847**
 
 ## Python modules
 - layers/layer13_persistence/__init__.py
@@ -118,6 +118,7 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/layer1_memory_backend.py
 - layers/layer13_persistence/modules/postgresql/manager.py
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py
+- layers/layer13_persistence/modules/postgresql/neon_migration.py
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py
 - layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py
 - layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py
@@ -438,7 +439,7 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/manager.py:34 PostgreSQLManager
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:19 PerformanceBenchmark
 - layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:12 CredentialRepository
-- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:9 IdentityRepository
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:8 IdentityRepository
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:12 BaseRepository
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:35 ConfigRepository
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:60 MemoryRepository
@@ -1430,6 +1431,11 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py:336 get_all_create_sql()
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py:340 get_all_indexes_sql()
 - layers/layer13_persistence/modules/postgresql/migrations/schema.py:354 get_all_migration_sql()
+- layers/layer13_persistence/modules/postgresql/neon_migration.py:27 _source_dsn()
+- layers/layer13_persistence/modules/postgresql/neon_migration.py:47 _columns()
+- layers/layer13_persistence/modules/postgresql/neon_migration.py:57 _tables()
+- layers/layer13_persistence/modules/postgresql/neon_migration.py:66 _count()
+- layers/layer13_persistence/modules/postgresql/neon_migration.py:72 migrate_to_neon()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:295 _latency_stats()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:22 __init__()
 - layers/layer13_persistence/modules/postgresql/performance/benchmark.py:27 run_insert_benchmark()
@@ -1444,13 +1450,13 @@ Implementation path: layers/layer13_persistence
 - layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:30 _uuid()
 - layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:36 upsert()
 - layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:84 get_for_account()
-- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:115 revoke()
-- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:12 __init__()
-- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:22 _json()
-- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:25 upsert()
-- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:104 get()
-- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:123 list()
-- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:150 disable()
+- layers/layer13_persistence/modules/postgresql/repositories/credential_repository.py:120 revoke()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:11 __init__()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:21 _json()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:24 upsert()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:103 get()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:122 list()
+- layers/layer13_persistence/modules/postgresql/repositories/identity_repository.py:149 disable()
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:15 __init__()
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:19 get_by_id()
 - layers/layer13_persistence/modules/postgresql/repositories/repositories.py:22 get_all()
