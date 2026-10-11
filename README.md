@@ -10,6 +10,7 @@ This repository is the control-plane record. It does not replace production code
 
 ## Master architecture
 - `architecture/UCOS_MASTER_ARCHITECTURE.md` — complete system architecture and 23-layer responsibility map.
+- `architecture/SUPER_INTELLIGENCE_AGENT_ARCHITECTURE_FROZEN_v1.0.md` — frozen Super Intelligence Brain architecture; one central orchestrator using UCOS L01–L23 as capabilities/tools, with scoped account contexts, evidence-first planning, safe publishing, reconciliation and learning.
 - `layers/layer-01` … `layers/layer-23` — bounded layer records.
 - `generated/layers/` — source-derived module/class/function inventory produced by automation.
 - `dependency-map/` — dependency boundaries.
