@@ -1,6 +1,6 @@
 # Layer 22 — Documentation
 
-Implementation commit: a07ba26beb715970b54c070185eff295279fd446
+Implementation commit: 9a238a5226acd709c02679d55b95a77f8a9193e9
 Implementation path: layers/layer22_documentation
 
 ## Source inventory
