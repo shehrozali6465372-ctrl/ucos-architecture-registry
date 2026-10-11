@@ -1,6 +1,6 @@
 # Layer 08 — Analytics
 
-Implementation commit: 16ef0622aaef78877fe030585a33162c7851d52b
+Implementation commit: a5a2162eb4fae48ac5ae748d9f28eb8a4c407075
 Implementation path: layers/layer08_analytics
 
 ## Source inventory

@@ -1,16 +1,17 @@
 # Layer 14 — Enterprise Integration
 
-Implementation commit: 16ef0622aaef78877fe030585a33162c7851d52b
+Implementation commit: a5a2162eb4fae48ac5ae748d9f28eb8a4c407075
 Implementation path: layers/layer14_enterprise_integration
 
 ## Source inventory
-- Python modules: **85**
+- Python modules: **86**
 - Classes: **99**
-- Functions/methods: **593**
+- Functions/methods: **595**
 
 ## Python modules
 - layers/layer14_enterprise_integration/__init__.py
 - layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py
+- layers/layer14_enterprise_integration/modules/agents/pinterest_token_guardian.py
 - layers/layer14_enterprise_integration/modules/api_gateway/__init__.py
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py
 - layers/layer14_enterprise_integration/modules/async_wiring/__init__.py
@@ -204,6 +205,8 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:71 _execute()
 - layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:77 search_products()
 - layers/layer14_enterprise_integration/modules/affiliate_browser_gateway.py:115 create_affiliate_link()
+- layers/layer14_enterprise_integration/modules/agents/pinterest_token_guardian.py:21 _run_forever()
+- layers/layer14_enterprise_integration/modules/agents/pinterest_token_guardian.py:38 start_pinterest_token_guardian()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:20 __init__()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:23 to_json()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:33 __init__()
@@ -235,15 +238,15 @@ Implementation path: layers/layer14_enterprise_integration
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:338 _handle_pinterest_credential_store()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:398 _handle_pinterest_credential_revoke()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:421 _refresh_pinterest_token_if_needed()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:513 _handle_pinterest_operation()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:613 _handle_pinterest_credentials()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:636 _handle_generate()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:644 _handle_templates()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:653 _handle_tiktok_reconcile()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:660 _handle_atoz_job()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:669 _handle_meta_health()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:678 _handle_meta_discover()
-- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:685 _handle_platforms()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:517 _handle_pinterest_operation()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:617 _handle_pinterest_credentials()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:640 _handle_generate()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:648 _handle_templates()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:657 _handle_tiktok_reconcile()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:664 _handle_atoz_job()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:673 _handle_meta_health()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:682 _handle_meta_discover()
+- layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:689 _handle_platforms()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:79 do_GET()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:88 do_POST()
 - layers/layer14_enterprise_integration/modules/api_gateway/api_gateway.py:103 _send()
