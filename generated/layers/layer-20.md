@@ -1,6 +1,6 @@
 # Layer 20 — Image Pipeline
 
-Implementation commit: 9a238a5226acd709c02679d55b95a77f8a9193e9
+Implementation commit: e0b7a592d303b2863356e3eee481bf5b805aeae7
 Implementation path: layers/layer20_image_pipeline
 
 ## Source inventory
