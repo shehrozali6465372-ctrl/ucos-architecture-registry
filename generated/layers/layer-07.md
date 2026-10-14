@@ -1,12 +1,12 @@
 # Layer 07 — Publishing
 
-Implementation commit: 3fea749c90566d307c1a23775a72a751ffa9933e
+Implementation commit: 92108af0e192fc28ef27512edfa4468f96e550c2
 Implementation path: layers/layer07_publishing
 
 ## Source inventory
 - Python modules: **150**
 - Classes: **240**
-- Functions/methods: **1194**
+- Functions/methods: **1203**
 
 ## Python modules
 - layers/layer07_publishing/__init__.py
@@ -161,7 +161,7 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/scheduler_queue/worker_manager.py
 
 ## Classes
-- layers/layer07_publishing/modules/account_control/account_data_store.py:15 AccountDataStore
+- layers/layer07_publishing/modules/account_control/account_data_store.py:74 AccountDataStore
 - layers/layer07_publishing/modules/account_control/account_registry.py:18 AccountSpec
 - layers/layer07_publishing/modules/account_control/account_registry.py:56 AccountRegistry
 - layers/layer07_publishing/modules/account_control/decision_engine.py:10 Decision
@@ -403,22 +403,31 @@ Implementation path: layers/layer07_publishing
 - layers/layer07_publishing/modules/scheduler_queue/worker_manager.py:19 WorkerManager
 
 ## Functions / methods
-- layers/layer07_publishing/modules/account_control/account_data_store.py:16 __init__()
-- layers/layer07_publishing/modules/account_control/account_data_store.py:19 _db()
-- layers/layer07_publishing/modules/account_control/account_data_store.py:34 put()
-- layers/layer07_publishing/modules/account_control/account_data_store.py:39 get()
-- layers/layer07_publishing/modules/account_control/account_data_store.py:45 append()
-- layers/layer07_publishing/modules/account_control/account_data_store.py:66 snapshot()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:23 _production()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:27 _account_level()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:39 is_verified_history_baseline()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:63 _decode()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:77 __init__()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:100 _validate()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:108 _account_exists()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:112 _db()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:125 put()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:142 get()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:153 append()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:199 history_baseline()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:207 mark_history_baseline_verified()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:233 bootstrap_legacy_store()
+- layers/layer07_publishing/modules/account_control/account_data_store.py:322 snapshot()
 - layers/layer07_publishing/modules/account_control/account_registry.py:52 _production()
 - layers/layer07_publishing/modules/account_control/account_registry.py:39 validate()
 - layers/layer07_publishing/modules/account_control/account_registry.py:59 __init__()
 - layers/layer07_publishing/modules/account_control/account_registry.py:82 _safe()
 - layers/layer07_publishing/modules/account_control/account_registry.py:90 workspace_path()
 - layers/layer07_publishing/modules/account_control/account_registry.py:97 _from_row()
-- layers/layer07_publishing/modules/account_control/account_registry.py:130 register()
-- layers/layer07_publishing/modules/account_control/account_registry.py:171 get()
-- layers/layer07_publishing/modules/account_control/account_registry.py:187 list()
-- layers/layer07_publishing/modules/account_control/account_registry.py:210 disable()
+- layers/layer07_publishing/modules/account_control/account_registry.py:133 register()
+- layers/layer07_publishing/modules/account_control/account_registry.py:174 get()
+- layers/layer07_publishing/modules/account_control/account_registry.py:190 list()
+- layers/layer07_publishing/modules/account_control/account_registry.py:213 disable()
 - layers/layer07_publishing/modules/account_control/account_registry.py:98 decoded()
 - layers/layer07_publishing/modules/account_control/decision_engine.py:22 __init__()
 - layers/layer07_publishing/modules/account_control/decision_engine.py:25 _score()

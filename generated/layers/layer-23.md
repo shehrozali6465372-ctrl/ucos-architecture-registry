@@ -1,6 +1,6 @@
 # Layer 23 — Website Manager
 
-Implementation commit: 3fea749c90566d307c1a23775a72a751ffa9933e
+Implementation commit: 92108af0e192fc28ef27512edfa4468f96e550c2
 Implementation path: layers/layer23_website_manager
 
 ## Source inventory
