@@ -13,13 +13,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: shehrozali6465372-ctrl/universal-content-operating-system
-          ref: production/master-plan-hardening
+          ref: main
           path: ucos
-      - name: Validate registry boundaries
+      - name: Validate canonical architecture and registry boundaries
         run: |
-          test -f architecture/UCOS_MASTER_ARCHITECTURE.md
+          test -f architecture/UCOS_ARCHITECTURE_FROZEN_PRODUCTION_BASELINE_v1.2.md
+          test -f architecture/UCOS_ARCHITECTURE_FREEZE_REVIEW_v1.2_FINAL.md
+          test ! -e architecture/UCOS_MASTER_ARCHITECTURE.md
+          test ! -e architecture/SUPER_INTELLIGENCE_AGENT_ARCHITECTURE_FROZEN_v1.0.md
+          test ! -e architecture/UCOS_ARCHITECTURE_V1.2_IMPLEMENTATION_CONFORMANCE_AUDIT.md
           test -f status/SYSTEM_STATUS.md
           for n in $(seq -w 1 23); do test -f layers/layer-$n/README.md; done
           python -m py_compile scripts/build_registry.py
           python scripts/build_registry.py ucos /tmp/registry-generated
-          test $(find /tmp/registry-generated/generated/layers -name 'layer-*.md' | wc -l) -eq 23
+          test "$(find /tmp/registry-generated/generated/layers -name 'layer-*.md' | wc -l)" -eq 23
