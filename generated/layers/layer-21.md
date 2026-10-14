@@ -1,6 +1,6 @@
 # Layer 21 — Deployment
 
-Implementation commit: 0fb134a1add5eb7c635765238e010d2166da90b9
+Implementation commit: 3fea749c90566d307c1a23775a72a751ffa9933e
 Implementation path: layers/layer21_deployment
 
 ## Source inventory
