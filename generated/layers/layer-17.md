@@ -1,210 +1,21 @@
 # Layer 17 — Security
 
-Implementation commit: 92108af0e192fc28ef27512edfa4468f96e550c2
-Implementation path: layers/layer17_security
+Implementation commit: 246ba63de0e596f186b8096a649235334b85d7b8
+Implementation path: NOT FOUND
 
 ## Source inventory
-- Python modules: **28**
-- Classes: **30**
-- Functions/methods: **134**
+- Python modules: **0**
+- Classes: **0**
+- Functions/methods: **0**
 
 ## Python modules
-- layers/layer17_security/__init__.py
-- layers/layer17_security/modules/audit_logger/__init__.py
-- layers/layer17_security/modules/audit_logger/audit_logger.py
-- layers/layer17_security/modules/authentication/__init__.py
-- layers/layer17_security/modules/authentication/authentication.py
-- layers/layer17_security/modules/authorization/__init__.py
-- layers/layer17_security/modules/authorization/authorization.py
-- layers/layer17_security/modules/credential_resolver/credential_resolver.py
-- layers/layer17_security/modules/encryption_engine/__init__.py
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py
-- layers/layer17_security/modules/firewall/__init__.py
-- layers/layer17_security/modules/firewall/firewall.py
-- layers/layer17_security/modules/input_validator/__init__.py
-- layers/layer17_security/modules/input_validator/input_validator.py
-- layers/layer17_security/modules/jwt_framework/__init__.py
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py
-- layers/layer17_security/modules/output_sanitizer/__init__.py
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py
-- layers/layer17_security/modules/permission_engine/__init__.py
-- layers/layer17_security/modules/permission_engine/permission_engine.py
-- layers/layer17_security/modules/secrets_manager/__init__.py
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py
-- layers/layer17_security/modules/security_policies/__init__.py
-- layers/layer17_security/modules/security_policies/security_policies.py
-- layers/layer17_security/modules/signature_engine/__init__.py
-- layers/layer17_security/modules/signature_engine/signature_engine.py
-- layers/layer17_security/modules/token_manager/__init__.py
-- layers/layer17_security/modules/token_manager/token_manager.py
+- None discovered.
 
 ## Classes
-- layers/layer17_security/modules/audit_logger/audit_logger.py:9 AuditSeverity
-- layers/layer17_security/modules/audit_logger/audit_logger.py:16 AuditEvent
-- layers/layer17_security/modules/audit_logger/audit_logger.py:38 AuditLogger
-- layers/layer17_security/modules/authentication/authentication.py:13 AuthStrategy
-- layers/layer17_security/modules/authentication/authentication.py:20 User
-- layers/layer17_security/modules/authentication/authentication.py:54 AuthSession
-- layers/layer17_security/modules/authentication/authentication.py:77 AuthenticationManager
-- layers/layer17_security/modules/authorization/authorization.py:9 Permission
-- layers/layer17_security/modules/authorization/authorization.py:19 Role
-- layers/layer17_security/modules/authorization/authorization.py:36 AuthorizationManager
-- layers/layer17_security/modules/credential_resolver/credential_resolver.py:17 AccountCredentialResolver
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:13 EncryptionEngine
-- layers/layer17_security/modules/firewall/firewall.py:10 FirewallRule
-- layers/layer17_security/modules/firewall/firewall.py:22 Firewall
-- layers/layer17_security/modules/input_validator/input_validator.py:10 ValidationRule
-- layers/layer17_security/modules/input_validator/input_validator.py:21 InputValidator
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:13 JWTToken
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:24 JWTFramework
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:7 OutputSanitizer
-- layers/layer17_security/modules/permission_engine/permission_engine.py:7 PermissionRule
-- layers/layer17_security/modules/permission_engine/permission_engine.py:20 PermissionEngine
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:12 SecretEntry
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:32 SecretsManager
-- layers/layer17_security/modules/security_policies/security_policies.py:8 PolicyLevel
-- layers/layer17_security/modules/security_policies/security_policies.py:15 SecurityPolicy
-- layers/layer17_security/modules/security_policies/security_policies.py:47 SecurityPolicies
-- layers/layer17_security/modules/signature_engine/signature_engine.py:10 SignatureEngine
-- layers/layer17_security/modules/token_manager/token_manager.py:11 TokenType
-- layers/layer17_security/modules/token_manager/token_manager.py:18 Token
-- layers/layer17_security/modules/token_manager/token_manager.py:46 TokenManager
+- None discovered.
 
 ## Functions / methods
-- layers/layer17_security/modules/audit_logger/audit_logger.py:20 __init__()
-- layers/layer17_security/modules/audit_logger/audit_logger.py:32 to_dict()
-- layers/layer17_security/modules/audit_logger/audit_logger.py:39 __init__()
-- layers/layer17_security/modules/audit_logger/audit_logger.py:43 log()
-- layers/layer17_security/modules/audit_logger/audit_logger.py:53 query()
-- layers/layer17_security/modules/audit_logger/audit_logger.py:66 count()
-- layers/layer17_security/modules/audit_logger/audit_logger.py:69 clear()
-- layers/layer17_security/modules/authentication/authentication.py:24 __init__()
-- layers/layer17_security/modules/authentication/authentication.py:38 _hash_password()
-- layers/layer17_security/modules/authentication/authentication.py:43 verify_password()
-- layers/layer17_security/modules/authentication/authentication.py:48 to_dict()
-- layers/layer17_security/modules/authentication/authentication.py:58 __init__()
-- layers/layer17_security/modules/authentication/authentication.py:69 is_expired()
-- layers/layer17_security/modules/authentication/authentication.py:72 to_dict()
-- layers/layer17_security/modules/authentication/authentication.py:78 __init__()
-- layers/layer17_security/modules/authentication/authentication.py:87 register_user()
-- layers/layer17_security/modules/authentication/authentication.py:97 authenticate_password()
-- layers/layer17_security/modules/authentication/authentication.py:113 register_api_key()
-- layers/layer17_security/modules/authentication/authentication.py:119 authenticate_api_key()
-- layers/layer17_security/modules/authentication/authentication.py:125 validate_session()
-- layers/layer17_security/modules/authentication/authentication.py:133 invalidate_session()
-- layers/layer17_security/modules/authentication/authentication.py:136 get_user()
-- layers/layer17_security/modules/authentication/authentication.py:139 list_users()
-- layers/layer17_security/modules/authentication/authentication.py:142 stats()
-- layers/layer17_security/modules/authorization/authorization.py:22 __init__()
-- layers/layer17_security/modules/authorization/authorization.py:31 to_dict()
-- layers/layer17_security/modules/authorization/authorization.py:37 __init__()
-- layers/layer17_security/modules/authorization/authorization.py:41 create_role()
-- layers/layer17_security/modules/authorization/authorization.py:48 assign_role()
-- layers/layer17_security/modules/authorization/authorization.py:54 revoke_role()
-- layers/layer17_security/modules/authorization/authorization.py:63 has_permission()
-- layers/layer17_security/modules/authorization/authorization.py:70 get_user_roles()
-- layers/layer17_security/modules/authorization/authorization.py:73 get_role_permissions()
-- layers/layer17_security/modules/authorization/authorization.py:77 list_roles()
-- layers/layer17_security/modules/authorization/authorization.py:80 stats()
-- layers/layer17_security/modules/credential_resolver/credential_resolver.py:21 _production()
-- layers/layer17_security/modules/credential_resolver/credential_resolver.py:25 resolve()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:14 __init__()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:17 set_key()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:22 generate_key()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:26 _require_key()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:31 encrypt()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:37 decrypt()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:47 hash()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:54 hmac_sign()
-- layers/layer17_security/modules/encryption_engine/encryption_engine.py:57 hmac_verify()
-- layers/layer17_security/modules/firewall/firewall.py:13 __init__()
-- layers/layer17_security/modules/firewall/firewall.py:23 __init__()
-- layers/layer17_security/modules/firewall/firewall.py:33 add_rule()
-- layers/layer17_security/modules/firewall/firewall.py:42 block_ip()
-- layers/layer17_security/modules/firewall/firewall.py:46 unblock_ip()
-- layers/layer17_security/modules/firewall/firewall.py:50 is_ip_blocked()
-- layers/layer17_security/modules/firewall/firewall.py:54 block_path()
-- layers/layer17_security/modules/firewall/firewall.py:58 is_path_blocked()
-- layers/layer17_security/modules/firewall/firewall.py:62 check_rate_limit()
-- layers/layer17_security/modules/firewall/firewall.py:78 evaluate()
-- layers/layer17_security/modules/firewall/firewall.py:87 list_rules()
-- layers/layer17_security/modules/firewall/firewall.py:92 stats()
-- layers/layer17_security/modules/input_validator/input_validator.py:13 __init__()
-- layers/layer17_security/modules/input_validator/input_validator.py:22 __init__()
-- layers/layer17_security/modules/input_validator/input_validator.py:26 add_rule()
-- layers/layer17_security/modules/input_validator/input_validator.py:29 validate()
-- layers/layer17_security/modules/input_validator/input_validator.py:42 validate_field()
-- layers/layer17_security/modules/input_validator/input_validator.py:52 is_valid_email()
-- layers/layer17_security/modules/input_validator/input_validator.py:55 is_valid_url()
-- layers/layer17_security/modules/input_validator/input_validator.py:77 sanitize_string()
-- layers/layer17_security/modules/input_validator/input_validator.py:83 get_errors()
-- layers/layer17_security/modules/input_validator/input_validator.py:86 clear_errors()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:16 __init__()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:25 __init__()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:33 _b64url()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:37 _b64decode()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:40 create_token()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:54 decode_token()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:79 revoke_token()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:85 is_revoked()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:88 refresh_token()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:96 list_blacklist()
-- layers/layer17_security/modules/jwt_framework/jwt_framework.py:99 clear_blacklist()
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:8 __init__()
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:16 sanitize_html()
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:22 sanitize_sql()
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:27 sanitize_dict()
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:40 strip_null_bytes()
-- layers/layer17_security/modules/output_sanitizer/output_sanitizer.py:43 limit_length()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:10 __init__()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:21 __init__()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:25 add_rule()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:31 check_permission()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:47 assign_role_permissions()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:52 check_role_permission()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:55 list_rules()
-- layers/layer17_security/modules/permission_engine/permission_engine.py:59 count()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:16 __init__()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:27 to_dict()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:33 __init__()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:38 _production()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:41 set_secret()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:50 get_secret()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:60 delete_secret()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:63 rotate_secret()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:74 verify_secret()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:80 list_secrets()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:86 count()
-- layers/layer17_security/modules/secrets_manager/secrets_manager.py:89 get_access_log()
-- layers/layer17_security/modules/security_policies/security_policies.py:19 __init__()
-- layers/layer17_security/modules/security_policies/security_policies.py:28 add_rule()
-- layers/layer17_security/modules/security_policies/security_policies.py:31 evaluate()
-- layers/layer17_security/modules/security_policies/security_policies.py:41 to_dict()
-- layers/layer17_security/modules/security_policies/security_policies.py:48 __init__()
-- layers/layer17_security/modules/security_policies/security_policies.py:52 create_policy()
-- layers/layer17_security/modules/security_policies/security_policies.py:57 evaluate_all()
-- layers/layer17_security/modules/security_policies/security_policies.py:66 get_policy()
-- layers/layer17_security/modules/security_policies/security_policies.py:69 list_policies()
-- layers/layer17_security/modules/security_policies/security_policies.py:72 get_history()
-- layers/layer17_security/modules/security_policies/security_policies.py:75 count()
-- layers/layer17_security/modules/signature_engine/signature_engine.py:11 __init__()
-- layers/layer17_security/modules/signature_engine/signature_engine.py:14 generate_key()
-- layers/layer17_security/modules/signature_engine/signature_engine.py:21 sign()
-- layers/layer17_security/modules/signature_engine/signature_engine.py:27 verify()
-- layers/layer17_security/modules/signature_engine/signature_engine.py:34 list_keys()
-- layers/layer17_security/modules/signature_engine/signature_engine.py:37 remove_key()
-- layers/layer17_security/modules/token_manager/token_manager.py:22 __init__()
-- layers/layer17_security/modules/token_manager/token_manager.py:35 is_expired()
-- layers/layer17_security/modules/token_manager/token_manager.py:38 is_valid()
-- layers/layer17_security/modules/token_manager/token_manager.py:41 to_dict()
-- layers/layer17_security/modules/token_manager/token_manager.py:47 __init__()
-- layers/layer17_security/modules/token_manager/token_manager.py:51 create_token()
-- layers/layer17_security/modules/token_manager/token_manager.py:58 validate_token()
-- layers/layer17_security/modules/token_manager/token_manager.py:62 revoke_token()
-- layers/layer17_security/modules/token_manager/token_manager.py:69 revoke_all_user_tokens()
-- layers/layer17_security/modules/token_manager/token_manager.py:78 list_tokens()
-- layers/layer17_security/modules/token_manager/token_manager.py:87 cleanup_expired()
-- layers/layer17_security/modules/token_manager/token_manager.py:95 stats()
+- None discovered.
 
 ## Status discipline
 Generated from the implementation tree. Source presence is not live-provider or production-runtime certification.
